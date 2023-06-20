@@ -1,0 +1,28 @@
+.horizontal-menu {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end; /* Add this line to align the menu on the right */
+  }
+  
+  .horizontal-menu li {
+    margin-left: 15px; /* Change margin-right to margin-left to create spacing between menu items */
+  }
+  
+  .horizontal-menu li:first-child {
+    margin-left: 0; /* Remove the margin from the first menu item */
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    /* Additional styles for dropdown appearance */
+  }
+  
+  .dropdown:hover > .dropdown-menu {
+    display: block;
+    /* Additional styles for dropdown appearance */
+  }
+  
+  nav {
+    /* Other CSS styles for the navigation */
+  }
