@@ -1,96 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f2f2;
+    }
+    header {
+      background: #0085CA;
+      color: white;
+      padding: 1rem 2rem;
+    }
+    nav {
+      margin-top: 1rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    nav li {
+      position: relative;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      display: block;
+    }
+    nav li:hover > ul {
+      display: block;
+    }
+    nav ul ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #006fa1;
+    }
+    nav ul ul li a {
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+    }
+    main {
+      padding: 2rem;
+    }
+    section img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background: #0085CA;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
-
 <body>
   <header>
-    <h1>Youth Football Coaching</h1>
+    <h1>Youth Football Coaching Hub</h1>
+    <p>Your one-stop shop for drills, tips, and resources for coaching youth football.</p>
+    <nav>
+      <ul>
+        <li>
+          <a href="#">Offense Drills</a>
+          <ul>
+            <li><a href="#">Quarterback</a></li>
+            <li><a href="#">Running Back</a></li>
+            <li><a href="#">Wide Receiver</a></li>
+            <li><a href="#">Offensive Line</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Defense Drills</a>
+          <ul>
+            <li><a href="#">Defensive Line</a></li>
+            <li><a href="#">Linebacker</a></li>
+            <li><a href="#">Defensive Backs</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Coaching Philosophy</a></li>
+        <li><a href="#">Formations</a></li>
+        <li><a href="coaches-corner.html">Coaches Corner</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <nav>
-    <ul class="horizontal-menu">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li class="dropdown">
-        <a href="#">Drills &#9662;</a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Blocking</a></li>
-          <li><a href="#">Tackling</a></li>
-          <li class="dropdown">
-            <a href="#">Defense &#9662;</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Defensive Line</a></li>
-              <li><a href="#">Defensive Backs</a></li>
-              <li><a href="#">Linebackers</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#">Offense &#9662;</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Quarterback</a></li>
-              <li><a href="#">Running back</a></li>
-              <li><a href="#">Wide Receiver</a></li>
-            </ul>
-          </li>
-        </ul>
-      </li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-  
-  
   <main>
     <section>
-      <h2>About Me</h2>
-      <p>Hi, my name is Kyle. I’m excited to create this webpage as a valuable
-         resource for coaching youth football. This platform will serve as a 
-         hub for drills, plays, and other coaching-related content, while also
-         documenting my personal journey.
-        </p>
-      <p>I’ve been coaching youth tackle football since 2021. Prior to that,
-         I gained experience coaching various sports like flag football, 
-         basketball, T-ball, and coaches pitch baseball at our local rec center. 
-         When my eldest son expressed interest in playing tackle football, 
-         we enrolled him with the local club team known as the Hawks.
-        </p>
-      <p>Through my involvement with the Hawks, I developed a deep appreciation
-         for the art of coaching. Curious to learn more about coaching tackle 
-         football, I reached out to the team to inquire about my son’s head 
-         coach. To my surprise, they informed me that he didn’t have a coach 
-         yet and asked if I would be interested in taking on the role. After
-         careful consideration, I reluctantly accepted the opportunity. Since
-         then, coaching has been an absolute blast, and we’ve achieved success,
-         which is always gratifying.
-        </p>
-      <p>I’m thrilled to share my knowledge, experiences, and insights on this 
-         website to support fellow coaches and provide valuable resources for 
-         youth football coaching. Together, we can make a positive impact on 
-         young athletes and help them develop both on and off the field.
-        </p>
+      <img src="images/CoachingPicture01.jpg" alt="Youth Football Team Huddle">
+      <h2>Welcome to Your Coaching Resource</h2>
+      <p>Whether you're just getting started or looking to sharpen your skills, this site has drills and resources organized by position to help you run effective practices and develop confident, skilled players.</p>
     </section>
-
-    <!-- This image doesn't work in VSC but does when testing in Chrome -->
-    <img src="images/MyBioPic.png" alt="Description of the image">
-
     <section>
-      <h2>Our Services</h2>
+      <img src="images/CoachingAiPicture01.png" alt="Coach leading drill">
+      <h3>Getting Started</h3>
       <ul>
-        <li>Web Design</li>
-        <li>Graphic Design</li>
-        <li>Mobile App Development</li>
+        <li><a href="#">Practice Planning Tips</a></li>
+        <li><a href="#">Offseason Training Ideas</a></li>
+        <li><a href="#">Downloadable Playbooks</a></li>
       </ul>
     </section>
+    <section>
+      <img src="images/FootballPlayerNo10_01.jpg" alt="Football field overview">
+      <h3>What's New</h3>
+      <p>We've added new pages for coaching philosophy, recommended youth formations, and a private Coaches Corner where you can share documents and collaborate with your coaching staff.</p>
+    </section>
   </main>
-
   <footer>
-    <p>&copy; 2023 My Website. All rights reserved.</p>
+    <p>&copy; 2025 Youth Football Coaching Hub. All rights reserved.</p>
   </footer>
 </body>
-
 </html>
