@@ -1,6 +1,9 @@
 # My Youth Football Coaching Repo
 > This is my first attempt at creating a website from scratch.
 
+## Test website.
+Just open the index.html from the file manager.
+
 ## Password-Protected Pages
 > Change this based on year/team  
 Password: `Coaching20210614`

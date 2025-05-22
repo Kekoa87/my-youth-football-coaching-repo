@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Youth Football Coaching Hub</title>
-  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
       background: #f2f2f2;
+      color: #333;
     }
     header {
       background: #0085CA;
@@ -45,6 +44,8 @@
       top: 100%;
       left: 0;
       background: #006fa1;
+      min-width: 160px;
+      z-index: 1000;
     }
     nav ul ul li a {
       padding: 0.5rem 1rem;
@@ -52,12 +53,35 @@
     }
     main {
       padding: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
     }
-    section img {
+    article {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+    }
+    article img {
       max-width: 100%;
       height: auto;
       border-radius: 8px;
       margin-bottom: 1rem;
+    }
+    article h2, article h3 {
+      margin-top: 0;
+      color: #0085CA;
+    }
+    article p {
+      line-height: 1.5;
+    }
+    article a.read-more {
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      color: #0085CA;
+      text-decoration: underline;
     }
     footer {
       background: #0085CA;
@@ -94,29 +118,29 @@
         <li><a href="#">Coaching Philosophy</a></li>
         <li><a href="#">Formations</a></li>
         <li><a href="coaches-corner.html">Coaches Corner</a></li>
+        <li><a href="coaches-corner.html">About Me</a></li>
       </ul>
     </nav>
   </header>
   <main>
-    <section>
-      <img src="images/CoachingPicture01.jpg" alt="Youth Football Team Huddle">
-      <h2>Welcome to Your Coaching Resource</h2>
-      <p>Whether you're just getting started or looking to sharpen your skills, this site has drills and resources organized by position to help you run effective practices and develop confident, skilled players.</p>
-    </section>
-    <section>
-      <img src="images/CoachingAiPicture01.png" alt="Coach leading drill">
-      <h3>Getting Started</h3>
-      <ul>
-        <li><a href="#">Practice Planning Tips</a></li>
-        <li><a href="#">Offseason Training Ideas</a></li>
-        <li><a href="#">Downloadable Playbooks</a></li>
-      </ul>
-    </section>
-    <section>
-      <img src="images/FootballPlayerNo10_01.jpg" alt="Football field overview">
-      <h3>What's New</h3>
-      <p>We've added new pages for coaching philosophy, recommended youth formations, and a private Coaches Corner where you can share documents and collaborate with your coaching staff.</p>
-    </section>
+    <article>
+      <a href="pages/coachingPhilosophy.html">
+        <img src="images/CoachingPicture01.jpg" alt="About Me" />
+      </a>
+      <h3>Coaching Philosophy</h3>
+      <p>Core principles that guide my approach to coaching youth football — focusing on effort, discipline, player development, and building character on and off the field.</p>
+      <a href="pages/coachingPhilosophy.html" class="read-more">Read More</a>
+    </article>
+
+    <article>
+      <a href="pages/about.html">
+        <img src="images/MyBioPic.png" alt="About Me" />
+      </a>
+      <h3>Welcome!</h3>
+      <p>I'm Coach Kyle. A passionate youth football coach with 3 years of experience helping young athletes develop their skills, confidence, and love for the game. I believe coaching is about more than just winning — it’s about teaching teamwork, discipline, and sportsmanship that will benefit players on and off the field. This site is my way of sharing the drills, tips, and resources I’ve gathered over the years to support fellow coaches and grow the youth football community.</p>
+      <a href="pages/about.html" class="read-more">Read More</a>
+    </article>
+
   </main>
   <footer>
     <p>&copy; 2025 Youth Football Coaching Hub. All rights reserved.</p>
