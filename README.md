@@ -4,10 +4,6 @@
 ## Test website.
 Just open the index.html from the file manager.
 
-## Password-Protected Pages
-> Change this based on year/team  
-Password: `Coaching20210614`
-
 ## MY NOTES
 > I need a place other than my [website](https://tacticalyouthfootball.com/) to store internal notes.
 
