@@ -90,6 +90,20 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+    /* Target third-level dropdowns (e.g., under "Offense Drills") */
+    nav ul ul ul {
+      left: 100%;
+      top: 0;
+      position: absolute;
+      background: #005a80;
+    }
+
+    /* Optional: make sure nested links are visible above other content */
+    nav ul ul ul li a {
+      padding: 0.5rem 1rem;
+      white-space: nowrap;
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -99,26 +113,38 @@
     <nav>
       <ul>
         <li>
-          <a href="#">Offense Drills</a>
+          <a href="#">Offense</a>
           <ul>
-            <li><a href="#">Quarterback</a></li>
-            <li><a href="#">Running Back</a></li>
-            <li><a href="#">Wide Receiver</a></li>
-            <li><a href="#">Offensive Line</a></li>
+            <li>
+              <a href="#">Offense Drills</a>
+              <ul>
+                <li><a href="pages/qbDrills.html">Quarterback</a></li>
+                <li><a href="pages/rbDrills.html">Running Back</a></li>
+                <li><a href="pages/wrDrills.html">Wide Receiver</a></li>
+                <li><a href="pages/olDrills.html">Offensive Line</a></li>
+              </ul>
+            </li>
+            <li><a href="pages/blockingSchemes.html">Blocking Schemes</a></li>
+            <li><a href="pages/offensiveFormations.html">Formations</a></li>
           </ul>
         </li>
         <li>
-          <a href="#">Defense Drills</a>
+          <a href="#">Defense</a>
           <ul>
-            <li><a href="#">Defensive Line</a></li>
-            <li><a href="#">Linebacker</a></li>
-            <li><a href="#">Defensive Backs</a></li>
+            <li>
+              <a href="#">Defense Drills</a>
+              <ul>
+                <li><a href="pages/dlDrills.html">Defensive Line</a></li>
+                <li><a href="pages/lbDrills.html">Linebacker</a></li>
+                <li><a href="pages/dbDrills.html">Defensive Back</a></li>
+              </ul>
+            </li>
+            <li><a href="pages/defensiveFormations.html">Formations</a></li>
           </ul>
         </li>
-        <li><a href="#">Coaching Philosophy</a></li>
-        <li><a href="#">Formations</a></li>
-        <li><a href="coaches-corner.html">Coaches Corner</a></li>
-        <li><a href="coaches-corner.html">About Me</a></li>
+        <li><a href="pages/coachingPhilosophy.html">Coaching Philosophy</a></li>
+        <li><a href="pages/coaches-corner.html">Coaches Corner</a></li>
+        <li><a href="pages/about.html">About Me</a></li>
       </ul>
     </nav>
   </header>
