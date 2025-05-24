@@ -1,28 +1,255 @@
-.horizontal-menu {
-    display: flex;
-    list-style: none;
-    justify-content: flex-end; /* Add this line to align the menu on the right */
-  }
-  
-  .horizontal-menu li {
-    margin-left: 15px; /* Change margin-right to margin-left to create spacing between menu items */
-  }
-  
-  .horizontal-menu li:first-child {
-    margin-left: 0; /* Remove the margin from the first menu item */
-  }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    /* Additional styles for dropdown appearance */
-  }
-  
-  .dropdown:hover > .dropdown-menu {
+/* General Body Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2; /* Common background */
+  color: #333;         /* Common text color */
+}
+
+/* Header Styles */
+header {
+  background: #0085CA;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+header h1 { /* From olDrills.html, but general enough */
+  margin: 0;
+}
+
+/* Navigation Styles (from index.html, most comprehensive) */
+nav {
+  margin-top: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav li {
+  position: relative;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  display: block;
+}
+
+nav li:hover > ul {
+  display: block;
+}
+
+/* First level dropdown */
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #006fa1;
+  min-width: 160px;
+  z-index: 1000;
+}
+
+nav ul ul li a {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  color: white; /* Ensure nested links are white */
+}
+
+/* Second level dropdown (e.g., under "Offense Drills") */
+nav ul ul ul {
+  left: 100%;
+  top: 0;
+  /* position: absolute; already inherited and set by nav ul ul */
+  background: #005a80; /* Darker background for third level */
+}
+
+/* Main Content Styles */
+main {
+  padding: 2rem;
+  max-width: 900px; /* Default from index.html and olDrills.html */
+  margin: 0 auto;
+}
+
+/* Styles for about.html main section */
+main.about-page-main {
+  background: white;
+  border-radius: 8px;
+  max-width: 800px;
+}
+
+
+/* Article Styles (from index.html) */
+article {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+article img { /* From index.html */
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+article h2, article h3 { /* From index.html */
+  margin-top: 0;
+  color: #0085CA;
+}
+
+article p { /* From index.html */
+  line-height: 1.5;
+}
+
+article a.read-more { /* From index.html */
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  color: #0085CA;
+  text-decoration: underline;
+}
+
+/* Section Styles (from olDrills.html) */
+section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+/* Specific image styling within sections for olDrills.html */
+section article img { /* This is from olDrills.html, more specific than article img */
+    max-width: 100%;
+    height: auto;
+    max-height: 300px; /* Limit height for drill GIFs */
     display: block;
-    /* Additional styles for dropdown appearance */
+    margin: 1rem 0;
+    border-radius: 0; /* Overriding index.html's article img border-radius if it's inside a section > article context */
+}
+
+
+/* General Heading Styles */
+/* h1, h2, h3 were styled with color: #0085CA; in various places, this is covered by article h2, article h3 and specific header h1 */
+/* about.html h1 style was color: #0085CA; */
+/* olDrills.html h2 style was color: #0085CA; */
+/* index.html article h2, article h3 was color: #0085CA */
+/* It seems specific enough, no need for a general h1,h2,h3 rule here that might override things like header h1 if it wasn't white. */
+
+
+/* Footer Styles */
+footer {
+  background: #0085CA;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Basic styling for site title in header on sub-pages */
+.site-title {
+  font-size: 2em; /* Example size, adjust as needed */
+  font-weight: bold;
+  margin: 0; /* Or match original h1 margin if necessary */
+}
+
+/* Keyboard navigation accessibility for dropdowns */
+header nav ul li.focus-within-parent > ul,
+header nav ul li.submenu-active > ul {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem 1rem; /* Reduced padding for smaller screens */
+  }
+
+  header h1, header .site-title { /* Target both h1 in index and .site-title in subpages */
+    font-size: 1.5em; /* Slightly smaller title on mobile */
   }
   
-  nav {
-    /* Other CSS styles for the navigation */
+  header p { /* Reduce size of subtitle in header */
+    font-size: 0.9em;
   }
+
+  nav ul {
+    gap: 0.5rem; /* Reduce gap between nav items */
+    justify-content: center; /* Center nav items when they wrap */
+  }
+
+  nav a {
+    padding: 0.5rem 0.8rem; /* Adjust padding for touch targets */
+  }
+
+  /* Adjust nested dropdown positioning for smaller screens */
+  nav ul ul ul { /* Third-level dropdowns */
+    left: 50%; /* Attempt to bring it more into view */
+    right: -50%;
+    /* Consider making them full width or stack differently if still problematic */
+  }
+
+  main {
+    padding: 1rem; /* Reduced padding for main content */
+  }
+
+  article {
+    padding: 1rem; /* Reduced padding for articles */
+  }
+  
+  /* Make iframes and images within them responsive */
+  iframe {
+    max-width: 100%;
+    height: auto; /* Adjust height proportionally, might need specific aspect ratio classes if fixed height is an issue */
+  }
+}
+
+@media (max-width: 480px) {
+  header h1, header .site-title {
+    font-size: 1.2em; /* Even smaller title on very small screens */
+  }
+  
+  header p {
+    font-size: 0.8em; /* Smaller subtitle */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center; /* Center stacked items */
+  }
+
+  nav ul li {
+    width: 100%; /* Make list items take full width */
+    text-align: center; /* Center text within list items */
+  }
+
+  nav ul ul, nav ul ul ul { /* All dropdown levels */
+    position: static; /* Remove absolute positioning, stack them */
+    width: 100%;
+    background-color: #0077b3; /* Slightly different background for stacked dropdown */
+  }
+  
+  nav ul ul li a, nav ul ul ul li a {
+    padding: 0.8rem 1rem; /* Consistent padding for stacked items */
+    border-bottom: 1px solid #006fa1; /* Separator for stacked items */
+  }
+  
+  nav ul ul li:last-child a, nav ul ul ul li:last-child a {
+     border-bottom: none;
+  }
+
+  /* Ensure JavaScript-toggled dropdowns still work with stacked layout */
+  header nav ul li.focus-within-parent > ul,
+  header nav ul li.submenu-active > ul {
+     display: block; /* This should still work as intended */
+  }
+}
