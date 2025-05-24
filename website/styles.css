@@ -253,3 +253,12 @@ header nav ul li.submenu-active > ul {
      display: block; /* This should still work as intended */
   }
 }
+
+/* Specific styling for Wide Receiver Route Tree image */
+.wr-route-tree {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
