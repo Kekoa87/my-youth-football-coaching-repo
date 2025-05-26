@@ -290,3 +290,26 @@ header nav ul li.submenu-active > ul {
 .day-nav a:hover {
   background-color: #e6f0ff;
 }
+
+/* Instagram Embed Fix */
+.instagram-media {
+  width: 100% !important;
+  max-width: 540px;
+  margin: 1.5rem auto !important;
+}
+
+/* Video container spacing */
+.video-container, .video-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+/* Site title inside header */
+header h1.site-title {
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Ensure Instagram scripts properly activate */
+article blockquote.instagram-media {
+  display: block;
+}
