@@ -8,57 +8,14 @@
   <link rel="stylesheet" href="../../../styles.css">
 </head>
 <body>
-  <header>
-    <p class="site-title">Youth Football Coaching Hub</p>
-    <nav>
-      <ul>
-        <li><a href="../../../../index.html">Home</a></li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">Offense</a>
-          <ul>
-            <li>
-              <a href="#" aria-haspopup="true" aria-expanded="false">Offense Drills</a>
-              <ul>
-                <li><a href="qbDrills.html">Quarterback</a></li>
-                <li><a href="rbDrills.html">Running Back</a></li>
-                <li><a href="wrDrills.html">Wide Receiver</a></li>
-                <li><a href="olDrills.html">Offensive Line</a></li>
-              </ul>
-            </li>
-            <li><a href="blockingSchemes.html">Blocking Schemes</a></li>
-            <li><a href="offensiveFormations.html">Formations</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">Defense</a>
-          <ul>
-            <li>
-              <a href="#" aria-haspopup="true" aria-expanded="false">Defense Drills</a>
-              <ul>
-                <li><a href="dlDrills.html">Defensive Line</a></li>
-                <li><a href="lbDrills.html">Linebacker</a></li>
-                <li><a href="dbDrills.html">Defensive Back</a></li>
-              </ul>
-            </li>
-            <li><a href="defensiveFormations.html">Formations</a></li>
-          </ul>
-        </li>
-        <li><a href="coaches-corner.html">Coaches Corner</a></li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">About</a>
-          <ul>
-            <li>
-              <a href="#" aria-haspopup="true" aria-expanded="false">About</a>
-              <ul>
-                <li><a href="../../about/about.html">About</a></li>
-                <li><a href="../../../about/coachingPhilosophy.html">Coaching Philosophy</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>        
-      </ul>
-    </nav>
-  </header>
+<div id="site-header"></div>
+<script>
+  fetch("/website/includes/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-header').innerHTML = data;
+    });
+</script>
 
   <main>
     <section>
@@ -132,8 +89,13 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Youth Football Coaching Hub</p>
-  </footer>
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+</script>
 </body>
 </html>

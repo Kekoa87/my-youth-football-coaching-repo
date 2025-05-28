@@ -9,57 +9,14 @@
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </head>
 <body>
-  <header>
-    <p class="site-title">Youth Football Coaching Hub</p>
-    <nav>
-      <ul>
-        <li><a href="../../../../index.html">Home</a></li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">Offense</a>
-          <ul>
-            <li>
-              <a href="#" aria-haspopup="true" aria-expanded="false">Offense Drills</a>
-              <ul>
-                <li><a href="../../offense/offense_drills/qbDrills.html">Quarterback</a></li>
-                <li><a href="../../offense/offense_drills/rbDrills.html">Running Back</a></li>
-                <li><a href="../../offense/offense_drills/wrDrills.html">Wide Receiver</a></li>
-                <li><a href="../../offense/offense_drills/olDrills.html">Offensive Line</a></li>
-              </ul>
-            </li>
-            <li><a href="../../offense/">Blocking Schemes</a></li>
-            <li><a href="../../offense/offensiveFormations.html">Formations</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">Defense</a>
-          <ul>
-            <li>
-              <a href="#" aria-haspopup="true" aria-expanded="false">Defense Drills</a>
-              <ul>
-                <li><a href="dlDrills.html">Defensive Line</a></li>
-                <li><a href="lbDrills.html">Linebacker</a></li>
-                <li><a href="dbDrills.html">Defensive Back</a></li>
-              </ul>
-            </li>
-            <li><a href="../../defense/">Formations</a></li>
-          </ul>
-        </li>
-        <li><a href="coaches-corner.html">Coaches Corner</a></li>
-        <li>
-          <a href="#" aria-haspopup="true" aria-expanded="false">About</a>
-          <ul>
-            <li>
-              <a href="#" aria-haspopup="true" aria-expanded="false">About</a>
-              <ul>
-                <li><a href="../../about/about.html">About</a></li>
-                <li><a href="../../about/coachingPhilosophy.html">Coaching Philosophy</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li> 
-      </ul>
-    </nav>
-  </header>
+<div id="site-header"></div>
+<script>
+  fetch("/website/includes/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-header').innerHTML = data;
+    });
+</script>
 
   <main class="about-page-main">
     <h1>Defensive Line Drills</h1>
@@ -127,8 +84,13 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 Youth Football Coaching Hub</p>
-  </footer>
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+</script>
 </body>
 </html>
