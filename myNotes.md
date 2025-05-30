@@ -32,7 +32,7 @@
 
 ## 🔥 Coaching Staff Expectations
 
-### What I Expect from Coaches
+### What I Expect from Coachesg
 - **Commitment** – Time is valuable. Show up locked in.
 - **Consistency** – Be present, prepared, and on time.
 - **Energy** – Bring the juice. Kids feed off it.
