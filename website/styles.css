@@ -244,15 +244,27 @@ main {
   padding: var(--space-xl) 0; /* Use container for side padding */
 }
 
+/* Styling for the container of articles on index.html */
+main > .container { /* This assumes index.html uses main > div.container for articles */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--space-lg);
+  /* It inherits max-width, margin: auto, and LR padding from the generic .container rule */
+}
+
 /* Articles on index.html (Card-like style) */
-main > article {
+main > article { /* This rule is primarily for the cards on index.html */
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-sm);
-  margin-bottom: var(--space-xl);
   padding: var(--space-lg);
   transition: box-shadow 0.2s ease-in-out;
+  /* Flex item properties */
+  flex: 0 1 360px; /* flex-grow: 0, flex-shrink: 1, flex-basis: 360px */
+  margin-bottom: 0;  /* Remove margin-bottom as gap property from parent now handles it */
 }
 
 main > article:hover {
@@ -277,22 +289,34 @@ main > article p {
 }
 
 main > article a.read-more {
-  display: inline-block; /* More button-like */
+  display: inline-block;
   font-family: var(--font-family-sans-serif);
   font-weight: 600;
   background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: var(--space-sm) var(--space-md);
+  color: var(--color-white) !important; /* Ensure text color overrides any generic link color */
+  padding: var(--space-md) var(--space-lg); /* Increased padding */
   border-radius: var(--border-radius);
-  text-decoration: none;
-  margin-top: var(--space-sm); /* Ensure some space above it */
-  transition: background-color 0.2s ease;
+  text-decoration: none !important; /* Ensure no underline */
+  margin-top: var(--space-md); /* Increased top margin */
+  box-shadow: var(--box-shadow-sm);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+  text-align: center;
+  cursor: pointer; /* Indicate it's clickable */
 }
 
-main > article a.read-more:hover {
+main > article a.read-more:hover,
+main > article a.read-more:focus {
   background-color: var(--color-primary-dark);
-  color: var(--color-white);
-  text-decoration: none;
+  color: var(--color-white) !important; /* Ensure text color overrides */
+  text-decoration: none !important; /* Ensure no underline */
+  box-shadow: var(--box-shadow-md);
+  transform: translateY(-1px);
+}
+
+main > article a.read-more:active {
+  transform: translateY(0px); /* Remove lift effect on click */
+  box-shadow: var(--box-shadow-sm); /* Revert shadow to base */
+  background-color: var(--color-primary-dark); /* Keep it dark during click */
 }
 
 /* Content Pages (e.g., about.html, drill pages) */
