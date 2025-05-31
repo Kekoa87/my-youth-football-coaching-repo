@@ -117,70 +117,91 @@ img {
 @media (min-width: 1200px) { .container { max-width: 1140px; } }
 
 /* Header */
-header {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  padding: var(--space-md) 0; /* Padding top/bottom, nav will handle sides if using .container */
-  box-shadow: var(--box-shadow-sm);
+.header-title-area {
+  text-align: center;
+  padding: var(--space-lg) var(--space-md) var(--space-md); /* Generous top padding, medium bottom */
+  background-color: var(--color-dark); /* Matches overall header bg */
 }
 
-header .site-title, /* For sub-pages */
-header h1 { /* For index.html */
+.header-title-area h1 {
+  font-size: var(--font-size-xxl); /* Default for mobile, overridden for desktop */
+  color: var(--color-white);
+  margin-top: 0;
+  margin-bottom: 0; /* Spacing controlled by padding on parent */
+}
+
+header {
+  background-color: var(--color-dark); /* This might be redundant if children cover it */
+  color: var(--color-light);
+  padding: 0; /* Remove header padding, let sections inside control it */
+  box-shadow: var(--box-shadow-sm); /* Keep this for the overall header block */
+}
+
+/* Obsolete general header h1 styling, now handled by .header-title-area h1
+header .site-title, / For sub-pages /
+header h1 { / For index.html /
   font-size: var(--font-size-xl);
   color: var(--color-white);
   margin-bottom: var(--space-xs);
   text-align: center;
 }
-header p { /* Subtitle */
+*/
+/* header p has been removed from header.html, so this rule is obsolete
+header p { / Subtitle /
   font-size: var(--font-size-sm);
-  color: #adb5bd; /* Softer color for subtitle - Updated for better contrast */
+  color: #adb5bd; / Softer color for subtitle - Updated for better contrast /
   text-align: center;
   margin-bottom: var(--space-md);
 }
+*/
 
 /* Navigation */
-nav {
+nav.site-navigation {
+  background-color: var(--color-primary); /* Primary color for nav bar background */
+  padding: var(--space-sm) 0; /* Vertical padding for the nav bar itself */
   width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: a subtle shadow */
 }
 
-nav ul {
+nav.site-navigation ul { /* Ensure this targets UL within .site-navigation .container */
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center; /* Center nav items */
   flex-wrap: wrap; /* Allow wrapping on smaller screens */
-  gap: var(--space-sm);
+  gap: var(--space-sm); /* Default gap, overridden for desktop */
 }
 
-nav li {
+nav.site-navigation li {
   position: relative; /* For dropdown positioning */
 }
 
-nav a {
+nav.site-navigation a,
+nav.site-navigation a:visited { /* Added :visited for consistency */
   display: block;
-  padding: var(--space-sm) var(--space-md);
-  color: var(--color-light);
+  padding: var(--space-sm) var(--space-md); /* Existing padding */
+  color: var(--color-white); /* White links on primary background */
   text-decoration: none;
   border-radius: var(--border-radius);
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-nav a:hover,
-nav a:focus,
-nav li.submenu-active > a { /* Highlight active dropdown parent */
-  background-color: var(--color-primary);
+nav.site-navigation a:hover,
+nav.site-navigation a:focus,
+nav.site-navigation li.submenu-active > a {
+  background-color: var(--color-primary-dark); /* Darken on hover/focus */
   color: var(--color-white);
   text-decoration: none;
 }
 
 /* Dropdown Menus */
-nav ul ul {
+nav.site-navigation ul ul {
   display: none; /* Hidden by default */
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: var(--color-dark);
+  background-color: var(--color-primary-dark); /* Darker primary for dropdown BG */
   min-width: 200px; /* Wider dropdowns */
   z-index: 1000;
   border-radius: 0 0 var(--border-radius) var(--border-radius);
@@ -188,30 +209,32 @@ nav ul ul {
   padding: var(--space-sm) 0; /* Padding inside dropdown */
 }
 
-nav ul ul li a {
+nav.site-navigation ul ul li a,
+nav.site-navigation ul ul li a:visited {
   padding: var(--space-sm) var(--space-md);
   white-space: nowrap;
-  color: var(--color-light); /* Links inside dropdown */
+  color: var(--color-white); /* White links in dropdown */
   border-radius: 0; /* No radius for items inside dropdown */
 }
 
-nav ul ul li a:hover,
-nav ul ul li a:focus {
-  background-color: var(--color-primary); /* Hover for dropdown items */
-  color: var(--color-white);
+nav.site-navigation ul ul li a:hover,
+nav.site-navigation ul ul li a:focus {
+  background-color: var(--color-primary); /* Lighter primary for hover in dropdown */
+  color: var(--color-white); /* Ensure text remains white */
 }
 
 /* Second Level Dropdown */
-nav ul ul ul {
+nav.site-navigation ul ul ul {
   top: 0; /* Align with parent item */
   left: 100%; /* Position to the side */
   border-radius: var(--border-radius); /* Radius for nested dropdown */
+  background-color: var(--color-primary); /* Even lighter or same as hover */
 }
 
 /* Show dropdowns on hover/focus (CSS only for hover, JS for click/focus) */
-nav li:hover > ul,
-nav li.focus-within-parent > ul, /* For keyboard nav from main.js */
-nav li.submenu-active > ul { /* For click nav from main.js */
+nav.site-navigation li:hover > ul,
+nav.site-navigation li.focus-within-parent > ul, /* For keyboard nav from main.js */
+nav.site-navigation li.submenu-active > ul { /* For click nav from main.js */
   display: block;
 }
 
@@ -310,6 +333,7 @@ footer p {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  /* Obsolete: text-align handled by .header-title-area or site-navigation
   header .site-title,
   header h1 {
     font-size: var(--font-size-xxl);
@@ -318,46 +342,72 @@ footer p {
   header p {
     text-align: left;
   }
-  nav ul {
+  */
+  nav.site-navigation ul { /* Target specific nav */
     gap: var(--space-md); /* More space for nav items on larger screens */
   }
-  /* If header content is in a container, align nav within it */
-  header > .container { /* Assuming header content might be wrapped in a container */
+  /* Obsolete: header > .container rule removed as structure changed
+  header > .container { / Assuming header content might be wrapped in a container /
     display: flex;
     align-items: center;
   }
-  nav { /* If header uses flexbox and container */
-    flex-grow: 1; /* Allow nav to take up available space */
+  */
+  /* Obsolete: nav flex-grow handled by new structure or not needed
+  nav { / If header uses flexbox and container /
+    flex-grow: 1; / Allow nav to take up available space /
+  }
+  */
+
+  /* --- New styles for desktop --- */
+  .header-title-area h1 {
+    font-size: var(--font-size-xxl); /* Ensure title is large on desktop */
   }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 767.98px) {
-  nav ul {
-    flex-direction: column; /* Stack nav items */
-    align-items: center; /* Center stacked items */
+  /* --- Styles for .header-title-area on mobile --- */
+  .header-title-area h1 {
+    font-size: var(--font-size-xl); /* Slightly smaller title on mobile */
   }
-  nav li {
-    width: 100%; /* Full width for stacked items */
+
+  /* --- Styles for nav.site-navigation on mobile --- */
+  nav.site-navigation ul { /* This is the main ul inside .container */
+    flex-direction: column;
+    align-items: center;
+    gap: 0; /* Remove gap when stacked, li will handle width */
   }
-  nav a {
+  nav.site-navigation li {
+    width: 100%;
+  }
+  nav.site-navigation a { /* Main links */
     text-align: center;
+    border-bottom: 1px solid var(--color-primary-dark); /* Separator for stacked links */
   }
-  nav ul ul,
-  nav ul ul ul {
-    position: static; /* Static positioning for dropdowns in stacked nav */
+  nav.site-navigation li:last-child a {
+    border-bottom: none;
+  }
+
+  /* Mobile dropdowns adjustments */
+  nav.site-navigation ul ul,
+  nav.site-navigation ul ul ul {
+    position: static;
     width: 100%;
     box-shadow: none;
     border-radius: 0;
     padding-left: var(--space-md); /* Indent submenus */
-    background-color: rgba(0,0,0,0.1); /* Slightly different bg for stacked dropdown */
+    background-color: var(--color-primary-dark); /* Darker shade of nav bg */
   }
-  nav ul ul li a {
-    color: var(--color-light);
+  nav.site-navigation ul ul li a { /* Ensure links are visible */
+    color: var(--color-white);
+    border-bottom: 1px solid var(--color-primary); /* Separator for dropdown items */
   }
-  nav ul ul li a:hover,
-  nav ul ul li a:focus {
-    background-color: var(--color-primary);
+  nav.site-navigation ul ul li:last-child a {
+     border-bottom: none;
+  }
+  nav.site-navigation ul ul li a:hover,
+  nav.site-navigation ul ul li a:focus {
+    background-color: var(--color-primary); /* Lighter shade for hover */
   }
 }
 
