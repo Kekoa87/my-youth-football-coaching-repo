@@ -133,7 +133,7 @@ header h1 { /* For index.html */
 }
 header p { /* Subtitle */
   font-size: var(--font-size-sm);
-  color: var(--color-secondary); /* Softer color for subtitle */
+  color: #adb5bd; /* Softer color for subtitle - Updated for better contrast */
   text-align: center;
   margin-bottom: var(--space-md);
 }
@@ -324,12 +324,10 @@ footer p {
   /* If header content is in a container, align nav within it */
   header > .container { /* Assuming header content might be wrapped in a container */
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
   }
   nav { /* If header uses flexbox and container */
-    width: auto; /* Allow nav to not take full width if header is flex */
+    flex-grow: 1; /* Allow nav to take up available space */
   }
 }
 
