@@ -14,8 +14,8 @@
   --font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* Colors - Modern Palette (Example: Cool Blues & Grays) */
-  --color-primary: ##1C523A; /* Vibrant Blue for accents */
-  --color-primary-dark: 184B33;
+  --color-primary: #007bff; /* Vibrant Blue for accents */
+  --color-primary-dark: #0056b3;
   --color-secondary: #6c757d; /* Neutral Gray */
   --color-light: #f8f9fa;    /* Light background */
   --color-dark: #343a40;     /* Dark text */
@@ -136,24 +136,6 @@ header {
   padding: 0; /* Remove header padding, let sections inside control it */
   box-shadow: var(--box-shadow-sm); /* Keep this for the overall header block */
 }
-
-/* Obsolete general header h1 styling, now handled by .header-title-area h1
-header .site-title, / For sub-pages /
-header h1 { / For index.html /
-  font-size: var(--font-size-xl);
-  color: var(--color-white);
-  margin-bottom: var(--space-xs);
-  text-align: center;
-}
-*/
-/* header p has been removed from header.html, so this rule is obsolete
-header p { / Subtitle /
-  font-size: var(--font-size-sm);
-  color: #adb5bd; / Softer color for subtitle - Updated for better contrast /
-  text-align: center;
-  margin-bottom: var(--space-md);
-}
-*/
 
 /* Navigation */
 nav.site-navigation {
@@ -357,30 +339,9 @@ footer p {
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-  /* Obsolete: text-align handled by .header-title-area or site-navigation
-  header .site-title,
-  header h1 {
-    font-size: var(--font-size-xxl);
-    text-align: left;
-  }
-  header p {
-    text-align: left;
-  }
-  */
   nav.site-navigation ul { /* Target specific nav */
     gap: var(--space-md); /* More space for nav items on larger screens */
   }
-  /* Obsolete: header > .container rule removed as structure changed
-  header > .container { / Assuming header content might be wrapped in a container /
-    display: flex;
-    align-items: center;
-  }
-  */
-  /* Obsolete: nav flex-grow handled by new structure or not needed
-  nav { / If header uses flexbox and container /
-    flex-grow: 1; / Allow nav to take up available space /
-  }
-  */
 
   /* --- New styles for desktop --- */
   .header-title-area h1 {
