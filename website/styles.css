@@ -491,3 +491,17 @@ footer p {
   display: inline-block;
   margin-bottom: var(--space-sm);
 }
+
+.logo-title-wrapper {
+  display: flex;
+  align-items: center;         /* Vertically center the image and text */
+  justify-content: center;     /* Horizontally center the whole thing */
+  gap: var(--space-md);        /* Add space between image and title */
+  flex-wrap: wrap;             /* Allows stacking on small screens */
+}
+
+.site-logo {
+  height: 60px;                /* Or whatever fits your design */
+  width: auto;
+  display: block;
+}
