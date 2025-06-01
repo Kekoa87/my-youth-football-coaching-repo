@@ -484,3 +484,10 @@ footer p {
 
 /* Ensure JavaScript-toggled dropdowns for accessibility still work */
 /* Classes 'focus-within-parent' and 'submenu-active' are handled above */
+
+.site-logo {
+  height: 60px; /* Adjust as needed */
+  width: auto;
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
