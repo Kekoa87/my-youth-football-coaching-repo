@@ -14,8 +14,8 @@
   --font-family-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
   /* Colors - Modern Palette (Example: Cool Blues & Grays) */
-  --color-primary: #007bff; /* Vibrant Blue for accents */
-  --color-primary-dark: #0056b3;
+  --color-primary: #1C5239; /* New Green for accents */
+  --color-primary-dark: #133728; /* Darker shade of new Green */
   --color-secondary: #6c757d; /* Neutral Gray */
   --color-light: #f8f9fa;    /* Light background */
   --color-dark: #343a40;     /* Dark text */
