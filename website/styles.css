@@ -500,3 +500,23 @@ footer p {
   gap: var(--space-md);        /* Add space between image and title */
   flex-wrap: wrap;             /* Allows stacking on small screens */
 }
+
+/* Styles for page title and author info block */
+.page-header {
+  /* The margin-bottom is applied inline on the div itself */
+}
+
+.page-header h1 {
+  display: block;
+  width: 100%;
+  text-align: center; /* Center the page title */
+  margin-bottom: var(--space-sm); /* Add a small margin below the title */
+}
+
+.page-header p {
+  display: block;
+  width: 100%;
+  /* text-align: center; is already in the inline style of the <p> tag */
+  /* The <p> tag also has an inline style for text-align, which is fine. */
+  /* margin-bottom for the whole block is on the .page-header div's inline style */
+}
