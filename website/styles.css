@@ -245,7 +245,7 @@ main > article { /* This rule is primarily for the cards on index.html */
   padding: var(--space-lg);
   transition: box-shadow 0.2s ease-in-out;
   /* Flex item properties */
-  flex: 0 1 360px; /* flex-grow: 0, flex-shrink: 1, flex-basis: 360px */
+  flex: 0 1 100%; /* flex-grow: 0, flex-shrink: 1, flex-basis: 100% */
   margin-bottom: 0;  /* Remove margin-bottom as gap property from parent now handles it */
 }
 
@@ -369,6 +369,25 @@ footer p {
     text-align: center;
     border-bottom: 1px solid var(--color-primary-dark); /* Separator for stacked links */
   }
+
+.collapsible-content.hidden {
+  display: none;
+}
+#toggleRouteTreeButton {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-family-sans-serif);
+  font-weight: 600;
+}
+#toggleRouteTreeButton:hover,
+#toggleRouteTreeButton:focus {
+  background-color: var(--color-primary-dark);
+}
   nav.site-navigation li:last-child a {
     border-bottom: none;
   }

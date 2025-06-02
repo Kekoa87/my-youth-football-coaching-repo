@@ -1,59 +1,84 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const navItems = document.querySelectorAll('header nav ul li');
+// Function to toggle the mobile menu
+function toggleMenu() {
+  const nav = document.querySelector('nav ul');
+  const hamburger = document.querySelector('.hamburger-menu');
+  nav.classList.toggle('show');
+  hamburger.classList.toggle('active');
+}
 
-  navItems.forEach(function (item) {
-    // Find direct anchor child for focus/blur
-    const anchor = item.querySelector('a');
-    if (anchor) {
-        // If there's a submenu (ul inside this li)
-        const submenu = item.querySelector('ul');
-        if (submenu) {
-            anchor.addEventListener('focus', function () {
-                // Show submenu when parent link is focused
-                item.classList.add('focus-within-parent');
-            });
+// Function to toggle dark mode
+function toggleDarkMode() {
+  const body = document.body;
+  body.classList.toggle('dark-mode');
+  // Optionally, save user preference to localStorage
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark-mode');
+  } else {
+    localStorage.removeItem('theme');
+  }
+}
 
-            // Find all focusable elements in the submenu
-            const submenuLinks = submenu.querySelectorAll('a');
-            if (submenuLinks.length > 0) {
-                const lastLink = submenuLinks[submenuLinks.length - 1];
-                lastLink.addEventListener('blur', function (e) {
-                    // Check if focus is moving outside the current li
-                    // Use a timeout to allow focus to shift before checking
-                    setTimeout(() => {
-                        if (!item.contains(document.activeElement)) {
-                            item.classList.remove('focus-within-parent');
-                        }
-                    }, 0);
-                });
-            } else { // If no links in submenu, parent link blur should hide
-                 anchor.addEventListener('blur', function() {
-                    setTimeout(() => {
-                        if (!item.contains(document.activeElement)) {
-                            item.classList.remove('focus-within-parent');
-                        }
-                    }, 0);
-                });
-            }
-        }
-    }
-  });
+// Apply saved theme on page load
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark-mode') {
+    document.body.classList.add('dark-mode');
+  }
 
-  // Add click listener for touch devices / ease of use
-  const topLevelLinksWithSubmenus = document.querySelectorAll('header nav > ul > li > a');
-  topLevelLinksWithSubmenus.forEach(link => {
-    const parentLi = link.parentElement;
-    const submenu = parentLi.querySelector('ul');
-    if (submenu) {
-      link.addEventListener('click', function(event) {
-        // Prevent default if it's just a '#' link
-        if (link.getAttribute('href') === '#') {
-          event.preventDefault();
-        }
-        // Toggle a class to show/hide submenu
-        parentLi.classList.toggle('submenu-active');
-      });
-    }
-  });
+  // Event listener for hamburger menu
+  const hamburger = document.querySelector('.hamburger-menu');
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMenu);
+  }
 
+  // Event listener for dark mode toggle
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  if (darkModeToggle) {
+    darkModeToggle.addEventListener('click', toggleDarkMode);
+  }
 });
+
+// Function to handle collapsible sections
+function toggleCollapsible(event) {
+    const button = event.target;
+    const content = button.nextElementSibling; // Assumes content is immediately after button
+    const isExpanded = content.classList.toggle('hidden');
+    button.textContent = isExpanded ? button.dataset.textCollapse : button.dataset.textExpand;
+    button.setAttribute('aria-expanded', isExpanded);
+}
+
+// Add event listeners to all collapsible buttons
+document.querySelectorAll('.collapsible-button').forEach(button => {
+    // Ensure section is hidden by default by adding 'hidden' class if not present
+    const content = button.nextElementSibling;
+    if (content && !content.classList.contains('hidden')) {
+        content.classList.add('hidden');
+        // Update button state accordingly
+        button.textContent = button.dataset.textExpand || 'Expand Section'; // Fallback text
+        button.setAttribute('aria-expanded', 'false');
+    }
+    button.addEventListener('click', toggleCollapsible);
+});
+
+function toggleRouteTree() {
+  const section = document.getElementById('routeTreeSection');
+  const button = document.getElementById('toggleRouteTreeButton');
+  if (section && button) {
+    const isExpanded = section.classList.toggle('hidden');
+    button.textContent = isExpanded ? 'Collapse Route Tree' : 'Expand Route Tree';
+    button.setAttribute('aria-expanded', isExpanded);
+  }
+}
+
+const routeTreeButton = document.getElementById('toggleRouteTreeButton');
+if (routeTreeButton) {
+  // Ensure section is hidden by default by adding 'hidden' class if not present
+  const section = document.getElementById('routeTreeSection');
+  if (section && !section.classList.contains('hidden')) {
+     section.classList.add('hidden');
+     // Update button state accordingly
+     routeTreeButton.textContent = 'Expand Route Tree';
+     routeTreeButton.setAttribute('aria-expanded', 'false');
+  }
+  routeTreeButton.addEventListener('click', toggleRouteTree);
+}
