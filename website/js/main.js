@@ -36,49 +36,58 @@ document.addEventListener('DOMContentLoaded', () => {
   if (darkModeToggle) {
     darkModeToggle.addEventListener('click', toggleDarkMode);
   }
+
+  // Route Tree Toggle Logic
+  const routeTreeButton = document.getElementById('toggleRouteTreeButton');
+  const routeTreeSection = document.getElementById('routeTreeSection');
+
+  if (routeTreeButton && routeTreeSection) {
+      // Ensure section is hidden by default and button state is correct
+      // This will run regardless of whether 'hidden' is already on the section in HTML
+      routeTreeSection.classList.add('hidden'); 
+      routeTreeButton.textContent = 'Expand Route Tree';
+      routeTreeButton.setAttribute('aria-expanded', 'false');
+
+      routeTreeButton.addEventListener('click', () => {
+          // Toggle returns true if class was added (now hidden), false if removed (now visible)
+          const isNowHidden = routeTreeSection.classList.toggle('hidden');
+          
+          if (isNowHidden) {
+              routeTreeButton.textContent = 'Expand Route Tree';
+              routeTreeButton.setAttribute('aria-expanded', 'false');
+          } else {
+              routeTreeButton.textContent = 'Collapse Route Tree';
+              routeTreeButton.setAttribute('aria-expanded', 'true');
+          }
+      });
+  }
 });
 
-// Function to handle collapsible sections
+// Function to handle generic collapsible sections (if any are still used)
 function toggleCollapsible(event) {
     const button = event.target;
     const content = button.nextElementSibling; // Assumes content is immediately after button
-    const isExpanded = content.classList.toggle('hidden');
-    button.textContent = isExpanded ? button.dataset.textCollapse : button.dataset.textExpand;
-    button.setAttribute('aria-expanded', isExpanded);
-}
-
-// Add event listeners to all collapsible buttons
-document.querySelectorAll('.collapsible-button').forEach(button => {
-    // Ensure section is hidden by default by adding 'hidden' class if not present
-    const content = button.nextElementSibling;
-    if (content && !content.classList.contains('hidden')) {
-        content.classList.add('hidden');
-        // Update button state accordingly
-        button.textContent = button.dataset.textExpand || 'Expand Section'; // Fallback text
-        button.setAttribute('aria-expanded', 'false');
+    if (content) { // Check if content exists
+        const isNowHidden = content.classList.toggle('hidden');
+        // Text and ARIA update based on whether 'hidden' is now present
+        if (isNowHidden) {
+            button.textContent = button.dataset.textExpand || 'Expand Section';
+            button.setAttribute('aria-expanded', 'false');
+        } else {
+            button.textContent = button.dataset.textCollapse || 'Collapse Section';
+            button.setAttribute('aria-expanded', 'true');
+        }
     }
-    button.addEventListener('click', toggleCollapsible);
+}
+
+// Add event listeners to all generic collapsible buttons
+document.querySelectorAll('.collapsible-button').forEach(button => {
+    const content = button.nextElementSibling;
+    if (content) { // Check if content exists
+        // Set initial state for generic collapsibles
+        content.classList.add('hidden');
+        button.textContent = button.dataset.textExpand || 'Expand Section';
+        button.setAttribute('aria-expanded', 'false');
+        button.addEventListener('click', toggleCollapsible);
+    }
 });
-
-function toggleRouteTree() {
-  const section = document.getElementById('routeTreeSection');
-  const button = document.getElementById('toggleRouteTreeButton');
-  if (section && button) {
-    const isExpanded = section.classList.toggle('hidden');
-    button.textContent = isExpanded ? 'Collapse Route Tree' : 'Expand Route Tree';
-    button.setAttribute('aria-expanded', isExpanded);
-  }
-}
-
-const routeTreeButton = document.getElementById('toggleRouteTreeButton');
-if (routeTreeButton) {
-  // Ensure section is hidden by default by adding 'hidden' class if not present
-  const section = document.getElementById('routeTreeSection');
-  if (section && !section.classList.contains('hidden')) {
-     section.classList.add('hidden');
-     // Update button state accordingly
-     routeTreeButton.textContent = 'Expand Route Tree';
-     routeTreeButton.setAttribute('aria-expanded', 'false');
-  }
-  routeTreeButton.addEventListener('click', toggleRouteTree);
-}

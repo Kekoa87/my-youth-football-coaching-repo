@@ -237,7 +237,7 @@ main > .container { /* This assumes index.html uses main > div.container for art
 }
 
 /* Articles on index.html (Card-like style) */
-main > article { /* This rule is primarily for the cards on index.html */
+main > .container > article { /* This rule is primarily for the cards on index.html */
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
@@ -320,6 +320,11 @@ main section img,
   margin-bottom: var(--space-md);
 }
 
+/* Collapsible Content Styling */
+.collapsible-content.hidden {
+  display: none;
+}
+
 /* Footer */
 footer {
   background-color: var(--color-dark);
@@ -370,9 +375,6 @@ footer p {
     border-bottom: 1px solid var(--color-primary-dark); /* Separator for stacked links */
   }
 
-.collapsible-content.hidden {
-  display: none;
-}
 #toggleRouteTreeButton {
   background-color: var(--color-primary);
   color: var(--color-white);
