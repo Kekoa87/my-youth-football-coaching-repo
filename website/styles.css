@@ -247,30 +247,33 @@ main > .container > article { /* This rule is primarily for the cards on index.h
   /* Flex item properties */
   flex: 0 1 100%; /* flex-grow: 0, flex-shrink: 1, flex-basis: 100% */
   margin-bottom: 0;  /* Remove margin-bottom as gap property from parent now handles it */
+  text-align: center; /* Center inline content and text */
 }
 
-main > article:hover {
+main > .container > article:hover {
   box-shadow: var(--box-shadow-md);
 }
 
-main > article img {
+main > .container > article img {
+  margin-left: auto; /* Center block-level image */
+  margin-right: auto; /* Center block-level image */
   margin-bottom: var(--space-md);
   border-radius: var(--border-radius) var(--border-radius) 0 0; /* Top radius if image is flush */
 }
 
-main > article h3 {
+main > .container > article h3 {
   font-size: var(--font-size-lg);
   margin-bottom: var(--space-sm);
   color: var(--color-primary);
 }
 
-main > article p {
+main > .container > article p {
   font-size: var(--font-size-base);
   margin-bottom: var(--space-md);
   color: var(--color-secondary);
 }
 
-main > article a.read-more {
+main > .container > article a.read-more {
   display: inline-block;
   font-family: var(--font-family-sans-serif);
   font-weight: 600;
@@ -286,8 +289,8 @@ main > article a.read-more {
   cursor: pointer; /* Indicate it's clickable */
 }
 
-main > article a.read-more:hover,
-main > article a.read-more:focus {
+main > .container > article a.read-more:hover,
+main > .container > article a.read-more:focus {
   background-color: var(--color-primary-dark);
   color: var(--color-white) !important; /* Ensure text color overrides */
   text-decoration: none !important; /* Ensure no underline */
@@ -295,7 +298,7 @@ main > article a.read-more:focus {
   transform: translateY(-1px);
 }
 
-main > article a.read-more:active {
+main > .container > article a.read-more:active {
   transform: translateY(0px); /* Remove lift effect on click */
   box-shadow: var(--box-shadow-sm); /* Revert shadow to base */
   background-color: var(--color-primary-dark); /* Keep it dark during click */
@@ -340,6 +343,33 @@ footer p {
   color: var(--color-secondary);
 }
 
+/* Toggle Route Tree Button Styling */
+#toggleRouteTreeButton {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: var(--space-md) var(--space-lg); /* Updated padding */
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-family-sans-serif);
+  font-weight: 600;
+  box-shadow: var(--box-shadow-sm); /* Added box shadow */
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease; /* Added transition */
+}
+
+#toggleRouteTreeButton:hover,
+#toggleRouteTreeButton:focus {
+  background-color: var(--color-primary-dark);
+  box-shadow: var(--box-shadow-md); /* Added hover/focus box shadow */
+  transform: translateY(-1px); /* Added hover/focus transform */
+}
+
+#toggleRouteTreeButton:active {
+  transform: translateY(0px); /* Active state transform */
+  box-shadow: var(--box-shadow-sm); /* Active state box shadow */
+}
+
 /* Responsive Adjustments */
 
 /* Medium devices (tablets, 768px and up) */
@@ -375,21 +405,6 @@ footer p {
     border-bottom: 1px solid var(--color-primary-dark); /* Separator for stacked links */
   }
 
-#toggleRouteTreeButton {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border: none;
-  padding: var(--space-sm) var(--space-md);
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  margin-bottom: var(--space-md);
-  font-family: var(--font-family-sans-serif);
-  font-weight: 600;
-}
-#toggleRouteTreeButton:hover,
-#toggleRouteTreeButton:focus {
-  background-color: var(--color-primary-dark);
-}
   nav.site-navigation li:last-child a {
     border-bottom: none;
   }
