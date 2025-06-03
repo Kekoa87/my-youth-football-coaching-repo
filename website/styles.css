@@ -556,3 +556,20 @@ footer p {
   /* The <p> tag also has an inline style for text-align, which is fine. */
   /* margin-bottom for the whole block is on the .page-header div's inline style */
 }
+
+.youtube-thumbnail {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.youtube-thumbnail:hover {
+  transform: scale(1.02);
+  box-shadow: var(--box-shadow-md);
+}
