@@ -21,6 +21,7 @@ This is my personal project and first attempt at building a  website from scratc
 - Coaches Corner
 - My page (for notes and what I was kind of using README for)
 - Playbooks
+- html layout update
 
 ## 🚀 Getting Started
 
