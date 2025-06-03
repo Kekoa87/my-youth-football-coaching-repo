@@ -137,3 +137,6 @@ Each week includes:
 
 ## 🔒 Internal Use
 This file lives in the repo only. Not part of the public site.
+
+## Resources:
+[Zone Read Offense](https://youtu.be/pEQJIVX9G54?si=lq8Y_SadSoq2WjtN)
