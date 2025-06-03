@@ -45,6 +45,7 @@
   - Our philosophy
   - How to run drills
   - How to install plays
+  - If corners are wide...why bother blocking them?
 
 #### Example – OL Coach
 > You’ll learn how I want warm-ups run, how to teach stance, and how to install weekly run plays. No guesswork.
