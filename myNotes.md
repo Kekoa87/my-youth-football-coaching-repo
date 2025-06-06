@@ -48,7 +48,7 @@
   - If corners are wide...why bother blocking them?
 
 #### Example – OL Coach
-> You’ll learn how I want warm-ups run, how to teach stance, and how to install weekly run plays. No guesswork.
+> You’ll learn how I want warm-ups run, how to teach stance, and how to install weekly run plays. No guesswork.  The OL will be the most praised unit on the field.  Each "Skill" position coach will remind his players that they better be thanking the OL or nothing else would be happening.
 
 ---
 
@@ -140,3 +140,5 @@ This file lives in the repo only. Not part of the public site.
 
 ## Resources:
 [Zone Read Offense](https://youtu.be/pEQJIVX9G54?si=lq8Y_SadSoq2WjtN)
+[YFO - Dominating Defenses with the Shotgun Wing T Offense](https://youtu.be/R5-iw-UoE8Q?si=RERyFXTxkhcSiaKH)
+[Play Football - How NFL Players Train to Become ELITE: Meet the Footwork King](https://youtu.be/t4l4kSdb_dY?si=DLBcH0HV9QQmfWa_)
