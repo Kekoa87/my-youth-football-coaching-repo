@@ -121,7 +121,14 @@
       <li>Add a WR crack block from the outside to help seal the edge and spring a big play.</li>
     </ul>
   </main>
-
-  <!-- Include your footer here if applicable -->
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+</script>
+  <script src="website/js/main.js"></script>
 </body>
 </html>

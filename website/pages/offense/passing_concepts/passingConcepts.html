@@ -114,6 +114,13 @@
     </p>
 
   </main>
-  <!-- Include your footer here if applicable -->
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+</script>
+  <script src="website/js/main.js"></script>
 </body>
-</html>
