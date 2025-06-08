@@ -135,6 +135,11 @@ header {
   color: var(--color-light);
   padding: 0; /* Remove header padding, let sections inside control it */
   box-shadow: var(--box-shadow-sm); /* Keep this for the overall header block */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 /* Navigation */
@@ -223,7 +228,7 @@ nav.site-navigation li.submenu-active > ul { /* For click nav from main.js */
 
 /* Main Content */
 main {
-  padding: var(--space-xl) 0; /* Use container for side padding */
+  padding: 180px 0 var(--space-xl); /* Use container for side padding */
 }
 
 /* Styling for the container of articles on index.html */
@@ -429,6 +434,10 @@ footer p {
   nav.site-navigation ul ul li a:hover,
   nav.site-navigation ul ul li a:focus {
     background-color: var(--color-primary); /* Lighter shade for hover */
+  }
+
+  main {
+    padding: 300px 0 var(--space-xl); /* Adjusted top padding for mobile */
   }
 }
 
