@@ -67,28 +67,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinksWithSubmenus.forEach(link => {
     link.addEventListener('click', function(event) {
-      // Only apply this logic for mobile view, where submenus are 'static'
-      // Check if the direct child ul (submenu) is positioned statically
-      const submenu = this.nextElementSibling;
-      if (submenu && getComputedStyle(submenu).position === 'static') {
-        event.preventDefault(); // Prevent default link behavior
+      // const submenu = this.nextElementSibling; // This line can be removed if submenu is not used below
 
-        const parentLi = this.parentElement;
-        parentLi.classList.toggle('submenu-active');
+      event.preventDefault(); // Prevent default link behavior
 
-        const isExpanded = parentLi.classList.contains('submenu-active');
-        this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      const parentLi = this.parentElement;
+      parentLi.classList.toggle('submenu-active');
 
-        // Optional: Close other open submenus at the same level
-        // If you want to implement this, you'd need to:
-        // 1. Find sibling li elements of parentLi.
-        // 2. For each sibling, if it has 'submenu-active', remove it and set aria-expanded to false on its link.
-        // 3. If a nested submenu is clicked, ensure its parent submenus remain open.
-        // For now, this basic toggle will be implemented.
-      }
-      // If not static (i.e., desktop view where hover works), allow default behavior
-      // or let CSS hover take care of it. The click handler shouldn't interfere
-      // with desktop hover if event.preventDefault() is conditional.
+      const isExpanded = parentLi.classList.contains('submenu-active');
+      this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+
+      // Optional: Close other open submenus logic (if ever added) would go here.
+      // Desktop hover/focus CSS will still work alongside this.
     });
 
     // Optional: Add keyboard support for opening/closing with Enter/Space for parent links

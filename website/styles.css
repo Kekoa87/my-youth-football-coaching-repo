@@ -419,16 +419,31 @@ footer p {
   }
 
   /* Mobile dropdowns adjustments */
-  nav.site-navigation ul ul,
-  nav.site-navigation ul ul ul {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 0;
-    padding-left: var(--space-md); /* Indent submenus */
-    background-color: var(--color-primary-dark); /* Darker shade of nav bg */
+  nav.site-navigation ul ul { /* First-level dropdowns */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* This will be 100% of the parent li */
+    background-color: var(--color-primary-dark);
+    z-index: 1000;
+    box-shadow: none; /* Keep as per mobile existing style */
+    border-radius: 0; /* Keep as per mobile existing style */
+    /* padding-left: var(--space-md); Removed */
   }
-  nav.site-navigation ul ul li a { /* Ensure links are visible */
+
+  nav.site-navigation ul ul ul { /* Second-level dropdowns */
+    position: absolute;
+    top: 100%; /* Drop down from parent li in first-level dropdown */
+    left: 0;
+    width: 100%; /* This will be 100% of its parent li */
+    background-color: var(--color-primary); /* Differentiate from first-level */
+    z-index: 1010; /* Above first-level dropdown */
+    box-shadow: none; /* Keep as per mobile existing style */
+    border-radius: 0; /* Keep as per mobile existing style */
+    /* padding-left: var(--space-md); Removed or adjust if was part of combined rule */
+  }
+
+  nav.site-navigation ul ul li a { /* Ensure links are visible in all dropdowns */
     color: var(--color-white);
     border-bottom: 1px solid var(--color-primary); /* Separator for dropdown items */
   }
@@ -441,7 +456,7 @@ footer p {
   }
 
   main {
-    padding: 300px 0 var(--space-xl); /* Adjusted top padding for mobile */
+    padding: 180px 0 var(--space-xl); /* Adjusted top padding for mobile - REVERTED to original desktop padding as dropdowns now overlay */
   }
 }
 
