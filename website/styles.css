@@ -401,7 +401,7 @@ footer p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-sm); /* Remove gap when stacked, li will handle width */
+    gap: calc(var(--space-sm) * 0.5); /* Remove gap when stacked, li will handle width */
     align-items: center; /* Keep this if you want items centered vertically if they wrap to multiple lines and have different heights */
   }
   nav.site-navigation li {
@@ -410,7 +410,7 @@ footer p {
   nav.site-navigation a { /* Main links */
     text-align: center;
     font-size: 0.8rem;
-    padding: var(--space-xs) var(--space-sm); /* Adjusted from plan for slightly more vertical padding */
+    padding: var(--space-xs) calc(var(--space-sm) * 0.5); /* Adjusted from plan for slightly more vertical padding */
     /* border-bottom: 1px solid var(--color-primary-dark); */ /* Removed as per plan */
   }
 

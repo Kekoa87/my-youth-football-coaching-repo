@@ -61,6 +61,39 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   }
+
+  // Mobile Navigation Dropdown Toggle Logic
+  const navLinksWithSubmenus = document.querySelectorAll('nav.site-navigation li > a[aria-haspopup="true"]');
+
+  navLinksWithSubmenus.forEach(link => {
+    link.addEventListener('click', function(event) {
+      // Only apply this logic for mobile view, where submenus are 'static'
+      // Check if the direct child ul (submenu) is positioned statically
+      const submenu = this.nextElementSibling;
+      if (submenu && getComputedStyle(submenu).position === 'static') {
+        event.preventDefault(); // Prevent default link behavior
+
+        const parentLi = this.parentElement;
+        parentLi.classList.toggle('submenu-active');
+
+        const isExpanded = parentLi.classList.contains('submenu-active');
+        this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+
+        // Optional: Close other open submenus at the same level
+        // If you want to implement this, you'd need to:
+        // 1. Find sibling li elements of parentLi.
+        // 2. For each sibling, if it has 'submenu-active', remove it and set aria-expanded to false on its link.
+        // 3. If a nested submenu is clicked, ensure its parent submenus remain open.
+        // For now, this basic toggle will be implemented.
+      }
+      // If not static (i.e., desktop view where hover works), allow default behavior
+      // or let CSS hover take care of it. The click handler shouldn't interfere
+      // with desktop hover if event.preventDefault() is conditional.
+    });
+
+    // Optional: Add keyboard support for opening/closing with Enter/Space for parent links
+    // This can be added later if required.
+  });
 });
 
 // Function to handle generic collapsible sections (if any are still used)
