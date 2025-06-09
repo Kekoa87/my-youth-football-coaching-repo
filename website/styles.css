@@ -398,20 +398,24 @@ footer p {
 
   /* --- Styles for nav.site-navigation on mobile --- */
   nav.site-navigation ul { /* This is the main ul inside .container */
-    flex-direction: column;
-    align-items: center;
-    gap: 0; /* Remove gap when stacked, li will handle width */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm); /* Remove gap when stacked, li will handle width */
+    align-items: center; /* Keep this if you want items centered vertically if they wrap to multiple lines and have different heights */
   }
   nav.site-navigation li {
-    width: 100%;
+    width: auto;
   }
   nav.site-navigation a { /* Main links */
     text-align: center;
-    border-bottom: 1px solid var(--color-primary-dark); /* Separator for stacked links */
+    font-size: 0.8rem;
+    padding: var(--space-xs) var(--space-sm); /* Adjusted from plan for slightly more vertical padding */
+    /* border-bottom: 1px solid var(--color-primary-dark); */ /* Removed as per plan */
   }
 
   nav.site-navigation li:last-child a {
-    border-bottom: none;
+    /* border-bottom: none; */ /* Removed as per plan */
   }
 
   /* Mobile dropdowns adjustments */
