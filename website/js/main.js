@@ -61,6 +61,29 @@ document.addEventListener('DOMContentLoaded', () => {
           }
       });
   }
+
+  // Mobile Navigation Dropdown Toggle Logic
+  const navLinksWithSubmenus = document.querySelectorAll('nav.site-navigation li > a[aria-haspopup="true"]');
+
+  navLinksWithSubmenus.forEach(link => {
+    link.addEventListener('click', function(event) {
+      // const submenu = this.nextElementSibling; // This line can be removed if submenu is not used below
+
+      event.preventDefault(); // Prevent default link behavior
+
+      const parentLi = this.parentElement;
+      parentLi.classList.toggle('submenu-active');
+
+      const isExpanded = parentLi.classList.contains('submenu-active');
+      this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+
+      // Optional: Close other open submenus logic (if ever added) would go here.
+      // Desktop hover/focus CSS will still work alongside this.
+    });
+
+    // Optional: Add keyboard support for opening/closing with Enter/Space for parent links
+    // This can be added later if required.
+  });
 });
 
 // Function to handle generic collapsible sections (if any are still used)

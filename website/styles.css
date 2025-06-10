@@ -392,39 +392,80 @@ footer p {
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 767.98px) {
   /* --- Styles for .header-title-area on mobile --- */
+  .header-title-area {
+    padding: var(--space-sm) var(--space-md); /* Reduce padding */
+  }
+
   .header-title-area h1 {
     font-size: var(--font-size-xl); /* Slightly smaller title on mobile */
+    /* Vertical margins are effectively 0 from desktop .header-title-area h1 rule */
+  }
+
+  .logo-title-wrapper { /* Mobile specific override */
+    flex-wrap: nowrap; /* Prevent stacking */
+    /* align-items: center; and justify-content: center; inherited from global rule */
+  }
+
+  .site-logo { /* Mobile specific override */
+    height: 50px; /* Reduce logo height */
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-right: var(--space-sm); /* Add right margin for spacing */
   }
 
   /* --- Styles for nav.site-navigation on mobile --- */
   nav.site-navigation ul { /* This is the main ul inside .container */
-    flex-direction: column;
-    align-items: center;
-    gap: 0; /* Remove gap when stacked, li will handle width */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: calc(var(--space-sm) * 0.5); /* Remove gap when stacked, li will handle width */
+    align-items: center; /* Keep this if you want items centered vertically if they wrap to multiple lines and have different heights */
   }
   nav.site-navigation li {
-    width: 100%;
+    width: auto;
   }
   nav.site-navigation a { /* Main links */
     text-align: center;
-    border-bottom: 1px solid var(--color-primary-dark); /* Separator for stacked links */
+    font-size: 0.8rem;
+    padding: var(--space-xs) calc(var(--space-sm) * 0.5); /* Adjusted from plan for slightly more vertical padding */
+    /* border-bottom: 1px solid var(--color-primary-dark); */ /* Removed as per plan */
   }
 
   nav.site-navigation li:last-child a {
-    border-bottom: none;
+    /* border-bottom: none; */ /* Removed as per plan */
   }
 
   /* Mobile dropdowns adjustments */
-  nav.site-navigation ul ul,
-  nav.site-navigation ul ul ul {
-    position: static;
-    width: 100%;
-    box-shadow: none;
-    border-radius: 0;
-    padding-left: var(--space-md); /* Indent submenus */
-    background-color: var(--color-primary-dark); /* Darker shade of nav bg */
+  nav.site-navigation ul ul { /* First-level dropdowns */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%; /* This will be 100% of the parent li */
+    background-color: var(--color-primary-dark);
+    z-index: 1000;
+    box-shadow: none; /* Keep as per mobile existing style */
+    border-radius: 0; /* Keep as per mobile existing style */
+    /* padding-left: var(--space-md); Removed */
   }
-  nav.site-navigation ul ul li a { /* Ensure links are visible */
+
+  nav.site-navigation ul ul ul { /* Second-level dropdowns */
+    position: absolute;
+    top: 100%; /* Drop down from parent li in first-level dropdown */
+    left: 0;
+    width: 100%; /* This will be 100% of its parent li */
+    background-color: var(--color-primary); /* Differentiate from first-level */
+    z-index: 1010; /* Above first-level dropdown */
+    box-shadow: none; /* Keep as per mobile existing style */
+    border-radius: 0; /* Keep as per mobile existing style */
+    /* padding-left: var(--space-md); Removed or adjust if was part of combined rule */
+  }
+
+  /* Specific rule for last main nav item's dropdown on mobile */
+  nav.site-navigation > .container > ul > li:last-child > ul {
+    left: auto;
+    right: 0;
+  }
+
+  nav.site-navigation ul ul li a { /* Ensure links are visible in all dropdowns */
     color: var(--color-white);
     border-bottom: 1px solid var(--color-primary); /* Separator for dropdown items */
   }
@@ -437,7 +478,7 @@ footer p {
   }
 
   main {
-    padding: 300px 0 var(--space-xl); /* Adjusted top padding for mobile */
+    padding: 180px 0 var(--space-xl); /* Adjusted top padding for mobile - REVERTED to original desktop padding as dropdowns now overlay */
   }
 }
 
