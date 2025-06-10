@@ -392,8 +392,24 @@ footer p {
 /* Small devices (landscape phones, 576px and up) */
 @media (max-width: 767.98px) {
   /* --- Styles for .header-title-area on mobile --- */
+  .header-title-area {
+    padding: var(--space-sm) var(--space-md); /* Reduce padding */
+  }
+
   .header-title-area h1 {
     font-size: var(--font-size-xl); /* Slightly smaller title on mobile */
+    /* Vertical margins are effectively 0 from desktop .header-title-area h1 rule */
+  }
+
+  .logo-title-wrapper { /* Mobile specific override */
+    flex-wrap: nowrap; /* Prevent stacking */
+    /* align-items: center; and justify-content: center; inherited from global rule */
+  }
+
+  .site-logo { /* Mobile specific override */
+    height: 50px; /* Reduce logo height */
+    margin-bottom: 0; /* Remove bottom margin */
+    margin-right: var(--space-sm); /* Add right margin for spacing */
   }
 
   /* --- Styles for nav.site-navigation on mobile --- */
@@ -441,6 +457,12 @@ footer p {
     box-shadow: none; /* Keep as per mobile existing style */
     border-radius: 0; /* Keep as per mobile existing style */
     /* padding-left: var(--space-md); Removed or adjust if was part of combined rule */
+  }
+
+  /* Specific rule for last main nav item's dropdown on mobile */
+  nav.site-navigation > .container > ul > li:last-child > ul {
+    left: auto;
+    right: 0;
   }
 
   nav.site-navigation ul ul li a { /* Ensure links are visible in all dropdowns */
