@@ -32,7 +32,7 @@
 
 ## 🔥 Coaching Staff Expectations
 
-### What I Expect from Coachesg
+### What I Expect from Coaches
 - **Commitment** – Time is valuable. Show up locked in.
 - **Consistency** – Be present, prepared, and on time.
 - **Energy** – Bring the juice. Kids feed off it.
@@ -64,6 +64,8 @@
 
 ### Example – Offensive Line
 > I coach the OL coach on stance, footwork, combo blocks, and communication. Nothing is assumed. Everything is taught.
+
+> Determine scheme before formation.
 
 ---
 

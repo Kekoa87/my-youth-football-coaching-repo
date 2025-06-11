@@ -9,6 +9,15 @@
   <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png">
 </head>
 <body>
+<div id="site-header"></div>
+<script>
+  fetch("/website/includes/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-header').innerHTML = data;
+    });
+</script>
+
   <main class="container">
     <h1>Passing Concepts</h1>
 

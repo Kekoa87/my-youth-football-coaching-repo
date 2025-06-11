@@ -3,15 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Your one-stop resource for youth football coaching drills, tips, offensive and defensive strategies, and coaching philosophy. Improve your team and player skills.">
-  <title>Youth Football Coaching Hub</title>
-  <link rel="stylesheet" href="../../../styles.css">
+  <meta name="description" content="Linebacker drills for youth football, focusing on tackling, coverage, and run support. Features instructional videos.">
+  <title>Linebacker Drills | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../../styles.css" />
   <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png">
 </head>
 <body>
-  <!-- Include your site header here if using includes -->
+<div id="site-header"></div>
+<script>
+  fetch("/website/includes/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-header').innerHTML = data;
+    });
+</script>
+
   <main class="container">
-    <h1>Blocking Schemes</h1>
+  <div class="container">
+    <div class="page-header" style="margin-bottom: var(--space-lg);">
+      <h1>P</h1>
+      <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025</p>
+    </div>
 
     <p>
     <a href="https://youthfootballonline.com" target="_blank" rel="noopener noreferrer">
