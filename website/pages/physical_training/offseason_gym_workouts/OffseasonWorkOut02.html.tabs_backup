@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Offseason Gym Workout 02 based on coach Isaac Hadac.">
+  <title>Offseason Workout No.1 | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png">
+  <script async src="//www.instagram.com/embed.js"></script>
+</head>
+<body>
+<div id="site-header"></div>
+<script>
+  fetch("/website/includes/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-header').innerHTML = data;
+    });
+</script>
+
+  <main>
+    <div class="container">
+      <div class="workout-program"> <div class="page-header" style="margin-bottom: var(--space-lg);">
+        <h2>Offseason Workout 02</h2>
+        <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025</p>
+      </div>
+    <p>This is a 5-day off-season gym workout plan tailored for a 13U linebacker, drawing inspiration from Coach Isaac Hadac's 5 Star Football Package and his emphasis on position-specific training. This program focuses on building strength, explosiveness, and agility—key attributes for a linebacker</p>
+
+    <nav class="day-nav">
+      <a href="#day1">Day 1</a>
+      <a href="#day2">Day 2</a>
+      <a href="#day3">Day 3</a>
+      <a href="#day4">Day 4</a>
+      <a href="#day5">Day 5</a>
+    </nav>
+
+    <details id="day1">
+      <summary>Day 1 – Lower Body Strength & Power</summary>
+      <p>Focus: Building a strong foundation in the lower body, essential for a linebacker's ability to take on blocks, make tackles, and explode off the mark.</p>
+      <h4>Warm-Up</h4>
+      <p>Dynamic stretches (leg swings, hip circles, torso twists), bodyweight squats and lunges, and light cardio (jogging, skipping) for 5-10 minutes.</p>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Back Squats</td>
+            <td>4 x 6</td>
+            <td>Focus on proper form, depth, and controlled movement.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Ak1iHbEeeY8" title="Back Squat 01" allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/ultWZbUMPL8" title="Back Squat 02" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Romanian Deadlifts (RDLs)</td>
+            <td>3 x 8</td>
+            <td>Maintain a slight bend in the knees, focus on hamstring and glute engagement.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Wou9zVQrAfs" title="Romanian Deadlift" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Walking Lunges</td>
+            <td>3 x 10 (each leg)</td>
+            <td>Keep torso upright, ensure front knee tracks over ankle.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/1kMf9COA1Iw" title="Walking Lunges" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Box Jumps</td>
+            <td>3 x 5</td>
+            <td>Focus on explosive jump and soft, controlled landing. Start with a comfortable box height.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/9CWjnuMaXXE" title="Box Jumps" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Calf Raises</td>
+            <td>3 x 15</td>
+            <td>Perform slowly, focusing on full range of motion.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/nFKYH_j3GOc" title="Calf Raises" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Core Work</h4>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps/Duration</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plank Holds</td>
+            <td>3 x 1-minute</td>
+            <td>Maintain a straight line from head to heels, engage core.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/v25dawSzRTM" title="Plank holds" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Russian Twists</td>
+            <td>3 x 20 (10 per side)</td>
+            <td>Rotate torso, keep hips stable. Add weight for increased difficulty.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/aRUMRbl7KS4" title="Russian Twists" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Cool Down</h4>
+      <p>Static stretches for quads, hamstrings, glutes, calves, and lower back, held for 30 seconds each. Foam roll if available.</p>
+    </details>
+
+    <details id="day2">
+      <summary>Day 2 – Upper Body Strength & Mobility</summary>
+      <p>Focus: Building upper body strength for shedding blocks, tackling, and controlling opponents, alongside mobility for range of motion and injury prevention.</p>
+      <h4>Warm-Up</h4>
+      <p>Dynamic upper body stretches (arm circles, shoulder rotations), band pull-aparts, cat-cow stretches, and light push-ups or planks for 5-10 minutes. (Original: Arm circles, band pull-aparts, Push-ups: 2 sets x 15 reps - consider expanding for better preparation).</p>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Incline Bench Press</td>
+            <td>4 x 6</td>
+            <td>Focus on controlled descent and explosive press.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/98HWfiRonkE" title="Incline Bench Press 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Pull-Ups (or Lat Pulldowns)</td>
+            <td>3 x max reps (or 3 x 8-10 for Lat Pulldowns)</td>
+            <td>Aim for full range of motion. Use assistance if needed for Pull-Ups.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/eDP_OOhMTZ4" title="Pull-Up 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Dumbbell Shoulder Press</td>
+            <td>3 x 8</td>
+            <td>Keep core engaged; press dumbbells overhead without excessive arching.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/k6tzKisR3NY" title="Dumbbell Shoulder Press 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Bent-Over Rows</td>
+            <td>3 x 10</td>
+            <td>Maintain a flat back; pull the weight towards your lower rib cage.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/p9RihhjmJsw" title="Bent Over Row 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Face Pulls</td>
+            <td>3 x 12</td>
+            <td>Focus on squeezing shoulder blades together; great for shoulder health.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/IeOqdw9WI90" title="Face Pulls 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Core Work</h4>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps/Duration</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hanging Leg Raises (or Knee Tucks)</td>
+            <td>3 x 10-15</td>
+            <td>Control the movement; avoid swinging.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/7FwGZ8qY5OU" title="Hanging Leg Raises 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Side Planks</td>
+            <td>3 x 30 seconds (each side)</td>
+            <td>Maintain a straight line from head to feet; keep hips lifted.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/sKMD_pbNm7w" title="Side Planks" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Position Routine: Linebacker Drills</h4>
+      <p>Focus on linebacker-specific movements, reaction time, and footwork. Refer to the video for detailed drill execution.</p>
+      <div class="video-container">
+        <iframe loading="lazy" src="https://www.youtube.com/embed/W9KF71SHGv0" title="Denzel Perryman LB Drills" allowfullscreen></iframe>
+      </div>
+      <ul>
+        <li>Shuffle & Shed: Practice shuffling laterally and using hands to shed a (real or imaginary) blocker.</li>
+        <li>Read & React Drills: Simulate reading offensive keys and reacting to the play.</li>
+      </ul>
+      <h4>Cool Down</h4>
+      <p>Static stretches for chest, shoulders, lats, biceps, triceps, and upper back, held for 30 seconds each. Include mobility work like thoracic rotations.</p>
+    </details>
+
+    <details id="day3">
+        <summary>Day 3 – Agility & Speed</summary>
+        <p>Focus: Improving a linebacker's ability to change direction quickly, accelerate, and cover ground effectively. Agility and speed are critical for pass coverage, run stopping, and blitzing.</p>
+        <h4>Warm-Up</h4>
+        <p>Full dynamic warm-up: High knees, butt kicks, cariocas, power skips, A-skips, B-skips, lateral shuffles, backpedals. Light jogging for 3-5 minutes. Include linebacker-specific warm-up drills like stance and starts, and angle steps.</p>
+
+        <h4>Main Workout: Coach Jamal Liggin Inspired Drills</h4>
+        <p>Follow the drills demonstrated in the video by Coach Jamal Liggin, focusing on explosiveness and proper technique. Adapt drills to emphasize linebacker movements where possible (e.g., lateral agility, moving forward to fill gaps).</p>
+        <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/1ygmc5LTD_M" title="Speed, Agility & Strength Drills with Nike Trainer Jamal Liggin!" allowfullscreen></iframe>
+        </div>
+
+        <h4>Supplementary Linebacker Agility Circuit (if equipment is limited)</h4>
+        <p>If access to specific equipment is limited, perform 2-3 rounds of this circuit:</p>
+        <table class="workout-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Reps/Duration</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Cone Drills (e.g., 4-Cone Box Drill, T-Drill)</td>
+                    <td>3-5 reps per drill</td>
+                    <td>Focus on quick feet, hip turns, and accelerating out of breaks. (Use any markers if cones unavailable)</td>
+                </tr>
+                <tr>
+                    <td>Broad Jumps (forwards and lateral)</td>
+                    <td>3 x 5-8 reps</td>
+                    <td>Focus on explosive power and controlled landings.</td>
+                </tr>
+                <tr>
+                    <td>Backpedal to Sprint</td>
+                    <td>3 x 10-15 yards (backpedal) + 10-15 yards (sprint)</td>
+                    <td>Focus on smooth transition from backpedal to forward sprint.</td>
+                </tr>
+                <tr>
+                    <td>Plyometric Push-ups (or standard)</td>
+                    <td>3 x 8-10</td>
+                    <td>Develop upper body explosiveness useful for shedding blocks.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Mobility & Flexibility</h4>
+        <p>Spend 10-15 minutes on dynamic and static stretches. Focus on hips, groin, hamstrings, ankles, and shoulders. Include drills like fire hydrants, mountain climbers, and scorpion stretches.</p>
+
+        <h4>Cool Down</h4>
+        <p>Light jogging or walking for 3-5 minutes. Follow with static stretching of all major muscle groups, paying extra attention to lower body and core.</p>
+    </details>
+
+    <details id="day4">
+      <summary>Day 4 – Functional Strength & Conditioning</summary>
+      <p>Focus: Developing functional strength and conditioning that translates directly to the football field. This circuit is designed to challenge multiple muscle groups and improve work capacity, crucial for late-game performance.</p>
+      <h4>Warm-Up</h4>
+      <p>Jump rope for 3-5 minutes, followed by a dynamic warm-up including bodyweight squats, lunges with twists, inchworms, and high knees for 5-7 minutes.</p>
+
+      <h4>Main Circuit (Perform 3 rounds)</h4>
+      <p>Rest 60-90 seconds between exercises and 2-3 minutes between rounds. Adjust rest as needed based on fitness level.</p>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Reps/Duration</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kettlebell Swings</td>
+            <td>15 reps</td>
+            <td>Focus on hip hinge and explosive power.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/9FT2lQQNF9Q" title="Kettlebell Swings 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Push-Ups</td>
+            <td>20 reps</td>
+            <td>Maintain good form; modify to knees if necessary.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/4Bc1tPaYkOo" title="Push-Ups 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Goblet Squats</td>
+            <td>15 reps</td>
+            <td>Keep chest up and back straight; squat to depth.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/cssx0dfq3Wg" title="Goblet Squats" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Battle Ropes</td>
+            <td>30 seconds</td>
+            <td>Maintain intensity; try different variations (waves, slams).
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/ZEAqK0lXnb0" title="Battle Ropes 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Farmer's Carry</td>
+            <td>40 yards</td>
+            <td>Use challenging weight; maintain upright posture and strong grip.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/-LwASAVMEek" title="Farmer's Carry 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Core Finisher</h4>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plank with Shoulder Taps</td>
+            <td>3 x 20 total taps (10 per side)</td>
+            <td>Minimize hip rotation; maintain core stability.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/wcKyqAMqueQ" title="Plank with Shoulder Taps" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>V-Ups</td>
+            <td>3 x 15 reps</td>
+            <td>Aim for simultaneous hand and foot touch; modify to tuck-ups if needed.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/BIOM5eSsJ_8" title="V-Ups 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Cool Down</h4>
+      <p>Light cardio (e.g., walking, stationary bike) for 5 minutes. Follow with full-body static stretching, holding each stretch for 30 seconds. Focus on muscles worked during the circuit (legs, chest, shoulders, back, core).</p>
+    </details>
+
+    <details id="day5">
+      <summary>Day 5 – Recovery & Mobility</summary>
+      <p>Focus: Promoting recovery, reducing muscle soreness, and improving flexibility and mobility to prepare the body for the next week of training and prevent injuries. This is a crucial part of a comprehensive training plan.</p>
+
+      <h4>Activities:</h4>
+      <ul>
+        <li>
+          <strong>Light Aerobic Activity (15-20 minutes):</strong>
+          <p>Engage in low-intensity activities like a light jog, cycling at a comfortable pace, or swimming. The goal is to increase blood flow and aid recovery without causing further stress.</p>
+        </li>
+        <li>
+          <strong>Foam Rolling (10-15 minutes):</strong>
+          <p>Target major muscle groups worked during the week (quads, hamstrings, glutes, back, shoulders, chest). Spend 1-2 minutes on each tender area.</p>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/qE7rG2jzxkU" title="Full Body Foam Rolling Routine" allowfullscreen></iframe>
+          </div>
+        </li>
+        <li>
+          <strong>Static Stretching (10-15 minutes):</strong>
+          <p>Hold stretches for 20-30 seconds each, focusing on all major muscle groups. Pay extra attention to areas feeling particularly tight.</p>
+          <p>Examples: Hamstring stretch, quad stretch, chest stretch, shoulder stretch, triceps stretch, hip flexor stretch.</p>
+        </li>
+        <li>
+          <strong>Yoga or Mobility Flow (15-20 minutes):</strong>
+          <p>Focus on gentle movements and poses that improve flexibility, balance, and body awareness. Emphasize poses that open the hips and shoulders.</p>
+          <p>Example Poses: Pigeon Pose, Downward Dog, Cat-Cow, Child's Pose, Thread the Needle, Hip Circles.</p>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/M_yWmW_hY44" title="Yoga for Athletes - Full Body Mobility" allowfullscreen></iframe>
+          </div>
+        </li>
+      </ul>
+      <p><strong>Hydration and Nutrition:</strong> Remember to continue hydrating well and consuming nutritious foods to support recovery.</p>
+      <p><em>This recovery day is just as important as your hard training days. Listen to your body and adjust activities as needed.</em></p>
+    </details>
+      </div>
+    </div>
+  </main>
+
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+</script>
+</body>
+</html>
