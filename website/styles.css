@@ -393,12 +393,14 @@ footer p {
 @media (max-width: 767.98px) {
   /* --- Styles for .header-title-area on mobile --- */
   .header-title-area {
-    padding: var(--space-sm) var(--space-md); /* Reduce padding */
+    padding: var(--space-xs) var(--space-md); /* Reduce padding */
   }
 
   .header-title-area h1 {
-    font-size: var(--font-size-xl); /* Slightly smaller title on mobile */
+    font-size: var(--font-size-lg); /* Slightly smaller title on mobile */
     /* Vertical margins are effectively 0 from desktop .header-title-area h1 rule */
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .logo-title-wrapper { /* Mobile specific override */
@@ -407,9 +409,10 @@ footer p {
   }
 
   .site-logo { /* Mobile specific override */
-    height: 50px; /* Reduce logo height */
+    height: 40px; /* Reduce logo height */
     margin-bottom: 0; /* Remove bottom margin */
     margin-right: var(--space-sm); /* Add right margin for spacing */
+    flex-shrink: 0;
   }
 
   /* --- Styles for nav.site-navigation on mobile --- */
