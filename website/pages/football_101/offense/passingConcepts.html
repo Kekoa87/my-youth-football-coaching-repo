@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Passing Concepts - Football 101</title>
-    <link rel="stylesheet" href="../../../styles.css">
-    <!-- Include for header and footer -->
-    <script>
-        function includeHTML() {
-            var z, i, elmnt, file, xhttp;
-            z = document.getElementsByTagName("*");
-            for (i = 0; i < z.length; i++) {
-                elmnt = z[i];
-                file = elmnt.getAttribute("w3-include-html");
-                if (file) {
-                    xhttp = new XMLHttpRequest();
-                    xhttp.onreadystatechange = function() {
-                        if (this.readyState == 4) {
-                            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                            elmnt.removeAttribute("w3-include-html");
-                            includeHTML();
-                        }
-                    }
-                    xhttp.open("GET", file, true);
-                    xhttp.send();
-                    return;
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Blocking Schemes">
+  <title>FOOTBALL 101: Passing Concepts | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png">
 </head>
 <body>
-    <div w3-include-html="../../../includes/header.html"></div>
+    <div id="site-header"></div>
+    <script>
+        fetch("/website/includes/header.html")
+            .then(res => res.text())
+            .then(data => {
+            document.getElementById('site-header').innerHTML = data;
+            });
+    </script>
 
-    <main class="container">
-        <article class="content-wrapper">
-            <header class="page-header" style="margin-bottom: var(--space-lg);">
-                <h1>Passing Concepts</h1>
-                <p style="text-align: center; color: var(--color-secondary); font-size: var(--font-size-sm);">
-                    Author: [Your Name/Team] | Date: [Current Date]
-                </p>
-            </header>
+    <main>
+        <div class="container">
+            <div class="page-header" style="margin-bottom: var(--space-lg);">
+                <h1>Block Schemes</h1>
+                <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 15, 2025</p>
+        </div>
 
-            <section>
-                <h2>Section 1: Introduction to Passing Concepts</h2>
-                <p>This is where the content for the introduction to passing concepts will go.
-                You can add text, images, and videos here.</p>
-                <!-- More content can be added here -->
-            </section>
+        <section>
+            <h2>Section 1: Introduction to Passing Concepts</h2>
+            <p>This is where the content for the introduction to passing concepts will go.
+            You can add text, images, and videos here.</p>
+            <!-- More content can be added here -->
+        </section>
 
-            <section>
-                <h2>Section 2: Common Passing Routes</h2>
-                <p>Detailed explanations of common passing routes will be placed here.</p>
-                <!-- More content can be added here -->
-            </section>
+        <section>
+            <h2>Section 2: Common Passing Routes</h2>
+            <p>Detailed explanations of common passing routes will be placed here.</p>
+            <!-- More content can be added here -->
+        </section>
 
-            <!-- Add more sections as needed -->
+        <!-- Add more sections as needed -->
 
         </article>
     </main>

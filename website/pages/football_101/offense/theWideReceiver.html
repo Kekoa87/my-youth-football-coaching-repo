@@ -18,30 +18,28 @@
             });
     </script>
 
-    <main class="container">
-        <article class="content-wrapper">
-            <header class="page-header" style="margin-bottom: var(--space-lg);">
+    <main>
+        <div class="container">
+            <div class="page-header" style="margin-bottom: var(--space-lg);">
                 <h1>The Wide Receiver</h1>
-                <p style="text-align: center; color: var(--color-secondary); font-size: var(--font-size-sm);">
-                    Author: Coach Kyle | Date: 15 June 2025
-                </p>
-            </header>
+                <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 15, 2025</p>
+        </div>
 
-            <section>
-                <p>If you’re coaching wide receivers at the youth level, your job goes far beyond teaching them how to catch. A great receiver understands the full picture—alignment, leverage, coverage, and the role they play even when the ball isn’t coming their way.</p>
+        <section>
+            <p>If you’re coaching wide receivers at the youth level, your job goes far beyond teaching them how to catch. A great receiver understands the full picture—alignment, leverage, coverage, and the role they play even when the ball isn’t coming their way.</p>
 
-                <p>Start with the basics: know when you’re on the line and when you’re off. That matters for spacing, timing, and staying legal. Teach your guys how to line up right every time.</p>
+            <p>Start with the basics: know when you’re on the line and when you’re off. That matters for spacing, timing, and staying legal. Teach your guys how to line up right every time.</p>
 
-                <p>Next, emphasize physicality. Every receiver has to block. I don’t care how talented he is with the ball—if he won’t block on the perimeter, he’s a liability. Blocking is non-negotiable.</p>
+            <p>Next, emphasize physicality. Every receiver has to block. I don’t care how talented he is with the ball—if he won’t block on the perimeter, he’s a liability. Blocking is non-negotiable.</p>
 
-                <p>Now onto releases. Start simple but set a foundation: outside release when it's called, especially on a Must Outside Release (MOR). Teach them how to use their hands, set up the defender, and get vertical with purpose. They need to understand how to win leverage, not just run fast.</p>
+            <p>Now onto releases. Start simple but set a foundation: outside release when it's called, especially on a Must Outside Release (MOR). Teach them how to use their hands, set up the defender, and get vertical with purpose. They need to understand how to win leverage, not just run fast.</p>
 
-                <p>Then, layer in the mental side. Can your receivers identify if the middle of the field is open or closed? Do they know how that affects a post route vs. a dig? Teach them what the defense is showing—and how to adjust accordingly.</p>
+            <p>Then, layer in the mental side. Can your receivers identify if the middle of the field is open or closed? Do they know how that affects a post route vs. a dig? Teach them what the defense is showing—and how to adjust accordingly.</p>
 
-                <p>You don’t need a playbook full of route tags. You need a receiver room that knows why they’re doing what they’re doing. That’s how you build a reliable, explosive passing game—starting with Football 101.</p>
-                
-                <p>Let’s coach it right.</p>
-            </section>
+            <p>You don’t need a playbook full of route tags. You need a receiver room that knows why they’re doing what they’re doing. That’s how you build a reliable, explosive passing game—starting with Football 101.</p>
+            
+            <p>Let’s coach it right.</p>
+        </section>
 
             <section>
             <h2>Route Tree</h2>
@@ -127,10 +125,13 @@
         </article>
     </main>
 
-    <div w3-include-html="../../../includes/footer.html"></div>
-    <script src="../../../js/main.js"></script>
+    <div id="site-footer"></div>
     <script>
-        includeHTML();
+      fetch("/website/includes/footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('site-footer').innerHTML = data;
+        });
     </script>
 </body>
 </html>
