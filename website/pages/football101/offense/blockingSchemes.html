@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocking Schemes - Football 101</title>
+    <link rel="stylesheet" href="../../../styles.css">
+    <!-- Include for header and footer -->
+    <script>
+        function includeHTML() {
+            var z, i, elmnt, file, xhttp;
+            z = document.getElementsByTagName("*");
+            for (i = 0; i < z.length; i++) {
+                elmnt = z[i];
+                file = elmnt.getAttribute("w3-include-html");
+                if (file) {
+                    xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState == 4) {
+                            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                            elmnt.removeAttribute("w3-include-html");
+                            includeHTML();
+                        }
+                    }
+                    xhttp.open("GET", file, true);
+                    xhttp.send();
+                    return;
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div w3-include-html="../../../includes/header.html"></div>
+
+    <main class="container">
+        <article class="content-wrapper">
+            <header class="page-header" style="margin-bottom: var(--space-lg);">
+                <h1>Blocking Schemes</h1>
+                <p style="text-align: center; color: var(--color-secondary); font-size: var(--font-size-sm);">
+                    Author: [Your Name/Team] | Date: [Current Date]
+                </p>
+            </header>
+
+            <section>
+                <h2>Section 1: Introduction to Blocking Schemes</h2>
+                <p>This is where the content for the introduction to blocking schemes will go.
+                You can add text, images, and videos here.</p>
+                <!-- More content can be added here -->
+            </section>
+
+            <section>
+                <h2>Section 2: Common Blocking Schemes (e.g., Zone, Gap)</h2>
+                <p>Detailed explanations of common blocking schemes will be placed here.</p>
+                <!-- More content can be added here -->
+            </section>
+
+            <!-- Add more sections as needed -->
+
+        </article>
+    </main>
+
+    <div w3-include-html="../../../includes/footer.html"></div>
+
+    <script src="../../../js/main.js"></script>
+    <script>
+        includeHTML();
+    </script>
+</body>
+</html>
