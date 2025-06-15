@@ -9,14 +9,14 @@
   <link rel="icon" href="../../images/ChromeSiteSymbol.jpg" type="image/png">
 </head>
 <body>
-<div id="site-header"></div>
-<script>
-  fetch("/website/includes/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('site-header').innerHTML = data;
-    });
-</script>
+  <div id="site-header"></div>
+  <script>
+    fetch("/website/includes/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      });
+  </script>
 
   <main class="about-page-main">
     <div class="container">
@@ -24,36 +24,36 @@
         <h1>About Coach Kyle</h1>
         <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025</p>
       </div>
-    <img src="../../images/MyBioPic.png" alt="Coach Kyle, founder of Youth Football Coaching Hub." />
-    <p>
-      Coach Kyle is a United States Air Force veteran and former software engineer who discovered a deep passion for coaching youth football. Over the years, he's made it his mission to help kids succeed both on and off the field by creating structured, supportive environments where they can learn, grow, and compete with confidence.
-    </p>
-    <p>
-      His obsessive personality and drive to win made him a constant student of the game. Always looking to improve, he spent countless hours researching drills, studying coaching techniques, and gathering ideas from across the football world. But the resources he found were scattered across different sites and platforms.
-    </p>
-    <p>
-      Drawing on his background in software engineering, he built FootballCoachingHub.com—a place to organize and share everything in one central location. What started as a personal tool to track drills and practice ideas has grown into a resource for coaches, parents, and players looking for practical, position-specific content to help develop their skills.
-    </p>
-    <p>
-      Coach Kyle takes coaching personally. He views each player’s success as their own, but feels a responsibility for their setbacks. That mindset drives his commitment to constant learning—studying film, reading, and connecting with other coaches to refine how he teaches, structures practices, and builds teams.
-    </p>
-    <p>
-      The site is a work in progress, constantly growing as new ideas and features are added.
-    </p>
-    <p>
-      Thanks for visiting the site. He hopes the drills and resources here support your growth as a coach and help you make a meaningful impact on the kids you lead.
-    </p>
+      <img src="../../images/MyBioPic.png" alt="Coach Kyle, founder of Youth Football Coaching Hub." />
+      <p>
+        Coach Kyle is a United States Air Force veteran and former software engineer who discovered a deep passion for coaching youth football. Over the years, he's made it his mission to help kids succeed both on and off the field by creating structured, supportive environments where they can learn, grow, and compete with confidence.
+      </p>
+      <p>
+        His obsessive personality and drive to win made him a constant student of the game. Always looking to improve, he spent countless hours researching drills, studying coaching techniques, and gathering ideas from across the football world. But the resources he found were scattered across different sites and platforms.
+      </p>
+      <p>
+        Drawing on his background in software engineering, he built FootballCoachingHub.com—a place to organize and share everything in one central location. What started as a personal tool to track drills and practice ideas has grown into a resource for coaches, parents, and players looking for practical, position-specific content to help develop their skills.
+      </p>
+      <p>
+        Coach Kyle takes coaching personally. He views each player’s success as their own, but feels a responsibility for their setbacks. That mindset drives his commitment to constant learning—studying film, reading, and connecting with other coaches to refine how he teaches, structures practices, and builds teams.
+      </p>
+      <p>
+        The site is a work in progress, constantly growing as new ideas and features are added.
+      </p>
+      <p>
+        Thanks for visiting the site. He hopes the drills and resources here support your growth as a coach and help you make a meaningful impact on the kids you lead.
+      </p>
     </div>
   </main>
 
-<div id="site-footer"></div>
-<script>
-  fetch("/website/includes/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('site-footer').innerHTML = data;
-    });
-</script>
+  <div id="site-footer"></div>
+  <script>
+    fetch("/website/includes/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('site-footer').innerHTML = data;
+      });
+  </script>
   <script src="../../js/main.js"></script>
 </body>
 </html>

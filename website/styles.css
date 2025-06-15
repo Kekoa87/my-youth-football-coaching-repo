@@ -830,4 +830,10 @@ footer p {
     margin-bottom: var(--space-sm);
     color: var(--color-primary);
   }
+  .centered-text {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left; /* change to center if you prefer full center-aligned text */
+    padding: 1rem 0;
+  }
 }

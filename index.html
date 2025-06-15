@@ -9,32 +9,24 @@
   <link rel="icon" href="website/images/ChromeSiteSymbol.jpg" type="image/png">
 </head>
 <body>
-<div id="site-header"></div>
-<script>
-  fetch("/website/includes/header.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('site-header').innerHTML = data;
-    });
-</script>
+  <div id="site-header"></div>
+  <script>
+    fetch("/website/includes/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      });
+  </script>
   
   <main>
     <div class="container">
-    <article>
-      <a href="website/pages/defense/defense_drills/dlDrills.html">
-        <img src="website/images/AaronDonald.png" alt="Aaron Donald demonstrating a defensive line technique" />
-      </a>
-      <h3>Defensive Line</h3>
-      <p>Linebacker drills for youth football, focusing on tackling, coverage, and run support. Features instructional videos.</p>
-      <a href="website/pages/defense/defense_drills/dlDrills.html" class="read-more">Read More</a>
-    </article> 
 
     <article>
       <a href="website/pages/defense/defense_drills/dlDrills.html">
         <img src="website/images/AaronDonald.png" alt="Aaron Donald demonstrating a defensive line technique" />
       </a>
       <h3>Defensive Line</h3>
-      <p>Linebacker drills for youth football, focusing on tackling, coverage, and run support. Features instructional videos.</p>
+      <p>Defensive line drills for youth football, focusing on tackling, coverage, and run support. Features instructional videos.</p>
       <a href="website/pages/defense/defense_drills/dlDrills.html" class="read-more">Read More</a>
     </article> 
 
@@ -124,19 +116,19 @@
         <img src="website/images/MyBioPic.png" alt="Coach Kyle, founder of Youth Football Coaching Hub." />
       </a>
       <h3>Welcome!</h3>
-      <p>I'm Coach Kyle. A passionate youth football coach with years of experience helping young athletes develop their skills, confidence, and love for the game. I believe coaching is about more than just winning — it’s about teaching teamwork, discipline, and sportsmanship that will benefit players on and off the field. This site is my way of sharing the drills, tips, and resources I’ve gathered over the years to support fellow coaches and grow the youth football community.</p>
+        <p>I'm Coach Kyle. A passionate youth football coach with years of experience helping young athletes develop their skills, confidence, and love for the game. I believe coaching is about more than just winning — it’s about teaching teamwork, discipline, and sportsmanship that will benefit players on and off the field. This site is my way of sharing the drills, tips, and resources I’ve gathered over the years to support fellow coaches and grow the youth football community.</p>
       <a href="website/pages/about.html" class="read-more">Read More</a>
     </article>
     </div>
   </main>
-<div id="site-footer"></div>
-<script>
-  fetch("/website/includes/footer.html")
-    .then(res => res.text())
-    .then(data => {
-      document.getElementById('site-footer').innerHTML = data;
-    });
-</script>
+  <div id="site-footer"></div>
+  <script>
+    fetch("/website/includes/footer.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('site-footer').innerHTML = data;
+      });
+  </script>
   <script src="website/js/main.js"></script>
 </body>
 </html>
