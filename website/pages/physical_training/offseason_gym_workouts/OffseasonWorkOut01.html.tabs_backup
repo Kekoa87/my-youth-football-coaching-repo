@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Offseason Gym Workout 01 based on coach Jamal Liggin.">
+  <title>Offseason Workout No.1 | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png">
+  <script async src="//www.instagram.com/embed.js"></script>
+</head>
+<body>
+<div id="site-header"></div>
+<script>
+  fetch("/website/includes/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-header').innerHTML = data;
+    });
+</script>
+
+  <main>
+    <div class="container">
+      <div class="workout-program"> <div class="page-header" style="margin-bottom: var(--space-lg);">
+        <h2>Offseason Workout 01</h2>
+        <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025</p>
+      </div>
+    <p>This is a 5-day off-season gym workout plan tailored for a 13U wide receivers, drawing inspiration from Coach Jamal Liggin and his emphasis on position-specific training. This program focuses on building strength, explosiveness, and agility—key attributes for a wide receiver</p>
+
+    <nav class="day-nav">
+      <a href="#day1">Day 1</a>
+      <a href="#day2">Day 2</a>
+      <a href="#day3">Day 3</a>
+      <a href="#day4">Day 4</a>
+      <a href="#day5">Day 5</a>
+    </nav>
+
+    <details id="day1">
+      <summary>Day 1 – Lower Body Power & Acceleration</summary>
+      <p>Focus: Building foundational lower body strength and explosive power, crucial for quick acceleration off the line and powerful movements on the field.</p>
+      <h4>Warm-Up</h4>
+      <p>Dynamic stretches (leg swings, torso twists, arm circles), mobility drills (hip circles, ankle rotations), and light cardio (jogging, skipping) for 5-10 minutes.</p>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Hang Cleans</td>
+            <td>4 x 5</td>
+            <td>Focus on explosive hip extension.
+              <div class="video-container">
+                  <iframe loading="lazy" src="https://www.youtube.com/embed/WCdhjfg7fv4" title="Hang Clean 01" allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                  <iframe loading="lazy" src="https://www.youtube.com/embed/TjTEOme9fvw" title="Hang Clean 02" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Trap Bar Deadlifts</td>
+            <td>4 x 5</td>
+            <td>Maintain a flat back; drive through the heels.
+              <div class="video-container">
+                  <iframe loading="lazy" src="https://www.youtube.com/embed/oc3X4oUaeZs" title="Trap Bar Deadlift 01" allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                  <iframe loading="lazy" src="https://www.youtube.com/embed/v709aJKv-gM" title="Trap Bar Deadlift 02" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Broad Jumps</td>
+            <td>3 x 5</td>
+            <td>Focus on maximum horizontal distance and controlled landing.
+              <div class="video-container">
+                  <iframe loading="lazy" src="https://www.youtube.com/embed/6L6CJXF5CNs" title="Broad Jump 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Sled Pushes</td>
+            <td>5 x 15-yards</td>
+            <td>Focus on powerful leg drive and maintaining a forward lean.
+              <div class="video-container">
+                  <iframe loading="lazy" src="https://www.youtube.com/embed/BCexQ27DWIE" title="Sled Push" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Single-Leg Bulgarian Split Squats</td>
+            <td>3 x 8 (per leg)</td>
+            <td>Maintain balance and control; ensure front knee tracks over ankle.
+              <div class="video-container">
+                  <iframe loading="lazy" src="https://www.youtube.com/embed/or1frhkjBDc" title="Bulgarian Split Squats 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Explosive Step-Ups</td>
+            <td>3 x 6 (per leg)</td>
+            <td>Drive explosively off the front leg; use a challenging but safe box height.
+              <div class="video-container">
+                  <iframe loading="lazy" src="https://www.youtube.com/embed/vnP-ZKi0ZAM" title="Explosive Step-Ups 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Cool Down</h4>
+      <p>Static stretches (quads, hamstrings, glutes, calves) held for 30 seconds each. Foam roll if available.</p>
+    </details>
+
+    <details id="day2">
+      <summary>Day 2 – Upper Body Strength + Hands</summary>
+      <p>Focus: Developing upper body strength for blocking and contested catches, plus hand strength for securing the ball.</p>
+      <h4>Warm-Up</h4>
+      <p>Dynamic upper body stretches (arm swings, shoulder rotations), resistance band exercises for shoulders (pull-aparts, dislocations), and light cardio for 5-10 minutes.</p>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Incline Bench Press</td>
+            <td>4 x 6</td>
+            <td>Focus on controlled movement and chest activation.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/98HWfiRonkE" title="Incline Bench Press 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Pull-Ups (or Lat Pulldowns)</td>
+            <td>3 x 10 (or to failure)</td>
+            <td>Use assistance if needed, or substitute with Lat Pulldowns.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/eDP_OOhMTZ4" title="Pull-Up 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Bent Over Rows</td>
+            <td>3 x 10</td>
+            <td>Maintain a flat back; pull towards the lower chest.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/phVtqawIgbk" title="Bent Over Row 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Standing Barbell Shoulder Press</td>
+            <td>3 x 8</td>
+            <td>Engage core; press overhead without excessive arching.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/zoN5EH50Dro" title="Standing Overhead Press 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Flat Dumbbell Flyes</td>
+            <td>3 x 12</td>
+            <td>Focus on chest stretch and adduction.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/rk8YayRoTRQ" title="Flat Dumbbell Fly 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Core Circuit</h4>
+      <p>Perform 2–3 rounds of this circuit. Rest 60 seconds between rounds.</p>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Duration/Reps</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Plank</td>
+            <td>30-60 seconds</td>
+            <td>Maintain a straight line from head to heels.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/pSHjTRCQxIw" title="Plank" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Side Plank</td>
+            <td>30 seconds per side</td>
+            <td>Keep hips lifted and body aligned.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/sKMD_pbNm7w" title="Side Plank" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Russian Twists</td>
+            <td>15-20 reps per side</td>
+            <td>Rotate torso, not just arms. Add weight for challenge.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/wkD8rjkodUI" title="Russian Twist" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Position Routine: WR Drills</h4>
+      <p>Focus on hand-eye coordination, catching technique, and route-specific movements.</p>
+      <ul>
+        <li>Tennis Ball Drops: 3 x 10 catches (partner drops ball, player catches with one hand).</li>
+        <li>Wall Ball (Catch & Secure): 3 x 15 (throw ball against wall, catch, secure in tuck position).</li>
+        <li>Refer to specific drills from provided video:
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/4n-Js1SwC2c" title="WR Drills with Odell Beckham Jr." frameborder="0" allowfullscreen></iframe>
+          </div>
+        </li>
+      </ul>
+      <h4>Cool Down</h4>
+      <p>Static stretches for chest, back, shoulders, and arms, held for 30 seconds each. Include wrist and forearm stretches.</p>
+    </details>
+
+    <details id="day3">
+        <summary>Day 3 – Speed, Agility, and Mobility</summary>
+        <p>Focus: Enhancing speed, quickness, change of direction, and overall body mobility. This day is crucial for on-field agility and injury prevention.</p>
+        <h4>Warm-Up</h4>
+        <p>Full dynamic warm-up: High knees, butt kicks, cariocas, A-skips, B-skips, leg swings (forward and lateral), torso twists, arm circles. Follow with light jogging for 3-5 minutes.</p>
+
+        <h4>Main Workout: Coach Jamal Liggin Inspired Drills</h4>
+        <p>Follow the drills demonstrated in the video by Coach Jamal Liggin. Pay close attention to form and intensity. If specific equipment is unavailable, focus on the movement patterns and adapt as needed (e.g., using cones for agility, bodyweight for plyometrics).</p>
+        <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/1ygmc5LTD_M" title="Speed, Agility & Strength Drills with Nike Trainer Jamal Liggin!" allowfullscreen></iframe>
+        </div>
+
+        <h4>Supplementary Bodyweight Circuit (if equipment is limited)</h4>
+        <p>If access to equipment shown in the video is limited, perform 2-3 rounds of the following circuit:</p>
+        <table class="workout-table">
+            <thead>
+                <tr>
+                    <th>Exercise</th>
+                    <th>Reps/Duration</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Box Jumps (or Tuck Jumps)</td>
+                    <td>3 x 8-10</td>
+                    <td>Focus on explosive upward movement and soft landings.</td>
+                </tr>
+                <tr>
+                    <td>Lateral Bounds</td>
+                    <td>3 x 8-10 per leg</td>
+                    <td>Focus on distance and control, absorb landing.</td>
+                </tr>
+                <tr>
+                    <td>Cone Drills (e.g., Figure 8, 5-10-5 Shuttle)</td>
+                    <td>3-5 reps each drill</td>
+                    <td>Focus on quick feet, low center of gravity, and sharp cuts. (Use any markers if cones aren't available)</td>
+                </tr>
+                <tr>
+                    <td>Plank Variations (e.g., Plank with leg lift)</td>
+                    <td>3 x 30-45 seconds</td>
+                    <td>Maintain core stability.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Mobility & Flexibility</h4>
+        <p>Spend 10-15 minutes on mobility work. Focus on hips, hamstrings, ankles, and shoulders. Examples: Hip flexor stretch, pigeon pose, hamstring scoops, calf stretches, thoracic spine rotations.</p>
+
+        <h4>Cool Down</h4>
+        <p>Light jogging or walking for 3-5 minutes followed by static stretching of all major muscle groups worked (quads, hamstrings, glutes, calves, hip flexors, chest, shoulders, back).</p>
+    </details>
+
+    <details id="day4">
+      <summary>Day 4 – Lower Body Strength + Core Stability</summary>
+      <p>Focus: Building robust lower body strength with a continued emphasis on unilateral movements and integrating core stability exercises to support powerful actions and prevent energy leaks.</p>
+      <h4>Warm-Up</h4>
+      <p>Dynamic stretches (leg swings, hip circles, torso twists), activation exercises (glute bridges, bird-dogs, band walks), and light cardio for 5-10 minutes.</p>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Back Squat</td>
+            <td>4 x 8</td>
+            <td>Focus on depth and maintaining an upright torso.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Ak1iHbEeeY8" title="Back Squat 01" allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/ultWZbUMPL8" title="Back Squat 02" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Romanian Deadlifts (RDLs)</td>
+            <td>4 x 8</td>
+            <td>Focus on hamstring stretch and maintaining a flat back.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Wou9zVQrAfs" title="Romanian Deadlift" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Partner Glute-Ham Raises or Nordic Curls</td>
+            <td>4 x 8 (or as many as possible with good form)</td>
+            <td>Focus on controlled eccentric movement.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Lsq7ztSjIYA" title="Partner Glute-Ham Raise" allowfullscreen></iframe>
+              </div>
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/3-4pKUhkzoQ" title="Nordic Hamstring Curls" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Dumbbell Step-Ups</td>
+            <td>4 x 8 (per leg)</td>
+            <td>Focus on driving through the front heel; control the descent.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/JFQx5avgKus" title="Dumbbell Step-Up" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Rotational Med Ball Slams</td>
+            <td>3 x 10 (per side)</td>
+            <td>Generate power from hips and core; slam forcefully.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/T_XkIEfDtP8" title="Rotational Med Ball Slam 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Cable Woodchoppers</td>
+            <td>3 x 12 (per side)</td>
+            <td>Control the movement through the full range of motion.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/iTmMPyDzeYA" title="Cable Woodchopper" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Ab Wheel Rollouts or Hanging Leg Raises</td>
+            <td>3 x 8-12 (or to failure)</td>
+            <td>Maintain core tension; avoid arching the lower back for Ab Wheel. For Leg Raises, aim for full range of motion.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/EXTVAbDdvAc" title="Ab Wheel Rollouts for Beginners" allowfullscreen></iframe>
+              </div>
+               <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/Nw0LOKe3_l8" title="Hanging Leg Raises Progression" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>Cool Down</h4>
+      <p>Static stretches for quads, hamstrings, glutes, hip flexors, and lower back, held for 30 seconds each. Foam roll if available.</p>
+    </details>
+
+    <details id="day5">
+      <summary>Day 5 – Upper Body Explosiveness + Grip</summary>
+      <p>Focus: Developing explosive upper body power for plays like stiff arms and aggressive blocking, combined with crucial grip strength for ball security and making tough catches.</p>
+      <h4>Warm-Up</h4>
+      <p>Dynamic upper body stretches, medicine ball warm-up drills (light throws, rotations), and shoulder activation exercises for 5-10 minutes.</p>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Push Press or Landmine Press</td>
+            <td>4 x 5</td>
+            <td>Focus on transferring power from legs through the upper body. Choose one variation.
+              <p>Push Press:</p>
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/X6-DMh-t4nQ" title="Push Press" allowfullscreen></iframe>
+              </div>
+              <p>Landmine Press:</p>
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/azAYQHhjiSc" title="Landmine Press 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Medicine Ball Chest Pass (Explosive)</td>
+            <td>3 x 10</td>
+            <td>Focus on maximum power and speed with each pass.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/fYp7wBoZ_Ms" title="Medicine Ball Chest Pass 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Explosive Pushups (Clapping or Standard)</td>
+            <td>3 x 10</td>
+            <td>Focus on pushing up as explosively as possible.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/YJJTSyOEm1k" title="Explosive Pushups 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Grip Strength Focus</h4>
+      <table class="workout-table">
+        <thead>
+          <tr>
+            <th>Exercise</th>
+            <th>Sets x Reps/Duration</th>
+            <th>Notes / Video</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Rope Climbs or Rope Pulls</td>
+            <td>3 x 5 ascents/pulls (or to failure)</td>
+            <td>Focus on using grip and upper body.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/YN7DcLUSTEs" title="Rope Climb Technique" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Farmer's Carries</td>
+            <td>3 x 40-yards</td>
+            <td>Use heavy dumbbells/kettlebells; maintain posture and strong grip.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/vi4X2iSOyiA" title="Farmers Carry Technique" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>Plate Pinches</td>
+            <td>3 x 45-seconds per hand</td>
+            <td>Pinch two plates together, smooth side out.
+              <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/jFTV3DQf3HE" title="Plate Pinch Grip Strength Exercise 01" allowfullscreen></iframe>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h4>Position Drill: WR Hand-Eye Catching Drill</h4>
+      <p>Focus on various catching scenarios, improving hand-eye coordination and reaction time.</p>
+      <ul>
+        <li>Rapid Fire Tennis Ball Catches: 3 x 20 (partner throws tennis balls rapidly, player catches and discards).</li>
+        <li>Distraction Catching Drills: 3 x 10 (partner tries to distract player while they catch a football).</li>
+        <li>Refer to specific drills from provided video:
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/C9wuGmsphVM" title="WR Hand-Eye Catching Drill" allowfullscreen></iframe>
+          </div>
+        </li>
+      </ul>
+      <h4>Cool Down</h4>
+      <p>Static stretches for chest, shoulders, back, forearms, and wrists, held for 30 seconds each.</p>
+    </details>
+      </div>
+    </div>
+  </main>
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+</script>
+</body>
+</html>
