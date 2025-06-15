@@ -774,7 +774,7 @@ footer p {
 }
 
 /* Responsive adjustments for tabs if needed */
-@media (max-width: 767.98px) { /* Mobile styles from existing CSS */
+@media (max-width: 767.98px) {
   .workout-tabs {
     flex-direction: column; /* Stack tabs vertically on small screens */
     border-bottom: none; /* Remove bottom border for vertical tabs */
@@ -803,5 +803,31 @@ footer p {
   .workout-tab-panel {
     border-top: 2px solid var(--color-border); /* Add top border back for panels when tabs are stacked */
     border-radius: var(--border-radius); /* Consistent rounding */
+  }
+
+  /* Workout Table Mobile Styles */
+  .workout-table thead {
+    display: none; /* Hide table headers on mobile */
+  }
+  .workout-table tr,
+  .workout-table td {
+    display: block;
+    width: 100%;
+  }
+  .workout-table td {
+    border-bottom: 1px solid var(--color-border); /* Add a separator for stacked cells */
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+  .workout-table tr:last-child td:last-child {
+    border-bottom: none; /* Remove border from the very last cell in the table */
+  }
+  /* Add a label for each cell using the data-label attribute */
+  .workout-table td:before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary);
   }
 }
