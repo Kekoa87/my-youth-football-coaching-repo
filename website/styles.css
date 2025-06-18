@@ -21,6 +21,7 @@
   --color-dark: #343a40;     /* Dark text */
   --color-white: #ffffff;
   --color-border: #dee2e6;
+  --color-link-hover: #0056b3; /* For specific strong tag styling */
 
   /* Spacing System (based on 0.25rem increments) */
   --space-xs: 0.25rem; /* 4px */
@@ -835,5 +836,186 @@ footer p {
     margin: 0 auto;
     text-align: left; /* change to center if you prefer full center-aligned text */
     padding: 1rem 0;
+  }
+}
+
+/* Route Card Styles */
+.route-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  gap: var(--space-lg);
+  padding-top: var(--space-lg); /* Add some space above the grid */
+}
+
+.route-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg); /* This will apply if not a direct grid item, or can be removed if gap is sufficient */
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.route-card:hover {
+  box-shadow: var(--box-shadow-md);
+}
+
+.route-card h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.route-card p {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--space-sm);
+}
+
+.route-card p strong { /* For "Setup:", "Directions:", "Tips:" labels */
+  color: var(--color-primary-dark);
+  margin-right: var(--space-xs);
+}
+
+/* Scheme Card Styles */
+.scheme-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.scheme-card h3 {
+  font-size: 1.5em; /* Approx 24px if base is 16px */
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.scheme-card h4 {
+  font-size: 1.2em; /* Approx 19.2px */
+  color: #555;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.scheme-card blockquote {
+  border-left: 4px solid #007bff; /* Blue accent for quote */
+  padding-left: 15px;
+  margin-left: 0; /* Reset any default margin */
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+  font-style: italic;
+  color: #444;
+}
+
+.scheme-card ul {
+  list-style-position: outside;
+  padding-left: 20px; /* Standard indent for bullets */
+  margin-bottom: var(--space-md);
+}
+
+.scheme-card ul li {
+  margin-bottom: var(--space-sm); /* Space between list items */
+}
+
+/* Styling for strong tags not part of h4, making them distinct */
+.scheme-card p strong,
+.scheme-card li strong {
+  font-weight: bold; /* Ensure it's bold */
+  color: var(--color-link-hover); /* Using a defined blue color */
+}
+/* Ensure h4 strong tags are not overridden by the above if not desired, but usually h4 itself has priority or specific color */
+.scheme-card h4 strong {
+    color: inherit; /* Inherit color from h4 if specific color for h4 > strong is not needed */
+}
+
+
+/* Table styling within scheme-card (for Cheat Code section) */
+.scheme-card table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.scheme-card th,
+.scheme-card td {
+  border: 1px solid #ccc;
+  padding: var(--space-sm) var(--space-md); /* 8px 16px */
+  text-align: left;
+  vertical-align: top;
+}
+
+.scheme-card th {
+  background-color: #e9ecef; /* Light grey for table headers */
+  font-weight: 600; /* Make headers bold */
+  color: #333;
+}
+
+.scheme-card td strong { /* For emphasizing text within table cells, like scheme names */
+    color: var(--color-primary-dark); /* Dark green for emphasis */
+}
+
+/* Responsive Table Wrapper */
+.table-responsive-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+
+/* Image styling for the chart image */
+.img-responsive-chart {
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-md) auto; /* Centered with margin */
+  display: block; /* Ensure it's a block for centering */
+  border-radius: var(--border-radius); /* Consistent border radius */
+  box-shadow: var(--box-shadow-sm); /* Subtle shadow */
+}
+
+
+/* Responsive Design for Scheme Cards */
+@media (max-width: 768px) { /* Tablets and below */
+  .scheme-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  .scheme-card h3 {
+    font-size: 1.3em; /* Slightly smaller */
+  }
+  .scheme-card h4 {
+    font-size: 1.1em; /* Slightly smaller */
+  }
+  .container { /* Ensure container padding is adequate */
+    padding-right: var(--space-sm);
+    padding-left: var(--space-sm);
+  }
+}
+
+@media (max-width: 480px) { /* Mobile phones */
+  .scheme-card {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px; /* Slightly smaller radius */
+  }
+  .scheme-card h3 {
+    font-size: 1.2em; /* Further adjust for mobile */
+  }
+  .scheme-card h4 {
+    font-size: 1.0em; /* Further adjust for mobile */
+  }
+  .scheme-card blockquote {
+    padding-left: 10px;
+  }
+  .scheme-card ul {
+    padding-left: 15px; /* Reduce indent slightly */
+  }
+  .scheme-card th,
+  .scheme-card td {
+    padding: var(--space-xs) var(--space-sm); /* Reduce padding in table cells */
   }
 }
