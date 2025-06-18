@@ -141,6 +141,19 @@ Each week includes:
 This file lives in the repo only. Not part of the public site.
 
 ## Resources:
-[Zone Read Offense](https://youtu.be/pEQJIVX9G54?si=lq8Y_SadSoq2WjtN)
+### Football 101
+[Every Passing Concept Explained in 13 Minutes](https://youtu.be/Ebn6c1jNZbo?si=wqL4avamMq9eRNhb)
+[Every Defensive Formation Explained in 12 Minutes](https://youtu.be/Q6iuu58jLgU?si=fgLrJIUs2tgH-JXE)
+[Every Defensive Coverage Explained in 15 Minutes](https://youtu.be/ROliJ27Br9A?si=B3roHj1Zbx4FGjTe)
+[Every Offensive Formation Explained in 18 Minutes](https://youtu.be/sRaIlyv95hs?si=emERUmfzhpCn6vfq)
+
+### Wing T
 [YFO - Dominating Defenses with the Shotgun Wing T Offense](https://youtu.be/R5-iw-UoE8Q?si=RERyFXTxkhcSiaKH)
+[Football 101: Buck Sweep](https://youtu.be/ZtlGCGJGE64?si=vyKamT4OWV9dfCbx)
+[YFO - Winning with the Wing T Offense](https://youtu.be/7Fv9l1DZKrk?si=767-CwYKbx5oy78Y)
+
+### Workouts
 [Play Football - How NFL Players Train to Become ELITE: Meet the Footwork King](https://youtu.be/t4l4kSdb_dY?si=DLBcH0HV9QQmfWa_)
+
+### Zone
+[Zone Read Offense](https://youtu.be/pEQJIVX9G54?si=lq8Y_SadSoq2WjtN)
