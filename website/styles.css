@@ -1019,3 +1019,72 @@ footer p {
     padding: var(--space-xs) var(--space-sm); /* Reduce padding in table cells */
   }
 }
+
+/* Passing Concept Card Styles */
+.passing-concepts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg, 20px); /* Use variable or fallback */
+  justify-content: center; /* Center cards if they don't fill the row */
+  padding: var(--space-lg, 20px) 0; /* Add some padding around the container */
+}
+
+.passing-concept-card {
+  border: 1px solid #ccc;
+  padding: var(--space-md, 16px); /* Use variable or fallback */
+  margin-bottom: var(--space-lg, 20px); /* Use variable or fallback */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white, #fff); /* Use variable or fallback */
+  border-radius: var(--border-radius, 0.3rem); /* Use variable or fallback */
+  /* Flex item properties for the container */
+  flex: 0 1 calc(33.333% - var(--space-lg, 20px)); /* Default for 3 cards per row */
+  max-width: calc(33.333% - var(--space-lg, 20px)); /* Ensure it doesn't exceed 33.333% */
+}
+
+.passing-concept-card h3 {
+  color: var(--color-primary-dark, #133728); /* Use variable or fallback */
+  margin-bottom: var(--space-md, 10px); /* Use variable or fallback */
+}
+
+.concept-description {
+  margin-bottom: var(--space-md, 10px); /* Use variable or fallback */
+  font-size: var(--font-size-base, 1rem); /* Use variable or fallback */
+  line-height: var(--line-height-base, 1.6); /* Use variable or fallback */
+  color: var(--color-dark, #343a40); /* Use variable or fallback */
+  flex-grow: 1; /* Allows description to take available space */
+}
+
+.concept-diagram-placeholder {
+  border: 1px dashed #aaa;
+  padding: var(--space-lg, 20px); /* Use variable or fallback */
+  text-align: center;
+  margin-bottom: var(--space-md, 10px); /* Use variable or fallback */
+  background-color: #f8f9fa; /* Light background for placeholder */
+  color: #6c757d; /* Muted text color */
+  min-height: 150px; /* Ensure it has some height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius, 0.3rem);
+}
+
+/* Responsive design for passing concept cards */
+@media (max-width: 991.98px) { /* Medium screens, e.g. tablets, for 2 cards per row */
+  .passing-concept-card {
+    flex: 0 1 calc(50% - var(--space-lg, 20px)); /* 2 cards per row */
+    max-width: calc(50% - var(--space-lg, 20px));
+  }
+}
+
+@media (max-width: 767.98px) { /* Small screens, e.g. mobile phones, for 1 card per row */
+  .passing-concepts-container {
+    padding: var(--space-md, 16px) var(--space-sm, 8px); /* Reduce padding on smaller screens */
+  }
+  .passing-concept-card {
+    flex: 0 1 100%; /* Cards take full width and stack vertically */
+    max-width: 100%;
+    margin-bottom: var(--space-md, 16px); /* Adjust margin for stacked cards */
+  }
+}
