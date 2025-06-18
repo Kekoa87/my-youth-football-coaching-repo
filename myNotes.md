@@ -50,6 +50,10 @@
 #### Example – OL Coach
 > You’ll learn how I want warm-ups run, how to teach stance, and how to install weekly run plays. No guesswork.  The OL will be the most praised unit on the field.  Each "Skill" position coach will remind his players that they better be thanking the OL or nothing else would be happening.
 
+### Defense
+- Defense Q&A -- thoughts:
+  - I as well as all position coaches need to know **EXACTLY** what the DC wants coached in each position **BEFORE** practice.
+  - How are we coaching kids gap responsibility?  I.E: in a 6-2 all gaps are covered naturally.  What are we doing in 5-3, 4-4, 3-4?
 ---
 
 ## 🧱 My Commitments as a Coach
