@@ -114,3 +114,53 @@ document.querySelectorAll('.collapsible-button').forEach(button => {
         button.addEventListener('click', toggleCollapsible);
     }
 });
+
+// Lightbox functionality
+function initializeLightbox() {
+  const modal = document.getElementById('lightbox-modal');
+  if (!modal) {
+    // If the modal is not on this page, do nothing.
+    return;
+  }
+
+  const modalImg = document.getElementById('lightbox-image');
+  const closeButton = document.querySelector('.close-button');
+
+  const diagramPlaceholders = document.querySelectorAll('.concept-diagram-placeholder');
+
+  diagramPlaceholders.forEach(placeholder => {
+    const img = placeholder.querySelector('img');
+    if (img) {
+      img.onclick = function() {
+        modal.style.display = 'block';
+        modalImg.src = this.src;
+        modalImg.alt = this.alt; // Copy alt text for accessibility
+      }
+    }
+  });
+
+  if (closeButton) {
+    closeButton.onclick = function() {
+      modal.style.display = 'none';
+    }
+  }
+
+  // Close modal when clicking on the background
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = 'none';
+    }
+  }
+}
+
+// Call the function to initialize lightbox functionality
+// We need to ensure this runs after the DOM is loaded.
+// If there's an existing onload or DOMContentLoaded, add to it.
+// For simplicity, we'll try calling it directly.
+// If issues arise, we might need to hook into an existing DOM ready function.
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeLightbox);
+} else {
+    // DOMContentLoaded has already fired
+    initializeLightbox();
+}
