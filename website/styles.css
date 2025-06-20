@@ -136,7 +136,7 @@ header {
   color: var(--color-light);
   padding: 0; /* Remove header padding, let sections inside control it */
   box-shadow: var(--box-shadow-sm); /* Keep this for the overall header block */
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
@@ -229,7 +229,7 @@ nav.site-navigation li.submenu-active > ul { /* For click nav from main.js */
 
 /* Main Content */
 main {
-  padding: 180px 0 var(--space-xl); /* Use container for side padding */
+  padding: 0 0 var(--space-xl); /* Use container for side padding */
 }
 
 /* Styling for the container of articles on index.html */
@@ -482,7 +482,7 @@ footer p {
   }
 
   main {
-    padding: 180px 0 var(--space-xl); /* Adjusted top padding for mobile - REVERTED to original desktop padding as dropdowns now overlay */
+    padding: 0 0 var(--space-xl); /* Adjusted top padding for mobile - REVERTED to original desktop padding as dropdowns now overlay */
   }
 }
 
