@@ -146,6 +146,7 @@ This file lives in the repo only. Not part of the public site.
 
 ## Resources:
 ### Football 101
+[vIQtory - Passing Concepts Explained for Youth Football Coaches](https://youtu.be/a3ypxBpLnx8?si=17MwRUtbb6iTgUMZ)
 [Every Passing Concept Explained in 13 Minutes](https://youtu.be/Ebn6c1jNZbo?si=wqL4avamMq9eRNhb)
 [Every Defensive Formation Explained in 12 Minutes](https://youtu.be/Q6iuu58jLgU?si=fgLrJIUs2tgH-JXE)
 [Every Defensive Coverage Explained in 15 Minutes](https://youtu.be/ROliJ27Br9A?si=B3roHj1Zbx4FGjTe)
