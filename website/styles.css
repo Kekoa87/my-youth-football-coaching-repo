@@ -1039,16 +1039,18 @@ footer p {
   background-color: var(--color-white, #fff); /* Use variable or fallback */
   border-radius: var(--border-radius, 0.3rem); /* Use variable or fallback */
   /* Flex item properties for the container */
-  flex: 0 1 calc(33.333% - var(--space-lg, 20px)); /* Default for 3 cards per row */
-  max-width: calc(33.333% - var(--space-lg, 20px)); /* Ensure it doesn't exceed 33.333% */
+  flex: 0 1 calc(50% - var(--space-lg, 20px)); /* Default for 2 cards per row */
+  max-width: calc(50% - var(--space-lg, 20px)); /* Ensure it doesn't exceed 50% */
 }
 
 .passing-concept-card h3 {
   color: var(--color-primary-dark, #133728); /* Use variable or fallback */
   margin-bottom: var(--space-md, 10px); /* Use variable or fallback */
+  margin-top: var(--space-sm); /* Add space between image and title */
 }
 
 .concept-description {
+  width: 100%; /* Ensure it uses the full width within the card */
   margin-bottom: var(--space-md, 10px); /* Use variable or fallback */
   font-size: var(--font-size-base, 1rem); /* Use variable or fallback */
   line-height: var(--line-height-base, 1.6); /* Use variable or fallback */
@@ -1057,26 +1059,27 @@ footer p {
 }
 
 .concept-diagram-placeholder {
-  border: 1px dashed #aaa;
-  padding: var(--space-lg, 20px); /* Use variable or fallback */
-  text-align: center;
+  /* border: 1px dashed #aaa; */ /* Removed */
+  /* padding: var(--space-lg, 20px); */ /* Removed */
+  /* text-align: center; */ /* Removed as image is block and 100% width */
   margin-bottom: var(--space-md, 10px); /* Use variable or fallback */
-  background-color: #f8f9fa; /* Light background for placeholder */
-  color: #6c757d; /* Muted text color */
-  min-height: 150px; /* Ensure it has some height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--border-radius, 0.3rem);
+  /* background-color: #f8f9fa; */ /* Removed */
+  /* color: #6c757d; */ /* Removed */
+  /* min-height: 150px; */ /* Removed */
+  display: block; /* Changed from flex to block */
+  /* align-items: center; */ /* Removed as it's for flex */
+  /* justify-content: center; */ /* Removed as it's for flex */
+  border-radius: var(--border-radius, 0.3rem); /* Keep radius for the image if image itself doesn't have it */
 }
 
 /* Responsive design for passing concept cards */
-@media (max-width: 991.98px) { /* Medium screens, e.g. tablets, for 2 cards per row */
-  .passing-concept-card {
-    flex: 0 1 calc(50% - var(--space-lg, 20px)); /* 2 cards per row */
-    max-width: calc(50% - var(--space-lg, 20px));
-  }
-}
+/* Default is now 2 cards per row, so the 991.98px media query for this specific case is no longer needed. */
+/* @media (max-width: 991.98px) { */ /* Medium screens, e.g. tablets, for 2 cards per row */
+  /* .passing-concept-card { */
+    /* flex: 0 1 calc(50% - var(--space-lg, 20px)); */ /* 2 cards per row */
+    /* max-width: calc(50% - var(--space-lg, 20px)); */
+  /* } */
+/* } */
 
 @media (max-width: 767.98px) { /* Small screens, e.g. mobile phones, for 1 card per row */
   .passing-concepts-container {
@@ -1141,6 +1144,10 @@ footer p {
 
 /* Modify existing image placeholder to indicate interactivity */
 .concept-diagram-placeholder img {
+  width: 100%; /* Ensure image takes full width of the placeholder */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Already global, but good for specificity */
+  border-radius: var(--border-radius); /* Ensure image itself has the radius */
   cursor: pointer;
   transition: 0.3s;
 }
