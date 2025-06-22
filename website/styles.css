@@ -960,6 +960,122 @@ footer p {
 
 /* Responsive Table Wrapper */
 .table-responsive-wrapper {
+/* START: Run Concept Card Styles */
+
+/* Container for all run concept cards */
+.run-concepts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg, 20px); /* Consistent gap */
+  justify-content: center;
+  padding: var(--space-lg, 20px) 0;
+}
+
+/* Individual run concept card */
+.run-concept-card {
+  border: 1px solid var(--color-border, #ccc);
+  padding: var(--space-lg, 16px); /* Use variable or fallback */
+  margin-bottom: var(--space-lg, 20px); /* Consistent margin */
+  box-shadow: var(--box-shadow-sm, 0 2px 4px rgba(0,0,0,0.1));
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white, #fff);
+  border-radius: var(--border-radius, 0.3rem);
+  flex: 0 1 calc(50% - var(--space-lg, 20px)); /* Default for 2 cards per row */
+  max-width: calc(50% - var(--space-lg, 20px)); /* Ensure it doesn't exceed 50% */
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.run-concept-card:hover {
+  box-shadow: var(--box-shadow-md);
+}
+
+.run-concept-card h3 {
+  color: var(--color-primary-dark, #133728);
+  margin-top: var(--space-md, 10px); /* Space between image and title */
+  margin-bottom: var(--space-md, 10px);
+  text-align: center; /* Center the concept title */
+}
+
+/* Overriding general .concept-description to be specific for run concepts if needed,
+   or ensuring it works well with the new structure.
+   The existing .concept-description from passing concepts might be too generic.
+   Let's assume we want more specific control here. */
+.run-concept-card .concept-description {
+  width: 100%;
+  flex-grow: 1; /* Allows description area to fill space */
+}
+
+.run-concept-card .concept-detail {
+  margin-bottom: var(--space-md); /* Space between detail sections */
+  padding: var(--space-sm);
+  border-left: 3px solid var(--color-primary); /* Accent line */
+  background-color: #fdfdfd; /* Slightly off-white background for detail sections */
+}
+
+.run-concept-card .concept-detail h4 {
+  font-size: var(--font-size-base); /* Or var(--font-size-md) if you have it */
+  color: var(--color-primary); /* Heading color for detail sections */
+  margin-bottom: var(--space-sm);
+}
+
+.run-concept-card .concept-detail p {
+  font-size: var(--font-size-sm); /* Slightly smaller text for details */
+  line-height: var(--line-height-base);
+  margin-bottom: 0; /* Remove default p margin as spacing is handled by .concept-detail */
+}
+
+
+/* Desktop: Two-column layout for details within a card */
+@media (min-width: 992px) { /* Adjust breakpoint as needed */
+  .run-concept-card .concept-description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .run-concept-card .concept-detail {
+    margin-bottom: 0; /* Remove bottom margin as gap handles it */
+  }
+}
+
+/* Tablet and Mobile: Single card per row, stacked details */
+@media (max-width: 991.98px) {
+  .run-concept-card {
+    flex: 0 1 100%; /* Full width for single card layout */
+    max-width: 100%;
+  }
+  /* On tablet, still allow 2 columns for details if space permits and desired */
+  /* For instance, keep 2 columns for details down to 768px */
+   .run-concept-card .concept-description {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Keep 2 columns for details on tablets */
+    gap: var(--space-md);
+  }
+}
+
+
+@media (max-width: 767.98px) { /* Smaller tablets and mobile phones */
+  .run-concepts-container {
+    padding: var(--space-md, 16px) var(--space-sm, 8px);
+  }
+  .run-concept-card .concept-description {
+    display: block; /* Stack details vertically */
+    grid-template-columns: none; /* Override grid */
+  }
+  .run-concept-card .concept-detail {
+    margin-bottom: var(--space-md); /* Restore margin for stacked layout */
+    border-left-width: 2px; /* Thinner border on mobile */
+  }
+   .run-concept-card .concept-detail:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* END: Run Concept Card Styles */
+
+/* Table styling within scheme-card (for Cheat Code section) */
+.scheme-card table {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   margin-top: var(--space-md);
