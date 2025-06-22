@@ -1043,6 +1043,70 @@ footer p {
   max-width: calc(50% - var(--space-lg, 20px)); /* Ensure it doesn't exceed 50% */
 }
 
+/* Run Concept Card Styles */
+.run-concepts-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-lg, 20px); /* Space between cards */
+  justify-content: center; /* Center cards in the container */
+  padding: var(--space-lg, 20px) 0; /* Padding for the container */
+}
+
+.run-concept-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white, #fff);
+  border: 1px solid var(--color-border, #ccc);
+  border-radius: var(--border-radius, 0.3rem);
+  box-shadow: var(--box-shadow-sm, 0 .125rem .25rem rgba(0,0,0,.075));
+  padding: var(--space-lg, 16px); /* Consistent padding */
+  /* Flex item properties for responsiveness will be handled in media queries */
+  flex: 0 1 100%; /* Default to full width for mobile-first approach */
+  max-width: 100%;
+  margin-bottom: var(--space-lg); /* Ensure spacing when stacked, gap handles row spacing */
+}
+
+.run-concept-card .concept-diagram-placeholder {
+  margin-bottom: var(--space-md); /* Space between image and title */
+  border-radius: var(--border-radius); /* Ensure placeholder itself can clip image if needed */
+  overflow: hidden; /* If image is larger than placeholder */
+}
+
+.run-concept-card .concept-diagram-placeholder img {
+  /* Styles for image are mostly global: max-width: 100%, height: auto */
+  border-radius: var(--border-radius); /* Ensure consistent border radius */
+  cursor: pointer; /* Assuming lightbox functionality for these images as well */
+  transition: opacity 0.3s ease;
+}
+
+.run-concept-card .concept-diagram-placeholder img:hover {
+  opacity: 0.7;
+}
+
+.run-concept-card h3 {
+  color: var(--color-primary-dark, #133728);
+  margin-top: 0; /* Remove default top margin if any, space handled by placeholder's bottom margin */
+  margin-bottom: var(--space-md, 10px);
+  text-align: center; /* Center the concept title */
+}
+
+.run-concept-card .concept-description p {
+  font-size: var(--font-size-base, 1rem);
+  line-height: var(--line-height-base, 1.6);
+  color: var(--color-dark, #343a40);
+  margin-bottom: var(--space-sm); /* Slightly less space between paragraphs in card */
+  text-align: left; /* Ensure paragraph text is left-aligned for readability */
+}
+
+.run-concept-card .concept-description p:last-child {
+  margin-bottom: 0; /* Remove margin from the last paragraph in the description */
+}
+
+.run-concept-card .concept-description strong {
+  color: var(--color-primary-dark); /* Make labels like "Overview:" stand out a bit more */
+}
+
+
 .passing-concept-card h3 {
   color: var(--color-primary-dark, #133728); /* Use variable or fallback */
   margin-bottom: var(--space-md, 10px); /* Use variable or fallback */
@@ -1154,4 +1218,21 @@ footer p {
 
 .concept-diagram-placeholder img:hover {
   opacity: 0.7;
+}
+
+/* Responsive Adjustments for Run Concept Cards */
+/* Tablet and up for Run Concept Cards */
+@media (min-width: 768px) {
+  .run-concept-card {
+    flex: 0 1 calc(50% - var(--space-lg, 20px)); /* 2 cards per row, accounting for gap */
+    max-width: calc(50% - var(--space-lg, 20px));
+  }
+}
+
+/* Desktop and up for Run Concept Cards */
+@media (min-width: 992px) {
+  .run-concept-card {
+    flex: 0 1 calc(33.333% - var(--space-lg, 20px)); /* 3 cards per row */
+    max-width: calc(33.333% - var(--space-lg, 20px));
+  }
 }
