@@ -1051,11 +1051,19 @@ footer p {
 
 .run-concept-card {
   /* Each card is a block containing one concept (image + text) */
-  margin-bottom: var(--space-xxl); /* Generous space between each concept */
+  margin-bottom: var(--space-xxl); /* Generous space between each concept (this will be space AFTER the border) */
   background-color: transparent; /* Ensure no card-like background */
-  border: none; /* Ensure no card-like border */
+  border: none; /* Ensure no card-like border */ /* This will be overridden for border-bottom */
   box-shadow: none; /* Ensure no card-like shadow */
   padding: 0; /* Reset padding if any was inherited or previously set */
+  padding-bottom: var(--space-lg); /* Space between content and the bottom border */
+  border-bottom: 1px solid var(--color-border); /* Horizontal line separator */
+}
+
+/* Remove border and adjust padding for the last concept card */
+.run-concepts-container > .run-concept-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0; /* No extra padding needed if there's no border. The margin-bottom will provide space. */
 }
 
 .run-concept-card .concept-diagram-placeholder {
