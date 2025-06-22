@@ -1043,69 +1043,76 @@ footer p {
   max-width: calc(50% - var(--space-lg, 20px)); /* Ensure it doesn't exceed 50% */
 }
 
-/* Run Concept Card Styles */
+/* New Run Concept Styling (Full-width image and text) */
 .run-concepts-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-lg, 20px); /* Space between cards */
-  justify-content: center; /* Center cards in the container */
-  padding: var(--space-lg, 20px) 0; /* Padding for the container */
+  /* Container doesn't need flex for this layout, just normal block flow */
+  padding: var(--space-lg) 0; /* Add some vertical padding if desired */
 }
 
 .run-concept-card {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-white, #fff);
-  border: 1px solid var(--color-border, #ccc);
-  border-radius: var(--border-radius, 0.3rem);
-  box-shadow: var(--box-shadow-sm, 0 .125rem .25rem rgba(0,0,0,.075));
-  padding: var(--space-lg, 16px); /* Consistent padding */
-  /* Flex item properties for responsiveness will be handled in media queries */
-  flex: 0 1 100%; /* Default to full width for mobile-first approach */
-  max-width: 100%;
-  margin-bottom: var(--space-lg); /* Ensure spacing when stacked, gap handles row spacing */
+  /* Each card is a block containing one concept (image + text) */
+  margin-bottom: var(--space-xxl); /* Generous space between each concept */
+  background-color: transparent; /* Ensure no card-like background */
+  border: none; /* Ensure no card-like border */
+  box-shadow: none; /* Ensure no card-like shadow */
+  padding: 0; /* Reset padding if any was inherited or previously set */
 }
 
 .run-concept-card .concept-diagram-placeholder {
-  margin-bottom: var(--space-md); /* Space between image and title */
-  border-radius: var(--border-radius); /* Ensure placeholder itself can clip image if needed */
-  overflow: hidden; /* If image is larger than placeholder */
+  margin-bottom: var(--space-lg); /* Space between image and the title/description */
+  text-align: center; /* Center the image if it has a max-width */
 }
 
 .run-concept-card .concept-diagram-placeholder img {
-  /* Styles for image are mostly global: max-width: 100%, height: auto */
-  border-radius: var(--border-radius); /* Ensure consistent border radius */
-  cursor: pointer; /* Assuming lightbox functionality for these images as well */
+  width: 100%; /* Make image responsive */
+  max-width: 800px; /* Max width for large images on desktop, adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below image and allow margin auto to work */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--border-radius); /* Keep rounded corners */
+  cursor: pointer; /* Assuming lightbox is still desired */
   transition: opacity 0.3s ease;
 }
 
 .run-concept-card .concept-diagram-placeholder img:hover {
-  opacity: 0.7;
+  opacity: 0.7; /* Keep hover effect for lightbox */
 }
 
-.run-concept-card h3 {
-  color: var(--color-primary-dark, #133728);
-  margin-top: 0; /* Remove default top margin if any, space handled by placeholder's bottom margin */
-  margin-bottom: var(--space-md, 10px);
-  text-align: center; /* Center the concept title */
+.run-concept-card h3 { /* Title of the concept */
+  font-size: var(--font-size-xl); /* Make title prominent */
+  color: var(--color-primary-dark);
+  text-align: center; /* Center the title */
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+.run-concept-card .concept-description {
+  /* The description text block */
+  max-width: 800px; /* Optional: constrain text width for readability, matching image max-width */
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-md); /* Add some padding if text is edge-to-edge with container */
+  padding-right: var(--space-md);
 }
 
 .run-concept-card .concept-description p {
-  font-size: var(--font-size-base, 1rem);
-  line-height: var(--line-height-base, 1.6);
-  color: var(--color-dark, #343a40);
-  margin-bottom: var(--space-sm); /* Slightly less space between paragraphs in card */
-  text-align: left; /* Ensure paragraph text is left-aligned for readability */
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-dark);
+  margin-bottom: var(--space-md); /* Standard paragraph spacing */
+  text-align: left;
 }
 
 .run-concept-card .concept-description p:last-child {
-  margin-bottom: 0; /* Remove margin from the last paragraph in the description */
+  margin-bottom: 0;
 }
 
 .run-concept-card .concept-description strong {
-  color: var(--color-primary-dark); /* Make labels like "Overview:" stand out a bit more */
+  color: var(--color-primary-dark); /* Keep emphasis for labels */
+  font-weight: 600; /* Ensure it's visually distinct */
 }
-
+/* End of New Run Concept Styling */
 
 .passing-concept-card h3 {
   color: var(--color-primary-dark, #133728); /* Use variable or fallback */
@@ -1218,21 +1225,4 @@ footer p {
 
 .concept-diagram-placeholder img:hover {
   opacity: 0.7;
-}
-
-/* Responsive Adjustments for Run Concept Cards */
-/* Tablet and up for Run Concept Cards */
-@media (min-width: 768px) {
-  .run-concept-card {
-    flex: 0 1 calc(50% - var(--space-lg, 20px)); /* 2 cards per row, accounting for gap */
-    max-width: calc(50% - var(--space-lg, 20px));
-  }
-}
-
-/* Desktop and up for Run Concept Cards */
-@media (min-width: 992px) {
-  .run-concept-card {
-    flex: 0 1 calc(33.333% - var(--space-lg, 20px)); /* 3 cards per row */
-    max-width: calc(33.333% - var(--space-lg, 20px));
-  }
 }
