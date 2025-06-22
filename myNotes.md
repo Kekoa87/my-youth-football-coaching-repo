@@ -147,10 +147,14 @@ This file lives in the repo only. Not part of the public site.
 ## Resources:
 ### Football 101
 [vIQtory - Passing Concepts Explained for Youth Football Coaches](https://youtu.be/a3ypxBpLnx8?si=17MwRUtbb6iTgUMZ)
+[vIQtory - Top Run Concepts to Teach In Youth Football](https://youtu.be/y8vyd1qhZSI?si=Jh69HzYS4gv_jHk2)
 [Every Passing Concept Explained in 13 Minutes](https://youtu.be/Ebn6c1jNZbo?si=wqL4avamMq9eRNhb)
 [Every Defensive Formation Explained in 12 Minutes](https://youtu.be/Q6iuu58jLgU?si=fgLrJIUs2tgH-JXE)
 [Every Defensive Coverage Explained in 15 Minutes](https://youtu.be/ROliJ27Br9A?si=B3roHj1Zbx4FGjTe)
 [Every Offensive Formation Explained in 18 Minutes](https://youtu.be/sRaIlyv95hs?si=emERUmfzhpCn6vfq)
+[Chalk Talk Football - Gap Run Scheme | Football 101](https://youtu.be/UbtuTuErRvk?si=01oqlPXJhXbFEqcc)
+[Chalk Talk Football - Zone Run Scheme | Football 101](https://youtu.be/lJpnYGf4ybs?si=IoTYEKyM4gdUCZZg)
+
 
 ### Wing T
 [YFO - Dominating Defenses with the Shotgun Wing T Offense](https://youtu.be/R5-iw-UoE8Q?si=RERyFXTxkhcSiaKH)
@@ -162,3 +166,7 @@ This file lives in the repo only. Not part of the public site.
 
 ### Zone
 [Zone Read Offense](https://youtu.be/pEQJIVX9G54?si=lq8Y_SadSoq2WjtN)
+[Brett Kollmann - God's favorite run play.](https://youtu.be/V0zyZx1O9pE?si=TYpLOUZXsF-z7t1v)
+
+### Jet
+[YFO - This has been our best play for a long time!](https://youtu.be/wm7OzD9dmhs?si=uboMKMjvBTrwbBEe)
