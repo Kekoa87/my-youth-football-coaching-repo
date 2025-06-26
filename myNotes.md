@@ -169,4 +169,4 @@ This file lives in the repo only. Not part of the public site.
 [Brett Kollmann - God's favorite run play.](https://youtu.be/V0zyZx1O9pE?si=TYpLOUZXsF-z7t1v)
 
 ### Jet
-[YFO - This has been our best play for a long time!](https://youtu.be/wm7OzD9dmhs?si=uboMKMjvBTrwbBEe)
+[YFO - This has been our best play for a long time! (Jet ISO)](https://youtu.be/wm7OzD9dmhs?si=uboMKMjvBTrwbBEe)

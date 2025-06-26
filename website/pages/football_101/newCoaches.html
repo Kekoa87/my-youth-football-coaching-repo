@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Passing Concepts">
+  <title>FOOTBALL 101: New Coaches | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="icon" href="../../images/siteSymbol.png" type="image/png">
+</head>
+<body>
+    <div id="site-header"></div>
+    <script>
+        fetch("/website/includes/header.html")
+            .then(res => res.text())
+            .then(data => {
+            document.getElementById('site-header').innerHTML = data;
+            });
+    </script>
+
+    <main>
+        <div class="container">
+            <div class="page-header" style="margin-bottom: var(--space-lg);">
+                <h1>New Youth Football Coaches</h1>
+                <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 26, 2025</p>
+            </div>
+            <section>
+                <h2>What Matters Most in Youth Football</h2>
+                <p>
+                    If I could offer one piece of advice to a new youth football coach—or explain to a parent what I believe this game is really about—it’s this: focus on teaching the right things, for the right reasons.
+                </p>
+
+                <p>
+                    Start with the fundamentals. Not just of football, but of effort, responsibility, and respect. Teach kids how to line up, how to move their feet, how to block and tackle safely. Don’t worry about being creative with formations or coming up with a bunch of advanced passing concepts. That stuff has its place, but it’s not the foundation. If your players understand leverage, space, and timing—and why those things matter—you’re doing your job.
+                </p>
+
+                <p> 
+                    Keep your communication clear and your energy consistent. Kids don’t need complexity, they need clarity. They should know exactly what’s being asked of them, and they should feel like you believe they can do it. Your energy sets the tone. Show up with purpose and they will too.
+                </p>
+                
+                <p> 
+                    That said, coaching is also about learning. If you're new to the game or just want to keep growing, take time to educate yourself on the basics of formations, schemes, and concepts. On this site, you’ll find breakdowns and tools to help make that side of the game more approachable—so when you're ready to add more layers, you’re doing it with intention.
+                </p>
+
+                <p> 
+                    At the same time, don’t lose sight of the joy. Make it fun. Let their personalities come out. Compete hard, but laugh with them. Cheer the effort plays. Let them run a trick play in practice just for the thrill of it. The more they love the game, the more they’ll want to keep learning and growing.
+                </p>
+                    
+                <p> 
+                    And maybe most important—build relationships. Every kid on your team deserves to feel seen and supported. The starter and the backup, the quiet kid and the loud one. Take the time to know them. Connect with them. Because once they trust you, they’ll listen to you. And once they know you care, they’ll give you everything they’ve got.
+                </p>
+
+                <p> 
+                    You’re not just coaching football. You’re helping shape who these kids become. That’s the real job. And it’s worth doing well.
+                </p>
+
+            </section>
+        </div>
+    </main>
+
+    <div id="site-footer"></div>
+    <script>
+      fetch("/website/includes/footer.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById('site-footer').innerHTML = data;
+        });
+    </script>
+</body>
+</html>
