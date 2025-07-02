@@ -164,6 +164,10 @@ This file lives in the repo only. Not part of the public site.
 ### Workouts
 [Play Football - How NFL Players Train to Become ELITE: Meet the Footwork King](https://youtu.be/t4l4kSdb_dY?si=DLBcH0HV9QQmfWa_)
 
+#### WR Drills
+[RouteGod - WR’s Xavier Legette X Debebo Samuel South Carolina Legends](https://youtu.be/g1JnpdR6tIY?si=IE6Mb3n0JcZVbHSG)
+[RouteGod - Sticky Work Work Xavier Legette In AZ!!](https://youtu.be/SF_DiSNgTys?si=te6YNHRAptGeScny)
+
 ### Zone
 [Zone Read Offense](https://youtu.be/pEQJIVX9G54?si=lq8Y_SadSoq2WjtN)
 [Brett Kollmann - God's favorite run play.](https://youtu.be/V0zyZx1O9pE?si=TYpLOUZXsF-z7t1v)
