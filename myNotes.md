@@ -165,8 +165,6 @@ This file lives in the repo only. Not part of the public site.
 [Play Football - How NFL Players Train to Become ELITE: Meet the Footwork King](https://youtu.be/t4l4kSdb_dY?si=DLBcH0HV9QQmfWa_)
 
 #### WR Drills
-[RouteGod - WR’s Xavier Legette X Debebo Samuel South Carolina Legends](https://youtu.be/g1JnpdR6tIY?si=IE6Mb3n0JcZVbHSG)
-[RouteGod - Sticky Work Work Xavier Legette In AZ!!](https://youtu.be/SF_DiSNgTys?si=te6YNHRAptGeScny)
 
 ### Zone
 [Zone Read Offense](https://youtu.be/pEQJIVX9G54?si=lq8Y_SadSoq2WjtN)
@@ -174,3 +172,7 @@ This file lives in the repo only. Not part of the public site.
 
 ### Jet
 [YFO - This has been our best play for a long time! (Jet ISO)](https://youtu.be/wm7OzD9dmhs?si=uboMKMjvBTrwbBEe)
+
+### Team Drills
+[Team open Field Blocking Drill](https://youtube.com/shorts/U3fCcFiRNz0?si=i50woE1oQ_1XN6hz)
+
