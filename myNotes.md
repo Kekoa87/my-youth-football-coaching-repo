@@ -154,21 +154,31 @@ This file lives in the repo only. Not part of the public site.
 [Every Offensive Formation Explained in 18 Minutes](https://youtu.be/sRaIlyv95hs?si=emERUmfzhpCn6vfq)
 [Chalk Talk Football - Gap Run Scheme | Football 101](https://youtu.be/UbtuTuErRvk?si=01oqlPXJhXbFEqcc)
 [Chalk Talk Football - Zone Run Scheme | Football 101](https://youtu.be/lJpnYGf4ybs?si=IoTYEKyM4gdUCZZg)
-
+[YFO - Outside Zone: Hand Placement](https://www.youtube.com/shorts/8bfeubF6dUo)
+[AFA - Short Yardage Sprint Out](https://youtu.be/QQ-tqg3qTYI?si=6la_KbgQ3IoRPHjf)
 
 ### Wing T
 [YFO - Dominating Defenses with the Shotgun Wing T Offense](https://youtu.be/R5-iw-UoE8Q?si=RERyFXTxkhcSiaKH)
 [Football 101: Buck Sweep](https://youtu.be/ZtlGCGJGE64?si=vyKamT4OWV9dfCbx)
 [YFO - Winning with the Wing T Offense](https://youtu.be/7Fv9l1DZKrk?si=767-CwYKbx5oy78Y)
+[Chiefpigskin - How to Run the Wing-T](https://www.youtube.com/watch?v=jmaWZfFBt4Y&ab_channel=Chiefpigskin)
 
 ### Workouts
 [Play Football - How NFL Players Train to Become ELITE: Meet the Footwork King](https://youtu.be/t4l4kSdb_dY?si=DLBcH0HV9QQmfWa_)
 
 #### WR Drills
+[FDT - Beginner WR Press Release](https://www.youtube.com/shorts/qzPnd5uEjo0)
+
+### Gap
+[AFA - How To Run The Power Concept (Gap Scheme)](https://youtu.be/d0E0ZPjWmp8?si=h2uYs9Lc1uvFJSmU)
+[AFA - How To Run Counter (Gap Scheme)](https://youtu.be/FW4gxLkPvKY?si=7285MKYJ_eTG_3Om)
+[Power and Counter in the Auburn Offense](https://www.collegeandmagnolia.com/2014/8/7/5975453/auburn-offense-gus-malzahn-power-counter-running-game)
 
 ### Zone
 [Zone Read Offense](https://youtu.be/pEQJIVX9G54?si=lq8Y_SadSoq2WjtN)
 [Brett Kollmann - God's favorite run play.](https://youtu.be/V0zyZx1O9pE?si=TYpLOUZXsF-z7t1v)
+[Coach Codutti - Oregon wide zone clinic](https://youtu.be/l1ri1xGnNHw?si=Al7iFHn7xz8fCRPm)
+[Throw Deep Publishing - WATCH: Michigan Inside Zone Blocking Drills - Sherrone Moore](https://www.youtube.com/watch?v=9hF42QR9Ahc)
 
 ### Jet
 [YFO - This has been our best play for a long time! (Jet ISO)](https://youtu.be/wm7OzD9dmhs?si=uboMKMjvBTrwbBEe)
@@ -176,3 +186,5 @@ This file lives in the repo only. Not part of the public site.
 ### Team Drills
 [Team open Field Blocking Drill](https://youtube.com/shorts/U3fCcFiRNz0?si=i50woE1oQ_1XN6hz)
 
+### Blocking
+[Play Football - O-Line Tips: Hand Placement & Blitz Recognition](https://www.youtube.com/watch?v=TsmUl6VHYeQ&ab_channel=PlayFootball)
