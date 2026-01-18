@@ -39,6 +39,7 @@
 - **Preparation** – Know your role, the install, and how to run your indy period.
 - **Humility** – Be open to learning and growth.
 - **Accountability** – If this isn't realistic for you, don't sign up. The kids deserve better.
+- "*Three claps if you're with me*"
 
 ### Pre-Season Prep
 - Walk each coach through:
@@ -70,6 +71,34 @@
 > I coach the OL coach on stance, footwork, combo blocks, and communication. Nothing is assumed. Everything is taught.
 
 > Determine scheme before formation.
+
+### Terminology
+#### 5 Eligible Receivers
+- H
+  - the half back.
+  - stands in the back field
+- Y
+  - Tight End
+- Z
+  - Wide Receiver goes to the call (LT || RT)
+  - Y follows
+  - Traditionally off the line.
+- X 
+  - Goes away from the call
+    - For example IZ RT, the x will line up on the left side fo the formation.
+  - Usually solo on trips formations.
+- F
+  - Do it all
+  - Can play FUll back
+  - Can play in the Slot
+  - Can play the second TE
+
+### Wide Receiver alignment
+- If in the middle
+  - Outside receivers line up bottom of the numbers
+- Else
+  - Short Field outside receiver lines up half way between the bottom of the numbers and sideline.
+  - Far side receiver half way between top of numbers and hash.
 
 ### Passing Play Install - Stick
 For the stick concept, the "stick" receiver & the QB are reacting to the OLB.
@@ -635,6 +664,7 @@ This file lives in the repo only. Not part of the public site.
 - [Armchair Coach Justin - Pass Protection Explained](https://youtu.be/5jJaJNv9oKg?si=TujAmowPLYOsdji4)
 - [Biggien Sports Network - Inside Zone vs Duo](https://youtu.be/FaA6CvWjlmQ?si=fvdyB6nTK_D4flU9)
 - [Gruden Explains the Bunch Formation | Gruden’s Glossary](https://youtu.be/f0t4M7ad2qY?si=RO_f8thQ1gN9BdmX)
+- [Gruden Explains Basic Offensive Formations | Gruden’s Glossary](https://youtu.be/2Rk0K-w5DYA?si=tqDJOtI-occD84Ou)
 
 ### Football Play Ideas
 - [Film Waters - C gap insert](https://youtu.be/ozOcqWj7kh8?si=aRoDwc5r0J-rDSsJ)
