@@ -39,7 +39,7 @@
 - **Preparation** – Know your role, the install, and how to run your indy period.
 - **Humility** – Be open to learning and growth.
 - **Accountability** – If this isn't realistic for you, don't sign up. The kids deserve better.
-- "*Three claps if you're with me*"
+
 
 ### Pre-Season Prep
 - Walk each coach through:
@@ -100,6 +100,7 @@
   - Short Field outside receiver lines up half way between the bottom of the numbers and sideline.
   - Far side receiver half way between top of numbers and hash.
 
+- "*Three claps if you're with me*"
 ### Passing Play Install - Stick
 For the stick concept, the "stick" receiver & the QB are reacting to the OLB.
 ```

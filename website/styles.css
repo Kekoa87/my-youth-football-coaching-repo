@@ -1234,3 +1234,50 @@ footer p {
 .concept-diagram-placeholder img:hover {
   opacity: 0.7;
 }
+
+/* Two-column scheme layout */
+.scheme-two-column {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.scheme-column {
+  flex: 1;
+}
+
+/* Responsive: stack columns on small screens */
+@media (max-width: 700px) {
+  .scheme-two-column {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Additional mobile-friendly breakpoint requested by user */
+@media (max-width: 768px) {
+  .scheme-two-column {
+    flex-direction: column;
+  }
+}
+
+.blocking-rule-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.blocking-rule-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Stack on small screens */
+@media (max-width: 768px) {
+    .blocking-rule-images {
+        grid-template-columns: 1fr;
+    }
+}
+
