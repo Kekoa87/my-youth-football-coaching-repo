@@ -26,108 +26,112 @@
     </div>
     <p>Here are some linebacker drills I've found through my research. These clips focus on tackling, footwork, run fits, coverage reads, and mobility—all critical for developing instinctive and physical linebackers at the youth level.</p>
 
-    <div class="drill-filters">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="tackling">Tackling</button>
-        <button class="filter-btn" data-filter="footwork">Footwork</button>
-        <button class="filter-btn" data-filter="coverage">Coverage</button>
-        <button class="filter-btn" data-filter="reads">Reads</button>
+    <div class="filter-bar-container">
+        <button class="scroll-btn scroll-btn-left" aria-label="Scroll filters left">&lsaquo;</button>
+        <div class="drill-filters-wrapper">
+            <div class="drill-filters" role="tablist">
+                <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Drills</button>
+                <button class="filter-btn" role="tab" aria-selected="false" data-filter="footwork">Footwork</button>
+                <button class="filter-btn" role="tab" aria-selected="false" data-filter="tackling">Tackling</button>
+                <button class="filter-btn" role="tab" aria-selected="false" data-filter="reads">Reads</button>
+                <button class="filter-btn" role="tab" aria-selected="false" data-filter="fundamentals">Fundamentals</button>
+            </div>
+        </div>
+        <button class="scroll-btn scroll-btn-right" aria-label="Scroll filters right">&rsaquo;</button>
     </div>
 
     <div class="drills-grid">
       <div class="drill-card" data-category="footwork" data-tags="reaction">
         <h3>Denzel Perryman - Reaction & Footwork</h3>
-        <p>Improve reaction time and footwork with these drills from NFL LB Denzel Perryman.</p>
         <a href="https://www.youtube.com/watch?v=W9KF71SHGv0" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.youtube.com/vi/W9KF71SHGv0/hqdefault.jpg" alt="Denzel Perryman LB Drills" class="youtube-thumbnail" />
+          <img src="https://img.youtube.com/vi/W9KF71SHGv0/hqdefault.jpg" alt="Denzel Perryman LB Drills" class="youtube-thumbnail" />
         </a>
       </div>
 
       <div class="drill-card" data-category="fundamentals">
-        <h3>Eagles - Train Like an All-Pro</h3>
-        <p>A look at how professional linebackers train their body and mind for the game.</p>
+        <h3>Philadelphia Eagles - Train Like an All-Pro NFL LB</h3>
         <a href="https://www.youtube.com/watch?v=MnuUx57yyd4" target="_blank" rel="noopener noreferrer">
-          <img 
-            src="https://img.youtube.com/vi/MnuUx57yyd4/hqdefault.jpg" 
-            alt="Philadelphia Eagles - How to Train Like an All-Pro Linebacker"
-            class="youtube-thumbnail" 
-          />
+          <img src="https://img.youtube.com/vi/MnuUx57yyd4/hqdefault.jpg" alt="Eagles All-Pro LB Training" class="youtube-thumbnail" />
         </a>
       </div>
 
-      <div class="drill-card" data-category="fundamentals">
-        <h3>Isaac Hadac - Advice to Young LBs</h3>
-        <p>Essential advice for youth linebackers looking to improve their game.</p>
+      <div class="drill-card" data-category="fundamentals" data-tags="youth">
+        <h3>Isaac Hadac - Advice to young linebackers</h3>
         <div class="video-container">
           <iframe loading="lazy" src="https://www.youtube.com/embed/9QnLyho4EWE" title="Advice to young lbs" allowfullscreen></iframe>
         </div>
       </div>
 
-      <div class="drill-card" data-category="technique">
-        <h3>Isaac Hadac - Coaching D1 LBs</h3>
-        <p>Insight into a full coaching session with a D1 linebacker prospect.</p>
+      <div class="drill-card" data-category="fundamentals">
+        <h3>Isaac Hadac - I Coached a D1 Linebacker (Part 2)</h3>
         <div class="video-container">
-          <iframe loading="lazy" src="https://www.youtube.com/embed/C29g5iJ-nPA" title="I Coached a D1 LB - Isaac Hadac" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/sy2U9krTsC0" title="I Coached a D1 LB - Part 2" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="drill-card" data-category="fundamentals" data-tags="coaching">
+        <h3>Isaac Hadac - I Coached a D1 LB (Full Session)</h3>
+        <div class="video-container">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/C29g5iJ-nPA" title="Full Session Isaac Hadac" allowfullscreen></iframe>
         </div>
       </div>
 
       <div class="drill-card" data-category="fundamentals">
-        <h3>Isaac Hadac - Secrets to Becoming D1</h3>
-        <p>Discover the secrets and work ethic required to reach the D1 level at linebacker.</p>
+        <h3>SECRETS to Becoming a D1 Linebacker</h3>
         <div class="video-container">
-          <iframe loading="lazy" src="https://www.youtube.com/embed/PrrAkGVFAR8" title="The SECRETS to Becoming a D1 Linebacker" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/PrrAkGVFAR8" title="SECRETS to D1 LB" allowfullscreen></iframe>
         </div>
       </div>
 
-      <div class="drill-card" data-category="footwork">
-        <h3>Isaac Hadac - Top PA LB Drills</h3>
-        <p>Drills used by some of the top high school linebackers in Pennsylvania.</p>
+      <div class="drill-card" data-category="fundamentals">
+        <h3>Isaac Hadac - LB Drills (#1 in PA)</h3>
         <div class="video-container">
-          <iframe loading="lazy" src="https://www.youtube.com/embed/TbPQwFzKp7M" title="Linebacker Drills - #1 in PA" allowfullscreen></iframe>
+          <iframe loading="lazy" src="https://www.youtube.com/embed/TbPQwFzKp7M" title="LB Drills PA" allowfullscreen></iframe>
         </div>
       </div>
 
-      <div class="drill-card" data-category="tackling" data-tags="shedding">
-        <h3>Bobby Wagner - Shedding Blocks & Tackling</h3>
-        <p>Learn block shedding and tackling techniques from one of the best in the business.</p>
+      <div class="drill-card" data-category="fundamentals">
+        <h3>Isaac Hadac - How I became a Better LB</h3>
+        <div class="video-container">
+          <iframe loading="lazy" src="https://www.youtube.com/embed/Zb3v5HQ7vy4" title="How I became a Better LB" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <div class="drill-card" data-category="tackling" data-tags="shedding-blocks">
+        <h3>Bobby Wagner - Shed Blocks & Make Tackles</h3>
         <a href="https://www.youtube.com/watch?v=TaNMYKJoA80" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.youtube.com/vi/TaNMYKJoA80/hqdefault.jpg" alt="LB Drills & Techniques to Shed Blocks & Make Tackles like Bobby Wagner" class="youtube-thumbnail" />
+          <img src="https://img.youtube.com/vi/TaNMYKJoA80/hqdefault.jpg" alt="Bobby Wagner LB Drills" class="youtube-thumbnail" />
         </a>
       </div>
 
-      <div class="drill-card" data-category="footwork" data-tags="pursuit">
+      <div class="drill-card" data-category="fundamentals" data-tags="pursuit">
         <h3>Darius Leonard - Stance & Pursuit</h3>
-        <p>Improve your stance and pursuit angles with drills inspired by Darius Leonard.</p>
         <a href="https://www.youtube.com/watch?v=VY1OUACvfYg" target="_blank" rel="noopener noreferrer">
-        <img src="https://img.youtube.com/vi/VY1OUACvfYg/hqdefault.jpg" alt="Linebacker Drills: How to Improve Stance & Pursuit like Darius Leonard!" class="youtube-thumbnail" />
+          <img src="https://img.youtube.com/vi/VY1OUACvfYg/hqdefault.jpg" alt="Darius Leonard LB Drills" class="youtube-thumbnail" />
         </a>
       </div>
 
       <div class="drill-card" data-category="tackling">
-        <h3>USA Football - Tackle Tube Fill Drill</h3>
-        <p>A great drill using a tackle tube to practice filling holes and making tackles.</p>
+        <h3>USA Football – Tackle Tube Tuesday: LB Fill Drill</h3>
         <div class="video-container">
           <iframe loading="lazy" src="https://www.youtube.com/embed/QVA8q1VY6vE" title="USA Football LB Fill Drill" allowfullscreen></iframe>
         </div>
       </div>
 
       <div class="drill-card" data-category="footwork">
-        <h3>CAB Training - Cone Drills</h3>
-        <p>Develop agility and playmaking ability with these intensive cone drills.</p>
+        <h3>CAB Training – LB Cone Drills</h3>
         <div class="video-container">
           <iframe loading="lazy" src="https://www.youtube.com/embed/C3QGd3fub5E" title="CAB Training LB Cone Drills" allowfullscreen></iframe>
         </div>
       </div>
 
       <div class="drill-card" data-category="reads">
-        <h3>Defensive Insider - Miami Read Drill</h3>
-        <p>A fast-paced read drill to improve linebacker instincts and decision making.</p>
+        <h3>Defensive Insider – Miami LB Fast Read Drill</h3>
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CuUqxqZAPik/" data-instgrm-version="14"></blockquote>
       </div>
 
-      <div class="drill-card" data-category="footwork">
-        <h3>Matt Bowen - LB Drill Work</h3>
-        <p>Expert linebacker drill work focused on footwork and fundamentals.</p>
+      <div class="drill-card" data-category="footwork" data-tags="fundamentals">
+        <h3>Matt Bowen – Linebacker Drill Work</h3>
         <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CrGrFXct3ci/" data-instgrm-version="14"></blockquote>
       </div>
     </div>

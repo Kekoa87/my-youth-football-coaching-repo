@@ -20,113 +20,143 @@
 
 <main class="about-page-main">
     <div class="container">
-        <div class="page-header" style="margin-bottom: var(--space-lg);">
-            <h1>Tackle Drills</h1>
-            <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 03, 2025</p>
+      <div class="page-header" style="margin-bottom: var(--space-lg);">
+        <h1>Tackle Drills</h1>
+        <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 03, 2025</p>
+      </div>
+      <p>Tackling must be taught with an emphasis on safety, technique, and control. These drills focus on proper form—keeping the head up, wrapping up, and driving through the ball carrier—while building confidence and reinforcing good habits.</p>
+
+      <div class="filter-bar-container">
+          <button class="scroll-btn scroll-btn-left" aria-label="Scroll filters left">&lsaquo;</button>
+          <div class="drill-filters-wrapper">
+              <div class="drill-filters" role="tablist">
+                  <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Drills</button>
+                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="fundamentals">Fundamentals</button>
+                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="form">Form</button>
+                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="tackle-tube">Tackle Tube</button>
+                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="advanced">Advanced</button>
+              </div>
+          </div>
+          <button class="scroll-btn scroll-btn-right" aria-label="Scroll filters right">&rsaquo;</button>
+      </div>
+
+      <div class="drills-grid">
+        <!-- Fundamentals -->
+        <div class="drill-card" data-category="fundamentals">
+          <h3>The Proper Tackling Stance</h3>
+          <p>4 Key points: Feet shoulder width, squeeze shoulder blades, sink (bend knees/waist), and hands ready for uppercuts.</p>
         </div>
-        <p>Tackling is one of the most important skills in youth football and must be taught with an emphasis on safety, technique, and control. Our drills focus on proper form—keeping the head up, wrapping up, and driving through the ball carrier—while building confidence and reinforcing good habits.</p>
 
-        <div class="drill-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="fundamentals">Fundamentals</button>
-            <button class="filter-btn" data-filter="form">Form</button>
-            <button class="filter-btn" data-filter="tackle-tube">Tackle Tube</button>
-            <button class="filter-btn" data-filter="advanced">Advanced</button>
+        <div class="drill-card" data-category="fundamentals">
+          <h3>Near Foot Drill</h3>
+          <p>Explode into the near foot stance on command. Leading with the correct foot is essential for leverage.</p>
+          <img src="/website/images/nearFoot.png" alt="Near Foot Stance" />
         </div>
 
-        <div class="drills-grid">
-            <div class="drill-card" data-category="fundamentals">
-                <h3>The Stance</h3>
-                <p>4 Key points: Feet shoulder width, squeeze shoulder blades, sink hips, and hands ready for uppercuts.</p>
-                <ul>
-                    <li><strong>Feet:</strong> Shoulder width apart, weight on balls of feet</li>
-                    <li><strong>Squeeze:</strong> Shoulder blades</li>
-                    <li><strong>Sink:</strong> Bend the knees, lower waist</li>
-                    <li><strong>Hands:</strong> Ready to throw upper cuts</li>
-                </ul>
-            </div>
-
-            <div class="drill-card" data-category="fundamentals">
-                <h3>Near Foot</h3>
-                <p>Explode into the near foot stance from a proper football stance on command.</p>
-                <img src="../../../images/nearFoot.png" alt="Near Foot Stance" />
-            </div>
-
-            <div class="drill-card" data-category="fundamentals">
-                <h3>Swoop</h3>
-                <p>Breakdown position as the tackler approaches with leading foot based on leverage.</p>
-                <div style="display: flex; flex-wrap: wrap; gap: 5px; justify-content: center;">
-                    <img src="../../../images/drills/swoop01.png" alt="swoop 01" style="width: 45%;" />
-                    <img src="../../../images/drills/swoop02.png" alt="swoop 02" style="width: 45%;" />
-                </div>
-            </div>
-
-            <div class="drill-card" data-category="fundamentals">
-                <h3>Shoot</h3>
-                <p>Explode forward from a kneeling position, sinking and hitting while keeping the head up.</p>
-                <img src="../../../images/drills/shoot01.png" alt="shoot 01" />
-            </div>
-
-            <div class="drill-card" data-category="fundamentals">
-                <h3>Upper Cuts</h3>
-                <p>Drive for 5 yards using uppercuts. Can be practiced with an exercise ball for varied angles.</p>
-                <img src="../../../images/drills/upperCut01.png" alt="Upper Cut 01" />
-            </div>
-
-            <div class="drill-card" data-category="form">
-                <h3>Near Hip</h3>
-                <p>Track the runner's near hip to maintain proper leverage and positioning.</p>
-                <img src="../../../images/drills/NearHipDrill.png" alt="Near Hip Drill" />
-            </div>
-
-            <div class="drill-card" data-category="form">
-                <h3>Run & Gather</h3>
-                <p>Mirror the ball carrier and gather into a swoop when they sink their hips.</p>
-                <div class="video-container">
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/WMDLgwpoJRI" title="Run & Gather" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="drill-card" data-category="form">
-                <h3>All Blacks Rugby - Tackle Form</h3>
-                <p>Learn safe and effective tackling form used by the world-famous All Blacks rugby team.</p>
-                <div class="video-container">
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/JTEpg96ues4" title="Rugby" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="drill-card" data-category="form">
-                <h3>Low Impact Tackling</h3>
-                <p>Focus on technique and form without the heavy impact of full-speed contact.</p>
-                <div class="video-container">
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/qwh7Xus7wjY" title="Low Impact Tackling" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="drill-card" data-category="tackle-tube">
-                <h3>Leverage Step and Drive</h3>
-                <p>Practice the leverage step and drive using tackle tubes for safe, repetitive work.</p>
-                <div class="video-container">
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/hQDwfUZjdbg" title="Leverage Step and Drive" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="drill-card" data-category="tackle-tube">
-                <h3>Half-field Cornerback/Safety</h3>
-                <p>Tackle tube drill specifically designed for defensive backs in open field situations.</p>
-                <div class="video-container">
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/c1HxmWee5pY" title="Half-field" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <div class="drill-card" data-category="advanced" data-tags="linebacker">
-                <h3>Linebacker Fill Drill</h3>
-                <p>Simulate filling gaps and attacking the ball carrier with a tackle tube and bags.</p>
-                <div class="video-container">
-                    <iframe loading="lazy" src="https://www.youtube.com/embed/QVA8q1VY6vE" title="Linebacker Fill Drill" allowfullscreen></iframe>
-                </div>
-            </div>
+        <div class="drill-card" data-category="fundamentals">
+          <h3>Swoop (Breakdown Position)</h3>
+          <p>Approach the ball-carrier with the appropriate lead foot based on leverage. Freeze in place at the end of the bag.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+              <img src="/website/images/drills/swoop01.png" alt="swoop 01" style="width: 45%;" />
+              <img src="/website/images/drills/swoop02.png" alt="swoop 02" style="width: 45%;" />
+          </div>
         </div>
+
+        <div class="drill-card" data-category="fundamentals">
+          <h3>Shoot Drill</h3>
+          <p>Sink at the waist and explode forward while throwing uppercuts. Keep head up and cleats out of the grass.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+              <img src="/website/images/drills/shoot01.png" alt="shoot 01" style="width: 45%;" />
+              <img src="/website/images/drills/shoot02.png" alt="shoot 02" style="width: 45%;" />
+          </div>
+        </div>
+
+        <div class="drill-card" data-category="fundamentals">
+          <h3>Upper Cuts</h3>
+          <p>Drive for 5 yards using uppercuts. Can be done with a large exercise ball to vary angles.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
+              <img src="/website/images/drills/upperCut01.png" alt="Upper Cut 01" style="width: 45%;" />
+              <img src="/website/images/drills/upperCut02.png" alt="Upper Cut 02" style="width: 45%;" />
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="drill-card" data-category="form">
+          <h3>Near Foot Near Shoulder</h3>
+          <p>Two players stand 5 yards apart. Tackler leads with near foot and touches with near shoulder-side hand.</p>
+        </div>
+
+        <div class="drill-card" data-category="form" data-tags="reads">
+          <h3>Near Hip Tracking</h3>
+          <p>Tackler tracks the runner through cones, watching the runner’s hip and maintaining correct foot lead.</p>
+          <img src="/website/images/drills/NearHipDrill.png" alt="Near Hip Drill" />
+        </div>
+
+        <div class="drill-card" data-category="form">
+          <h3>Run & Gather</h3>
+          <p>Mirror the ball carrier and gather into a swoop when they sink their hips to stay balanced.</p>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/WMDLgwpoJRI" title="Run & Gather" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="drill-card" data-category="form">
+          <h3>Form Tackle Progression</h3>
+          <p>Complete sequence: Run, Swoop, Upper cuts, Drive for five, Head up for vision.</p>
+        </div>
+
+        <div class="drill-card" data-category="form">
+          <h3>All Blacks Rugby - Tackle Form</h3>
+          <p>Excellent cross-sport example of safe and effective tackling mechanics.</p>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/JTEpg96ues4" title="Rugby Tackle Form" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="drill-card" data-category="form" data-tags="safety">
+          <h3>Low Impact Tackling</h3>
+          <p>Training safe contact without high-velocity collisions.</p>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/qwh7Xus7wjY" title="Low Impact Tackling" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- Advanced -->
+        <div class="drill-card" data-category="advanced">
+          <h3>Angle & Sprint Tackles</h3>
+          <p>Form tackling with resistance. Bag carrier walks or sprints at various angles away from the tackler.</p>
+        </div>
+
+        <div class="drill-card" data-category="advanced" data-tags="progression">
+          <h3>Drive Progressions</h3>
+          <p>Kneeling, Standing, 2-Step, and Running drives. Progress from no pads to full pads with increasing movement.</p>
+        </div>
+
+        <!-- Tackle Tube -->
+        <div class="drill-card" data-category="tackle-tube">
+          <h3>Tackle Tube: Leverage Step and Drive</h3>
+          <p>Take 2–3 steps before landing on tube. Emphasizes near foot/shoulder lead.</p>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/hQDwfUZjdbg" title="Leverage Step and Drive" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="drill-card" data-category="tackle-tube">
+          <h3>Tackle Tube Tuesday: Cornerback/Safety</h3>
+          <p>Half-field tackling drill for secondary players using the tackle tube.</p>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/c1HxmWee5pY" title="CB/Safety Tackle Tube" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="drill-card" data-category="tackle-tube" data-tags="linebacker">
+          <h3>Linebacker Fill Drill</h3>
+          <p>Simulate OL gaps. LB must scan gap before attacking the rolled tube. Shoulder lead depends on runner direction.</p>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/QVA8q1VY6vE" title="LB Fill Drill" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
     </div>
 </main>
 

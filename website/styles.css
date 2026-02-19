@@ -1203,6 +1203,139 @@ footer p {
   display: none;
 }
 
+/* Filter Bar Component */
+.filter-bar-container {
+  position: sticky;
+  top: 100px; /* Adjust based on header height, will be tuned in JS or media queries */
+  z-index: 1001;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--box-shadow-sm);
+  margin-bottom: var(--space-xl);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: top 0.3s ease;
+}
+
+.drill-filters-wrapper {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.drill-filters {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--space-sm);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: 0; /* Override previous margin */
+  justify-content: flex-start; /* Ensure scroll starts from left */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.drill-filters::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
+}
+
+.filter-btn {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  white-space: nowrap;
+}
+
+/* Gradient Indicators */
+.filter-bar-container::before,
+.filter-bar-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50px;
+  z-index: 2;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.filter-bar-container::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-white), transparent);
+}
+
+.filter-bar-container::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-white), transparent);
+}
+
+.filter-bar-container.has-scroll-left::before {
+  opacity: 1;
+}
+
+.filter-bar-container.has-scroll-right::after {
+  opacity: 1;
+}
+
+/* Scroll Buttons (Chevrons) */
+.scroll-btn {
+  display: none; /* Hidden by default, shown on desktop hover */
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+  margin: 0 var(--space-sm);
+  color: var(--color-primary);
+  box-shadow: var(--box-shadow-sm);
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.filter-bar-container:hover .scroll-btn {
+  opacity: 1;
+}
+
+.scroll-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.scroll-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Sticky Offset Adjustments */
+@media (min-width: 768px) {
+  .filter-bar-container {
+    top: 156px; /* Approx desktop header height (Title + Nav) */
+  }
+  .scroll-btn {
+    display: flex;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .filter-bar-container {
+    top: 70px; /* Approx mobile header height */
+  }
+  .drill-filters {
+    padding: var(--space-sm) var(--space-md);
+  }
+}
+
 .passing-concept-card h3 {
   color: var(--color-primary-dark, #133728); /* Use variable or fallback */
   margin-bottom: var(--space-md, 10px); /* Use variable or fallback */

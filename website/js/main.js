@@ -159,7 +159,11 @@ function filterDrills(category) {
   const buttons = document.querySelectorAll('.filter-btn');
 
   cards.forEach(card => {
-    if (category === 'all' || card.dataset.category === category || (card.dataset.tags && card.dataset.tags.includes(category))) {
+    const tags = card.dataset.tags ? card.dataset.tags.split(',').map(t => t.trim()) : [];
+    const isCategoryMatch = category === 'all' || card.dataset.category === category;
+    const isTagMatch = tags.includes(category);
+
+    if (isCategoryMatch || isTagMatch) {
       card.classList.remove('hidden');
     } else {
       card.classList.add('hidden');
@@ -167,11 +171,9 @@ function filterDrills(category) {
   });
 
   buttons.forEach(btn => {
-    if (btn.dataset.filter === category) {
-      btn.classList.add('active');
-    } else {
-      btn.classList.remove('active');
-    }
+    const isSelected = btn.dataset.filter === category;
+    btn.classList.toggle('active', isSelected);
+    btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
   });
 }
 
@@ -188,15 +190,71 @@ function initializeDrillFilters() {
   });
 }
 
-// Call the function to initialize lightbox and filters
+// Function to initialize the enterprise-level drill filter bar
+function initializeDrillFilterBar() {
+  const container = document.querySelector('.filter-bar-container');
+  const scrollContainer = document.querySelector('.drill-filters');
+  const btnLeft = document.querySelector('.scroll-btn-left');
+  const btnRight = document.querySelector('.scroll-btn-right');
+
+  if (!container || !scrollContainer) return;
+
+  const updateIndicators = () => {
+    const scrollLeft = scrollContainer.scrollLeft;
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+    // Use a small threshold (1px) to avoid sub-pixel flickering
+    container.classList.toggle('has-scroll-left', scrollLeft > 1);
+    container.classList.toggle('has-scroll-right', scrollLeft < maxScroll - 1);
+  };
+
+  const smoothScrollBy = (amount) => {
+    scrollContainer.scrollBy({ left: amount, behavior: 'smooth' });
+  };
+
+  // Scroll event for gradients with passive listener for performance
+  scrollContainer.addEventListener('scroll', updateIndicators, { passive: true });
+
+  // Chevron clicks for desktop
+  if (btnLeft) {
+    btnLeft.addEventListener('click', () => smoothScrollBy(-300));
+  }
+  if (btnRight) {
+    btnRight.addEventListener('click', () => smoothScrollBy(300));
+  }
+
+  // Keyboard navigation when focus is within the filter bar
+  container.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      smoothScrollBy(200);
+      e.preventDefault(); // Prevent page scroll
+    } else if (e.key === 'ArrowLeft') {
+      smoothScrollBy(-200);
+      e.preventDefault(); // Prevent page scroll
+    }
+  });
+
+  // Initial check to set correct gradient visibility
+  updateIndicators();
+
+  // Handle window resize to re-calculate overflow
+  window.addEventListener('resize', updateIndicators, { passive: true });
+
+  // Re-check after a short delay to ensure dynamic content and layout are stable
+  setTimeout(updateIndicators, 200);
+}
+
+// Call the functions to initialize components
 // We need to ensure this runs after the DOM is loaded.
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initializeLightbox();
       initializeDrillFilters();
+      initializeDrillFilterBar();
     });
 } else {
     // DOMContentLoaded has already fired
     initializeLightbox();
     initializeDrillFilters();
+    initializeDrillFilterBar();
 }

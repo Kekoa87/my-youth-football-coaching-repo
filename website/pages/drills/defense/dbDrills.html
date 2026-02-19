@@ -33,11 +33,17 @@
             and read offensive formations — the fundamentals every young DB needs to succeed.
         </p>
 
-        <div class="drill-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="footwork">Footwork</button>
-            <button class="filter-btn" data-filter="coverage">Coverage</button>
-            <button class="filter-btn" data-filter="fundamentals">Fundamentals</button>
+        <div class="filter-bar-container">
+            <button class="scroll-btn scroll-btn-left" aria-label="Scroll filters left">&lsaquo;</button>
+            <div class="drill-filters-wrapper">
+                <div class="drill-filters" role="tablist">
+                    <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Drills</button>
+                    <button class="filter-btn" role="tab" aria-selected="false" data-filter="footwork">Footwork</button>
+                    <button class="filter-btn" role="tab" aria-selected="false" data-filter="coverage">Coverage</button>
+                    <button class="filter-btn" role="tab" aria-selected="false" data-filter="fundamentals">Fundamentals</button>
+                </div>
+            </div>
+            <button class="scroll-btn scroll-btn-right" aria-label="Scroll filters right">&rsaquo;</button>
         </div>
 
         <div class="drills-grid">
@@ -67,7 +73,7 @@
             </div>
 
             <div class="drill-card" data-category="footwork" data-tags="coverage">
-                <h3>Instagram - DB Footwork Examples</h3>
+                <h3>DB Footwork & Hip Turns</h3>
                 <p>Real-world examples of footwork and hip turns for defensive backs.</p>
                 <blockquote
                     class="instagram-media"
@@ -77,7 +83,7 @@
             </div>
 
             <div class="drill-card" data-category="coverage">
-                <h3>Instagram - Coverage Reps</h3>
+                <h3>DB Coverage Reps</h3>
                 <p>Visual examples of proper coverage technique and positioning.</p>
                 <blockquote
                     class="instagram-media"
