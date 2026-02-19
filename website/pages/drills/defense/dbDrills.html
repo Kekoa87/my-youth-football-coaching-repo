@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Develop quick feet, sharp instincts, and confident coverage skills with our defensive back drills. These exercises are designed to teach youth players how to backpedal, break on the ball, tackle in space, and read offensive formations — the fundamentals every young DB needs to succeed.">
-  <title>Defensive Back  Drills | Youth Football Coaching Hub</title>
+  <title>Defensive Back Drills | Youth Football Coaching Hub</title>
   <link rel="stylesheet" href="../../../styles.css">
   <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png">
 </head>
@@ -33,11 +33,17 @@
             and read offensive formations — the fundamentals every young DB needs to succeed.
         </p>
 
-        <section>
-            <h2>YouTube Videos</h2>
+        <div class="drill-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="footwork">Footwork</button>
+            <button class="filter-btn" data-filter="coverage">Coverage</button>
+            <button class="filter-btn" data-filter="fundamentals">Fundamentals</button>
+        </div>
 
-            <article>
-                <h3>Play Football - Defensive Back Drills w/ Taylor Rapp to Improve Back Pedaling, Coverage & Technique</h3>
+        <div class="drills-grid">
+            <div class="drill-card" data-category="coverage" data-tags="footwork,technique">
+                <h3>Taylor Rapp - Back Pedaling & Coverage</h3>
+                <p>Improve back pedaling, coverage, and technique with tips from NFL safety Taylor Rapp.</p>
                 <a href="https://www.youtube.com/watch?v=YI7b26LyPqQ" target="_blank" rel="noopener noreferrer">
                     <img
                         src="https://img.youtube.com/vi/YI7b26LyPqQ/hqdefault.jpg"
@@ -45,10 +51,11 @@
                         class="youtube-thumbnail"
                     />
                 </a>
-            </article>
+            </div>
 
-            <article>
-                <h3>USA Football - Northwestern Wildcats Shuffle, Pedal, Angle Break Drill</h3>
+            <div class="drill-card" data-category="footwork">
+                <h3>Northwestern Wildcats - Shuffle, Pedal, Angle Break</h3>
+                <p>A classic drill from USA Football focusing on the fundamental movements of a defensive back.</p>
                 <div class="video-container">
                     <iframe
                         loading="lazy"
@@ -57,56 +64,42 @@
                         allowfullscreen>
                     </iframe>
                 </div>
-            </article>
-        </section>
+            </div>
 
-        <section>
-            <h2>Instagram Resources</h2>
-            <p>
-                Here are some helpful reels from various creators covering defensive back techniques,
-                drills, and movement skills.
-            </p>
-
-            <article>
-                <h3>Defensive Back Drill Examples</h3>
-                <p>
-                    These clips show real footwork, hip turns, and coverage reps that can help players
-                    visualize proper technique.
-                </p>
-
+            <div class="drill-card" data-category="footwork" data-tags="coverage">
+                <h3>Instagram - DB Footwork Examples</h3>
+                <p>Real-world examples of footwork and hip turns for defensive backs.</p>
                 <blockquote
                     class="instagram-media"
                     data-instgrm-permalink="https://www.instagram.com/p/Crw8tagAjX8/"
-                    data-instgrm-version="14"
-                    style="background:#FFF; border:0; margin: 1em 0; padding:0;">
+                    data-instgrm-version="14">
                 </blockquote>
+            </div>
 
+            <div class="drill-card" data-category="coverage">
+                <h3>Instagram - Coverage Reps</h3>
+                <p>Visual examples of proper coverage technique and positioning.</p>
                 <blockquote
                     class="instagram-media"
                     data-instgrm-permalink="https://www.instagram.com/p/Cd3P2XZsVkT/"
-                    data-instgrm-version="14"
-                    style="background:#FFF; border:0; margin: 1em 0; padding:0;">
+                    data-instgrm-version="14">
                 </blockquote>
-            </article>
-        </section>
+            </div>
 
-        <section>
-            <h2>Additional Resources</h2>
-
-            <article>
-                <h3>Glazier Clinics - Defensive Back Coaching Insight</h3>
-                <p>
-                    A strong breakdown from Glazier Clinics covering defensive back fundamentals
-                    and overall coaching perspective.
-                </p>
-                <a
-                    href="https://x.com/GlazierClinics/status/2015849040001356243?s=20"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    View on X
-                </a>
-            </article>
-        </section>
+            <div class="drill-card" data-category="fundamentals">
+                <h3>Glazier Clinics - DB Coaching Insight</h3>
+                <p>Coaching fundamentals and perspective for developing young defensive backs.</p>
+                <div style="text-align: center; margin-top: auto;">
+                    <a
+                        href="https://x.com/GlazierClinics/status/2015849040001356243?s=20"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="read-more">
+                        View on X
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </main>
 
@@ -118,6 +111,7 @@
       document.getElementById('site-footer').innerHTML = data;
     });
 </script>
+<script src="../../../js/main.js"></script>
 <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>

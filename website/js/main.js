@@ -153,14 +153,50 @@ function initializeLightbox() {
   }
 }
 
-// Call the function to initialize lightbox functionality
+// Function to filter drills
+function filterDrills(category) {
+  const cards = document.querySelectorAll('.drill-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category || (card.dataset.tags && card.dataset.tags.includes(category))) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+
+  buttons.forEach(btn => {
+    if (btn.dataset.filter === category) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+}
+
+// Initialize drill filters
+function initializeDrillFilters() {
+  const filterContainer = document.querySelector('.drill-filters');
+  if (!filterContainer) return;
+
+  filterContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('filter-btn')) {
+      const filter = e.target.dataset.filter;
+      filterDrills(filter);
+    }
+  });
+}
+
+// Call the function to initialize lightbox and filters
 // We need to ensure this runs after the DOM is loaded.
-// If there's an existing onload or DOMContentLoaded, add to it.
-// For simplicity, we'll try calling it directly.
-// If issues arise, we might need to hook into an existing DOM ready function.
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeLightbox);
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeLightbox();
+      initializeDrillFilters();
+    });
 } else {
     // DOMContentLoaded has already fired
     initializeLightbox();
+    initializeDrillFilters();
 }

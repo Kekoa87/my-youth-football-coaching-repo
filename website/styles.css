@@ -1122,6 +1122,87 @@ footer p {
 }
 /* End of New Run Concept Styling */
 
+/* Drills Layout */
+.drills-container {
+  margin-top: var(--space-lg);
+}
+
+.drills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.drill-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.drill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.drill-card h3, .drill-card h4, .drill-card h5 {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+.drill-card p {
+  font-size: var(--font-size-base);
+  color: var(--color-dark);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.drill-card .video-container,
+.drill-card .youtube-thumbnail,
+.drill-card .instagram-media,
+.drill-card .twitter-tweet {
+  margin-top: auto; /* Push media to bottom if desired, or keep flow */
+  margin-bottom: 0;
+}
+
+/* Category Filters */
+.drill-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  justify-content: center;
+}
+
+.filter-btn {
+  background-color: var(--color-light);
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-family: var(--font-family-sans-serif);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.drill-card.hidden {
+  display: none;
+}
+
 .passing-concept-card h3 {
   color: var(--color-primary-dark, #133728); /* Use variable or fallback */
   margin-bottom: var(--space-md, 10px); /* Use variable or fallback */
