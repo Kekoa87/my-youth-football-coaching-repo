@@ -642,6 +642,10 @@ This file lives in the repo only. Not part of the public site.
 - [How to Coach Slide Pass Protection | Joe Daniel Football](https://youtu.be/I_Gf5aCo1zg?si=QbNgNn3Kmet6Y_JW)
 - [The Spread Offense - Oklahoma Offensive Line Drills](https://youtu.be/U1GgSWGQqpU?si=gKQO4o3gD0bG_kkP)
 - [vIQtory Football Coaching - Pass Blocking Scheme Basics](https://youtu.be/vsTpQvzwNXI?si=B-pZIJnQIdpYI8Qb)
+- [The Pass Pro Drill Every Lineman Needs](https://youtu.be/iwzq5cywz0M?si=WIo5kIb0-64FoyVR)
+- [Hand Placement Drill for Youth Football Offensive Linemen](https://youtube.com/shorts/tfdaDWv9PdY?si=M1Gy8GLdvPDNW9Mo)
+- [FlipSled: Step, step, and punch drill - OL Blocking for better hands](https://youtube.com/shorts/ZYvlfR-4jls?si=bv90c5_bcGLUwOyr)
+- [Football University - Offensive Line Drills | Hand Placement](https://youtu.be/RBUG6JhE8nY?si=IsFxhK_kNrYC7uiz)
 
 ### Exercise & Conditioning
 - [Sprints](https://youtube.com/shorts/agHssqNb3Yg?si=WYJRL1fwg4646GJs)
@@ -666,6 +670,9 @@ This file lives in the repo only. Not part of the public site.
 - [Biggien Sports Network - Inside Zone vs Duo](https://youtu.be/FaA6CvWjlmQ?si=fvdyB6nTK_D4flU9)
 - [Gruden Explains the Bunch Formation | Gruden’s Glossary](https://youtu.be/f0t4M7ad2qY?si=RO_f8thQ1gN9BdmX)
 - [Gruden Explains Basic Offensive Formations | Gruden’s Glossary](https://youtu.be/2Rk0K-w5DYA?si=tqDJOtI-occD84Ou)
+- [How do you identify your fronts for the Offensive Line! ](https://youtube.com/shorts/_ePd4B0MHWA?si=NXVoUScNHAk8I8LD)
+   > I like the above to show typical fronts seen in football when coming up with blocking assignments.
+
 
 ### Football Play Ideas
 - [Film Waters - C gap insert](https://youtu.be/ozOcqWj7kh8?si=aRoDwc5r0J-rDSsJ)
@@ -675,6 +682,9 @@ This file lives in the repo only. Not part of the public site.
 - [AFA - How To Run Counter](https://youtu.be/FW4gxLkPvKY?si=7285MKYJ_eTG_3Om)
 - [Power and Counter in the Auburn Offense](https://www.collegeandmagnolia.com/2014/8/7/5975453/auburn-offense-gus-malzahn-power-counter-running-game)
 - [Duo: Gap Down Buddy](https://youtube.com/shorts/eCotQUJ3yxE?si=pOgyqqu6ICoSk6KM)
+- [How do you categorize Gap Scheme on Film](https://youtube.com/shorts/tGHx85Pa9QE?si=nhBnvy0P2MZHQ3ji)
+- [Simple Down Blocking Scheme for Youth Football](https://youtu.be/F797-EW_u4c?si=r-zVprjrfRvAyAyE)
+
 
 ### How to Watch Film
 - [How To Study American Football | A Deep Dive into NFL Film Analysis](https://youtu.be/pNfEuU9WntU?si=zzaF-YBV9c35e11h)
@@ -688,6 +698,9 @@ This file lives in the repo only. Not part of the public site.
 ### Quarterback Training
 - [FDT - Training Elite Youth QBs](https://www.youtube.com/watch?v=ll8WrM1iAiI)
 - [FDT - QB Warm Up Routine](https://youtu.be/S9A1xml5u7Y?si=86aGecxa6micoJCF)
+
+### Split Back
+- [How to utilize the 2 Back Run Game](https://youtu.be/yCiui2mWFZc?si=WVH-d1-EXTxfiDg6)
 
 ### Team Drills & Special Teams
 - [Team Open Field Blocking Drill](https://youtube.com/shorts/U3fCcFiRNz0?si=i50woE1oQ_1XN6hz)
