@@ -18,29 +18,30 @@
       });
   </script>
 
-<main class="about-page-main">
+<main class="drills-page-layout">
+  <section class="drills-header-section">
     <div class="container">
-      <div class="page-header" style="margin-bottom: var(--space-lg);">
+      <div class="page-header">
         <h1>Offensive Line Drills</h1>
-        <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025</p>
+        <p style="text-align: center; color: #666; font-style: italic;">
+          Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025
+        </p>
       </div>
-      <p>Everything on offense starts with the line. If you can’t block, you can’t move the ball. I teach my offensive linemen that they are the engine of the team — the unit that makes everything else possible. It’s not the flashiest job, but it’s one of the most important. We train fundamentals, toughness, and unity up front.</p>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto;">Everything on offense starts with the line. If you can’t block, you can’t move the ball. I teach my offensive linemen that they are the engine of the team — the unit that makes everything else possible. It’s not the flashiest job, but it’s one of the most important. We train fundamentals, toughness, and unity up front.</p>
+    </div>
+  </section>
 
-      <div class="filter-bar-container">
-          <button class="scroll-btn scroll-btn-left" aria-label="Scroll filters left">&lsaquo;</button>
-          <div class="drill-filters-wrapper">
-              <div class="drill-filters" role="tablist">
-                  <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Drills</button>
-                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="stance">Stance</button>
-                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="snapping">Snapping</button>
-                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="run-blocking">Run Blocking</button>
-                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="pass-protection">Pass Pro</button>
-                  <button class="filter-btn" role="tab" aria-selected="false" data-filter="fundamentals">Fundamentals</button>
-              </div>
-          </div>
-          <button class="scroll-btn scroll-btn-right" aria-label="Scroll filters right">&rsaquo;</button>
-      </div>
+  <div class="filter-bar-container" data-needs-load="true">
+    <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Drills</button>
+    <button class="filter-btn" role="tab" aria-selected="false" data-filter="stance">Stance</button>
+    <button class="filter-btn" role="tab" aria-selected="false" data-filter="snapping">Snapping</button>
+    <button class="filter-btn" role="tab" aria-selected="false" data-filter="run-blocking">Run Blocking</button>
+    <button class="filter-btn" role="tab" aria-selected="false" data-filter="pass-protection">Pass Pro</button>
+    <button class="filter-btn" role="tab" aria-selected="false" data-filter="fundamentals">Fundamentals</button>
+  </div>
 
+  <section class="drills-grid-section">
+    <div class="container drills-container">
       <div class="drills-grid">
         <!-- Stance -->
         <div class="drill-card" data-category="stance">
@@ -216,6 +217,7 @@
         </div>
       </div>
     </div>
+  </section>
 </main>
 
 <div id="site-footer"></div>

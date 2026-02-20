@@ -233,7 +233,8 @@ main {
 }
 
 /* Styling for the container of articles on index.html */
-main > .container { /* This assumes index.html uses main > div.container for articles */
+/* Exclude modernized layouts to avoid flexbox conflicts */
+main:not(.drills-page-layout):not(.about-page-main) > .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -1123,8 +1124,25 @@ footer p {
 /* End of New Run Concept Styling */
 
 /* Drills Layout */
+.drills-page-layout {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background-color: var(--color-white); /* Shared white background for clean, flush look */
+}
+
+.drills-header-section {
+  padding: var(--space-xl) 0 var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.drills-grid-section {
+  padding: var(--space-lg) 0 var(--space-xxl);
+  min-height: 60vh;
+}
+
 .drills-container {
-  margin-top: var(--space-lg);
+  margin-top: 0;
 }
 
 .drills-grid {
@@ -1211,7 +1229,7 @@ footer p {
   background-color: var(--color-white);
   border-bottom: 1px solid var(--color-border);
   box-shadow: var(--box-shadow-sm);
-  margin-bottom: var(--space-xl);
+  margin-bottom: 0; /* Flush with drills-grid-section below */
   display: flex;
   align-items: center;
   width: 100%;
