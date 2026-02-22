@@ -18,304 +18,220 @@
       });
   </script>
 
-  <main>
+<main class="drills-page-layout">
+  <section class="drills-header-section">
     <div class="container">
-      <div class="page-header" style="margin-bottom: var(--space-lg);">
-        <h1>Offesive Line Drills</h1>
-        <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025</p>
+      <div class="page-header">
+        <h1>Offensive Line Drills</h1>
+        <p style="text-align: center; color: #666; font-style: italic;">
+          Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025
+        </p>
       </div>
-      <section>
-      <p>Everything on offense starts with the line. If you can’t block, you can’t move the ball. I teach my offensive linemen that they are the engine of the team — the unit that makes everything else possible. It’s not the flashiest job, but it’s one of the most important. We train fundamentals, toughness, and unity up front.</p>
-    </section>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto;">Everything on offense starts with the line. If you can’t block, you can’t move the ball. I teach my offensive linemen that they are the engine of the team — the unit that makes everything else possible. It’s not the flashiest job, but it’s one of the most important. We train fundamentals, toughness, and unity up front.</p>
+    </div>
+  </section>
 
-    <section>
-      <h3>Stance</h3>
-      <p>Teaching a proper three-point stance and explosive first step. Focus on posture, balance, and firing out low.</p>
-        <ol>
-            <li>Feet</li>
-            <li>Slide</li>
-            <li>Squeeze</li>
-            <li>Sink</li>
-            <li>Down</li>
-        </ol>
+  <div class="container">
+    <div class="filter-bar-container" data-needs-load="true">
+      <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Drills</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="stance">Stance</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="snapping">Snapping</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="run-blocking">Run Blocking</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="pass-protection">Pass Pro</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="fundamentals">Fundamentals</button>
+    </div>
+  </div>
 
-        <h4>USA Football - Heads Up Blocking (Youth Stance)</h4>
-        <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315" src="https://www.youtube.com/embed/0x1iW2XvtmE" title="Youth Stance" allowfullscreen></iframe>
+  <section class="drills-grid-section">
+    <div class="container drills-container">
+      <div class="drills-grid">
+        <!-- Stance -->
+        <div class="drill-card" data-category="stance">
+          <h3>USA Football: Heads Up Blocking (Youth Stance)</h3>
+          <p>Teaching a proper three-point stance and explosive first step. Focus on posture, balance, and firing out low.</p>
+          <div class="video-container">
+              <iframe loading="lazy" src="https://www.youtube.com/embed/0x1iW2XvtmE" title="Youth Stance" allowfullscreen></iframe>
+          </div>
         </div>
 
-        <h4>Coach Isaac - 3 point Stance</h4>
-        <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315" src="https://www.youtube.com/embed/fz4prCcR1ys" title="3 point stance" allowfullscreen></iframe>
-        </div>
-    </section>
-
-    <section>
-        <h3>How to snap a football</h3>
-        <p>Yes I know it's from NFL Flag but it's the best video I've found that breaks down how to snap a football.</p>
-        <div class="video-container">
-            <iframe loading="lazy"
-                src="https://www.youtube.com/embed/ZMXmyL2z180?start=22"
-                title="How to Snap a Football - Starts at 22 seconds"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+        <div class="drill-card" data-category="stance">
+          <h3>Coach Isaac - 3 Point Stance</h3>
+          <div class="video-container">
+              <iframe loading="lazy" src="https://www.youtube.com/embed/fz4prCcR1ys" title="3 point stance" allowfullscreen></iframe>
+          </div>
         </div>
 
-        <div class="video-container">
-            <iframe loading="lazy"
-                src="https://www.youtube.com/embed/pFuPp4I22cA"
-                title="Additional Snapping Drill"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+        <!-- Snapping -->
+        <div class="drill-card" data-category="snapping">
+          <h3>How to Snap a Football (NFL Flag)</h3>
+          <p>Best video found that breaks down how to snap a football. Starts at 22 seconds.</p>
+          <div class="video-container">
+              <iframe loading="lazy" src="https://www.youtube.com/embed/ZMXmyL2z180?start=22" title="How to Snap a Football" allowfullscreen></iframe>
+          </div>
         </div>
-    </section>
 
-    <section>
-        <h3>"Play Football: O-Line Drills with Tyron Smith</h3>
-          <article>
-            <a href="https://www.youtube.com/watch?0NW_9B1axjc" target="_blank" rel="noopener noreferrer">
-            <img src="https://img.youtube.com/vi/0NW_9B1axjc/hqdefault.jpg" alt="Play Football O-Line Drills with Tyron Smith" class="youtube-thumbnail" />
-            </a>
-          </article>
-
-          <article>
-              <h3>Wide Zone Footwork Drill</h3>
-              <p>Wide zone footwork is a blocking technique used in the wide zone running scheme. It focuses on lateral movement and maintaining leverage against defenders.</p>
-              
-              <ol>
-                  <li>From a 3-point stance</li>
-                  <li>Line up on the left or right side of a line behind the hash.</li>
-                  <li>Explode out of stance with first step being up and over the horizontal and vertical line.</li>
-                  <li>
-                      Apply the "covered/uncovered" rule:
-                      <ul>
-                          <li><strong>If covered:</strong> Aim backside knee through the crotch, backside hand through the sternum.</li>
-                          <li><strong>Landmark:</strong> Target the defender’s playside armpit.</li>
-                      </ul>
-                  </li>
-              </ol>
-
-              <img src="../../../images/gifs/wideZoneFootwork.gif" alt="Wide Zone Footwork Drill demonstration" />
-          </article>
-
-        <article>
-            <h3>Inside Zone Footwork Drill</h3>
-            <p>Inside zone footwork is a blocking technique used in the inside zone running scheme. It focuses on driving defenders off the line of scrimmage and creating running lanes.</p>
-            <ol>
-            <li>From a 3-point stance</li>
-            <li>Line up on the left or right side of a line with back foot in front of hash.</li>
-            <li>Start by stepping over the line with the outside foot.</li>
-            <li>Power step forward.</li>
-            <li>Drive forward in a wide stance with short choppy steps.</li>
-            </ol>
-            <img src="../../../images/gifs/insideZoneFootwork.gif" alt="Inside Zone Footwork Drill demonstration" />
-        </article>
-
-        <article>
-            <h3>Pass Set Drill</h3>
-            <p>Pass set footwork is a blocking technique used in pass protection. It focuses on maintaining balance and leverage against defenders while protecting the quarterback.</p>
-            <ol>
-                <li>Back off the ball</li>
-                <li>Get in two-point stance</li>
-                <li>Kick back 3 times with the outside foot.</li>
-                <li>Fire Feet</li>
-            </ol>
-            <img src="../../../images/gifs/PassSetDrillFootwork.gif" alt="Pass Set Drill demonstration" />
-        </article>
-    </section>
-
-    <section>
-      <h3>Down Block</h3>
-      <p>Down blocking is a technique used to block defenders who are aligned inside the offensive lineman. It focuses on driving the defender off the line of scrimmage and creating running lanes.</p>
-      <div class="video-container">
-          <iframe loading="lazy"
-            src="https://www.youtube.com/embed/GeaaxMHxyTw"
-            title="Down Block" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
-      </div>
-    </section>
-
-    <section>
-      <h3>Reach Block</h3>
-      <p>Reach blocking is a technique used to block defenders who are aligned outside the offensive lineman. It focuses on getting the offensive lineman's body in front of the defender and driving them off the line of scrimmage.</p>
-
-      <div class="video-container">
-        <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/Xm8kuGWL0lI" title="Reach Block" allowfullscreen></iframe>
-      </div>
-
-      <div class="video-container">
-        <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/bWZBIlVUFv4" title="TE Reach Block" allowfullscreen></iframe>
-      </div>
-    </section>
-
-
-    <section>
-      <h3>USA Football: Miami Dolphins Zone Blocking Drills</h3>
-        <p>Inside zone footwork is a blocking technique used in the inside zone running scheme. It focuses on driving defenders off the line of scrimmage and creating running lanes.</p>
-        <div class="video-container">
-            <iframe loading="lazy"
-              src="https://www.youtube.com/embed/7x8jsDxn1pI"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+        <div class="drill-card" data-category="snapping">
+          <h3>Additional Snapping Drill</h3>
+          <div class="video-container">
+              <iframe loading="lazy" src="https://www.youtube.com/embed/pFuPp4I22cA" title="Additional Snapping Drill" allowfullscreen></iframe>
+          </div>
         </div>
-    </section>
-    
-    <section>
-        <h3>Youtube Resources</h3>
-        <p>Here are some additional helpful videos and reels from various creators.</p>
 
-        <article>
-            <h4>Isaac Marin - Spread Offense: Run Blocking Fundamentals & Drills</h4>
+        <!-- Run Blocking -->
+        <div class="drill-card" data-category="run-blocking">
+          <h3>Play Football: O-Line Drills with Tyron Smith</h3>
+          <a href="https://www.youtube.com/watch?v=0NW_9B1axjc" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/0NW_9B1axjc/hqdefault.jpg" alt="Tyron Smith O-Line Drills" class="youtube-thumbnail" />
+          </a>
+        </div>
+
+        <div class="drill-card" data-category="run-blocking">
+          <h3>Wide Zone Footwork Drill</h3>
+          <p>Lateral movement and maintaining leverage in the wide zone running scheme.</p>
+          <img src="../../../images/gifs/wideZoneFootwork.gif" alt="Wide Zone Footwork Drill" />
+        </div>
+
+        <div class="drill-card" data-category="run-blocking">
+          <h3>Inside Zone Footwork Drill</h3>
+          <p>Driving defenders off the line and creating running lanes in the inside zone scheme.</p>
+          <img src="../../../images/gifs/insideZoneFootwork.gif" alt="Inside Zone Footwork Drill" />
+        </div>
+
+        <div class="drill-card" data-category="run-blocking">
+          <h3>USA Football: Miami Dolphins Zone Blocking</h3>
+          <div class="video-container">
+            <iframe loading="lazy" src="https://www.youtube.com/embed/7x8jsDxn1pI" title="Miami Dolphins Zone Blocking" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <div class="drill-card" data-category="run-blocking" data-tags="fundamentals">
+            <h3>Down Block Technique</h3>
+            <p>Driving defenders aligned inside off the line of scrimmage.</p>
             <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315"
-                src="https://www.youtube.com/embed/I14C6CTohAo"
-                title="Spread Offense: Run Blocking Fundamentals & Drills"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/GeaaxMHxyTw" title="Down Block" allowfullscreen></iframe>
             </div>
-        </article>
+        </div>
 
-        <article>
-            <h4>Isaac Hadac - Simple OLine Drills - Master the Basics</h4>
+        <div class="drill-card" data-category="run-blocking" data-tags="fundamentals">
+            <h3>Reach Block Technique</h3>
+            <p>Getting in front of defenders aligned outside and driving them off the line.</p>
             <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315"
-                src="https://www.youtube.com/embed/mQxcKjnVbyI"
-                title="Isaac Hadac - Simple OLine Drills - Master the Basics"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+              <iframe loading="lazy" src="https://www.youtube.com/embed/Xm8kuGWL0lI" title="Reach Block" allowfullscreen></iframe>
             </div>
-        </article>
+        </div>
 
-        <article>
-            <h4>Coach Chris Haddad - Offensive Line Drills For Youth And High School</h4>
+        <div class="drill-card" data-category="run-blocking" data-tags="fundamentals">
+            <h3>TE Reach Block</h3>
             <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315"
-                src="https://www.youtube.com/embed/LDZnXrQeFQc"
-                title="Coach Chris Haddad - Offensive Line Drills For Youth And High School"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+              <iframe loading="lazy" src="https://www.youtube.com/embed/bWZBIlVUFv4" title="TE Reach Block" allowfullscreen></iframe>
             </div>
-        </article>
+        </div>
 
-        <article>
-            <h4>IMG Academy - 3 Football Drills to Become a Better Offensive Lineman</h4>
+        <!-- Pass Protection -->
+        <div class="drill-card" data-category="pass-protection">
+          <h3>Pass Set Drill</h3>
+          <p>Maintaining balance and leverage against defenders while protecting the QB.</p>
+          <img src="../../../images/gifs/PassSetDrillFootwork.gif" alt="Pass Set Drill" />
+        </div>
+
+        <!-- Fundamentals & Extra Resources -->
+        <div class="drill-card" data-category="run-blocking" data-tags="fundamentals">
+            <h3>Spread Offense: Run Blocking Fundamentals</h3>
             <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315"
-                src="https://www.youtube.com/embed/CJvTFJ1dwbs"
-                title="3 Football Drills to Become a Better Offensive Lineman"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/I14C6CTohAo" title="Spread Run Blocking" allowfullscreen></iframe>
             </div>
-        </article>
+        </div>
 
-        <article>
-            <h4>USA Football - Northwestern Wildcats 2-on-2 zone block combo drill: Offensive line</h4>
+        <div class="drill-card" data-category="fundamentals">
+            <h3>Isaac Hadac - Simple OLine Drills</h3>
             <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315"
-                src="https://www.youtube.com/embed/vqElT9u055w"
-                title="Northwestern Wildcats 2-on-2 zone block combo drill: Offensive line"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/mQxcKjnVbyI" title="OLine Basics" allowfullscreen></iframe>
             </div>
-        </article>
+        </div>
 
-        <article>
-            <h4>Coach Parker - Youth Football Spread Offense Playbook Review - Wildcat Multi Spread Offense</h4>
+        <div class="drill-card" data-category="fundamentals" data-tags="youth">
+            <h3>Coach Chris Haddad - Youth/HS OL Drills</h3>
             <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315"
-                src="https://www.youtube.com/embed/gjcXncX_fyw"
-                title="Youth Football Spread Offense Playbook Review"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/LDZnXrQeFQc" title="Chris Haddad OL Drills" allowfullscreen></iframe>
             </div>
-        </article>
+        </div>
 
-        <article>
-            <h4>Coach Parker - The Texas Swing Drill: Sweep Blocking & Open Field Tackling Drill</h4>
+        <div class="drill-card" data-category="fundamentals">
+            <h3>IMG Academy - 3 Drills for OL</h3>
             <div class="video-container">
-            <iframe loading="lazy"  width="560" height="315"
-                src="https://www.youtube.com/embed/T0NMPc2-2Q0"
-                title="Texas Swing Drill"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+                <iframe loading="lazy" src="https://www.youtube.com/embed/CJvTFJ1dwbs" title="IMG Academy OL Drills" allowfullscreen></iframe>
             </div>
-        </article>
-        <!-- Add more videos/reels as needed -->
+        </div>
 
-    </section>
+        <div class="drill-card" data-category="run-blocking">
+            <h3>Northwestern - 2-on-2 Zone Combo</h3>
+            <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/vqElT9u055w" title="2-on-2 Zone Combo" allowfullscreen></iframe>
+            </div>
+        </div>
 
-    <section>
-      <h3>Instagram Resources</h3>
-      <p>Here are some additional helpful videos and reels from various creators.</p>
+        <div class="drill-card" data-category="fundamentals" data-tags="spread">
+            <h3>Youth Football Spread Playbook Review</h3>
+            <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/gjcXncX_fyw" title="Spread Playbook Review" allowfullscreen></iframe>
+            </div>
+        </div>
 
-      <article>
-        <h4>Logan Tuley-Tillman</h4>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CtxBMLlvENb/" data-instgrm-version="14" style="background:#FFF; border:0; margin: 1em 0; padding:0;">
-        </blockquote>
-      </article>
-    </section>
+        <div class="drill-card" data-category="fundamentals" data-tags="tackling">
+            <h3>The Texas Swing Drill</h3>
+            <p>Sweep blocking & open field tackling drill.</p>
+            <div class="video-container">
+                <iframe loading="lazy" src="https://www.youtube.com/embed/T0NMPc2-2Q0" title="Texas Swing Drill" allowfullscreen></iframe>
+            </div>
+        </div>
 
+        <div class="drill-card" data-category="fundamentals">
+          <h3>Logan Tuley-Tillman - OL Reel</h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/CtxBMLlvENb/" data-instgrm-version="14"></blockquote>
+        </div>
 
-    <section>
-      <h3>X (formerly known as Twitter) Resources</h3>
-      <p>Here are some additional helpful videos and reels from various creators.</p>
+        <div class="drill-card" data-category="fundamentals">
+            <h3>Logan Tuley-Tillman - Footwork</h3>
+            <blockquote class="twitter-tweet">
+                <a href="https://twitter.com/LoganTillman/status/1691659484752384129">Loading tweet...</a>
+            </blockquote>
+        </div>
 
-      <article>
-          <h4>Tweet: Footwork Drill</h4>
+        <div class="drill-card" data-category="run-blocking">
+          <h3>Backside Cut-Off Technique</h3>
           <blockquote class="twitter-tweet">
-              <a href="https://twitter.com/LoganTillman/status/1691659484752384129">Loading tweet...</a>
+              <a href="https://twitter.com/LoganTillman/status/1671144395251372033">Loading tweet...</a>
           </blockquote>
-      </article>
+        </div>
 
-      <article>
-        <h4>Logan Tuley-Tillman: Backside Cut-Off</h4>
-        <blockquote class="twitter-tweet">
-            <a href="https://twitter.com/LoganTillman/status/1671144395251372033">Loading tweet...</a>
-        </blockquote>
-      </article>
+        <div class="drill-card" data-category="run-blocking">
+          <h3>Run Game Footwork!</h3>
+          <blockquote class="twitter-tweet">
+              <a href="https://twitter.com/Hwy_77/status/1673771904514027520">Loading tweet...</a>
+          </blockquote>
+        </div>
 
-      <article>
-        <h4>Ralph Rubalcaba: Run game Footwork!</h4>
-        <blockquote class="twitter-tweet">
-            <a href="https://twitter.com/Hwy_77/status/1673771904514027520">Loading tweet...</a>
-        </blockquote>
-      </article>
+        <div class="drill-card" data-category="run-blocking">
+          <h3>OL "Wedge 90"</h3>
+          <blockquote class="twitter-tweet">
+              <a href="https://twitter.com/CoachZBirdwell/status/1673108866806980611">Loading tweet...</a>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-      <article>
-        <h4>Zach Birdwell: OL "Wedge 90"</h4>
-        <blockquote class="twitter-tweet">
-            <a href="https://twitter.com/CoachZBirdwell/status/1673108866806980611">Loading tweet...</a>
-        </blockquote>
-      </article>
-
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </section>
-  </main>
-
-  <div id="site-footer"></div>
-  <script>
-    fetch("/website/includes/footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('site-footer').innerHTML = data;
-      });
-  </script>
-    <script src="../js/main.js"></script>
-  <script async src="https://www.instagram.com/embed.js"></script>
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+</script>
+<script src="../../../js/main.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>

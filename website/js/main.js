@@ -43,13 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (routeTreeButton && routeTreeSection) {
       // Ensure section is hidden by default and button state is correct
-      // This will run regardless of whether 'hidden' is already on the section in HTML
       routeTreeSection.classList.add('hidden'); 
       routeTreeButton.textContent = 'Expand Route Tree';
       routeTreeButton.setAttribute('aria-expanded', 'false');
 
       routeTreeButton.addEventListener('click', () => {
-          // Toggle returns true if class was added (now hidden), false if removed (now visible)
           const isNowHidden = routeTreeSection.classList.toggle('hidden');
           
           if (isNowHidden) {
@@ -67,32 +65,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   navLinksWithSubmenus.forEach(link => {
     link.addEventListener('click', function(event) {
-      // const submenu = this.nextElementSibling; // This line can be removed if submenu is not used below
-
-      event.preventDefault(); // Prevent default link behavior
+      event.preventDefault();
 
       const parentLi = this.parentElement;
       parentLi.classList.toggle('submenu-active');
 
       const isExpanded = parentLi.classList.contains('submenu-active');
       this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
-
-      // Optional: Close other open submenus logic (if ever added) would go here.
-      // Desktop hover/focus CSS will still work alongside this.
     });
-
-    // Optional: Add keyboard support for opening/closing with Enter/Space for parent links
-    // This can be added later if required.
   });
 });
 
-// Function to handle generic collapsible sections (if any are still used)
+// Function to handle generic collapsible sections
 function toggleCollapsible(event) {
     const button = event.target;
-    const content = button.nextElementSibling; // Assumes content is immediately after button
-    if (content) { // Check if content exists
+    const content = button.nextElementSibling;
+    if (content) {
         const isNowHidden = content.classList.toggle('hidden');
-        // Text and ARIA update based on whether 'hidden' is now present
         if (isNowHidden) {
             button.textContent = button.dataset.textExpand || 'Expand Section';
             button.setAttribute('aria-expanded', 'false');
@@ -106,8 +95,7 @@ function toggleCollapsible(event) {
 // Add event listeners to all generic collapsible buttons
 document.querySelectorAll('.collapsible-button').forEach(button => {
     const content = button.nextElementSibling;
-    if (content) { // Check if content exists
-        // Set initial state for generic collapsibles
+    if (content) {
         content.classList.add('hidden');
         button.textContent = button.dataset.textExpand || 'Expand Section';
         button.setAttribute('aria-expanded', 'false');
@@ -118,14 +106,10 @@ document.querySelectorAll('.collapsible-button').forEach(button => {
 // Lightbox functionality
 function initializeLightbox() {
   const modal = document.getElementById('lightbox-modal');
-  if (!modal) {
-    // If the modal is not on this page, do nothing.
-    return;
-  }
+  if (!modal) return;
 
   const modalImg = document.getElementById('lightbox-image');
   const closeButton = document.querySelector('.close-button');
-
   const diagramPlaceholders = document.querySelectorAll('.concept-diagram-placeholder');
 
   diagramPlaceholders.forEach(placeholder => {
@@ -134,7 +118,7 @@ function initializeLightbox() {
       img.onclick = function() {
         modal.style.display = 'block';
         modalImg.src = this.src;
-        modalImg.alt = this.alt; // Copy alt text for accessibility
+        modalImg.alt = this.alt;
       }
     }
   });
@@ -145,7 +129,6 @@ function initializeLightbox() {
     }
   }
 
-  // Close modal when clicking on the background
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = 'none';
@@ -153,14 +136,129 @@ function initializeLightbox() {
   }
 }
 
-// Call the function to initialize lightbox functionality
-// We need to ensure this runs after the DOM is loaded.
-// If there's an existing onload or DOMContentLoaded, add to it.
-// For simplicity, we'll try calling it directly.
-// If issues arise, we might need to hook into an existing DOM ready function.
+// Function to filter drills
+function filterDrills(category) {
+  const cards = document.querySelectorAll('.drill-card');
+  const buttons = document.querySelectorAll('.filter-btn');
+
+  cards.forEach(card => {
+    const tags = card.dataset.tags ? card.dataset.tags.split(',').map(t => t.trim()) : [];
+    const isCategoryMatch = category === 'all' || card.dataset.category === category;
+    const isTagMatch = tags.includes(category);
+
+    if (isCategoryMatch || isTagMatch) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+
+  buttons.forEach(btn => {
+    const isSelected = btn.dataset.filter === category;
+    btn.classList.toggle('active', isSelected);
+    btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+  });
+}
+
+// Initialize drill filters
+function initializeDrillFilters() {
+  const filterContainer = document.querySelector('.drill-filters');
+  if (!filterContainer || filterContainer.dataset.initialized === 'true') return;
+
+  filterContainer.addEventListener('click', (e) => {
+    if (e.target.classList.contains('filter-btn')) {
+      const filter = e.target.dataset.filter;
+      filterDrills(filter);
+    }
+  });
+  filterContainer.dataset.initialized = 'true';
+}
+
+// Function to initialize the enterprise-level drill filter bar
+function initializeDrillFilterBar() {
+  const container = document.querySelector('.filter-bar-container');
+  const scrollContainer = document.querySelector('.drill-filters');
+  const btnLeft = document.querySelector('.scroll-btn-left');
+  const btnRight = document.querySelector('.scroll-btn-right');
+
+  if (!container || !scrollContainer || container.dataset.initialized === 'true') return;
+
+  const updateIndicators = () => {
+    const scrollLeft = scrollContainer.scrollLeft;
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    container.classList.toggle('has-scroll-left', scrollLeft > 1);
+    container.classList.toggle('has-scroll-right', scrollLeft < maxScroll - 1);
+  };
+
+  const smoothScrollBy = (amount) => {
+    scrollContainer.scrollBy({ left: amount, behavior: 'smooth' });
+  };
+
+  scrollContainer.addEventListener('scroll', updateIndicators, { passive: true });
+
+  if (btnLeft) {
+    btnLeft.addEventListener('click', () => smoothScrollBy(-300));
+  }
+  if (btnRight) {
+    btnRight.addEventListener('click', () => smoothScrollBy(300));
+  }
+
+  container.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+      smoothScrollBy(200);
+      e.preventDefault();
+    } else if (e.key === 'ArrowLeft') {
+      smoothScrollBy(-200);
+      e.preventDefault();
+    }
+  });
+
+  updateIndicators();
+  window.addEventListener('resize', updateIndicators, { passive: true });
+  setTimeout(updateIndicators, 200);
+  container.dataset.initialized = 'true';
+}
+
+// Function to fetch and initialize the drill filter bar template
+function loadDrillFilterBar() {
+  const container = document.querySelector('.filter-bar-container[data-needs-load="true"]');
+  if (!container) {
+    // If no dynamic container needs loading, initialize any static ones present
+    initializeDrillFilters();
+    initializeDrillFilterBar();
+    return;
+  }
+
+  const buttonsHTML = container.innerHTML;
+  container.innerHTML = ''; // Clear to prevent flickering while loading
+
+  fetch("/website/includes/drill-filter-bar.html")
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to load filter bar template');
+      return res.text();
+    })
+    .then(template => {
+      container.innerHTML = template.replace('<!-- FILTER_BUTTONS_PLACEHOLDER -->', buttonsHTML);
+      container.removeAttribute('data-needs-load');
+      // Initialize components now that HTML is injected
+      initializeDrillFilters();
+      initializeDrillFilterBar();
+    })
+    .catch(err => {
+      console.error('Error loading drill filter bar:', err);
+      // Fallback: Restore buttons in a simple wrapper if template fails
+      container.innerHTML = `<div class="drill-filters" role="tablist">${buttonsHTML}</div>`;
+      initializeDrillFilters();
+    });
+}
+
+// Initial initialization
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeLightbox);
+    document.addEventListener('DOMContentLoaded', () => {
+      initializeLightbox();
+      loadDrillFilterBar();
+    });
 } else {
-    // DOMContentLoaded has already fired
     initializeLightbox();
+    loadDrillFilterBar();
 }

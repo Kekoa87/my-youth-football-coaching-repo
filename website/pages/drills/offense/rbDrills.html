@@ -7,23 +7,6 @@
   <title>Running Back Drills | Youth Football Coaching Hub</title>
   <link rel="stylesheet" href="../../../styles.css">
   <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png">
-  <style>
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 560px;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
 </head>
 <body>
   <div id="site-header"></div>
@@ -35,82 +18,91 @@
       });
   </script>
 
-  <main>
+<main class="drills-page-layout">
+  <section class="drills-header-section">
     <div class="container">
-      <div class="page-header" style="margin-bottom: var(--space-lg);">
+      <div class="page-header">
         <h1>Running Back Drills</h1>
-        <p style="text-align: center;">Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025</p>
+        <p style="text-align: center; color: #666; font-style: italic;">
+          Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: June 02, 2025
+        </p>
       </div>
-      <section>   
-        <article>
-          <h4>PlayFootball: RB Drills w/ Christian McCaffrey to Improve Quickness and Footwork!</h4>
-          <a href="https://www.youtube.com/watch?g9V6Rf6xPNg" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/g9V6Rf6xPNg/hqdefault.jpg" alt="RB Drills w/ Christian McCaffrey" class="youtube-thumbnail" />
-          </a>
-        </article>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto;">Running back play requires a combination of vision, agility, and power. These drills focus on ball security, explosive movement, and understanding how to read blocking schemes at the youth level.</p>
+    </div>
+  </section>
 
-        <article>
-          <h4>RB Drills with Saquon Barkley to Improve Agility & Ball Security!</h4>
-          <a href="https://www.youtube.com/watch?NwriG8DTzlo" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/gNwriG8DTzlo/hqdefault.jpg" alt="RB Drills with Saquon Barkley" class="youtube-thumbnail" />
-          </a>
-        </article>
+  <div class="container">
+    <div class="filter-bar-container" data-needs-load="true">
+      <button class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Drills</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="footwork">Footwork</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="agility">Agility</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="vision">Vision</button>
+      <button class="filter-btn" role="tab" aria-selected="false" data-filter="fundamentals">Fundamentals</button>
+    </div>
+  </div>
 
-        <article>
-          <h4>How to Condition Like an Elite Back: Improve Reaction, Speed, & Acceleration</h4>
-          <a href="https://www.youtube.com/watch?hlBS1dpO03A" target="_blank" rel="noopener noreferrer">
-          <img src="https://img.youtube.com/vi/hlBS1dpO03A/hqdefault.jpg" alt="How to Condition Like an Elite Back" class="youtube-thumbnail" />
+  <section class="drills-grid-section">
+    <div class="container drills-container">
+      <div class="drills-grid">
+        <div class="drill-card" data-category="footwork" data-tags="quickness">
+          <h3>PlayFootball: RB Drills w/ Christian McCaffrey to Improve Quickness and Footwork!</h3>
+          <a href="https://www.youtube.com/watch?v=g9V6Rf6xPNg" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/g9V6Rf6xPNg/hqdefault.jpg" alt="RB Drills w/ Christian McCaffrey" class="youtube-thumbnail" />
           </a>
-        </article>
+        </div>
 
-        <article>
-          <h4>USA Football: 2 Minute Drill - Find the Hole, Running Back Drill</h4>
+        <div class="drill-card" data-category="agility" data-tags="ball-security">
+          <h3>RB Drills with Saquon Barkley to Improve Agility & Ball Security!</h3>
+          <a href="https://www.youtube.com/watch?v=gNwriG8DTzlo" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/gNwriG8DTzlo/hqdefault.jpg" alt="RB Drills with Saquon Barkley" class="youtube-thumbnail" />
+          </a>
+        </div>
+
+        <div class="drill-card" data-category="agility" data-tags="speed,acceleration">
+          <h3>How to Condition Like an Elite Back: Improve Reaction, Speed, & Acceleration</h3>
+          <a href="https://www.youtube.com/watch?v=hlBS1dpO03A" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.youtube.com/vi/hlBS1dpO03A/hqdefault.jpg" alt="How to Condition Like an Elite Back" class="youtube-thumbnail" />
+          </a>
+        </div>
+
+        <div class="drill-card" data-category="vision" data-tags="footwork">
+          <h3>USA Football: 2 Minute Drill - Find the Hole, Running Back Drill</h3>
           <div class="video-container">
             <iframe loading="lazy" src="https://www.youtube.com/embed/ZmKzS7H2L7k" title="2 Minute Drill - Find the Hole, Running Back Drill" allowfullscreen></iframe>
           </div>
-        </article>
-    </section>
+        </div>
 
-    <section>
-      <h3>Instagram Resources</h3>
-      <p>Here are some helpful reels from various creators covering running back techniques, drills, and movement skills.</p>
+        <div class="drill-card" data-category="vision">
+          <h3>Coach Dan Casey: Packers RB Vision Drill</h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cp5n_KGgdHi/?utm_source=ig_web_copy_link" data-instgrm-version="14"></blockquote>
+        </div>
 
-      <article>
-        <h4>Coach Dan Casey: Packers RB Vision Drill</h4>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cp5n_KGgdHi/?utm_source=ig_web_copy_link" data-instgrm-version="14" style="background:#FFF; border:0; margin: 1em 0; padding:0;"></blockquote>
-      </article>
+        <div class="drill-card" data-category="agility">
+          <h3>Coach Deuce: Running Back Drills (Part 1)</h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cr9JhNJs2d3/?utm_source=ig_web_copy_link" data-instgrm-version="14"></blockquote>
+        </div>
 
-      <article>
-        <h4>Coach Deuce: Running Back Drills</h4>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Cr9JhNJs2d3/?utm_source=ig_web_copy_link" data-instgrm-version="14" style="background:#FFF; border:0; margin: 1em 0; padding:0;"></blockquote>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CfITUAFDNa_/" data-instgrm-version="14" style="background:#FFF; border:0; margin: 1em 0; padding:0;"></blockquote>
-      </article>
+        <div class="drill-card" data-category="agility">
+          <h3>Coach Deuce: Running Back Drills (Part 2)</h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CfITUAFDNa_/" data-instgrm-version="14"></blockquote>
+        </div>
 
-      <article>
-        <h4>Winner Circle Athletics: Youth RB Training</h4>
-        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CuD2jArqrha/" data-instgrm-version="14" style="background:#FFF; border:0; margin: 1em 0; padding:0;"></blockquote>
-      </article>
-    </section>
+        <div class="drill-card" data-category="fundamentals" data-tags="youth">
+          <h3>Winner Circle Athletics: Youth RB Training</h3>
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CuD2jArqrha/" data-instgrm-version="14"></blockquote>
+        </div>
 
-    <section> 
-      <h3>NFL Flag Running Back Drills</h3>
-      <p>Once again, even though these are from NFL Flag, I found them to be effective running back drills.</p>
-
-      <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
-        <a href="https://nflflag.com/coaches/football-drills/running-back-drills" target="_blank">
-          <img src="../../../images/nflFlagLogo.png" alt="NFL Flag Running Back Drills" width="300" />
-        </a>
-        <div>
-          <p>
-            <a href="https://nflflag.com/coaches/football-drills/running-back-drills" target="_blank">
-              Visit NFL Flag: Running Back Drills
-            </a>
-          </p>
+        <div class="drill-card" data-category="fundamentals">
+          <h3>NFL Flag Running Back Drills</h3>
+          <p>Once again, even though these are from NFL Flag, I found them to be effective running back drills.</p>
+          <a href="https://nflflag.com/coaches/football-drills/running-back-drills" target="_blank">
+            <img src="../../../images/nflFlagLogo.png" alt="NFL Flag Running Back Drills" />
+          </a>
         </div>
       </div>
-    </section>
     </div>
-  </main>
+  </section>
+</main>
 
   <div id="site-footer"></div>
   <script>
@@ -120,7 +112,7 @@
         document.getElementById('site-footer').innerHTML = data;
       });
   </script>
-
+  <script src="../../../js/main.js"></script>
   <script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
