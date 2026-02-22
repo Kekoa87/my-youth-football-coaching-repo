@@ -1133,7 +1133,6 @@ footer p {
 
 .drills-header-section {
   padding: var(--space-xl) 0 var(--space-md);
-  border-bottom: 1px solid var(--color-border);
 }
 
 .drills-grid-section {
