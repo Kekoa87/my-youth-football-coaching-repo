@@ -1,134 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Your one-stop resource for youth football coaching drills, tips, offensive and defensive strategies, and coaching philosophy. Improve your team and player skills.">
-  <title>Youth Football Coaching Hub</title>
-  <link rel="stylesheet" href="website/styles.css">
-  <link rel="icon" href="website/images/ChromeSiteSymbol.jpg" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional youth football coaching resources, drills, and practice plans. Built by coaches, for coaches.">
+    <title>Youth Football Coaching Hub | Modern Resources for Coaches</title>
+    <link rel="stylesheet" href="website/styles.css">
+    <link rel="icon" href="website/images/ChromeSiteSymbol.jpg" type="image/png">
 </head>
-<body>
-  <div id="site-header"></div>
-  <script>
-    fetch("/website/includes/header.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('site-header').innerHTML = data;
-      });
-  </script>
-  
-  <main>
-    <div class="container">
+<body class="home-page-layout">
+    <div id="site-header"></div>
 
-    <article>
-      <a href="website/pages/drills/defense/dlDrills.html">
-        <img src="website/images/AaronDonald.png" alt="Aaron Donald demonstrating a defensive line technique" />
-      </a>
-      <h3>Defensive Line</h3>
-      <p>Defensive line drills for youth football, focusing on tackling, coverage, and run support. Features instructional videos.</p>
-      <a href="website/pages/drills/defense/dlDrills.html" class="read-more">Read More</a>
-    </article> 
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Youth Football Coaching Hub</h1>
+                    <p class="hero-subtitle">Practical resources, drills, and strategies built for youth football coaches.</p>
+                    <div class="hero-actions">
+                        <a href="website/pages/drills/offense/qbDrills.html" class="btn btn-primary">Explore Drills</a>
+                        <a href="website/pages/football_101/newCoaches.html" class="btn btn-secondary">Start Here</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <article>
-      <a href="website/pages/drills/defense/lbDrills.html">
-        <img src="website/images/lukeKuechly02.png" alt="Luke Kuechly in a linebacker stance" />
-      </a>
-      <h2>Linebacker Drills</h2>
-      <p>Linebacker drills for youth football, focusing on tackling, coverage, and run support. Features instructional videos.</p>
-      <a href="website/pages/drills/defense/lbDrills.html" class="read-more">Read More</a>
-    </article>  
+        <!-- Featured Resources Grid -->
+        <section class="featured-grid-section section-padding">
+            <div class="container">
+                <h2 class="section-title">Featured Resources</h2>
+                <div class="featured-grid">
+                    <div class="featured-card">
+                        <div class="card-content">
+                            <h3>Start Here</h3>
+                            <p>New to coaching? Learn the essentials of practice structure and youth football philosophy.</p>
+                            <a href="website/pages/football_101/newCoaches.html" class="btn btn-outline">Get Started</a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="card-content">
+                            <h3>Offensive Drills</h3>
+                            <p>Master the fundamentals of every position from QB mechanics to Offensive Line leverage.</p>
+                            <a href="website/pages/drills/offense/qbDrills.html" class="btn btn-outline">View Offense</a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="card-content">
+                            <h3>Defensive Drills</h3>
+                            <p>Build a sound defense with drills for tackling, coverage, and defensive line play.</p>
+                            <a href="website/pages/drills/defense/dbDrills.html" class="btn btn-outline">View Defense</a>
+                        </div>
+                    </div>
+                    <div class="featured-card">
+                        <div class="card-content">
+                            <h3>Practice Planning</h3>
+                            <p>Structure your time effectively with our step-by-step practice templates.</p>
+                            <a href="website/pages/football_101/newCoaches.html#how-to-run-practice" class="btn btn-outline">Plan Practice</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <article>
-      <a href="website/pages/conditioning/workouts/wide_receiver/wrWorkOut.html">
-        <img src="website/images/wrWorkOutProgram.png" alt="Sample wide receiver workout program schedule" />
-      </a>
-      <h2>Wide Receiver Work Out Program</h2>
-      <p>My son is a WR so I created a WR workout program for him.</p>
-      <a href="website/pages/conditioning/workouts/wide_receiver/wrWorkOut.html" class="read-more">Read More</a>
-    </article>  
- 
-    <article>
-      <a href="website/pages/drills/defense/dbDrills.html">
-        <img src="website/images/PlayFootballDefensiveBackDRillswTaylorRapp.png" alt="Defensive back Taylor Rapp demonstrating a football drill" />
-      </a>
-      <h2>Defensive Back Drills</h2>
-      <p>Develop quick feet, sharp instincts, and confident coverage skills with our defensive back drills. These exercises are designed to teach youth players how to backpedal, break on the ball, tackle in space, and read offensive formations — the fundamentals every young DB needs to succeed.</p>
-      <a href="website/pages/drills/defense/dbDrills.html" class="read-more">Read More</a>
-    </article>
+        <!-- Recently Added Drills -->
+        <section class="latest-drills-section section-padding alternate-bg">
+            <div class="container">
+                <h2 class="section-title">Recently Added Drills</h2>
+                <div class="fundamentals-grid">
+                    <div class="fundamental-card">
+                        <div class="card-image">
+                            <img src="website/images/BlockingImage01.jpg" alt="Tackling Fundamentals">
+                        </div>
+                        <div class="card-content">
+                            <h3>Tackling Fundamentals</h3>
+                            <p>Safety-first tackling techniques for young athletes.</p>
+                            <a href="website/pages/drills/defense/tackleDrills.html" class="btn btn-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="fundamental-card">
+                        <div class="card-image">
+                            <img src="website/images/AiAnimeWRCatch.png" alt="WR Releases">
+                        </div>
+                        <div class="card-content">
+                            <h3>WR Releases & Catches</h3>
+                            <p>Help your receivers get open and secure the ball.</p>
+                            <a href="website/pages/drills/offense/wrDrills.html" class="btn btn-link">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="fundamental-card">
+                        <div class="card-image">
+                            <img src="website/images/PlayFootballDefensiveBackDRillswTaylorRapp.png" alt="DB Coverage">
+                        </div>
+                        <div class="card-content">
+                            <h3>DB Coverage Skills</h3>
+                            <p>Backpedal, breaking on the ball, and space tackling.</p>
+                            <a href="website/pages/drills/defense/dbDrills.html" class="btn btn-link">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <article>
-      <a href="website/pages/conditioning/conditioning.html">
-        <img src="website/images/conditioning.jpg" alt="Players performing football conditioning drills" />
-      </a>
-      <h2>Conditioning</h2>
-      <p>Conditioning is a key part of youth football development. Building endurance, strength, and body control helps players stay effective late in games and prevents injury. Here are some great resources to get started:</p>
-      <a href="website/pages/conditioning/conditioning.html" class="read-more">Read More</a>
-    </article>
+        <!-- Coach Kyle / About Section -->
+        <section class="about-preview-section section-padding">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image">
+                        <img src="website/images/MyBioPic.png" alt="Coach Kyle" class="img-round">
+                    </div>
+                    <div class="about-text">
+                        <h2>Meet Coach Kyle</h2>
+                        <p>I'm Coach Kyle, a passionate youth football coach dedicated to helping young athletes develop skills, confidence, and character. With years of experience on the field, I've gathered the best drills and strategies to help you build a successful program.</p>
+                        <p>My goal is to provide practical, easy-to-implement resources that save you time and help your players succeed.</p>
+                        <div class="about-actions">
+                            <a href="website/pages/about/about.html" class="btn btn-primary">My Story</a>
+                            <a href="website/pages/about/coachingPhilosophy.html" class="btn btn-outline">Coaching Philosophy</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <article>
-      <a href="website/pages/drills/offense/wrDrills.html">
-        <img src="website/images/BlockingImage01.jpg" alt="Football player demonstrating a running back drill" />
-      </a>
-      <h2>Runningback Drills</h2>
-      <p>A comprehensive collection of drills designed to enhance running back skills, including ball security, footwork, vision, and blocking. These drills focus on developing agility, speed, and decision-making to help youth running backs excel in various game situations.</p>
-      <a href="website/pages/drills/offense/rbDrills.html" class="read-more">Read More</a>
-    </article>
+    <div id="site-footer"></div>
 
-    <article>
-      <a href="website/pages/drills/offense/wrDrills.html">
-        <img src="website/images/AiAnimeWRCatch.png" alt="Animated image of a wide receiver catching a football" />
-      </a>
-      <h2>Wide Receiver Drills</h2>
-      <p>A comprehensive collection of drills designed to enhance route running, catching, blocking, and overall skills for youth wide receivers. These drills focus on footwork, hand-eye coordination, and situational awareness to help players excel in various game scenarios.</p>
-      <a href="website/pages/drills/offense/wrDrills.html" class="read-more">Read More</a>
-    </article>
+    <script>
+        // Load Header & Footer
+        fetch("website/includes/header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('site-header').innerHTML = data;
+            });
 
-    <article>
-      <a href="website/pages/offense/offense_drills/qbDrills.html">
-        <img src="website/images/AiAnimeQBimage02.png" alt="Animated image of a quarterback preparing to throw a football" />
-      </a>
-      <h3>Quarterback Drills</h3>
-      <p>Essential drills for youth quarterbacks focusing on footwork, throwing mechanics, and pocket movement. These drills help develop the skills needed to read defenses, make accurate throws, and lead the offense effectively.</p>
-      <a href="website/pages/offense/offense_drills/qbDrills.html" class="read-more">Read More</a>
-    </article>
-
-    <article>
-      <a href="website/pages/drills/offense/olDrills.html">
-        <img src="website/images/BlockingImage02.png" alt="Offensive line players in their stances" />
-      </a>
-      <h3>Offense Line Drills</h3>
-      <p>A curated set of fundamental drills focused on improving footwork, hand placement, leverage, and blocking technique. These drills are designed to build confidence, discipline, and physicality in youth offensive linemen, helping them master both run and pass protection through simple, repeatable movements.</p>
-      <a href="website/pages/drills/offense/olDrills.html" class="read-more">Read More</a>
-    </article>
-
-    <article>
-      <a href="website/pages/coachingPhilosophy.html">
-        <img src="website/images/CoachingPicture01.jpg" alt="Coach Kyle explaining football strategy" />
-      </a>
-      <h3>Coaching Philosophy</h3>
-      <p>Core principles that guide my approach to coaching youth football — focusing on effort, discipline, player development, and building character on and off the field.</p>
-      <a href="website/pages/coachingPhilosophy.html" class="read-more">Read More</a>
-    </article>
-
-    <article>
-      <a href="website/pages/about.html">
-        <img src="website/images/MyBioPic.png" alt="Coach Kyle, founder of Youth Football Coaching Hub." />
-      </a>
-      <h3>Welcome!</h3>
-        <p>I'm Coach Kyle. A passionate youth football coach with years of experience helping young athletes develop their skills, confidence, and love for the game. I believe coaching is about more than just winning — it’s about teaching teamwork, discipline, and sportsmanship that will benefit players on and off the field. This site is my way of sharing the drills, tips, and resources I’ve gathered over the years to support fellow coaches and grow the youth football community.</p>
-      <a href="website/pages/about.html" class="read-more">Read More</a>
-    </article>
-    </div>
-  </main>
-  <div id="site-footer"></div>
-  <script>
-    fetch("/website/includes/footer.html")
-      .then(res => res.text())
-      .then(data => {
-        document.getElementById('site-footer').innerHTML = data;
-      });
-  </script>
-  <script src="website/js/main.js"></script>
+        fetch("website/includes/footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('site-footer').innerHTML = data;
+            });
+    </script>
+    <script src="website/js/main.js"></script>
 </body>
 </html>
