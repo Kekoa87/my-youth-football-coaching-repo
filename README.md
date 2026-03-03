@@ -45,3 +45,15 @@ website/
 ├── js/
 └── styles.css
 ```
+
+## 🔐 Coaches Corner Protection
+
+- **Password hash storage:** The SHA-256 password hash is stored in `/js/auth.js` in the obfuscated auth module used by both `/coaches-login.html` and `/website/pages/coaches-corner/coachesCorner.html`.
+- **How to change the password:**
+  1. Generate a new SHA-256 hash for your new password (for example: `printf 'NEW_PASSWORD' | sha256sum`).
+  2. Replace the existing hash string in `/js/auth.js`.
+  3. Commit and deploy changes to GitHub Pages.
+- **Session handling:**
+  - On successful login, the app runs `sessionStorage.setItem("coachAuth", "true")`.
+  - Protected routes check `sessionStorage` immediately and redirect unauthenticated users to `/coaches-login.html`.
+  - Session persists only for the active browser tab/session and is cleared when the tab/session ends or when the user clicks logout.

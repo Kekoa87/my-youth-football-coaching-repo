@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Coaches Corner secure login." />
+  <title>Coaches Corner Login | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="/website/styles.css" />
+  <link rel="icon" href="/website/images/ChromeSiteSymbol.jpg" type="image/png" />
+  <style>
+    .coaches-login-wrap { min-height: 70vh; display: grid; place-items: center; padding: 2rem 1rem; }
+    .coaches-login-card { width: 100%; max-width: 420px; background: #fff; border: 1px solid #d9e2ef; border-radius: 14px; box-shadow: 0 10px 24px rgba(0,0,0,.08); padding: 1.5rem; }
+    .coaches-login-card h1 { margin: 0 0 .5rem; font-size: 1.5rem; text-align: center; }
+    .coaches-login-card p { margin: 0 0 1rem; text-align: center; color: #45556c; }
+    .coaches-login-card label { display: block; font-weight: 600; margin-bottom: .5rem; }
+    .coaches-login-card input { width: 100%; padding: .7rem .8rem; border: 1px solid #b9c7da; border-radius: 8px; font-size: 1rem; }
+    .coaches-login-card button { margin-top: 1rem; width: 100%; padding: .75rem; border: 0; border-radius: 8px; background: #063f7b; color: #fff; font-weight: 700; cursor: pointer; }
+    .coaches-login-card button:hover { background: #052f5d; }
+    .error-message { color: #b00020; min-height: 1.2em; margin-top: .75rem; text-align: center; }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+  <script>
+    fetch('/website/includes/header.html').then((r) => r.text()).then((html) => { document.getElementById('site-header').innerHTML = html; });
+  </script>
+
+  <main class="coaches-login-wrap">
+    <section class="coaches-login-card" aria-labelledby="coach-login-title">
+      <h1 id="coach-login-title">Coaches Corner</h1>
+      <p>Authorized coaches only.</p>
+      <form id="coach-login-form" novalidate>
+        <label for="coach-password">Password</label>
+        <input id="coach-password" name="coach-password" type="password" autocomplete="current-password" required />
+        <button type="submit">Enter Coaches Corner</button>
+        <p id="coach-login-error" class="error-message" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script>
+    fetch('/website/includes/footer.html').then((r) => r.text()).then((html) => { document.getElementById('site-footer').innerHTML = html; });
+  </script>
+
+  <script src="/js/auth.js"></script>
+  <script src="/website/js/main.js"></script>
+  <script>
+    if (window.coachAuth && window.coachAuth.isAuthenticated()) {
+      window.location.replace('/website/pages/coaches-corner/coachesCorner.html');
+    }
+
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+    document.addEventListener('keydown', (e) => {
+      const k = e.key.toLowerCase();
+      if ((e.ctrlKey && k === 'u') || (e.metaKey && e.altKey && k === 'u')) {
+        e.preventDefault();
+      }
+    });
+
+    const form = document.getElementById('coach-login-form');
+    const pw = document.getElementById('coach-password');
+    const err = document.getElementById('coach-login-error');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      err.textContent = '';
+
+      const ok = await window.coachAuth.validate(pw.value);
+      if (!ok) {
+        err.textContent = 'Incorrect password. Please try again.';
+        pw.value = '';
+        pw.focus();
+        return;
+      }
+
+      window.coachAuth.setAuthenticated();
+      window.location.replace('/website/pages/coaches-corner/coachesCorner.html');
+    });
+  </script>
+</body>
+</html>

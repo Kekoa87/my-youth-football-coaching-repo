@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Private coaching resources for authorized staff." />
+  <title>Coaches Corner | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="/website/styles.css" />
+  <link rel="icon" href="/website/images/ChromeSiteSymbol.jpg" type="image/png" />
+  <script src="/js/auth.js"></script>
+  <script>
+    window.coachAuth.guard('/coaches-login.html');
+  </script>
+</head>
+<body>
+  <div id="site-header"></div>
+  <script>
+    fetch('/website/includes/header.html').then((r) => r.text()).then((html) => { document.getElementById('site-header').innerHTML = html; });
+  </script>
+
+  <main class="section-padding">
+    <div class="container">
+      <div class="page-header" style="margin-bottom: var(--space-lg); text-align: center;">
+        <h1>Coaches Corner</h1>
+        <p>Authorized Coaches Access Only</p>
+      </div>
+
+      <section aria-label="Coaches content placeholder" style="min-height: 220px; border: 1px dashed #9ca9bb; border-radius: 12px; padding: 1rem; background: #fff;">
+        <p style="margin: 0; color: #49586f;">Content placeholder for future private coaching material.</p>
+      </section>
+
+      <p style="margin-top: 1rem; text-align: right;">
+        <a href="#" id="coach-logout" style="font-size: .9rem;">Logout</a>
+      </p>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script>
+    fetch('/website/includes/footer.html').then((r) => r.text()).then((html) => { document.getElementById('site-footer').innerHTML = html; });
+  </script>
+  <script src="/website/js/main.js"></script>
+  <script>
+    document.getElementById('coach-logout').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.coachAuth.logout();
+      window.location.replace('/index.html');
+    });
+  </script>
+</body>
+</html>
