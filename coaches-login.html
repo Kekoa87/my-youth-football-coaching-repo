@@ -47,7 +47,7 @@
   <script src="/website/js/main.js"></script>
   <script>
     if (window.coachAuth && window.coachAuth.isAuthenticated()) {
-      window.location.replace('/coaches-corner/');
+      window.location.replace('/website/pages/coaches-corner/coachesCorner.html');
     }
 
     document.addEventListener('contextmenu', (e) => e.preventDefault());
@@ -75,7 +75,7 @@
       }
 
       window.coachAuth.setAuthenticated();
-      window.location.replace('/coaches-corner/');
+      window.location.replace('/website/pages/coaches-corner/coachesCorner.html');
     });
   </script>
 </body>

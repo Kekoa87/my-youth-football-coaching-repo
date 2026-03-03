@@ -48,7 +48,7 @@ website/
 
 ## 🔐 Coaches Corner Protection
 
-- **Password hash storage:** The SHA-256 password hash is stored in `/js/auth.js` in the obfuscated auth module used by both `/coaches-login.html` and `/coaches-corner/index.html`.
+- **Password hash storage:** The SHA-256 password hash is stored in `/js/auth.js` in the obfuscated auth module used by both `/coaches-login.html` and `/website/pages/coaches-corner/coachesCorner.html`.
 - **How to change the password:**
   1. Generate a new SHA-256 hash for your new password (for example: `printf 'NEW_PASSWORD' | sha256sum`).
   2. Replace the existing hash string in `/js/auth.js`.
