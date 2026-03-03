@@ -1,5 +1,13 @@
+#site-header,
+#site-header header {
+  position: relative;
+  z-index: 1200;
+}
+
 .coaches-dashboard {
   background: #f6f8fb;
+  position: relative;
+  z-index: 1;
 }
 
 .coaches-dashboard__header {
@@ -8,6 +16,10 @@
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1.25rem;
+  background: transparent;
+  color: #233348;
+  box-shadow: none;
+  position: static;
 }
 
 .coaches-dashboard__eyebrow {
@@ -15,12 +27,12 @@
   font-size: 0.8rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #56657a;
+  color: #44556d;
 }
 
 .coaches-dashboard__subhead {
   margin-top: 0.35rem;
-  color: #3f4e63;
+  color: #2f425a;
 }
 
 .coaches-dashboard__logout {
@@ -188,6 +200,11 @@
 
 .segment-item__title {
   margin: 0;
+}
+
+.segment-item__title-link {
+  color: #1c5239;
+  text-decoration: underline;
 }
 
 .segment-actions {

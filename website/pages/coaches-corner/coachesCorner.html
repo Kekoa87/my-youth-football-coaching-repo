@@ -15,14 +15,14 @@
 
   <main class="section-padding coaches-dashboard">
     <div class="container">
-      <header class="coaches-dashboard__header">
+      <div class="coaches-dashboard__header" role="banner" aria-label="Coaches dashboard intro">
         <div>
           <p class="coaches-dashboard__eyebrow">Private Staff Workspace</p>
           <h1>Coaches Corner</h1>
           <p class="coaches-dashboard__subhead">Plan your week, run organized practices, and keep your staff aligned.</p>
         </div>
         <a href="#" id="coach-logout" class="coaches-dashboard__logout">Logout</a>
-      </header>
+      </div>
 
       <section class="module-grid" aria-label="Coaching modules">
         <article class="module-card module-card--placeholder" aria-labelledby="playbook-title">
@@ -54,6 +54,10 @@
               Practice Duration (minutes)
               <input id="practice-duration" type="number" min="1" step="1" />
             </label>
+            <label>
+              Practice Start Time
+              <input id="practice-start-time" type="time" />
+            </label>
           </div>
 
           <div class="practice-summary" aria-live="polite">
@@ -64,7 +68,7 @@
 
           <section class="segment-editor" aria-labelledby="segment-editor-title">
             <h3 id="segment-editor-title">Segment Editor</h3>
-            <form id="segment-form">
+            <form id="segment-form" novalidate>
               <input id="segment-id" type="hidden" />
               <div class="segment-form-grid">
                 <label>
@@ -80,14 +84,19 @@
                   <input id="segment-name" type="text" maxlength="80" required />
                 </label>
                 <label>
+                  Drill Link (optional)
+                  <input id="segment-drill-link" type="text" maxlength="200" placeholder="/website/pages/drills/..." />
+                </label>
+                <label>
                   Position Group (optional)
                   <input id="segment-group" type="text" maxlength="40" />
                 </label>
                 <label class="segment-form-grid__full">
                   Coaching Points
-                  <textarea id="segment-points" rows="3" maxlength="300" required></textarea>
+                  <textarea id="segment-points" rows="3" maxlength="300"></textarea>
                 </label>
               </div>
+              <p id="segment-link-error" class="warning hidden" role="alert">Drill Link must begin with /website/pages/drills/</p>
               <div class="segment-form-actions">
                 <button type="submit" id="segment-submit" class="btn btn-primary">Add Segment</button>
                 <button type="button" id="segment-cancel" class="btn btn-outline hidden">Cancel Edit</button>
