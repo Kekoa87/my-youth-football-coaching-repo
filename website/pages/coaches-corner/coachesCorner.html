@@ -83,10 +83,29 @@
                   Drill / Activity Name
                   <input id="segment-name" type="text" maxlength="80" required />
                 </label>
-                <label>
-                  Drill Link (optional)
-                  <input id="segment-drill-link" type="text" maxlength="200" placeholder="/website/pages/drills/..." />
-                </label>
+                <div class="segment-form-grid__full drill-selector">
+                  <p class="drill-selector__label">Select Drill From Library</p>
+                  <div class="drill-selector__controls">
+                    <label>
+                      Side of Ball
+                      <select id="drill-side">
+                        <option value="">No drill selected</option>
+                      </select>
+                    </label>
+                    <label>
+                      Position
+                      <select id="drill-position" disabled>
+                        <option value="">Select side first</option>
+                      </select>
+                    </label>
+                    <label>
+                      Drill
+                      <select id="drill-title" disabled>
+                        <option value="">Select position first</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
                 <label>
                   Position Group (optional)
                   <input id="segment-group" type="text" maxlength="40" />
@@ -96,7 +115,6 @@
                   <textarea id="segment-points" rows="3" maxlength="300"></textarea>
                 </label>
               </div>
-              <p id="segment-link-error" class="warning hidden" role="alert">Drill Link must begin with /website/pages/drills/</p>
               <div class="segment-form-actions">
                 <button type="submit" id="segment-submit" class="btn btn-primary">Add Segment</button>
                 <button type="button" id="segment-cancel" class="btn btn-outline hidden">Cancel Edit</button>
@@ -125,6 +143,7 @@
 
   <div id="site-footer"></div>
   <script src="/website/js/main.js"></script>
+  <script src="/js/drillLibrary.js"></script>
   <script src="/website/pages/coaches-corner/coachesCorner.js"></script>
 </body>
 </html>

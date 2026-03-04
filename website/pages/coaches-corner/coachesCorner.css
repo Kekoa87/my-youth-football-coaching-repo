@@ -141,6 +141,29 @@
   grid-column: 1 / -1;
 }
 
+
+.drill-selector {
+  border: 1px solid #dce5f2;
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: #f9fbfe;
+}
+
+.drill-selector__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  color: #40536d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.drill-selector__controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
 .segment-form-actions {
   margin-top: 0.75rem;
   display: flex;
@@ -232,7 +255,8 @@
   }
 
   .practice-meta,
-  .segment-form-grid {
+  .segment-form-grid,
+  .drill-selector__controls {
     grid-template-columns: 1fr;
   }
 

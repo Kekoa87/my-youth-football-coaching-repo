@@ -1,6 +1,5 @@
 (function () {
   const STORAGE_KEY = 'coachesCornerPracticePlan';
-  const DRILL_LINK_PREFIX = '/website/pages/drills/';
   const DEFAULT_PRACTICE_START_TIME = '16:30';
 
   function createWarmupSegment(startTime) {
@@ -11,7 +10,7 @@
       name: 'Warm-Ups',
       coachingPoints: '',
       positionGroup: 'All',
-      drillLink: ''
+      drill: null
     };
   }
 
@@ -25,7 +24,6 @@
     };
   }
 
-
   const elements = {};
   let state = loadState();
   let activePracticeIndex = 0;
@@ -34,6 +32,7 @@
     window.coachAuth.guard('/coaches-login.html');
     hydrateSharedLayout();
     cacheElements();
+    initializeDrillSelectors();
     bindEvents();
     render();
   }
@@ -66,15 +65,29 @@
     elements.segmentStart = document.getElementById('segment-start');
     elements.segmentDuration = document.getElementById('segment-duration');
     elements.segmentName = document.getElementById('segment-name');
-    elements.segmentLink = document.getElementById('segment-drill-link');
     elements.segmentGroup = document.getElementById('segment-group');
     elements.segmentPoints = document.getElementById('segment-points');
-    elements.segmentLinkError = document.getElementById('segment-link-error');
+    elements.drillSide = document.getElementById('drill-side');
+    elements.drillPosition = document.getElementById('drill-position');
+    elements.drillTitle = document.getElementById('drill-title');
     elements.segmentSubmit = document.getElementById('segment-submit');
     elements.segmentCancel = document.getElementById('segment-cancel');
     elements.segmentsList = document.getElementById('segments-list');
     elements.logout = document.getElementById('coach-logout');
     elements.resetWeek = document.getElementById('reset-week');
+  }
+
+  function initializeDrillSelectors() {
+    elements.drillSide.innerHTML = '<option value="">No drill selected</option>';
+    Object.keys(window.DRILL_LIBRARY).forEach((side) => {
+      const option = document.createElement('option');
+      option.value = side;
+      option.textContent = toDisplayLabel(side);
+      elements.drillSide.append(option);
+    });
+
+    resetPositionDropdown('Select side first');
+    resetDrillDropdown('Select position first');
   }
 
   function bindEvents() {
@@ -104,7 +117,6 @@
       const startTime = event.target.value || DEFAULT_PRACTICE_START_TIME;
       currentPractice().startTime = startTime;
 
-      // New practices include Warm-Ups as the first block. If untouched, keep it synced to practice start.
       const firstSegment = currentPractice().segments[0];
       if (firstSegment && firstSegment.name === 'Warm-Ups' && firstSegment.startTime === elements.segmentStart.value) {
         firstSegment.startTime = startTime;
@@ -117,6 +129,10 @@
       persistState();
       renderTimeline();
     });
+
+    elements.drillSide.addEventListener('change', onDrillSideChange);
+    elements.drillPosition.addEventListener('change', onDrillPositionChange);
+    elements.drillTitle.addEventListener('change', onDrillTitleChange);
 
     elements.segmentForm.addEventListener('submit', onSubmitSegment);
     elements.segmentCancel.addEventListener('click', resetSegmentForm);
@@ -158,16 +174,60 @@
     });
   }
 
-  function onSubmitSegment(event) {
-    event.preventDefault();
+  function onDrillSideChange() {
+    const side = elements.drillSide.value;
+    resetPositionDropdown('Select position');
+    resetDrillDropdown('Select drill');
 
-    hideLinkError();
-
-    const link = elements.segmentLink.value.trim();
-    if (!isValidDrillLink(link)) {
-      showLinkError();
+    if (!side) {
+      resetPositionDropdown('Select side first');
+      resetDrillDropdown('Select position first');
       return;
     }
+
+    const positions = window.DRILL_LIBRARY[side];
+    Object.keys(positions).forEach((positionKey) => {
+      const option = document.createElement('option');
+      option.value = positionKey;
+      option.textContent = positions[positionKey].label;
+      elements.drillPosition.append(option);
+    });
+
+    elements.drillPosition.disabled = false;
+    elements.drillTitle.disabled = true;
+  }
+
+  function onDrillPositionChange() {
+    const side = elements.drillSide.value;
+    const position = elements.drillPosition.value;
+    resetDrillDropdown('Select drill');
+
+    if (!side || !position) {
+      elements.drillTitle.disabled = true;
+      return;
+    }
+
+    const drillList = window.DRILL_LIBRARY[side][position].drills;
+    drillList.forEach((drill, index) => {
+      const option = document.createElement('option');
+      option.value = String(index);
+      option.textContent = drill.title;
+      elements.drillTitle.append(option);
+    });
+
+    elements.drillTitle.disabled = false;
+  }
+
+  function onDrillTitleChange() {
+    const selectedDrill = getSelectedDrill();
+    if (selectedDrill) {
+      // Selecting a drill auto-fills drill/activity name; coaches can still edit manually after.
+      elements.segmentName.value = selectedDrill.title;
+    }
+  }
+
+  function onSubmitSegment(event) {
+    event.preventDefault();
 
     const segment = {
       id: elements.segmentId.value || crypto.randomUUID(),
@@ -176,7 +236,7 @@
       name: elements.segmentName.value.trim(),
       coachingPoints: elements.segmentPoints.value.trim(),
       positionGroup: elements.segmentGroup.value.trim(),
-      drillLink: link
+      drill: getSelectedDrill()
     };
 
     if (!segment.startTime || !segment.durationMinutes || !segment.name) {
@@ -198,6 +258,46 @@
     renderSummary();
   }
 
+  function getSelectedDrill() {
+    const side = elements.drillSide.value;
+    const position = elements.drillPosition.value;
+    const drillIndex = elements.drillTitle.value;
+
+    if (!side || !position || drillIndex === '') {
+      return null;
+    }
+
+    const drill = window.DRILL_LIBRARY?.[side]?.[position]?.drills?.[Number(drillIndex)];
+    if (!drill) {
+      return null;
+    }
+
+    return {
+      side,
+      position,
+      title: drill.title,
+      url: drill.url
+    };
+  }
+
+  function setDrillSelectors(drill) {
+    if (!drill) {
+      elements.drillSide.value = '';
+      onDrillSideChange();
+      return;
+    }
+
+    elements.drillSide.value = drill.side || '';
+    onDrillSideChange();
+
+    elements.drillPosition.value = drill.position || '';
+    onDrillPositionChange();
+
+    const drillList = window.DRILL_LIBRARY?.[drill.side]?.[drill.position]?.drills || [];
+    const drillIndex = drillList.findIndex((item) => item.url === drill.url && item.title === drill.title);
+    elements.drillTitle.value = drillIndex >= 0 ? String(drillIndex) : '';
+  }
+
   function startSegmentEdit(segmentId) {
     const segment = currentPractice().segments.find((item) => item.id === segmentId);
     if (!segment) {
@@ -208,9 +308,9 @@
     elements.segmentStart.value = segment.startTime;
     elements.segmentDuration.value = segment.durationMinutes;
     elements.segmentName.value = segment.name;
-    elements.segmentLink.value = segment.drillLink || '';
     elements.segmentGroup.value = segment.positionGroup;
     elements.segmentPoints.value = segment.coachingPoints;
+    setDrillSelectors(segment.drill || null);
     elements.segmentSubmit.textContent = 'Save Segment';
     elements.segmentCancel.classList.remove('hidden');
     elements.segmentName.focus();
@@ -266,8 +366,6 @@
   function renderTimeline() {
     const practice = currentPractice();
 
-    // Chosen structure: a vertical timeline because coaches can scan sequence quickly on mobile,
-    // reorder blocks during practice, and map this one-day list into multiple practice days later.
     if (!practice.segments.length) {
       elements.segmentsList.innerHTML = '<li class="segment-item"><p class="segment-item__meta">No segments yet. Add your first drill block above.</p></li>';
       return;
@@ -276,13 +374,13 @@
     elements.segmentsList.innerHTML = practice.segments
       .map((segment, index) => {
         const safeGroup = segment.positionGroup ? `<p class="segment-item__meta"><strong>Group:</strong> ${escapeHtml(segment.positionGroup)}</p>` : '';
-        const displayName = segment.drillLink
-          ? `<a class="segment-item__title-link" href="${escapeAttribute(segment.drillLink)}" target="_blank" rel="noopener noreferrer">${escapeHtml(segment.name)}</a>`
+        const linkedName = segment.drill
+          ? `<a class="segment-item__title-link" href="${escapeAttribute(segment.drill.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(segment.name)}</a>`
           : escapeHtml(segment.name);
 
         return `
           <li class="segment-item">
-            <h4 class="segment-item__title">${displayName}</h4>
+            <h4 class="segment-item__title">${linkedName}</h4>
             <p class="segment-item__meta"><strong>${escapeHtml(segment.startTime)}</strong> · ${segment.durationMinutes} min</p>
             ${safeGroup}
             <p class="segment-item__meta"><strong>Coaching Points:</strong> ${escapeHtml(segment.coachingPoints || '—')}</p>
@@ -302,21 +400,19 @@
     elements.segmentForm.reset();
     elements.segmentId.value = '';
     elements.segmentStart.value = currentPractice().startTime || DEFAULT_PRACTICE_START_TIME;
+    setDrillSelectors(null);
     elements.segmentSubmit.textContent = 'Add Segment';
     elements.segmentCancel.classList.add('hidden');
-    hideLinkError();
   }
 
-  function showLinkError() {
-    elements.segmentLinkError.classList.remove('hidden');
+  function resetPositionDropdown(placeholderText) {
+    elements.drillPosition.innerHTML = `<option value="">${placeholderText}</option>`;
+    elements.drillPosition.disabled = true;
   }
 
-  function hideLinkError() {
-    elements.segmentLinkError.classList.add('hidden');
-  }
-
-  function isValidDrillLink(link) {
-    return !link || link.startsWith(DRILL_LINK_PREFIX);
+  function resetDrillDropdown(placeholderText) {
+    elements.drillTitle.innerHTML = `<option value="">${placeholderText}</option>`;
+    elements.drillTitle.disabled = true;
   }
 
   function loadState() {
@@ -355,8 +451,6 @@
   function normalizePractice(practice) {
     const startTime = practice.startTime || DEFAULT_PRACTICE_START_TIME;
     const segments = Array.isArray(practice.segments) ? practice.segments.map((segment) => normalizeSegment(segment)) : [];
-
-    // Inject defaults only when initializing a truly new/empty practice shape.
     const normalizedSegments = segments.length ? segments : [createWarmupSegment(startTime)];
 
     return {
@@ -369,6 +463,8 @@
   }
 
   function normalizeSegment(segment) {
+    const normalizedDrill = normalizeDrill(segment);
+
     return {
       id: segment.id || crypto.randomUUID(),
       startTime: segment.startTime || DEFAULT_PRACTICE_START_TIME,
@@ -376,8 +472,30 @@
       name: segment.name || 'Segment',
       coachingPoints: segment.coachingPoints || '',
       positionGroup: segment.positionGroup || '',
-      drillLink: segment.drillLink || ''
+      drill: normalizedDrill
     };
+  }
+
+  function normalizeDrill(segment) {
+    if (segment.drill && segment.drill.url && segment.drill.title) {
+      return {
+        side: segment.drill.side || '',
+        position: segment.drill.position || '',
+        title: segment.drill.title,
+        url: segment.drill.url
+      };
+    }
+
+    if (segment.drillLink) {
+      return {
+        side: '',
+        position: '',
+        title: segment.name || 'Linked Drill',
+        url: segment.drillLink
+      };
+    }
+
+    return null;
   }
 
   function persistState() {
@@ -390,6 +508,10 @@
 
   function getScheduledMinutes(segments) {
     return segments.reduce((total, segment) => total + (Number(segment.durationMinutes) || 0), 0);
+  }
+
+  function toDisplayLabel(value) {
+    return value.charAt(0).toUpperCase() + value.slice(1);
   }
 
   function escapeHtml(value) {
