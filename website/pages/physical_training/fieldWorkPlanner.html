@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Private coaching resources for authorized staff." />
+  <title>Field Work Planner | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="/website/styles.css" />
+  <link rel="stylesheet" href="/website/pages/physical_training/fieldWorkPlanner.css" />
+  <link rel="icon" href="/website/images/ChromeSiteSymbol.jpg" type="image/png" />
+  <script src="/js/auth.js"></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="section-padding coaches-dashboard">
+    <div class="container">
+      <div class="coaches-dashboard__header" role="banner" aria-label="Coaches dashboard intro">
+        <div>
+          <p class="coaches-dashboard__eyebrow">Private Coaching Tool</p>
+          <h1>Field Work Planner</h1>
+          <p class="coaches-dashboard__subhead">Build and manage weekly field sessions with drill-linked timelines.</p>
+        </div>
+        <a href="#" id="coach-logout" class="coaches-dashboard__logout">Logout</a>
+      </div>
+
+      <section class="module-grid" aria-label="Coaching modules">
+        <article class="module-card module-card--placeholder" aria-labelledby="playbook-title">
+          <h2 id="playbook-title">Playbook</h2>
+          <p>Coming soon. Organize concepts, installs, and call sheets in one place.</p>
+          <span class="module-status">Planned</span>
+        </article>
+
+        <article class="module-card module-card--active" aria-labelledby="practice-plan-title">
+          <div class="module-card__heading">
+            <h2 id="practice-plan-title">Field Work Planner</h2>
+            <span class="module-status module-status--active">Active</span>
+          </div>
+
+          <div class="practice-meta" aria-label="Field work session settings">
+            <label>
+              Week
+              <input id="week-label" type="text" maxlength="32" />
+            </label>
+            <label>
+              Field Work Day
+              <input id="practice-day" type="text" maxlength="20" />
+            </label>
+            <label>
+              Field Work Date
+              <input id="practice-date" type="date" />
+            </label>
+            <label>
+              Field Work Duration (minutes)
+              <input id="practice-duration" type="number" min="1" step="1" />
+            </label>
+            <label>
+              Field Work Start Time
+              <input id="practice-start-time" type="time" />
+            </label>
+          </div>
+
+          <div class="practice-summary" aria-live="polite">
+            <p><strong>Scheduled:</strong> <span id="scheduled-time">0</span> min</p>
+            <p><strong>Remaining:</strong> <span id="remaining-time">0</span> min</p>
+            <p id="duration-warning" class="warning hidden">Scheduled segments exceed total field work duration.</p>
+          </div>
+
+          <section class="segment-editor" aria-labelledby="segment-editor-title">
+            <h3 id="segment-editor-title">Segment Editor</h3>
+            <form id="segment-form" novalidate>
+              <input id="segment-id" type="hidden" />
+              <div class="segment-form-grid">
+                <label>
+                  Start Time
+                  <input id="segment-start" type="time" required />
+                </label>
+                <label>
+                  Duration (minutes)
+                  <input id="segment-duration" type="number" min="1" step="1" required />
+                </label>
+                <label>
+                  Drill / Activity Name
+                  <input id="segment-name" type="text" maxlength="80" required />
+                </label>
+                <div class="segment-form-grid__full drill-selector">
+                  <p class="drill-selector__label">Select Drill From Library</p>
+                  <div class="drill-selector__controls">
+                    <label>
+                      Side of Ball
+                      <select id="drill-side">
+                        <option value="">No drill selected</option>
+                      </select>
+                    </label>
+                    <label>
+                      Position
+                      <select id="drill-position" disabled>
+                        <option value="">Select side first</option>
+                      </select>
+                    </label>
+                    <label>
+                      Drill
+                      <select id="drill-title" disabled>
+                        <option value="">Select position first</option>
+                      </select>
+                    </label>
+                  </div>
+                </div>
+                <label>
+                  Position Group (optional)
+                  <input id="segment-group" type="text" maxlength="40" />
+                </label>
+                <label class="segment-form-grid__full">
+                  Coaching Points
+                  <textarea id="segment-points" rows="3" maxlength="300"></textarea>
+                </label>
+              </div>
+              <div class="segment-form-actions">
+                <button type="submit" id="segment-submit" class="btn btn-primary">Add Segment</button>
+                <button type="button" id="segment-cancel" class="btn btn-outline hidden">Cancel Edit</button>
+              </div>
+            </form>
+          </section>
+
+          <section aria-labelledby="timeline-title" class="timeline-section">
+            <div class="timeline-header">
+              <h3 id="timeline-title">Field Work Timeline</h3>
+              <button id="reset-week" type="button" class="btn btn-outline">Reset Week</button>
+            </div>
+            <p class="timeline-help">Tip: Use Up/Down to reorder drills as your field sequence evolves.</p>
+            <ol id="segments-list" class="segments-list"></ol>
+          </section>
+        </article>
+
+        <article class="module-card module-card--placeholder" aria-labelledby="roster-title">
+          <h2 id="roster-title">Roster Management</h2>
+          <p>Coming soon. Track player groups, attendance, and development notes.</p>
+          <span class="module-status">Planned</span>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/website/js/main.js"></script>
+  <script src="/js/drillLibrary.js"></script>
+  <script src="/website/pages/physical_training/fieldWorkPlanner.js"></script>
+</body>
+</html>

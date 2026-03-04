@@ -19,7 +19,7 @@
         <div>
           <p class="coaches-dashboard__eyebrow">Private Staff Workspace</p>
           <h1>Coaches Corner</h1>
-          <p class="coaches-dashboard__subhead">Plan your week, run organized practices, and keep your staff aligned.</p>
+          <p class="coaches-dashboard__subhead">Organize staff resources and templates in one place.</p>
         </div>
         <a href="#" id="coach-logout" class="coaches-dashboard__logout">Logout</a>
       </div>
@@ -31,105 +31,12 @@
           <span class="module-status">Planned</span>
         </article>
 
-        <article class="module-card module-card--active" aria-labelledby="practice-plan-title">
+        <article class="module-card module-card--active" aria-labelledby="practice-template-title">
           <div class="module-card__heading">
-            <h2 id="practice-plan-title">Practice Plan</h2>
-            <span class="module-status module-status--active">Active</span>
+            <h2 id="practice-template-title">Practice Plan Template</h2>
+            <span class="module-status">Coming Soon</span>
           </div>
-
-          <div class="practice-meta" aria-label="Practice day settings">
-            <label>
-              Week
-              <input id="week-label" type="text" maxlength="32" />
-            </label>
-            <label>
-              Practice Day
-              <input id="practice-day" type="text" maxlength="20" />
-            </label>
-            <label>
-              Practice Date
-              <input id="practice-date" type="date" />
-            </label>
-            <label>
-              Practice Duration (minutes)
-              <input id="practice-duration" type="number" min="1" step="1" />
-            </label>
-            <label>
-              Practice Start Time
-              <input id="practice-start-time" type="time" />
-            </label>
-          </div>
-
-          <div class="practice-summary" aria-live="polite">
-            <p><strong>Scheduled:</strong> <span id="scheduled-time">0</span> min</p>
-            <p><strong>Remaining:</strong> <span id="remaining-time">0</span> min</p>
-            <p id="duration-warning" class="warning hidden">Scheduled segments exceed total practice duration.</p>
-          </div>
-
-          <section class="segment-editor" aria-labelledby="segment-editor-title">
-            <h3 id="segment-editor-title">Segment Editor</h3>
-            <form id="segment-form" novalidate>
-              <input id="segment-id" type="hidden" />
-              <div class="segment-form-grid">
-                <label>
-                  Start Time
-                  <input id="segment-start" type="time" required />
-                </label>
-                <label>
-                  Duration (minutes)
-                  <input id="segment-duration" type="number" min="1" step="1" required />
-                </label>
-                <label>
-                  Drill / Activity Name
-                  <input id="segment-name" type="text" maxlength="80" required />
-                </label>
-                <div class="segment-form-grid__full drill-selector">
-                  <p class="drill-selector__label">Select Drill From Library</p>
-                  <div class="drill-selector__controls">
-                    <label>
-                      Side of Ball
-                      <select id="drill-side">
-                        <option value="">No drill selected</option>
-                      </select>
-                    </label>
-                    <label>
-                      Position
-                      <select id="drill-position" disabled>
-                        <option value="">Select side first</option>
-                      </select>
-                    </label>
-                    <label>
-                      Drill
-                      <select id="drill-title" disabled>
-                        <option value="">Select position first</option>
-                      </select>
-                    </label>
-                  </div>
-                </div>
-                <label>
-                  Position Group (optional)
-                  <input id="segment-group" type="text" maxlength="40" />
-                </label>
-                <label class="segment-form-grid__full">
-                  Coaching Points
-                  <textarea id="segment-points" rows="3" maxlength="300"></textarea>
-                </label>
-              </div>
-              <div class="segment-form-actions">
-                <button type="submit" id="segment-submit" class="btn btn-primary">Add Segment</button>
-                <button type="button" id="segment-cancel" class="btn btn-outline hidden">Cancel Edit</button>
-              </div>
-            </form>
-          </section>
-
-          <section aria-labelledby="timeline-title" class="timeline-section">
-            <div class="timeline-header">
-              <h3 id="timeline-title">Practice Timeline</h3>
-              <button id="reset-week" type="button" class="btn btn-outline">Reset Week</button>
-            </div>
-            <p class="timeline-help">Tip: Use Up/Down to reorder drills as your practice flow evolves.</p>
-            <ol id="segments-list" class="segments-list"></ol>
-          </section>
+          <p>This template module is being prepared for Coaches Corner.</p>
         </article>
 
         <article class="module-card module-card--placeholder" aria-labelledby="roster-title">
@@ -143,7 +50,6 @@
 
   <div id="site-footer"></div>
   <script src="/website/js/main.js"></script>
-  <script src="/js/drillLibrary.js"></script>
   <script src="/website/pages/coaches-corner/coachesCorner.js"></script>
 </body>
 </html>
