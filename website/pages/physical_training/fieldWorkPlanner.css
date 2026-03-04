@@ -4,48 +4,35 @@
   z-index: 1200;
 }
 
-.coaches-dashboard {
+.field-work-planner-page {
   background: #f6f8fb;
   position: relative;
   z-index: 1;
 }
 
-.coaches-dashboard__header {
+.field-work-planner-layout {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.field-work-planner__header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1.25rem;
-  background: transparent;
-  color: #233348;
-  box-shadow: none;
-  position: static;
 }
 
-.coaches-dashboard__eyebrow {
-  margin: 0;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #44556d;
-}
-
-.coaches-dashboard__subhead {
+.field-work-planner__subhead {
   margin-top: 0.35rem;
   color: #2f425a;
 }
 
-.coaches-dashboard__logout {
+.field-work-planner__logout {
   font-size: 0.9rem;
 }
 
-.module-grid {
-  display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.module-card {
+.planner-card {
   background: #fff;
   border: 1px solid #d9e1ec;
   border-radius: 12px;
@@ -53,15 +40,7 @@
   box-shadow: 0 2px 8px rgba(16, 32, 56, 0.06);
 }
 
-.module-card--placeholder {
-  grid-column: span 3;
-}
-
-.module-card--active {
-  grid-column: span 6;
-}
-
-.module-card__heading {
+.planner-card__heading {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -141,7 +120,6 @@
 .segment-form-grid__full {
   grid-column: 1 / -1;
 }
-
 
 .drill-selector {
   border: 1px solid #dce5f2;
@@ -266,15 +244,8 @@
   padding: 0.3rem 0.55rem;
 }
 
-@media (max-width: 1024px) {
-  .module-card--placeholder,
-  .module-card--active {
-    grid-column: span 12;
-  }
-}
-
 @media (max-width: 640px) {
-  .coaches-dashboard__header {
+  .field-work-planner__header {
     flex-direction: column;
   }
 
