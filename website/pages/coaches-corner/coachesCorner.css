@@ -105,7 +105,8 @@
 
 .practice-meta input,
 .segment-form-grid input,
-.segment-form-grid textarea {
+.segment-form-grid textarea,
+.drill-selector__controls select {
   width: 100%;
   margin-top: 0.3rem;
 }
@@ -162,6 +163,27 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+.drill-selector__controls label {
+  min-width: 0;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.drill-selector__controls select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .segment-form-actions {
@@ -225,9 +247,11 @@
   margin: 0;
 }
 
-.segment-item__title-link {
+.segment-item__title-link,
+.segment-item__drill-link {
   color: #1c5239;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .segment-actions {

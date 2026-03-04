@@ -83,11 +83,13 @@
       const option = document.createElement('option');
       option.value = side;
       option.textContent = toDisplayLabel(side);
+      option.title = toDisplayLabel(side);
       elements.drillSide.append(option);
     });
 
     resetPositionDropdown('Select side first');
     resetDrillDropdown('Select position first');
+    updateSelectTitle(elements.drillSide);
   }
 
   function bindEvents() {
@@ -138,6 +140,11 @@
     elements.segmentCancel.addEventListener('click', resetSegmentForm);
 
     elements.segmentsList.addEventListener('click', (event) => {
+      if (event.target.closest('.segment-item__drill-link')) {
+        event.stopPropagation();
+        return;
+      }
+
       const action = event.target.dataset.action;
       const segmentId = event.target.dataset.segmentId;
       if (!action || !segmentId) {
@@ -176,6 +183,7 @@
 
   function onDrillSideChange() {
     const side = elements.drillSide.value;
+    updateSelectTitle(elements.drillSide);
     resetPositionDropdown('Select position');
     resetDrillDropdown('Select drill');
 
@@ -190,15 +198,19 @@
       const option = document.createElement('option');
       option.value = positionKey;
       option.textContent = positions[positionKey].label;
+      option.title = positions[positionKey].label;
       elements.drillPosition.append(option);
     });
 
     elements.drillPosition.disabled = false;
     elements.drillTitle.disabled = true;
+    updateSelectTitle(elements.drillPosition);
+    updateSelectTitle(elements.drillTitle);
   }
 
   function onDrillPositionChange() {
     const side = elements.drillSide.value;
+    updateSelectTitle(elements.drillPosition);
     const position = elements.drillPosition.value;
     resetDrillDropdown('Select drill');
 
@@ -212,13 +224,16 @@
       const option = document.createElement('option');
       option.value = String(index);
       option.textContent = drill.title;
+      option.title = drill.title;
       elements.drillTitle.append(option);
     });
 
     elements.drillTitle.disabled = false;
+    updateSelectTitle(elements.drillTitle);
   }
 
   function onDrillTitleChange() {
+    updateSelectTitle(elements.drillTitle);
     const selectedDrill = getSelectedDrill();
     if (selectedDrill) {
       // Selecting a drill auto-fills drill/activity name; coaches can still edit manually after.
@@ -374,14 +389,16 @@
     elements.segmentsList.innerHTML = practice.segments
       .map((segment, index) => {
         const safeGroup = segment.positionGroup ? `<p class="segment-item__meta"><strong>Group:</strong> ${escapeHtml(segment.positionGroup)}</p>` : '';
-        const linkedName = segment.drill
-          ? `<a class="segment-item__title-link" href="${escapeAttribute(segment.drill.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(segment.name)}</a>`
-          : escapeHtml(segment.name);
+        const linkedName = escapeHtml(segment.name);
+        const drillMeta = segment.drill
+          ? `<p class="segment-item__meta"><strong>Drill:</strong> <a class="segment-item__drill-link" href="${escapeAttribute(segment.drill.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(segment.drill.title)}</a></p>`
+          : '';
 
         return `
           <li class="segment-item">
             <h4 class="segment-item__title">${linkedName}</h4>
             <p class="segment-item__meta"><strong>${escapeHtml(segment.startTime)}</strong> · ${segment.durationMinutes} min</p>
+            ${drillMeta}
             ${safeGroup}
             <p class="segment-item__meta"><strong>Coaching Points:</strong> ${escapeHtml(segment.coachingPoints || '—')}</p>
             <div class="segment-actions">
@@ -406,13 +423,20 @@
   }
 
   function resetPositionDropdown(placeholderText) {
-    elements.drillPosition.innerHTML = `<option value="">${placeholderText}</option>`;
+    elements.drillPosition.innerHTML = `<option value="" title="${escapeAttribute(placeholderText)}">${placeholderText}</option>`;
     elements.drillPosition.disabled = true;
+    updateSelectTitle(elements.drillPosition);
   }
 
   function resetDrillDropdown(placeholderText) {
-    elements.drillTitle.innerHTML = `<option value="">${placeholderText}</option>`;
+    elements.drillTitle.innerHTML = `<option value="" title="${escapeAttribute(placeholderText)}">${placeholderText}</option>`;
     elements.drillTitle.disabled = true;
+    updateSelectTitle(elements.drillTitle);
+  }
+
+  function updateSelectTitle(selectElement) {
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    selectElement.title = selectedOption ? selectedOption.textContent : '';
   }
 
   function loadState() {
