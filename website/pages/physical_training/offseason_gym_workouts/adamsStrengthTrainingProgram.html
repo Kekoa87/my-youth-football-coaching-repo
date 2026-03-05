@@ -11,6 +11,127 @@
   <link href="../../../images/ChromeSiteSymbol.jpg" rel="icon" type="image/png">
   <script async src="//www.instagram.com/embed.js">
   </script>
+  <style>
+   .program-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+   }
+
+   .program-sidebar {
+    border: 1px solid var(--border-color, #dcdcdc);
+    border-radius: 12px;
+    padding: var(--space-md);
+    background: var(--surface-color, #fff);
+    position: sticky;
+    top: 1rem;
+   }
+
+   .program-sidebar h3 {
+    margin-top: 0;
+   }
+
+   .block-group + .block-group {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-color, #e6e6e6);
+   }
+
+   .week-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   }
+
+   .week-list li + li {
+    margin-top: .35rem;
+   }
+
+   .week-button {
+    width: 100%;
+    text-align: left;
+    border: 1px solid transparent;
+    background: transparent;
+    padding: .5rem .65rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+   }
+
+   .week-button.active {
+    background: var(--accent-bg, #eef5ff);
+    border-color: var(--accent-color, #2d6cdf);
+    font-weight: 600;
+   }
+
+   .program-main {
+    min-width: 0;
+   }
+
+   .workout-section {
+    border: 1px solid var(--border-color, #e2e2e2);
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin-top: var(--space-md);
+    background: var(--surface-color, #fff);
+   }
+
+   .workout-section h4 {
+    margin-top: 0;
+   }
+
+   .exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-sm);
+   }
+
+   .exercise-card {
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 10px;
+    padding: .75rem;
+    background: #fff;
+   }
+
+   .exercise-card h5 {
+    margin: 0 0 .3rem;
+   }
+
+   .exercise-meta {
+    margin: 0 0 .55rem;
+    color: #444;
+    font-size: .95rem;
+   }
+
+   .video-placeholder {
+    border: 1px dashed #b7b7b7;
+    border-radius: 8px;
+    padding: .55rem;
+    text-align: center;
+    font-size: .9rem;
+    color: #555;
+    background: #fafafa;
+   }
+
+   .placeholder-message {
+    border: 1px dashed #bbb;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    background: #fafafa;
+   }
+
+   @media (max-width: 900px) {
+    .program-layout {
+     grid-template-columns: 1fr;
+    }
+
+    .program-sidebar {
+     position: static;
+    }
+   }
+  </style>
  </head>
  <body>
   <div id="site-header">
@@ -40,122 +161,48 @@
       This 12-week offseason strength program uses progressive overload with RPE-based compound lifts combined with assistance work to build total body strength for football players.
      </p>
 
-     <div class="tab-group" data-panel-class="block-panel">
-      <ul class="workout-tabs">
-       <li class="active"><a href="#block1-content">Block 1</a></li>
-       <li><a href="#block2-content">Block 2</a></li>
-       <li><a href="#block3-content">Block 3</a></li>
-      </ul>
-
-      <div class="workout-tab-panel block-panel active" id="block1-content">
-       <div class="tab-group" data-panel-class="week-panel">
-        <ul class="workout-tabs">
-         <li class="active"><a href="#block1-week1-content">Week 1</a></li>
-         <li><a href="#block1-week2-content">Week 2</a></li>
-         <li><a href="#block1-week3-content">Week 3</a></li>
-         <li><a href="#block1-week4-content">Week 4</a></li>
+     <div class="program-layout">
+      <aside class="program-sidebar">
+       <h3>Program Navigation</h3>
+       <div class="block-group">
+        <h4>Block 1</h4>
+        <ul class="week-list">
+         <li><button class="week-button active" data-week="1">Week 1</button></li>
+         <li><button class="week-button" data-week="2">Week 2</button></li>
+         <li><button class="week-button" data-week="3">Week 3</button></li>
+         <li><button class="week-button" data-week="4">Week 4</button></li>
         </ul>
-
-        <div class="workout-tab-panel week-panel active" id="block1-week1-content">
-         <div class="tab-group" data-panel-class="day-panel">
-          <ul class="workout-tabs">
-           <li class="active"><a href="#block1-week1-day1-content">Day 1</a></li>
-           <li><a href="#block1-week1-day2-content">Day 2</a></li>
-           <li><a href="#block1-week1-day3-content">Day 3</a></li>
-           <li><a href="#block1-week1-day4-content">Day 4</a></li>
-          </ul>
-
-          <div class="workout-tab-panel day-panel active" id="block1-week1-day1-content">
-           <table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Squat</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7</td></tr><tr><td data-label="Exercise">Deadlifts</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video">Moderate weight</td></tr><tr><td data-label="Exercise">Walking Lunges</td><td data-label="Sets x Reps">4 x 20</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table>
-          </div>
-          <div class="workout-tab-panel day-panel" id="block1-week1-day2-content">
-           <table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Bench Press</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7</td></tr><tr><td data-label="Exercise">Overhead Press</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Bicep Curls</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Any Other Arm Work</td><td data-label="Sets x Reps">2-3 x 10-15</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table>
-          </div>
-          <div class="workout-tab-panel day-panel" id="block1-week1-day3-content">
-           <table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Deadlift</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7</td></tr><tr><td data-label="Exercise">Front Squat</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Rear Foot Elevated Split Squat</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video">Weighted</td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table>
-          </div>
-          <div class="workout-tab-panel day-panel" id="block1-week1-day4-content">
-           <table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Overhead Press</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7</td></tr><tr><td data-label="Exercise">Pull Ups</td><td data-label="Sets x Reps">30 total reps</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Push Ups OR Dumbbell Bench Press</td><td data-label="Sets x Reps">3 x 15</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table>
-          </div>
-         </div>
-        </div>
-
-        <div class="workout-tab-panel week-panel" id="block1-week2-content">
-         <div class="tab-group" data-panel-class="day-panel">
-          <ul class="workout-tabs">
-           <li class="active"><a href="#block1-week2-day1-content">Day 1</a></li>
-           <li><a href="#block1-week2-day2-content">Day 2</a></li>
-           <li><a href="#block1-week2-day3-content">Day 3</a></li>
-           <li><a href="#block1-week2-day4-content">Day 4</a></li>
-          </ul>
-          <div class="workout-tab-panel day-panel active" id="block1-week2-day1-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Squat</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7.5</td></tr><tr><td data-label="Exercise">Deadlifts</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video">Moderate weight</td></tr><tr><td data-label="Exercise">Walking Lunges</td><td data-label="Sets x Reps">4 x 20</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week2-day2-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Bench Press</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7.5</td></tr><tr><td data-label="Exercise">Overhead Press</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Bicep Curls</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Any Other Arm Work</td><td data-label="Sets x Reps">2-3 x 10-15</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week2-day3-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Deadlift</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7.5</td></tr><tr><td data-label="Exercise">Front Squat</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Rear Foot Elevated Split Squat</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video">Weighted</td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week2-day4-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Overhead Press</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7.5</td></tr><tr><td data-label="Exercise">Pull Ups</td><td data-label="Sets x Reps">30 total reps</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Push Ups OR Dumbbell Bench Press</td><td data-label="Sets x Reps">3 x 15</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-         </div>
-        </div>
-
-        <div class="workout-tab-panel week-panel" id="block1-week3-content">
-         <div class="tab-group" data-panel-class="day-panel">
-          <ul class="workout-tabs">
-           <li class="active"><a href="#block1-week3-day1-content">Day 1</a></li>
-           <li><a href="#block1-week3-day2-content">Day 2</a></li>
-           <li><a href="#block1-week3-day3-content">Day 3</a></li>
-           <li><a href="#block1-week3-day4-content">Day 4</a></li>
-          </ul>
-          <div class="workout-tab-panel day-panel active" id="block1-week3-day1-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Squat</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7.5</td></tr><tr><td data-label="Exercise">Deadlifts</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video">Moderate weight</td></tr><tr><td data-label="Exercise">Walking Lunges</td><td data-label="Sets x Reps">4 x 20</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week3-day2-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Bench Press</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7.5</td></tr><tr><td data-label="Exercise">Overhead Press</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Bicep Curls</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Any Other Arm Work</td><td data-label="Sets x Reps">2-3 x 10-15</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week3-day3-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Deadlift</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7.5</td></tr><tr><td data-label="Exercise">Front Squat</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Rear Foot Elevated Split Squat</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video">Weighted</td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week3-day4-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Overhead Press</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 7.5</td></tr><tr><td data-label="Exercise">Pull Ups</td><td data-label="Sets x Reps">30 total reps</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Push Ups OR Dumbbell Bench Press</td><td data-label="Sets x Reps">3 x 15</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-         </div>
-        </div>
-
-        <div class="workout-tab-panel week-panel" id="block1-week4-content">
-         <div class="tab-group" data-panel-class="day-panel">
-          <ul class="workout-tabs">
-           <li class="active"><a href="#block1-week4-day1-content">Day 1</a></li>
-           <li><a href="#block1-week4-day2-content">Day 2</a></li>
-           <li><a href="#block1-week4-day3-content">Day 3</a></li>
-           <li><a href="#block1-week4-day4-content">Day 4</a></li>
-          </ul>
-          <div class="workout-tab-panel day-panel active" id="block1-week4-day1-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Squat</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 6.5-7</td></tr><tr><td data-label="Exercise">Deadlifts</td><td data-label="Sets x Reps">2 x 10</td><td data-label="Notes / Video">Moderate weight</td></tr><tr><td data-label="Exercise">Walking Lunges</td><td data-label="Sets x Reps">4 x 20</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week4-day2-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Bench Press</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 6.5-7</td></tr><tr><td data-label="Exercise">Overhead Press</td><td data-label="Sets x Reps">2 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Bicep Curls</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Any Other Arm Work</td><td data-label="Sets x Reps">2-3 x 10-15</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week4-day3-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Deadlift</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 6.5-7</td></tr><tr><td data-label="Exercise">Front Squat</td><td data-label="Sets x Reps">2 x 10</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Rear Foot Elevated Split Squat</td><td data-label="Sets x Reps">3 x 10</td><td data-label="Notes / Video">Weighted</td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-          <div class="workout-tab-panel day-panel" id="block1-week4-day4-content"><table class="workout-table"><thead><tr><th>Exercise</th><th>Sets x Reps</th><th>Notes / Video</th></tr></thead><tbody><tr><td data-label="Exercise">Overhead Press</td><td data-label="Sets x Reps">5 x 5</td><td data-label="Notes / Video">RPE 6.5-7</td></tr><tr><td data-label="Exercise">Pull Ups</td><td data-label="Sets x Reps">20 total reps</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Push Ups OR Dumbbell Bench Press</td><td data-label="Sets x Reps">3 x 15</td><td data-label="Notes / Video"></td></tr><tr><td data-label="Exercise">Abs / Core Work</td><td data-label="Sets x Reps">3 rounds</td><td data-label="Notes / Video"></td></tr></tbody></table></div>
-         </div>
-        </div>
        </div>
-      </div>
-
-      <div class="workout-tab-panel block-panel" id="block2-content">
-       <div class="tab-group" data-panel-class="week-panel">
-        <ul class="workout-tabs">
-         <li class="active"><a href="#block2-week5-content">Week 5</a></li>
-         <li><a href="#block2-week6-content">Week 6</a></li>
-         <li><a href="#block2-week7-content">Week 7</a></li>
-         <li><a href="#block2-week8-content">Week 8</a></li>
+       <div class="block-group">
+        <h4>Block 2</h4>
+        <ul class="week-list">
+         <li><button class="week-button" data-week="5">Week 5</button></li>
+         <li><button class="week-button" data-week="6">Week 6</button></li>
+         <li><button class="week-button" data-week="7">Week 7</button></li>
+         <li><button class="week-button" data-week="8">Week 8</button></li>
         </ul>
-        <div class="workout-tab-panel week-panel active" id="block2-week5-content"><div class="tab-group" data-panel-class="day-panel"><ul class="workout-tabs"><li class="active"><a href="#block2-week5-day1">Day 1</a></li><li><a href="#block2-week5-day2">Day 2</a></li><li><a href="#block2-week5-day3">Day 3</a></li><li><a href="#block2-week5-day4">Day 4</a></li></ul><div class="workout-tab-panel day-panel active" id="block2-week5-day1"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week5-day2"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week5-day3"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week5-day4"><p>Workout coming soon</p></div></div></div>
-        <div class="workout-tab-panel week-panel" id="block2-week6-content"><div class="tab-group" data-panel-class="day-panel"><ul class="workout-tabs"><li class="active"><a href="#block2-week6-day1">Day 1</a></li><li><a href="#block2-week6-day2">Day 2</a></li><li><a href="#block2-week6-day3">Day 3</a></li><li><a href="#block2-week6-day4">Day 4</a></li></ul><div class="workout-tab-panel day-panel active" id="block2-week6-day1"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week6-day2"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week6-day3"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week6-day4"><p>Workout coming soon</p></div></div></div>
-        <div class="workout-tab-panel week-panel" id="block2-week7-content"><div class="tab-group" data-panel-class="day-panel"><ul class="workout-tabs"><li class="active"><a href="#block2-week7-day1">Day 1</a></li><li><a href="#block2-week7-day2">Day 2</a></li><li><a href="#block2-week7-day3">Day 3</a></li><li><a href="#block2-week7-day4">Day 4</a></li></ul><div class="workout-tab-panel day-panel active" id="block2-week7-day1"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week7-day2"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week7-day3"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week7-day4"><p>Workout coming soon</p></div></div></div>
-        <div class="workout-tab-panel week-panel" id="block2-week8-content"><div class="tab-group" data-panel-class="day-panel"><ul class="workout-tabs"><li class="active"><a href="#block2-week8-day1">Day 1</a></li><li><a href="#block2-week8-day2">Day 2</a></li><li><a href="#block2-week8-day3">Day 3</a></li><li><a href="#block2-week8-day4">Day 4</a></li></ul><div class="workout-tab-panel day-panel active" id="block2-week8-day1"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week8-day2"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week8-day3"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block2-week8-day4"><p>Workout coming soon</p></div></div></div>
        </div>
-      </div>
-
-      <div class="workout-tab-panel block-panel" id="block3-content">
-       <div class="tab-group" data-panel-class="week-panel">
-        <ul class="workout-tabs">
-         <li class="active"><a href="#block3-week9-content">Week 9</a></li>
-         <li><a href="#block3-week10-content">Week 10</a></li>
-         <li><a href="#block3-week11-content">Week 11</a></li>
-         <li><a href="#block3-week12-content">Week 12</a></li>
+       <div class="block-group">
+        <h4>Block 3</h4>
+        <ul class="week-list">
+         <li><button class="week-button" data-week="9">Week 9</button></li>
+         <li><button class="week-button" data-week="10">Week 10</button></li>
+         <li><button class="week-button" data-week="11">Week 11</button></li>
+         <li><button class="week-button" data-week="12">Week 12</button></li>
         </ul>
-        <div class="workout-tab-panel week-panel active" id="block3-week9-content"><div class="tab-group" data-panel-class="day-panel"><ul class="workout-tabs"><li class="active"><a href="#block3-week9-day1">Day 1</a></li><li><a href="#block3-week9-day2">Day 2</a></li><li><a href="#block3-week9-day3">Day 3</a></li><li><a href="#block3-week9-day4">Day 4</a></li></ul><div class="workout-tab-panel day-panel active" id="block3-week9-day1"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week9-day2"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week9-day3"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week9-day4"><p>Workout coming soon</p></div></div></div>
-        <div class="workout-tab-panel week-panel" id="block3-week10-content"><div class="tab-group" data-panel-class="day-panel"><ul class="workout-tabs"><li class="active"><a href="#block3-week10-day1">Day 1</a></li><li><a href="#block3-week10-day2">Day 2</a></li><li><a href="#block3-week10-day3">Day 3</a></li><li><a href="#block3-week10-day4">Day 4</a></li></ul><div class="workout-tab-panel day-panel active" id="block3-week10-day1"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week10-day2"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week10-day3"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week10-day4"><p>Workout coming soon</p></div></div></div>
-        <div class="workout-tab-panel week-panel" id="block3-week11-content"><div class="tab-group" data-panel-class="day-panel"><ul class="workout-tabs"><li class="active"><a href="#block3-week11-day1">Day 1</a></li><li><a href="#block3-week11-day2">Day 2</a></li><li><a href="#block3-week11-day3">Day 3</a></li><li><a href="#block3-week11-day4">Day 4</a></li></ul><div class="workout-tab-panel day-panel active" id="block3-week11-day1"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week11-day2"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week11-day3"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week11-day4"><p>Workout coming soon</p></div></div></div>
-        <div class="workout-tab-panel week-panel" id="block3-week12-content"><div class="tab-group" data-panel-class="day-panel"><ul class="workout-tabs"><li class="active"><a href="#block3-week12-day1">Day 1</a></li><li><a href="#block3-week12-day2">Day 2</a></li><li><a href="#block3-week12-day3">Day 3</a></li><li><a href="#block3-week12-day4">Day 4</a></li></ul><div class="workout-tab-panel day-panel active" id="block3-week12-day1"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week12-day2"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week12-day3"><p>Workout coming soon</p></div><div class="workout-tab-panel day-panel" id="block3-week12-day4"><p>Workout coming soon</p></div></div></div>
        </div>
-      </div>
+      </aside>
+
+      <section class="program-main">
+       <ul class="workout-tabs" id="day-tabs">
+        <li class="active"><a href="#day1">Day 1</a></li>
+        <li><a href="#day2">Day 2</a></li>
+        <li><a href="#day3">Day 3</a></li>
+        <li><a href="#day4">Day 4</a></li>
+       </ul>
+       <div id="week-context" style="margin-top: var(--space-sm);"></div>
+       <div id="workout-content"></div>
+      </section>
      </div>
     </div>
    </div>
@@ -171,43 +218,90 @@
   </script>
   <script>
    document.addEventListener('DOMContentLoaded', function () {
-    const tabGroups = document.querySelectorAll('.tab-group');
+    const workouts = {
+      1: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      2: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      3: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      4: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'2 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'2 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'2 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'20 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      }
+    };
 
-    tabGroups.forEach(group => {
-      const tabList = group.querySelector(':scope > .workout-tabs');
-      const panelClass = group.getAttribute('data-panel-class');
-      if (!tabList || !panelClass) {
+    let selectedWeek = 1;
+    let selectedDay = 'day1';
+
+    const weekButtons = document.querySelectorAll('.week-button');
+    const dayTabs = document.querySelectorAll('#day-tabs li');
+    const dayLinks = document.querySelectorAll('#day-tabs a');
+    const weekContext = document.getElementById('week-context');
+    const content = document.getElementById('workout-content');
+
+    function blockFromWeek(week) {
+      if (week <= 4) return 1;
+      if (week <= 8) return 2;
+      return 3;
+    }
+
+    function renderWorkout() {
+      const block = blockFromWeek(selectedWeek);
+      weekContext.innerHTML = '<h3 style="margin-bottom: 0;">Block ' + block + ' • Week ' + selectedWeek + ' • ' + selectedDay.replace('day', 'Day ') + '</h3>';
+
+      if (!workouts[selectedWeek]) {
+        content.innerHTML = '<div class="workout-section"><div class="placeholder-message">Workout coming soon</div></div>';
         return;
       }
 
-      const tabs = tabList.querySelectorAll('li');
-      const links = tabList.querySelectorAll('a');
-      const panels = Array.from(group.children).filter(child => child.classList && child.classList.contains(panelClass));
-
-      function activateTab(link) {
-        tabs.forEach(tab => tab.classList.remove('active'));
-        panels.forEach(panel => panel.classList.remove('active'));
-
-        const targetId = link.getAttribute('href');
-        const targetPanel = group.querySelector(targetId);
-        link.parentElement.classList.add('active');
-        if (targetPanel) {
-          targetPanel.classList.add('active');
-        }
+      const dayData = workouts[selectedWeek][selectedDay];
+      if (!dayData) {
+        content.innerHTML = '<div class="workout-section"><div class="placeholder-message">Workout coming soon</div></div>';
+        return;
       }
 
-      links.forEach(link => {
-        link.addEventListener('click', function (event) {
-          event.preventDefault();
-          activateTab(link);
-        });
+      content.innerHTML = dayData.sections.map(section => {
+        return '<div class="workout-section"><h4>' + section.title + '</h4><div class="exercise-grid">' + section.exercises.map(ex => {
+          return '<article class="exercise-card"><h5>' + ex.name + '</h5><p class="exercise-meta">' + ex.details + '</p><div class="video-placeholder">Video Coming Soon</div></article>';
+        }).join('') + '</div></div>';
+      }).join('');
+    }
+
+    weekButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        weekButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedWeek = Number(btn.getAttribute('data-week'));
+        renderWorkout();
       });
-
-      const activeLink = tabList.querySelector('li.active a') || links[0];
-      if (activeLink) {
-        activateTab(activeLink);
-      }
     });
+
+    dayLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        dayTabs.forEach(li => li.classList.remove('active'));
+        link.parentElement.classList.add('active');
+        selectedDay = link.getAttribute('href').replace('#', '').toLowerCase();
+        renderWorkout();
+      });
+    });
+
+    renderWorkout();
    });
   </script>
  </body>
