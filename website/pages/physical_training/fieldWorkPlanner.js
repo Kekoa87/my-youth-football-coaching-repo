@@ -73,7 +73,9 @@
 
   function initializeDrillSelectors() {
     elements.drillSide.innerHTML = '<option value="">No drill selected</option>';
-    Object.keys(window.DRILL_LIBRARY).forEach((side) => {
+
+    const library = window.DRILL_LIBRARY || {};
+    Object.keys(library).forEach((side) => {
       const option = document.createElement('option');
       option.value = side;
       option.textContent = toDisplayLabel(side);
@@ -160,24 +162,30 @@
   function onDrillSideChange() {
     const side = elements.drillSide.value;
     updateSelectTitle(elements.drillSide);
-    resetPositionDropdown('Select position');
-    resetDrillDropdown('Select drill');
+
+    // Always clear dependent selects before repopulating.
+    resetPositionDropdown('Select side first');
+    resetDrillDropdown('Select position first');
 
     if (!side) {
-      resetPositionDropdown('Select side first');
-      resetDrillDropdown('Select position first');
       return;
     }
 
-    const positions = window.DRILL_LIBRARY[side];
+    const positions = window.DRILL_LIBRARY?.[side];
+    if (!positions || typeof positions !== 'object') {
+      return;
+    }
+
+    const positionFragment = document.createDocumentFragment();
     Object.keys(positions).forEach((positionKey) => {
       const option = document.createElement('option');
       option.value = positionKey;
       option.textContent = positions[positionKey].label;
       option.title = positions[positionKey].label;
-      elements.drillPosition.append(option);
+      positionFragment.append(option);
     });
 
+    elements.drillPosition.append(positionFragment);
     elements.drillPosition.disabled = false;
     elements.drillTitle.disabled = true;
     updateSelectTitle(elements.drillPosition);
