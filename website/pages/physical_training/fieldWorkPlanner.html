@@ -27,29 +27,26 @@
           <span class="module-status module-status--active">Active</span>
         </div>
 
-        <div class="practice-meta" aria-label="Field work session settings">
-          <label>
-            Week
-            <input id="week-label" type="text" maxlength="32" />
-          </label>
-          <label>
-            Field Work Day
-            <input id="practice-day" type="text" maxlength="20" />
-          </label>
-          <label>
-            Field Work Date
-            <input id="practice-date" type="date" />
-          </label>
-          <label>
-            Field Work Duration (minutes)
-            <input id="practice-duration" type="number" min="1" step="1" />
+        <div class="workout-focus" aria-label="Position focused workout settings">
+          <label for="workout-focus">
+            Workout Focus
+            <select id="workout-focus">
+              <option value="">Select focus</option>
+              <option value="QB">QB</option>
+              <option value="RB">RB</option>
+              <option value="WR">WR</option>
+              <option value="TE">TE</option>
+              <option value="OL">OL</option>
+              <option value="DL">DL</option>
+              <option value="LB">LB</option>
+              <option value="DB">DB</option>
+              <option value="Special Teams">Special Teams</option>
+            </select>
           </label>
         </div>
 
         <div class="practice-summary" aria-live="polite">
-          <p><strong>Scheduled:</strong> <span id="scheduled-time">0</span> min</p>
-          <p><strong>Remaining:</strong> <span id="remaining-time">0</span> min</p>
-          <p id="duration-warning" class="warning hidden">Scheduled segments exceed total field work duration.</p>
+          <p><strong>Total Workout Time:</strong> <span id="scheduled-time">0</span> min</p>
         </div>
 
         <section class="segment-editor" aria-labelledby="segment-editor-title">
@@ -62,7 +59,7 @@
                 <input id="segment-duration" type="number" min="1" step="1" required />
               </label>
               <label>
-                Drill / Activity Name
+                Position Focus
                 <input id="segment-name" type="text" maxlength="80" required />
               </label>
               <div class="segment-form-grid__full drill-selector">
@@ -97,6 +94,7 @@
                 <textarea id="segment-points" rows="3" maxlength="300"></textarea>
               </label>
             </div>
+            <p id="segment-duration-validation" class="form-validation hidden" role="status" aria-live="polite">Duration (minutes) is required before adding this drill.</p>
             <div class="segment-form-actions">
               <button type="submit" id="segment-submit" class="btn btn-primary">Add Segment</button>
               <button type="button" id="segment-cancel" class="btn btn-outline hidden">Cancel Edit</button>

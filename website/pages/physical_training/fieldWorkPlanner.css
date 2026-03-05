@@ -75,29 +75,33 @@
   color: #0c4e7a;
 }
 
-.practice-meta,
+.workout-focus,
 .segment-form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.75rem;
 }
 
-.practice-meta {
+.workout-focus {
   margin-top: 1rem;
 }
 
-.practice-meta label,
+.workout-focus label,
 .segment-form-grid label {
   font-size: 0.9rem;
   color: #2c3a4e;
 }
 
-.practice-meta input,
+.workout-focus select,
 .segment-form-grid input,
 .segment-form-grid textarea,
 .drill-selector__controls select {
   width: 100%;
   margin-top: 0.3rem;
+}
+
+.workout-focus label {
+  max-width: 320px;
 }
 
 .practice-summary {
@@ -115,6 +119,12 @@
 .warning {
   color: #9b1d1d;
   font-weight: 600;
+}
+
+.form-validation {
+  margin: 0.6rem 0 0;
+  font-size: 0.85rem;
+  color: #9b1d1d;
 }
 
 .hidden {
@@ -269,7 +279,7 @@
   }
 
 
-  .practice-meta,
+  .workout-focus,
   .segment-form-grid,
   .drill-selector__controls {
     grid-template-columns: 1fr;
@@ -293,7 +303,7 @@
   .timeline-controls,
   .timeline-help,
   .planner-card__heading .module-status,
-  .practice-meta,
+  .workout-focus,
   .practice-summary {
     display: none !important;
   }

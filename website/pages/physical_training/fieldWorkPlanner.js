@@ -14,6 +14,7 @@
 
   function createDefaultPractice() {
     return {
+      workoutFocus: '',
       day: 'Tuesday',
       date: '',
       durationMinutes: 90,
@@ -48,13 +49,8 @@
   }
 
   function cacheElements() {
-    elements.weekLabel = document.getElementById('week-label');
-    elements.practiceDay = document.getElementById('practice-day');
-    elements.practiceDate = document.getElementById('practice-date');
-    elements.practiceDuration = document.getElementById('practice-duration');
+    elements.workoutFocus = document.getElementById('workout-focus');
     elements.scheduledTime = document.getElementById('scheduled-time');
-    elements.remainingTime = document.getElementById('remaining-time');
-    elements.durationWarning = document.getElementById('duration-warning');
     elements.segmentForm = document.getElementById('segment-form');
     elements.segmentId = document.getElementById('segment-id');
     elements.segmentDuration = document.getElementById('segment-duration');
@@ -66,6 +62,7 @@
     elements.drillTitle = document.getElementById('drill-title');
     elements.segmentSubmit = document.getElementById('segment-submit');
     elements.segmentCancel = document.getElementById('segment-cancel');
+    elements.segmentDurationValidation = document.getElementById('segment-duration-validation');
     elements.segmentsList = document.getElementById('segments-list');
     elements.resetWeek = document.getElementById('reset-week');
     elements.printWorkout = document.getElementById('print-workout');
@@ -89,28 +86,12 @@
   }
 
   function bindEvents() {
-    elements.weekLabel.addEventListener('input', (event) => {
-      state.week = event.target.value || 'Week 1';
+    elements.workoutFocus.addEventListener('change', (event) => {
+      currentPractice().workoutFocus = event.target.value;
       persistState();
     });
 
-    elements.practiceDay.addEventListener('input', (event) => {
-      currentPractice().day = event.target.value;
-      persistState();
-    });
-
-    elements.practiceDate.addEventListener('input', (event) => {
-      currentPractice().date = event.target.value;
-      persistState();
-    });
-
-    elements.practiceDuration.addEventListener('input', (event) => {
-      const duration = parseInt(event.target.value, 10);
-      currentPractice().durationMinutes = Number.isFinite(duration) ? Math.max(duration, 1) : 1;
-      persistState();
-      renderSummary();
-    });
-
+    elements.segmentDuration.addEventListener('input', updateSegmentSubmitState);
 
     elements.drillSide.addEventListener('change', onDrillSideChange);
     elements.drillPosition.addEventListener('change', onDrillPositionChange);
@@ -157,6 +138,12 @@
       resetSegmentForm();
       render();
     });
+  }
+
+  function updateSegmentSubmitState() {
+    const hasDuration = Number.parseInt(elements.segmentDuration.value, 10) > 0;
+    elements.segmentSubmit.disabled = !hasDuration;
+    elements.segmentDurationValidation.classList.toggle('hidden', hasDuration);
   }
 
   function onDrillSideChange() {
@@ -238,6 +225,7 @@
     };
 
     if (!segment.durationMinutes || !segment.name) {
+      updateSegmentSubmitState();
       return;
     }
 
@@ -310,6 +298,7 @@
     setDrillSelectors(segment.drill || null);
     elements.segmentSubmit.textContent = 'Save Segment';
     elements.segmentCancel.classList.remove('hidden');
+    updateSegmentSubmitState();
     elements.segmentName.focus();
   }
 
@@ -340,10 +329,7 @@
 
   function render() {
     const practice = currentPractice();
-    elements.weekLabel.value = state.week;
-    elements.practiceDay.value = practice.day || '';
-    elements.practiceDate.value = practice.date || '';
-    elements.practiceDuration.value = practice.durationMinutes || 90;
+    elements.workoutFocus.value = practice.workoutFocus || '';
     resetSegmentForm();
     renderSummary();
     renderTimeline();
@@ -352,11 +338,7 @@
   function renderSummary() {
     const practice = currentPractice();
     const scheduled = getScheduledMinutes(practice.segments);
-    const duration = Number(practice.durationMinutes) || 0;
-
     elements.scheduledTime.textContent = String(scheduled);
-    elements.remainingTime.textContent = String(duration - scheduled);
-    elements.durationWarning.classList.toggle('hidden', scheduled <= duration);
   }
 
   function renderTimeline() {
@@ -400,6 +382,7 @@
     setDrillSelectors(null);
     elements.segmentSubmit.textContent = 'Add Segment';
     elements.segmentCancel.classList.add('hidden');
+    updateSegmentSubmitState();
   }
 
   function resetPositionDropdown(placeholderText) {
@@ -478,6 +461,7 @@
       day: practice.day || 'Tuesday',
       date: practice.date || '',
       durationMinutes: Number(practice.durationMinutes) || 90,
+      workoutFocus: practice.workoutFocus || '',
       segments: normalizedSegments
     };
   }
