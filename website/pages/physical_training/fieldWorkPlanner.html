@@ -16,11 +16,14 @@
   <main class="section-padding field-work-planner-page">
     <div class="container field-work-planner-layout">
       <div class="field-work-planner__header" role="banner" aria-label="Field Work Planner header">
-        <div>
+        <!-- Two-zone header keeps hierarchy clear: left = title context, right = utility action. -->
+        <div class="field-work-planner__header-main">
           <h1>Field Work Planner</h1>
           <p class="field-work-planner__subhead">Plan and structure your on-field sessions.</p>
         </div>
-        <a href="#" id="coach-logout" class="field-work-planner__logout">Logout</a>
+        <div class="field-work-planner__header-actions">
+          <a href="#" id="coach-logout" class="field-work-planner__logout">Logout</a>
+        </div>
       </div>
 
       <section class="planner-card" aria-labelledby="field-work-planner-title">
