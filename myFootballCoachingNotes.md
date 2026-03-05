@@ -646,6 +646,7 @@ This file lives in the repo only. Not part of the public site.
 - [Hand Placement Drill for Youth Football Offensive Linemen](https://youtube.com/shorts/tfdaDWv9PdY?si=M1Gy8GLdvPDNW9Mo)
 - [FlipSled: Step, step, and punch drill - OL Blocking for better hands](https://youtube.com/shorts/ZYvlfR-4jls?si=bv90c5_bcGLUwOyr)
 - [Football University - Offensive Line Drills | Hand Placement](https://youtu.be/RBUG6JhE8nY?si=IsFxhK_kNrYC7uiz)
+- [Joe Pawlak - UND O Line Drill Tape Run](https://youtu.be/owSJ2DiZNWA?si=IgKU7tH0scYStZLy)
 
 ### Exercise & Conditioning
 - [Sprints](https://youtube.com/shorts/agHssqNb3Yg?si=WYJRL1fwg4646GJs)
@@ -672,6 +673,7 @@ This file lives in the repo only. Not part of the public site.
 - [Gruden Explains Basic Offensive Formations | Gruden’s Glossary](https://youtu.be/2Rk0K-w5DYA?si=tqDJOtI-occD84Ou)
 - [How do you identify your fronts for the Offensive Line! ](https://youtube.com/shorts/_ePd4B0MHWA?si=NXVoUScNHAk8I8LD)
    > I like the above to show typical fronts seen in football when coming up with blocking assignments.
+- [WZWF - Kyle Shanahan's 49ers PLAYBOOK Breakdown (And DOWNLOAD)!](https://youtu.be/6gYC8ObJlDk?si=OmzRJTP8Z-ZRtPyI)
 
 
 ### Football Play Ideas
@@ -698,6 +700,9 @@ This file lives in the repo only. Not part of the public site.
 ### Quarterback Training
 - [FDT - Training Elite Youth QBs](https://www.youtube.com/watch?v=ll8WrM1iAiI)
 - [FDT - QB Warm Up Routine](https://youtu.be/S9A1xml5u7Y?si=86aGecxa6micoJCF)
+
+### RPOs
+- [Coach Tatum - RPOs](https://youtube.com/shorts/CGGRP3juTL0?si=66UhDRWwfcSVrals)
 
 ### Split Back
 - [How to utilize the 2 Back Run Game](https://youtu.be/yCiui2mWFZc?si=WVH-d1-EXTxfiDg6)
@@ -732,4 +737,6 @@ This file lives in the repo only. Not part of the public site.
 - [AFA - Inside Zone Blocking Rules](https://youtu.be/YunV5OwJ4H4?si=1Zq2euIhYGpmv5Ic)
 - [AFA - How To Run Inside Zone 10 Different Ways](https://youtu.be/wmwOEzJpKLM?si=PZfguCHzu3R11fKn)
 - [TOC - Coaching Outside Zone](https://youtube.com/shorts/wUDvHslp_Ic?si=Zt5tR_S8vD6WpUHI)
-                                                    
+
+
+## My Random Notes
