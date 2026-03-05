@@ -1,12 +1,9 @@
 (function () {
   const STORAGE_KEY = 'fieldWorkPlannerData';
   const LEGACY_STORAGE_KEYS = ['coachesCornerPracticePlan', 'practicePlanData'];
-  const DEFAULT_PRACTICE_START_TIME = '16:30';
-
-  function createWarmupSegment(startTime) {
+  function createWarmupSegment() {
     return {
       id: crypto.randomUUID(),
-      startTime,
       durationMinutes: 10,
       name: 'Warm-Ups',
       coachingPoints: '',
@@ -20,8 +17,7 @@
       day: 'Tuesday',
       date: '',
       durationMinutes: 90,
-      startTime: DEFAULT_PRACTICE_START_TIME,
-      segments: [createWarmupSegment(DEFAULT_PRACTICE_START_TIME)]
+      segments: [createWarmupSegment()]
     };
   }
 
@@ -56,13 +52,11 @@
     elements.practiceDay = document.getElementById('practice-day');
     elements.practiceDate = document.getElementById('practice-date');
     elements.practiceDuration = document.getElementById('practice-duration');
-    elements.practiceStartTime = document.getElementById('practice-start-time');
     elements.scheduledTime = document.getElementById('scheduled-time');
     elements.remainingTime = document.getElementById('remaining-time');
     elements.durationWarning = document.getElementById('duration-warning');
     elements.segmentForm = document.getElementById('segment-form');
     elements.segmentId = document.getElementById('segment-id');
-    elements.segmentStart = document.getElementById('segment-start');
     elements.segmentDuration = document.getElementById('segment-duration');
     elements.segmentName = document.getElementById('segment-name');
     elements.segmentGroup = document.getElementById('segment-group');
@@ -74,6 +68,7 @@
     elements.segmentCancel = document.getElementById('segment-cancel');
     elements.segmentsList = document.getElementById('segments-list');
     elements.resetWeek = document.getElementById('reset-week');
+    elements.printWorkout = document.getElementById('print-workout');
   }
 
   function initializeDrillSelectors() {
@@ -114,22 +109,6 @@
       renderSummary();
     });
 
-    elements.practiceStartTime.addEventListener('input', (event) => {
-      const startTime = event.target.value || DEFAULT_PRACTICE_START_TIME;
-      currentPractice().startTime = startTime;
-
-      const firstSegment = currentPractice().segments[0];
-      if (firstSegment && firstSegment.name === 'Warm-Ups' && firstSegment.startTime === elements.segmentStart.value) {
-        firstSegment.startTime = startTime;
-      }
-
-      if (!elements.segmentId.value) {
-        elements.segmentStart.value = startTime;
-      }
-
-      persistState();
-      renderTimeline();
-    });
 
     elements.drillSide.addEventListener('change', onDrillSideChange);
     elements.drillPosition.addEventListener('change', onDrillPositionChange);
@@ -161,6 +140,10 @@
       if (action === 'move-up' || action === 'move-down') {
         reorderSegment(segmentId, action === 'move-up' ? -1 : 1);
       }
+    });
+
+    elements.printWorkout.addEventListener('click', () => {
+      window.print();
     });
 
     elements.resetWeek.addEventListener('click', () => {
@@ -239,7 +222,6 @@
 
     const segment = {
       id: elements.segmentId.value || crypto.randomUUID(),
-      startTime: elements.segmentStart.value,
       durationMinutes: parseInt(elements.segmentDuration.value, 10),
       name: elements.segmentName.value.trim(),
       coachingPoints: elements.segmentPoints.value.trim(),
@@ -247,7 +229,7 @@
       drill: getSelectedDrill()
     };
 
-    if (!segment.startTime || !segment.durationMinutes || !segment.name) {
+    if (!segment.durationMinutes || !segment.name) {
       return;
     }
 
@@ -313,7 +295,6 @@
     }
 
     elements.segmentId.value = segment.id;
-    elements.segmentStart.value = segment.startTime;
     elements.segmentDuration.value = segment.durationMinutes;
     elements.segmentName.value = segment.name;
     elements.segmentGroup.value = segment.positionGroup;
@@ -355,7 +336,6 @@
     elements.practiceDay.value = practice.day || '';
     elements.practiceDate.value = practice.date || '';
     elements.practiceDuration.value = practice.durationMinutes || 90;
-    elements.practiceStartTime.value = practice.startTime || DEFAULT_PRACTICE_START_TIME;
     resetSegmentForm();
     renderSummary();
     renderTimeline();
@@ -390,7 +370,7 @@
         return `
           <li class="segment-item">
             <h4 class="segment-item__title">${linkedName}</h4>
-            <p class="segment-item__meta"><strong>${escapeHtml(segment.startTime)}</strong> · ${segment.durationMinutes} min</p>
+            <p class="segment-item__meta"><strong>Duration:</strong> ${segment.durationMinutes} min</p>
             ${drillMeta}
             ${safeGroup}
             <p class="segment-item__meta"><strong>Coaching Points:</strong> ${escapeHtml(segment.coachingPoints || '—')}</p>
@@ -409,7 +389,6 @@
   function resetSegmentForm() {
     elements.segmentForm.reset();
     elements.segmentId.value = '';
-    elements.segmentStart.value = currentPractice().startTime || DEFAULT_PRACTICE_START_TIME;
     setDrillSelectors(null);
     elements.segmentSubmit.textContent = 'Add Segment';
     elements.segmentCancel.classList.add('hidden');
@@ -484,15 +463,13 @@
   }
 
   function normalizePractice(practice) {
-    const startTime = practice.startTime || DEFAULT_PRACTICE_START_TIME;
     const segments = Array.isArray(practice.segments) ? practice.segments.map((segment) => normalizeSegment(segment)) : [];
-    const normalizedSegments = segments.length ? segments : [createWarmupSegment(startTime)];
+    const normalizedSegments = segments.length ? segments : [createWarmupSegment()];
 
     return {
       day: practice.day || 'Tuesday',
       date: practice.date || '',
       durationMinutes: Number(practice.durationMinutes) || 90,
-      startTime,
       segments: normalizedSegments
     };
   }
@@ -502,7 +479,6 @@
 
     return {
       id: segment.id || crypto.randomUUID(),
-      startTime: segment.startTime || DEFAULT_PRACTICE_START_TIME,
       durationMinutes: Number(segment.durationMinutes) || 10,
       name: segment.name || 'Segment',
       coachingPoints: segment.coachingPoints || '',

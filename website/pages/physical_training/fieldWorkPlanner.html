@@ -44,10 +44,6 @@
             Field Work Duration (minutes)
             <input id="practice-duration" type="number" min="1" step="1" />
           </label>
-          <label>
-            Field Work Start Time
-            <input id="practice-start-time" type="time" />
-          </label>
         </div>
 
         <div class="practice-summary" aria-live="polite">
@@ -61,10 +57,6 @@
           <form id="segment-form" novalidate>
             <input id="segment-id" type="hidden" />
             <div class="segment-form-grid">
-              <label>
-                Start Time
-                <input id="segment-start" type="time" required />
-              </label>
               <label>
                 Duration (minutes)
                 <input id="segment-duration" type="number" min="1" step="1" required />
@@ -115,7 +107,10 @@
         <section aria-labelledby="timeline-title" class="timeline-section">
           <div class="timeline-header">
             <h3 id="timeline-title">Field Work Timeline</h3>
-            <button id="reset-week" type="button" class="btn btn-outline">Reset Week</button>
+            <div class="timeline-controls">
+              <button id="print-workout" type="button" class="btn btn-outline" aria-label="Print Workout">Print Workout</button>
+              <button id="reset-week" type="button" class="btn btn-outline" aria-label="Reset Workout">Reset Workout</button>
+            </div>
           </div>
           <p class="timeline-help">Tip: Use Up/Down to reorder drills as your field sequence evolves.</p>
           <ol id="segments-list" class="segments-list"></ol>
