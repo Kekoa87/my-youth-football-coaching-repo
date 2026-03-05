@@ -1,0 +1,291 @@
+#site-header,
+#site-header header {
+  position: relative;
+  z-index: 1200;
+}
+
+.coaches-dashboard {
+  background: #f6f8fb;
+  position: relative;
+  z-index: 1;
+}
+
+.coaches-dashboard__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  background: transparent;
+  color: #233348;
+  box-shadow: none;
+  position: static;
+}
+
+.coaches-dashboard__eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #44556d;
+}
+
+.coaches-dashboard__subhead {
+  margin-top: 0.35rem;
+  color: #2f425a;
+}
+
+.coaches-dashboard__logout {
+  font-size: 0.9rem;
+}
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.module-card {
+  background: #fff;
+  border: 1px solid #d9e1ec;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(16, 32, 56, 0.06);
+}
+
+.module-card--placeholder {
+  grid-column: span 3;
+}
+
+.module-card--active {
+  grid-column: span 6;
+}
+
+.module-card__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.module-status {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  background: #e9eef6;
+  border-radius: 999px;
+  color: #47556a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.module-status--active {
+  margin-top: 0;
+  background: #dceefc;
+  color: #0c4e7a;
+}
+
+.practice-meta,
+.segment-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.practice-meta {
+  margin-top: 1rem;
+}
+
+.practice-meta label,
+.segment-form-grid label {
+  font-size: 0.9rem;
+  color: #2c3a4e;
+}
+
+.practice-meta input,
+.segment-form-grid input,
+.segment-form-grid textarea,
+.drill-selector__controls select {
+  width: 100%;
+  margin-top: 0.3rem;
+}
+
+.practice-summary {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #d9e1ec;
+  border-radius: 10px;
+  background: #f8fbff;
+}
+
+.practice-summary p {
+  margin: 0.2rem 0;
+}
+
+.warning {
+  color: #9b1d1d;
+  font-weight: 600;
+}
+
+.hidden {
+  display: none;
+}
+
+.segment-editor {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e3e9f2;
+}
+
+.segment-form-grid__full {
+  grid-column: 1 / -1;
+}
+
+
+.drill-selector {
+  border: 1px solid #dce5f2;
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: #f9fbfe;
+}
+
+.drill-selector__label {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  color: #40536d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.drill-selector__controls {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+
+.drill-selector__controls label {
+  min-width: 0;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.drill-selector__controls select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.segment-form-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.timeline-section {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e3e9f2;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-help {
+  color: #4d5e75;
+  font-size: 0.9rem;
+}
+
+.segments-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid #d2deee;
+}
+
+.segment-item {
+  margin: 0 0 0.75rem 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid #dce5f2;
+  border-radius: 10px;
+  background: #fff;
+  position: relative;
+}
+
+.segment-item::before {
+  content: '';
+  position: absolute;
+  left: -1.18rem;
+  top: 0.95rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #3e7eb3;
+}
+
+.segment-item__meta {
+  margin: 0.15rem 0;
+  color: #435269;
+  font-size: 0.92rem;
+}
+
+.segment-item__title {
+  margin: 0;
+}
+
+.segment-item__title-link,
+.segment-item__drill-link {
+  color: #1c5239;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.segment-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.segment-actions button {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.55rem;
+}
+
+@media (max-width: 1024px) {
+  .module-card--placeholder,
+  .module-card--active {
+    grid-column: span 12;
+  }
+}
+
+@media (max-width: 640px) {
+  .coaches-dashboard__header {
+    flex-direction: column;
+  }
+
+  .practice-meta,
+  .segment-form-grid,
+  .drill-selector__controls {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

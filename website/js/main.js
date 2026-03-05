@@ -160,6 +160,41 @@ function filterDrills(category) {
   });
 }
 
+
+function slugifyDrillTitle(title) {
+  return title
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9\s-]/g, '')
+    .trim()
+    .replace(/\s+/g, '-')
+    .replace(/-+/g, '-');
+}
+
+function assignDrillCardAnchors() {
+  const isDrillPage = window.location.pathname.includes('/website/pages/drills/');
+  if (!isDrillPage) return;
+
+  const drillCards = document.querySelectorAll('.drill-card');
+  if (!drillCards.length) return;
+
+  drillCards.forEach((card, index) => {
+    if (card.id) return;
+
+    const titleElement = card.querySelector('h3');
+    const titleText = titleElement ? titleElement.textContent : '';
+    const slug = slugifyDrillTitle(titleText) || `drill-${index + 1}`;
+    card.id = slug;
+  });
+
+  if (window.location.hash) {
+    const target = document.getElementById(window.location.hash.slice(1));
+    if (target) {
+      target.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
+  }
+}
+
 // Initialize drill filters
 function initializeDrillFilters() {
   const filterContainer = document.querySelector('.drill-filters');
@@ -257,8 +292,10 @@ if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initializeLightbox();
       loadDrillFilterBar();
+      assignDrillCardAnchors();
     });
 } else {
     initializeLightbox();
     loadDrillFilterBar();
+    assignDrillCardAnchors();
 }
