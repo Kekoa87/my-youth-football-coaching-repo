@@ -30,7 +30,6 @@
   let activePracticeIndex = 0;
 
   function init() {
-    window.coachAuth.guard('/coaches-login.html');
     hydrateSharedLayout();
     cacheElements();
     initializeDrillSelectors();
@@ -74,7 +73,6 @@
     elements.segmentSubmit = document.getElementById('segment-submit');
     elements.segmentCancel = document.getElementById('segment-cancel');
     elements.segmentsList = document.getElementById('segments-list');
-    elements.logout = document.getElementById('coach-logout');
     elements.resetWeek = document.getElementById('reset-week');
   }
 
@@ -163,12 +161,6 @@
       if (action === 'move-up' || action === 'move-down') {
         reorderSegment(segmentId, action === 'move-up' ? -1 : 1);
       }
-    });
-
-    elements.logout.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.coachAuth.logout();
-      window.location.replace('/index.html');
     });
 
     elements.resetWeek.addEventListener('click', () => {
