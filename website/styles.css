@@ -867,6 +867,35 @@ footer p {
   }
 }
 
+
+@media (max-width: 768px) {
+  .video-container {
+    display: none;
+  }
+
+  .mobile-video-link {
+    display: block;
+    text-align: center;
+    background-color: #2f6f4e;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+
+  .mobile-video-link:hover {
+    background-color: #24563b;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-video-link {
+    display: none;
+  }
+}
+
 /* Ensure JavaScript-toggled dropdowns for accessibility still work */
 /* Classes 'focus-within-parent' and 'submenu-active' are handled above */
 
