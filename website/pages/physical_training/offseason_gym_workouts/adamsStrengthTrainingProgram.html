@@ -340,7 +340,7 @@
       }
 
       const videoMarkup = videos.map(video => {
-        return '<div class="video-container"><iframe allowfullscreen loading="lazy" src="' + video.url + '" title="' + video.title + '"></iframe></div>';
+        return '<div class="video-container"><iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="' + video.url + '" title="' + video.title + '"></iframe></div>';
       }).join('');
 
       return '<div class="exercise-video-group">' + videoMarkup + '</div>';
