@@ -302,10 +302,46 @@
     const weekContext = document.getElementById('week-context');
     const content = document.getElementById('workout-content');
 
+    const exerciseVideos = {
+      'squat': [{ url: 'https://www.youtube.com/embed/Ak1iHbEeeY8', title: 'Back Squat' }],
+      'deadlift': [
+        { url: 'https://www.youtube.com/embed/oc3X4oUaeZs', title: 'Deadlift' },
+        { url: 'https://www.youtube.com/embed/v709aJKv-gM', title: 'Deadlift' }
+      ],
+      'walking lunges': [{ url: 'https://www.youtube.com/embed/t8RkrQxw', title: 'Walking Lunges' }],
+      'bench press': [{ url: 'https://www.youtube.com/embed/98HWfiRonkE', title: 'Bench Press' }],
+      'overhead press': [{ url: 'https://www.youtube.com/embed/zoN5EH50Dro', title: 'Overhead Press' }],
+      'bicep curls': [{ url: 'https://www.youtube.com/embed/jjncw7FmsY0', title: 'Bicep Curls' }],
+      'any other arm work': [
+        { url: 'https://www.youtube.com/embed/1FjkhpZsaxc', title: 'Arm Training Examples' },
+        { url: 'https://www.youtube.com/embed/6zWoAllRufg', title: 'Arm Training Examples' },
+        { url: 'https://www.youtube.com/embed/K3mFeNz4e3w', title: 'Arm Training Examples' },
+        { url: 'https://www.youtube.com/embed/_aoad2yuP5w', title: 'Arm Training Examples' }
+      ],
+      'front squat': [{ url: 'https://www.youtube.com/embed/_qv0m3tPd3s', title: 'Front Squat' }],
+      'rear foot elevated split squat': [{ url: 'https://www.youtube.com/embed/iZXSWRM9VnE', title: 'Rear Foot Elevated Split Squat' }],
+      'abs / core work': [{ url: 'https://www.youtube.com/embed/pSHjTRCQxIw', title: 'Core Training' }],
+      'pull ups': [{ url: 'https://www.youtube.com/embed/eDP_OOhMTZ4', title: 'Pull Ups' }],
+      'push ups or dumbbell bench press': [{ url: 'https://www.youtube.com/embed/8fXfwG4ftaQ', title: 'Push Ups / Dumbbell Bench Press' }]
+    };
+
     function blockFromWeek(week) {
       if (week <= 4) return 1;
       if (week <= 8) return 2;
       return 3;
+    }
+
+    function getExerciseVideoMarkup(exerciseName) {
+      const normalizedName = exerciseName.toLowerCase();
+      const videos = exerciseVideos[normalizedName] || (normalizedName === 'deadlifts' ? exerciseVideos.deadlift : []);
+
+      if (!videos.length) {
+        return '<div class="video-placeholder">Video Coming Soon</div>';
+      }
+
+      return videos.map(video => {
+        return '<div class="video-container"><iframe allowfullscreen loading="lazy" src="' + video.url + '" title="' + video.title + '"></iframe></div>';
+      }).join('');
     }
 
     function renderWorkout() {
@@ -325,7 +361,7 @@
 
       content.innerHTML = dayData.sections.map(section => {
         return '<div class="workout-section"><h4>' + section.title + '</h4><div class="exercise-grid">' + section.exercises.map(ex => {
-          return '<article class="exercise-card"><h5>' + ex.name + '</h5><p class="exercise-meta">' + ex.details + '</p><div class="video-placeholder">Video Coming Soon</div></article>';
+          return '<article class="exercise-card"><h5>' + ex.name + '</h5><p class="exercise-meta">' + ex.details + '</p>' + getExerciseVideoMarkup(ex.name) + '</article>';
         }).join('') + '</div></div>';
       }).join('');
     }
