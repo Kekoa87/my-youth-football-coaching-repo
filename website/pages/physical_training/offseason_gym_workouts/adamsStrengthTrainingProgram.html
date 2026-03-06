@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Adam's 12-week offseason strength program with progressive overload and RPE-based compound lifts." name="description">
+  <title>
+   Adam's Strength Training Program | Youth Football Coaching Hub
+  </title>
+  <link href="../../../styles.css" rel="stylesheet">
+  <link href="../../../images/ChromeSiteSymbol.jpg" rel="icon" type="image/png">
+  <script async src="//www.instagram.com/embed.js">
+  </script>
+  <style>
+   .program-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+   }
+
+   .program-sidebar {
+    border: 1px solid var(--border-color, #dcdcdc);
+    border-radius: 12px;
+    padding: var(--space-md);
+    background: var(--surface-color, #fff);
+    position: sticky;
+    top: 1rem;
+   }
+
+   .program-sidebar h3 {
+    margin-top: 0;
+   }
+
+   .block-group + .block-group {
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-color, #e6e6e6);
+   }
+
+   .week-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+   }
+
+   .week-list li + li {
+    margin-top: .35rem;
+   }
+
+   .week-button {
+    width: 100%;
+    text-align: left;
+    border: 1px solid transparent;
+    background: transparent;
+    padding: .5rem .65rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font: inherit;
+   }
+
+   .week-button.active {
+    background: var(--accent-bg, #eef5ff);
+    border-color: var(--accent-color, #2d6cdf);
+    font-weight: 600;
+   }
+
+   .program-main {
+    min-width: 0;
+   }
+
+   .workout-section {
+    border: 1px solid var(--border-color, #e2e2e2);
+    border-radius: 12px;
+    padding: var(--space-md);
+    margin-top: var(--space-md);
+    background: var(--surface-color, #fff);
+   }
+
+   .workout-section h4 {
+    margin-top: 0;
+   }
+
+   .exercise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-sm);
+   }
+
+   .exercise-card {
+    border: 1px solid var(--border-color, #ddd);
+    border-radius: 10px;
+    padding: .75rem;
+    background: #fff;
+   }
+
+   .exercise-card h5 {
+    margin: 0 0 .3rem;
+   }
+
+   .exercise-meta {
+    margin: 0 0 .55rem;
+    color: #444;
+    font-size: .95rem;
+   }
+
+   .video-placeholder {
+    border: 1px dashed #b7b7b7;
+    border-radius: 8px;
+    padding: .55rem;
+    text-align: center;
+    font-size: .9rem;
+    color: #555;
+    background: #fafafa;
+   }
+
+   .placeholder-message {
+    border: 1px dashed #bbb;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    background: #fafafa;
+   }
+
+   @media (max-width: 900px) {
+    .program-layout {
+     grid-template-columns: 1fr;
+    }
+
+    .program-sidebar {
+     position: static;
+    }
+   }
+  </style>
+ </head>
+ <body>
+  <div id="site-header">
+  </div>
+  <script>
+   fetch("/website/includes/header.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-header').innerHTML = data;
+    });
+  </script>
+  <main>
+   <div class="container">
+    <div class="workout-program">
+     <div class="page-header" style="margin-bottom: var(--space-lg);">
+      <h2>
+       Adam's Strength Training Program
+      </h2>
+      <p style="text-align: center;">
+       Author:
+       <a href="/website/pages/about/about.html">
+        Adam
+       </a>
+      </p>
+     </div>
+     <p>
+      This 12-week offseason strength program uses progressive overload with RPE-based compound lifts combined with assistance work to build total body strength for football players.
+     </p>
+
+     <div class="program-layout">
+      <aside class="program-sidebar">
+       <h3>Program Navigation</h3>
+       <div class="block-group">
+        <h4>Block 1</h4>
+        <ul class="week-list">
+         <li><button class="week-button active" data-week="1">Week 1</button></li>
+         <li><button class="week-button" data-week="2">Week 2</button></li>
+         <li><button class="week-button" data-week="3">Week 3</button></li>
+         <li><button class="week-button" data-week="4">Week 4</button></li>
+        </ul>
+       </div>
+       <div class="block-group">
+        <h4>Block 2</h4>
+        <ul class="week-list">
+         <li><button class="week-button" data-week="5">Week 5</button></li>
+         <li><button class="week-button" data-week="6">Week 6</button></li>
+         <li><button class="week-button" data-week="7">Week 7</button></li>
+         <li><button class="week-button" data-week="8">Week 8</button></li>
+        </ul>
+       </div>
+       <div class="block-group">
+        <h4>Block 3</h4>
+        <ul class="week-list">
+         <li><button class="week-button" data-week="9">Week 9</button></li>
+         <li><button class="week-button" data-week="10">Week 10</button></li>
+         <li><button class="week-button" data-week="11">Week 11</button></li>
+         <li><button class="week-button" data-week="12">Week 12</button></li>
+        </ul>
+       </div>
+      </aside>
+
+      <section class="program-main">
+       <ul class="workout-tabs" id="day-tabs">
+        <li class="active"><a href="#day1">Day 1</a></li>
+        <li><a href="#day2">Day 2</a></li>
+        <li><a href="#day3">Day 3</a></li>
+        <li><a href="#day4">Day 4</a></li>
+       </ul>
+       <div id="week-context" style="margin-top: var(--space-sm);"></div>
+       <div id="workout-content"></div>
+      </section>
+     </div>
+    </div>
+   </div>
+  </main>
+  <div id="site-footer">
+  </div>
+  <script>
+   fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+  </script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const workouts = {
+      1: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      2: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      3: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      4: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'2 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'2 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'2 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'20 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      5: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      6: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      7: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 8'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 8'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 8'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 8'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      8: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'2 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'2 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'2 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'20 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      9: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      10: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 7.5'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      11: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 8'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'3 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 8'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'3 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 8'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'3 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 8'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'30 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      },
+      12: {
+        day1: { sections: [ {title: 'Primary Lift', exercises: [{name:'Squat', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Deadlifts', details:'2 x 10 (Moderate weight)'}, {name:'Walking Lunges', details:'4 x 20'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day2: { sections: [ {title: 'Primary Lift', exercises: [{name:'Bench Press', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Overhead Press', details:'2 x 10'}, {name:'Bicep Curls', details:'3 x 10'}, {name:'Any Other Arm Work', details:'2-3 x 10-15'}]} ] },
+        day3: { sections: [ {title: 'Primary Lift', exercises: [{name:'Deadlift', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Front Squat', details:'2 x 10'}, {name:'Rear Foot Elevated Split Squat', details:'3 x 10 (Weighted)'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] },
+        day4: { sections: [ {title: 'Primary Lift', exercises: [{name:'Overhead Press', details:'5 x 5 — RPE 6.5-7'}]}, {title: 'Assistance Work', exercises: [{name:'Pull Ups', details:'20 total reps'}, {name:'Push Ups OR Dumbbell Bench Press', details:'3 x 15'}]}, {title: 'Core Work', exercises: [{name:'Abs / Core Work', details:'3 rounds'}]} ] }
+      }
+    };
+
+    let selectedWeek = 1;
+    let selectedDay = 'day1';
+
+    const weekButtons = document.querySelectorAll('.week-button');
+    const dayTabs = document.querySelectorAll('#day-tabs li');
+    const dayLinks = document.querySelectorAll('#day-tabs a');
+    const weekContext = document.getElementById('week-context');
+    const content = document.getElementById('workout-content');
+
+    const exerciseVideos = {
+      'squat': [{ url: 'https://www.youtube.com/embed/Ak1iHbEeeY8', title: 'Back Squat' }],
+      'deadlift': [
+        { url: 'https://www.youtube.com/embed/oc3X4oUaeZs', title: 'Deadlift' },
+        { url: 'https://www.youtube.com/embed/v709aJKv-gM', title: 'Deadlift' }
+      ],
+      'walking lunges': [{ url: 'https://www.youtube.com/embed/t8RkrQxw', title: 'Walking Lunges' }],
+      'bench press': [{ url: 'https://www.youtube.com/embed/98HWfiRonkE', title: 'Bench Press' }],
+      'overhead press': [{ url: 'https://www.youtube.com/embed/zoN5EH50Dro', title: 'Overhead Press' }],
+      'bicep curls': [{ url: 'https://www.youtube.com/embed/jjncw7FmsY0', title: 'Bicep Curls' }],
+      'any other arm work': [
+        { url: 'https://www.youtube.com/embed/1FjkhpZsaxc', title: 'Arm Training Examples' },
+        { url: 'https://www.youtube.com/embed/6zWoAllRufg', title: 'Arm Training Examples' },
+        { url: 'https://www.youtube.com/embed/K3mFeNz4e3w', title: 'Arm Training Examples' },
+        { url: 'https://www.youtube.com/embed/_aoad2yuP5w', title: 'Arm Training Examples' }
+      ],
+      'front squat': [{ url: 'https://www.youtube.com/embed/_qv0m3tPd3s', title: 'Front Squat' }],
+      'rear foot elevated split squat': [{ url: 'https://www.youtube.com/embed/iZXSWRM9VnE', title: 'Rear Foot Elevated Split Squat' }],
+      'abs / core work': [{ url: 'https://www.youtube.com/embed/pSHjTRCQxIw', title: 'Core Training' }],
+      'pull ups': [{ url: 'https://www.youtube.com/embed/eDP_OOhMTZ4', title: 'Pull Ups' }],
+      'push ups or dumbbell bench press': [{ url: 'https://www.youtube.com/embed/8fXfwG4ftaQ', title: 'Push Ups / Dumbbell Bench Press' }]
+    };
+
+    function blockFromWeek(week) {
+      if (week <= 4) return 1;
+      if (week <= 8) return 2;
+      return 3;
+    }
+
+    function getExerciseVideoMarkup(exerciseName) {
+      const normalizedName = exerciseName.toLowerCase();
+      const videos = exerciseVideos[normalizedName] || (normalizedName === 'deadlifts' ? exerciseVideos.deadlift : []);
+
+      if (!videos.length) {
+        return '<div class="video-placeholder">Video Coming Soon</div>';
+      }
+
+      return videos.map(video => {
+        return '<div class="video-container"><iframe allowfullscreen loading="lazy" src="' + video.url + '" title="' + video.title + '"></iframe></div>';
+      }).join('');
+    }
+
+    function renderWorkout() {
+      const block = blockFromWeek(selectedWeek);
+      weekContext.innerHTML = '<h3 style="margin-bottom: 0;">Block ' + block + ' • Week ' + selectedWeek + ' • ' + selectedDay.replace('day', 'Day ') + '</h3>';
+
+      if (!workouts[selectedWeek]) {
+        content.innerHTML = '<div class="workout-section"><div class="placeholder-message">Workout coming soon</div></div>';
+        return;
+      }
+
+      const dayData = workouts[selectedWeek][selectedDay];
+      if (!dayData) {
+        content.innerHTML = '<div class="workout-section"><div class="placeholder-message">Workout coming soon</div></div>';
+        return;
+      }
+
+      content.innerHTML = dayData.sections.map(section => {
+        return '<div class="workout-section"><h4>' + section.title + '</h4><div class="exercise-grid">' + section.exercises.map(ex => {
+          return '<article class="exercise-card"><h5>' + ex.name + '</h5><p class="exercise-meta">' + ex.details + '</p>' + getExerciseVideoMarkup(ex.name) + '</article>';
+        }).join('') + '</div></div>';
+      }).join('');
+    }
+
+    weekButtons.forEach(btn => {
+      btn.addEventListener('click', function () {
+        weekButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedWeek = Number(btn.getAttribute('data-week'));
+        renderWorkout();
+      });
+    });
+
+    dayLinks.forEach(link => {
+      link.addEventListener('click', function (event) {
+        event.preventDefault();
+        dayTabs.forEach(li => li.classList.remove('active'));
+        link.parentElement.classList.add('active');
+        selectedDay = link.getAttribute('href').replace('#', '').toLowerCase();
+        renderWorkout();
+      });
+    });
+
+    renderWorkout();
+   });
+  </script>
+ </body>
+</html>
