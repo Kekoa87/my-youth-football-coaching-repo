@@ -90,12 +90,12 @@
    .exercise-card {
     border: 1px solid var(--border-color, #ddd);
     border-radius: 10px;
-    padding: .75rem;
+    padding: 18px;
     background: #fff;
    }
 
    .exercise-card h5 {
-    margin: 0 0 .3rem;
+    margin: 0 0 10px;
    }
 
    .exercise-meta {
@@ -129,6 +129,12 @@
 
     .program-sidebar {
      position: static;
+    }
+   }
+
+   @media (max-width: 768px) {
+    .exercise-card {
+     padding: 16px;
     }
    }
   </style>
@@ -336,12 +342,15 @@
       const videos = exerciseVideos[normalizedName] || (normalizedName === 'deadlifts' ? exerciseVideos.deadlift : []);
 
       if (!videos.length) {
-        return '<div class="video-placeholder">Video Coming Soon</div>';
+        return '';
       }
 
-      return videos.map(video => {
-        return '<div class="video-container"><iframe allowfullscreen loading="lazy" src="' + video.url + '" title="' + video.title + '"></iframe></div>';
+      const videoMarkup = videos.map(video => {
+        const watchUrl = video.url.replace('/embed/', '/watch?v=');
+        return '<div class="video-container"><iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" src="' + video.url + '" title="' + video.title + '"></iframe></div><a class="mobile-video-link" href="' + watchUrl + '" rel="noopener noreferrer" target="_blank">▶ Watch Exercise Demo</a>';
       }).join('');
+
+      return '<div class="exercise-video-group">' + videoMarkup + '</div>';
     }
 
     function renderWorkout() {

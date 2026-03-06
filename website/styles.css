@@ -833,25 +833,67 @@ footer p {
 }
 
 /* Video container spacing */
-.video-container, .video-wrapper {
-  margin-bottom: var(--space-lg);
-  position: relative;
+.video-container {
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
-  height: 0;
-  overflow: hidden;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-sm);
+  margin-top: 12px;
+  margin-bottom: 16px;
 }
 
-.video-container iframe,
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
+.video-container iframe {
   width: 100%;
-  height: 100%;
-  border: 0;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+}
+
+.exercise-card {
+  padding: 18px;
+}
+
+.exercise-card h4,
+.exercise-card h5 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .exercise-card {
+    padding: 16px;
+  }
+
+  .video-container {
+    margin-top: 10px;
+    margin-bottom: 18px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .video-container {
+    display: none;
+  }
+
+  .mobile-video-link {
+    display: block;
+    text-align: center;
+    background-color: #2f6f4e;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 12px;
+  }
+
+  .mobile-video-link:hover {
+    background-color: #24563b;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-video-link {
+    display: none;
+  }
 }
 
 /* Ensure JavaScript-toggled dropdowns for accessibility still work */
