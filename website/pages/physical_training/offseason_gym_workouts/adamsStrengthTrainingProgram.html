@@ -90,12 +90,12 @@
    .exercise-card {
     border: 1px solid var(--border-color, #ddd);
     border-radius: 10px;
-    padding: .75rem;
+    padding: 18px;
     background: #fff;
    }
 
    .exercise-card h5 {
-    margin: 0 0 .3rem;
+    margin: 0 0 10px;
    }
 
    .exercise-meta {
@@ -129,6 +129,12 @@
 
     .program-sidebar {
      position: static;
+    }
+   }
+
+   @media (max-width: 768px) {
+    .exercise-card {
+     padding: 16px;
     }
    }
   </style>
@@ -363,7 +369,7 @@
 
       content.innerHTML = dayData.sections.map(section => {
         return '<div class="workout-section"><h4>' + section.title + '</h4><div class="exercise-grid">' + section.exercises.map(ex => {
-          return '<article class="exercise-card"><h5>' + ex.name + '</h5>' + getExerciseVideoMarkup(ex.name) + '<p class="exercise-meta">' + ex.details + '</p></article>';
+          return '<article class="exercise-card"><h5>' + ex.name + '</h5><p class="exercise-meta">' + ex.details + '</p>' + getExerciseVideoMarkup(ex.name) + '</article>';
         }).join('') + '</div></div>';
       }).join('');
     }
