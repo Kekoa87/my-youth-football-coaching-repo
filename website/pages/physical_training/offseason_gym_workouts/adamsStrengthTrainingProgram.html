@@ -336,7 +336,7 @@
       const videos = exerciseVideos[normalizedName] || (normalizedName === 'deadlifts' ? exerciseVideos.deadlift : []);
 
       if (!videos.length) {
-        return '<div class="video-placeholder">Video Coming Soon</div>';
+        return '';
       }
 
       return videos.map(video => {
@@ -361,7 +361,7 @@
 
       content.innerHTML = dayData.sections.map(section => {
         return '<div class="workout-section"><h4>' + section.title + '</h4><div class="exercise-grid">' + section.exercises.map(ex => {
-          return '<article class="exercise-card"><h5>' + ex.name + '</h5><p class="exercise-meta">' + ex.details + '</p>' + getExerciseVideoMarkup(ex.name) + '</article>';
+          return '<article class="exercise-card"><h5>' + ex.name + '</h5>' + getExerciseVideoMarkup(ex.name) + '<p class="exercise-meta">' + ex.details + '</p></article>';
         }).join('') + '</div></div>';
       }).join('');
     }

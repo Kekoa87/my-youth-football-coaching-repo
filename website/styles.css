@@ -834,14 +834,14 @@ footer p {
 
 /* Video container spacing */
 .video-container, .video-wrapper {
-  margin-bottom: var(--space-lg);
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  max-width: 720px;
+  margin: 12px auto 20px auto;
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow-sm);
+  border-radius: 12px;
 }
 
 .video-container iframe,
@@ -852,6 +852,14 @@ footer p {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+@media (max-width: 768px) {
+  .video-container,
+  .video-wrapper {
+    max-width: 100%;
+    margin: 10px 0 18px 0;
+  }
 }
 
 /* Ensure JavaScript-toggled dropdowns for accessibility still work */
