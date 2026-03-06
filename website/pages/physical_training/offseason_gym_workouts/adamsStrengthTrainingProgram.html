@@ -339,9 +339,11 @@
         return '';
       }
 
-      return videos.map(video => {
+      const videoMarkup = videos.map(video => {
         return '<div class="video-container"><iframe allowfullscreen loading="lazy" src="' + video.url + '" title="' + video.title + '"></iframe></div>';
       }).join('');
+
+      return '<div class="exercise-video-group">' + videoMarkup + '</div>';
     }
 
     function renderWorkout() {
