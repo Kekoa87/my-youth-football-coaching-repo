@@ -694,6 +694,9 @@ This file lives in the repo only. Not part of the public site.
 ### Jet Sweep
 - [YFO - Jet ISO - One of our best plays!](https://youtu.be/wm7OzD9dmhs?si=uboMKMjvBTrwbBEe)
 
+### Linebacker
+-[Coach Kou's - Coaching Football Defense: LB Fundamentals and Drills](https://coachkoufootball.substack.com/p/coaching-football-defense-lb-fundamentals?utm_source=substack&utm_medium=email#media-a2c558d4-1dce-4181-a36c-d87b0764384a)
+
 ### Planning & Installation
 - [Chiefpigskin - Pre-Season Defensive Planning & Install Drills](https://youtu.be/p3xfUQOfmDw?si=NzsvsRId5Lx11aZN)
 
@@ -722,6 +725,48 @@ This file lives in the repo only. Not part of the public site.
 
 ### Workouts & Conditioning
 - [Play Football - How NFL Players Train to Become ELITE](https://youtu.be/t4l4kSdb_dY?si=DLBcH0HV9QQmfWa_)
+- [Coach Isaac - Top LB Plys](https://youtu.be/FHZ65dYyymI?si=zO7-Fq4jCfCvmA-e)
+  - Weighted Dumbell Jump to Box Jump (5 sets x 3 dumbell jumps to 1 box jump)
+  - Three times continuous broad jump (5 sets of 3)
+  - Band assisted Push Ups (5 x 12)
+- [Coach Isaac - Football Plyos for Extreme Explosiveness](https://youtu.be/RpDQpLBC-B0?si=vF2lSUoSc4jT1AVY)
+  - Resisted Vert Jumps
+  - Depth Drop to Vertical
+  - Max Box Jump
+- [Coach Isaac - 3 Plyos that’ll make you a much better Football Player](https://youtu.be/LndNlmBQlTg?si=ag_f-pduqrTyozef)
+  - Lateral Bench Hops (3 sets of 12)
+  - Depth Drop, Vert, Broad (3 sets of 5)
+  - Broad, 180 degree vert, broad (3 sets of 5)
+- [Coach Isaac - Top 3 LINEBACKER plyometrics](https://youtu.be/0ok6hC5vvRM?si=LgaX4MV7D5vsZhIF)
+  - Lateral forward and backwards jumps
+  -  Three Hop backward flips 
+  - Forward and back Single leg hops
+- [Coach Isaac - The Best Football Plyometrics](https://youtu.be/ZXjSB5DdHbk?si=LT0XvHQE6zF85vFo)
+    - Seated Vertical Jumps (5 sets of 5)
+    - Split Jump Switches (3 sets of 8)
+- [Coach Isaac - Top 5 Football Plyos](https://youtu.be/gy8qxn-dfts?si=-IV3Q9SliZtJJosA)
+  - Seated Vertical Jumps
+  - Depth Drop, Vert
+  - Band assisted Push Ups  
+  - Band Assisted Verts
+  - Three times continuous broad jump  
+- [Coach Isaac - D1 Football Upper Body Workout](https://youtu.be/rut6wPXc0tI?si=HCLKsO-8DBgqiC0I)  
+  - Pallof Press (3 sets of 8)
+  - Single Arm Kneeling Press (3 sets of 8 reps each arm)
+  - Seated Z press
+  - Kettle Bell Bent over Rows
+- [Coach Isaac - Top 5 Football🏈 Workouts](https://youtu.be/bIDT-35Jogg?si=FeMWbGaCnTaVqeoP)    
+  - Sled Rows (4 sets of 8)
+  - Med ball Wall Press (4 sets of 12)
+  - Incline Dumbell Press (4 sets of 6 each arm)
+  - Med Ball overhead toss (4 sets of 4)
+  - Hang cleans 
+- [Coach Isaac - EXPLOSIVE UPPER BODY FOOTBALL WORKOUTS](https://youtu.be/bIDT-35Jogg?si=FeMWbGaCnTaVqeoP)   
+  - Med Ball Slams
+  - Med Ball Push Ups
+  - Med Ball Press
+  - Explosive barbell Rows
+
 
 ### Wide Receiver Drills
 - [FDT - Beginner WR Press Release](https://www.youtube.com/shorts/qzPnd5uEjo0)
