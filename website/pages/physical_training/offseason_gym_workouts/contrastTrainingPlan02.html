@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contrast Training Workout 02 — Contrast Training, Olympic Lifts & Mobility for football players.">
+  <title>Offseason Workout No.2 | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../../styles.css">
+  <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png">
+  <style>
+    /* ── Page-level design tokens ── */
+    :root {
+      --ow2-black:   #0f0f0f;
+      --ow2-dark:    #1a1a1a;
+      --ow2-steel:   #2e3440;
+      --ow2-gold:    #d4a017;
+      --ow2-gold-lt: #f0c040;
+      --ow2-slate:   #4a5568;
+      --ow2-fog:     #e8e8e6;
+      --ow2-white:   #fafaf8;
+      --ow2-accent:  #c0392b;
+      --ow2-accent2: #1a6ea8;
+      --radius:      6px;
+      --font-head:   'Georgia', 'Times New Roman', serif;
+      --font-body:   system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+
+    /* ── Hero band ── */
+    .ow2-hero {
+      background: var(--ow2-dark);
+      color: var(--ow2-white);
+      padding: 2.5rem 1.5rem 2rem;
+      text-align: center;
+      border-bottom: 3px solid var(--ow2-gold);
+      margin-bottom: 0;
+    }
+    .ow2-hero .eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ow2-gold);
+      margin-bottom: 0.6rem;
+    }
+    .ow2-hero h2 {
+      font-family: var(--font-head);
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--ow2-white);
+      margin: 0 0 0.5rem;
+      letter-spacing: -0.02em;
+    }
+    .ow2-hero .meta {
+      font-size: 0.82rem;
+      color: #aaa;
+    }
+    .ow2-hero .meta a { color: var(--ow2-gold-lt); }
+
+    /* ── Intro strip ── */
+    .ow2-intro {
+      background: var(--ow2-steel);
+      color: var(--ow2-fog);
+      padding: 1.1rem 1.5rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      border-bottom: 1px solid #3d4556;
+    }
+    .ow2-intro strong { color: var(--ow2-gold-lt); }
+
+    /* ── Pillars bar ── */
+    .ow2-pillars {
+      display: flex;
+      gap: 0;
+      background: var(--ow2-black);
+      border-bottom: 1px solid #222;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .ow2-pillars::-webkit-scrollbar { display: none; }
+    .ow2-pillar {
+      flex: 1 0 auto;
+      min-width: 110px;
+      text-align: center;
+      padding: 0.75rem 0.5rem;
+      border-right: 1px solid #222;
+      font-size: 0.7rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #777;
+    }
+    .ow2-pillar:last-child { border-right: none; }
+    .ow2-pillar .icon {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+    }
+    .ow2-pillar.active-pillar { color: var(--ow2-gold); border-bottom: 2px solid var(--ow2-gold); }
+
+    /* ── Tab nav ── */
+    .workout-tabs {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 0;
+      background: #f5f5f2;
+      border-bottom: 2px solid var(--ow2-gold);
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .workout-tabs::-webkit-scrollbar { display: none; }
+    .workout-tabs li a {
+      display: block;
+      padding: 0.7rem 1.1rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ow2-slate);
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: color 0.15s;
+    }
+    .workout-tabs li.active a,
+    .workout-tabs li a:hover {
+      color: var(--ow2-accent);
+      border-bottom-color: var(--ow2-accent);
+      background: #fff;
+    }
+
+    /* ── Tab panels ── */
+    .workout-tab-panel { display: none; padding: 1.5rem; }
+    .workout-tab-panel.active { display: block; }
+
+    /* ── Day header ── */
+    .day-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid #ddd;
+    }
+    .day-badge {
+      background: var(--ow2-dark);
+      color: var(--ow2-gold);
+      font-family: var(--font-head);
+      font-size: 1.6rem;
+      font-weight: 700;
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .day-badge span {
+      font-family: var(--font-body);
+      font-size: 0.55rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      margin-top: 2px;
+    }
+    .day-header h3 {
+      font-family: var(--font-head);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--ow2-dark);
+      margin: 0 0 0.25rem;
+    }
+    .day-focus {
+      font-size: 0.82rem;
+      color: var(--ow2-slate);
+      line-height: 1.5;
+    }
+    .day-focus strong { color: var(--ow2-accent); }
+
+    /* ── Section labels ── */
+    .section-label {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ow2-gold);
+      margin: 1.4rem 0 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e0e0db;
+    }
+
+    /* ── Contrast pair card ── */
+    .contrast-pair {
+      background: #fff;
+      border: 1px solid #e2e2de;
+      border-left: 4px solid var(--ow2-gold);
+      border-radius: var(--radius);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .contrast-pair-header {
+      background: var(--ow2-dark);
+      color: var(--ow2-white);
+      padding: 0.45rem 0.9rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .contrast-pair-header .pair-num {
+      background: var(--ow2-gold);
+      color: var(--ow2-black);
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contrast-pair-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    @media (max-width: 540px) {
+      .contrast-pair-body { grid-template-columns: 1fr; }
+    }
+    .contrast-lift, .contrast-explosive {
+      padding: 0.8rem 1rem;
+    }
+    .contrast-lift {
+      border-right: 1px solid #e2e2de;
+    }
+    @media (max-width: 540px) {
+      .contrast-lift { border-right: none; border-bottom: 1px solid #e2e2de; }
+    }
+    .exercise-type {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+    .exercise-type.heavy { color: var(--ow2-accent); }
+    .exercise-type.speed { color: var(--ow2-accent2); }
+    .exercise-name {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ow2-dark);
+      margin: 0 0 0.2rem;
+    }
+    .exercise-scheme {
+      display: inline-block;
+      background: var(--ow2-dark);
+      color: var(--ow2-gold);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.04em;
+    }
+    .exercise-cue {
+      font-size: 0.78rem;
+      color: var(--ow2-slate);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    .bar-cues {
+      list-style: none;
+      padding: 0;
+      margin: 0.4rem 0 0.5rem;
+    }
+    .bar-cues li {
+      font-size: 0.74rem;
+      color: #555;
+      line-height: 1.5;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .bar-cues li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--ow2-gold);
+      font-size: 0.7rem;
+    }
+
+    /* ── Video embed ── */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #000;
+      margin-top: 0.5rem;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+    .mobile-video-link {
+      display: none;
+      font-size: 0.78rem;
+      color: var(--ow2-accent2);
+      margin-top: 0.35rem;
+    }
+    @media (max-width: 600px) {
+      .video-container { display: none; }
+      .mobile-video-link { display: inline-block; }
+    }
+
+    /* ── Standard workout table ── */
+    .workout-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+      margin-bottom: 1rem;
+    }
+    .workout-table thead th {
+      background: var(--ow2-dark);
+      color: var(--ow2-gold);
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.55rem 0.75rem;
+      text-align: left;
+      border: none;
+    }
+    .workout-table tbody tr:nth-child(even) { background: #f9f9f7; }
+    .workout-table tbody td {
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid #eee;
+      vertical-align: top;
+      color: var(--ow2-dark);
+    }
+
+    /* ── Rest timer chip ── */
+    .rest-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: #fff4d4;
+      border: 1px solid #e8c84a;
+      border-radius: 20px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #7a5a00;
+      margin-top: 0.35rem;
+    }
+
+    /* ── Callout box ── */
+    .callout {
+      border-left: 4px solid var(--ow2-gold);
+      background: #fffbee;
+      padding: 0.75rem 1rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 0.83rem;
+      line-height: 1.55;
+      color: #4a3a00;
+      margin: 0.8rem 0;
+    }
+    .callout strong { color: #7a5a00; }
+
+    .callout.blue {
+      border-color: var(--ow2-accent2);
+      background: #eef6ff;
+      color: #0a3a5e;
+    }
+    .callout.blue strong { color: var(--ow2-accent2); }
+
+    .callout.red {
+      border-color: var(--ow2-accent);
+      background: #fff2f0;
+      color: #5e1010;
+    }
+    .callout.red strong { color: var(--ow2-accent); }
+
+    /* ── Mobility block ── */
+    .mobility-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+    }
+    .mobility-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-top: 3px solid var(--ow2-accent2);
+      border-radius: var(--radius);
+      padding: 0.75rem;
+    }
+    .mobility-card h5 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ow2-dark);
+      margin: 0 0 0.3rem;
+    }
+    .mobility-card p {
+      font-size: 0.75rem;
+      color: var(--ow2-slate);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ── Warm-up / Cool-down strips ── */
+    .phase-strip {
+      background: #f5f5f2;
+      border: 1px solid #e0e0db;
+      border-radius: var(--radius);
+      padding: 0.7rem 1rem;
+      font-size: 0.82rem;
+      color: var(--ow2-slate);
+      line-height: 1.55;
+      margin-bottom: 0.75rem;
+    }
+    .phase-strip strong { color: var(--ow2-dark); }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+<script>
+  fetch("/website/includes/header.html")
+    .then(r => r.text())
+    .then(d => { document.getElementById('site-header').innerHTML = d; });
+</script>
+
+<main>
+  <div class="container">
+    <div class="workout-program">
+
+      <!-- ── Hero ── -->
+      <div class="ow2-hero">
+        <p class="eyebrow">Offseason Program · No. 2</p>
+        <h2>Contrast Training &amp; Olympic Lifting</h2>
+        <p class="meta">
+          Author: <a href="/website/pages/about/about.html">Coach Kyle</a> &nbsp;|&nbsp; Created: June 16, 2025
+        </p>
+      </div>
+
+      <!-- ── Intro ── -->
+      <div class="ow2-intro">
+        A 5-day offseason program built around <strong>contrast training</strong> — pairing a heavy barbell or Olympic lift with an immediate explosive movement to train your nervous system to recruit fast-twitch muscle fibers faster. Every heavy set teaches perfect <strong>bar form and bar speed</strong>. Core integrity and targeted mobility round out each session so athletes stay powerful and injury-free across a long offseason.
+      </div>
+
+      <!-- ── Pillars ── -->
+      <div class="ow2-pillars">
+        <div class="ow2-pillar active-pillar">
+          <span class="icon">🏋️</span>Olympic Lifts
+        </div>
+        <div class="ow2-pillar">
+          <span class="icon">⚡</span>Contrast Pairs
+        </div>
+        <div class="ow2-pillar">
+          <span class="icon">🎯</span>Bar Speed
+        </div>
+        <div class="ow2-pillar">
+          <span class="icon">🔩</span>Core
+        </div>
+        <div class="ow2-pillar">
+          <span class="icon">🦵</span>Mobility
+        </div>
+      </div>
+
+      <!-- ── Tabs ── -->
+      <ul class="workout-tabs">
+        <li class="active"><a href="#day1-tab-content">Day 1</a></li>
+        <li><a href="#day2-tab-content">Day 2</a></li>
+        <li><a href="#day3-tab-content">Day 3</a></li>
+        <li><a href="#day4-tab-content">Day 4</a></li>
+        <li><a href="#day5-tab-content">Day 5</a></li>
+      </ul>
+
+      <!-- ══════════════════════════════════════════
+           DAY 1 — Power Clean + Lower Contrast
+      ══════════════════════════════════════════ -->
+      <div class="workout-tab-panel active" id="day1-tab-content">
+
+        <div class="day-header">
+          <div class="day-badge">1<span>Day</span></div>
+          <div>
+            <h3>Power Clean &amp; Lower-Body Contrast</h3>
+            <p class="day-focus"><strong>Olympic lift focus:</strong> Power Clean from the floor. Contrast pairs train triple-extension strength against sprint-speed output. End with hip mobility and anterior chain stretching.</p>
+          </div>
+        </div>
+
+        <div class="callout red">
+          <strong>Contrast Training Rule:</strong> Rest only 15–30 seconds between the heavy lift (A) and the explosive movement (B). Then rest 3 minutes before the next pair. The brief potentiation window is where the adaptation happens — don't waste it.
+        </div>
+
+        <div class="phase-strip">
+          <strong>Warm-Up (10 min):</strong> Jump rope 2 min → leg swings (forward/lateral) 10 each → hip circles 10 each → ankle circles → 3-stop pause squat × 5 → empty-bar hang pull × 5 → empty-bar power clean × 3.
+        </div>
+
+        <!-- Contrast Pair 1 -->
+        <p class="section-label">Contrast Pair 1</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">1</div>
+            Power Clean → Broad Jump
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy — Bar Form &amp; Speed</div>
+              <p class="exercise-name">Power Clean</p>
+              <span class="exercise-scheme">4 × 3 @ 70–80% 1RM</span>
+              <ul class="bar-cues">
+                <li>Start with bar over mid-foot, shoulder blades over bar</li>
+                <li>Lats tight, chest up — "proud chest" before first pull</li>
+                <li>Bar stays in contact with shins on the way up</li>
+                <li>Explode hips through; shrug is a <em>byproduct</em>, not the focus</li>
+                <li>Pull yourself under aggressively; catch in athletic stance</li>
+                <li>Bar speed through the hip is the cue — if it slows, the load is too heavy</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/GGH9T_Lfp5M" title="Power Clean Technique"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=GGH9T_Lfp5M" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive — Neural Activation</div>
+              <p class="exercise-name">Bilateral Broad Jump</p>
+              <span class="exercise-scheme">4 × 3 reps (max distance)</span>
+              <ul class="bar-cues">
+                <li>Load hips back; arms swing back simultaneously</li>
+                <li>Explode arms forward and jump as far as possible</li>
+                <li>Stick the landing — absorb with soft knees, no wobble</li>
+                <li>Reset fully before each jump; this is quality, not speed</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/6L6CJXF5CNs" title="Broad Jump"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=6L6CJXF5CNs" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast Pair 2 -->
+        <p class="section-label">Contrast Pair 2</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">2</div>
+            Trap Bar Deadlift → Vertical Jump
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy</div>
+              <p class="exercise-name">Trap Bar Deadlift</p>
+              <span class="exercise-scheme">4 × 4 @ 75–85% 1RM</span>
+              <ul class="bar-cues">
+                <li>Stand centered in the trap bar; hips hinge, not squat</li>
+                <li>Grip the handles hard before the pull — full-body tension first</li>
+                <li>Drive the floor away, don't yank the bar up</li>
+                <li>Lockout is hips through, glutes squeezed — not a back lean</li>
+                <li>Lower with control: eccentric builds strength too</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/oc3X4oUaeZs" title="Trap Bar Deadlift"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=oc3X4oUaeZs" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Countermovement Vertical Jump</p>
+              <span class="exercise-scheme">4 × 3 (max height)</span>
+              <ul class="bar-cues">
+                <li>Rapid dip and load — don't pause at the bottom</li>
+                <li>Arms drive overhead explosively at takeoff</li>
+                <li>Full extension at the top: toes pointed, arms high</li>
+                <li>Land softly and reset — quality over quantity</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/8A6ZDKoNRXo" title="Countermovement Vertical Jump"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=8A6ZDKoNRXo" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast Pair 3 -->
+        <p class="section-label">Contrast Pair 3</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">3</div>
+            Bulgarian Split Squat → Single-Leg Bound
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy — Unilateral</div>
+              <p class="exercise-name">DB Bulgarian Split Squat</p>
+              <span class="exercise-scheme">3 × 5 each leg</span>
+              <ul class="bar-cues">
+                <li>Front foot far enough that shin stays vertical</li>
+                <li>Torso upright — not leaning forward</li>
+                <li>Drive up through the front heel exclusively</li>
+                <li>Keep rear foot relaxed — it's just a balance aid</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/or1frhkjBDc" title="Bulgarian Split Squat"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=or1frhkjBDc" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive — Unilateral</div>
+              <p class="exercise-name">Single-Leg Horizontal Bound</p>
+              <span class="exercise-scheme">3 × 3 each leg (max distance)</span>
+              <ul class="bar-cues">
+                <li>Push off the same leg used in split squat</li>
+                <li>Drive knee up at takeoff for extra projection</li>
+                <li>Stick landing on the same leg — hold 1 second</li>
+                <li>Mirror both sides equally</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/j8S8a4H23Cw" title="Single Leg Bound"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=j8S8a4H23Cw" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core -->
+        <p class="section-label">Core Finisher (10 min)</p>
+        <table class="workout-table">
+          <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Dead Bug</td><td>3 × 8 each side</td>
+              <td>Press lower back flat to floor the entire time. Slow and controlled — 3 sec descent.</td>
+            </tr>
+            <tr>
+              <td>Pallof Press (Band/Cable)</td><td>3 × 10 each side</td>
+              <td>Anti-rotation: core resists the pull — it does not rotate. Keep hips square.</td>
+            </tr>
+            <tr>
+              <td>Weighted Plank Hold</td><td>3 × 30–40 sec</td>
+              <td>Plate on upper back. Body is a rigid plank: no hips hiking, no sagging.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- Mobility -->
+        <p class="section-label">Cool-Down Mobility (8 min)</p>
+        <div class="mobility-grid">
+          <div class="mobility-card"><h5>90/90 Hip Stretch</h5><p>2 min each side. Sit with both legs at 90°. Lean into the front hip. Key for clean hip hinge.</p></div>
+          <div class="mobility-card"><h5>Couch Stretch</h5><p>90 sec each side. Rear foot on bench, drive hips forward. Opens hip flexors beaten up by training.</p></div>
+          <div class="mobility-card"><h5>Ankle Circles + Dorsiflexion</h5><p>10 circles each direction + wall ankle mobilization × 10 each. Prerequisite for a solid power clean catch.</p></div>
+          <div class="mobility-card"><h5>Cat-Cow × 10</h5><p>Slow and full-range. Decompress the spine after heavy pulls.</p></div>
+        </div>
+
+      </div>
+      <!-- /Day 1 -->
+
+
+      <!-- ══════════════════════════════════════════
+           DAY 2 — Push Press + Upper Contrast
+      ══════════════════════════════════════════ -->
+      <div class="workout-tab-panel" id="day2-tab-content">
+
+        <div class="day-header">
+          <div class="day-badge">2<span>Day</span></div>
+          <div>
+            <h3>Push Press &amp; Upper-Body Contrast</h3>
+            <p class="day-focus"><strong>Olympic lift focus:</strong> Push Press teaches leg-to-arm power transfer — the exact chain used in a stiff arm or aggressive block shed. Paired with med-ball explosiveness and pull-up strength.</p>
+          </div>
+        </div>
+
+        <div class="callout blue">
+          <strong>Bar Speed Cue (Push Press):</strong> The bar should visibly accelerate off the shoulders — if it grinds upward, the load is too heavy. Choose a weight where you can feel the dip-drive produce speed, not just grind through strength.
+        </div>
+
+        <div class="phase-strip">
+          <strong>Warm-Up (8 min):</strong> Band pull-aparts 2 × 15 → shoulder circles → thoracic rotations × 10 each side → empty-bar push press × 5 → light lat pulldown × 10.
+        </div>
+
+        <!-- Contrast Pair 1 -->
+        <p class="section-label">Contrast Pair 1</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">1</div>
+            Push Press → Medicine Ball Scoop Toss
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy — Bar Form &amp; Speed</div>
+              <p class="exercise-name">Push Press</p>
+              <span class="exercise-scheme">4 × 4 @ 70–80% 1RM</span>
+              <ul class="bar-cues">
+                <li>Bar rests on front shoulders (front rack), elbows slightly forward</li>
+                <li>Dip to roughly 1/4 squat — stay vertical, knees out</li>
+                <li>Reverse the dip explosively; the legs create bar speed</li>
+                <li>Press into lockout as the bar reaches forehead height</li>
+                <li>Active shoulder at lockout — "push the ceiling away"</li>
+                <li>Lower under control to front rack, not free-fall</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/X6-DMh-t4nQ" title="Push Press"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=X6-DMh-t4nQ" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Med Ball Scoop Toss (Forward)</p>
+              <span class="exercise-scheme">4 × 4 (max height / distance)</span>
+              <ul class="bar-cues">
+                <li>Load hips, ball between legs — replicate the push press dip</li>
+                <li>Explode hips and throw the ball as high as possible overhead</li>
+                <li>Full body extension at release — same triple extension as the lift</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/fYp7wBoZ_Ms" title="Med Ball Chest Throw"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=fYp7wBoZ_Ms" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast Pair 2 -->
+        <p class="section-label">Contrast Pair 2</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">2</div>
+            Weighted Pull-Up → Clapping / Plyo Push-Up
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy</div>
+              <p class="exercise-name">Weighted Pull-Up</p>
+              <span class="exercise-scheme">4 × 4–5 (add belt weight)</span>
+              <ul class="bar-cues">
+                <li>Dead hang start — full shoulder retraction before pulling</li>
+                <li>Drive elbows to hips, not to sides (lat engagement)</li>
+                <li>Chin clears bar — don't crane neck forward</li>
+                <li>3-second controlled lowering — the eccentric builds size and strength</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/eDP_OOhMTZ4" title="Pull-Up"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=eDP_OOhMTZ4" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Clapping Push-Up (or Plyo Push-Up)</p>
+              <span class="exercise-scheme">4 × 5 (max explosion)</span>
+              <ul class="bar-cues">
+                <li>Lower with control, then press with maximum intent</li>
+                <li>Hands leave the floor — that's the goal; clap is secondary</li>
+                <li>Land softly and immediately reset for the next rep</li>
+                <li>If form breaks, drop to standard explosive push-up</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/YJJTSyOEm1k" title="Explosive Push-Ups"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=YJJTSyOEm1k" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast Pair 3 -->
+        <p class="section-label">Contrast Pair 3</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">3</div>
+            Incline Bench Press → Med Ball Chest Pass
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy</div>
+              <p class="exercise-name">Incline Barbell Bench Press</p>
+              <span class="exercise-scheme">3 × 5 @ 75–80% 1RM</span>
+              <ul class="bar-cues">
+                <li>Retract and depress scapulae before unracking</li>
+                <li>Touch upper chest — about 2 inches below the collarbone</li>
+                <li>Bar path arcs slightly back toward the rack on the press</li>
+                <li>Feet flat; don't bridge or arch excessively</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/98HWfiRonkE" title="Incline Bench Press"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=98HWfiRonkE" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Med Ball Chest Pass (Wall)</p>
+              <span class="exercise-scheme">3 × 6 (max speed)</span>
+              <ul class="bar-cues">
+                <li>Stand arm's length from wall; hold ball at chest</li>
+                <li>Throw into the wall as hard and fast as possible</li>
+                <li>Catch, absorb, and immediately repeat</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core -->
+        <p class="section-label">Core Finisher</p>
+        <table class="workout-table">
+          <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Hollow Body Hold</td><td>3 × 20–30 sec</td><td>Arms by ears, lower back pressed flat, legs low but not touching floor. Think "scoop" the pelvis.</td></tr>
+            <tr><td>Med Ball Rotational Slam</td><td>3 × 8 per side</td><td>Generate from hips and core, not arms. Slam forcefully.</td></tr>
+            <tr><td>TRX / Ring Fallout (or Ab Wheel)</td><td>3 × 8–10</td><td>Maintain a completely rigid torso. Any hip sag means the set ends.</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Mobility -->
+        <p class="section-label">Cool-Down Mobility (8 min)</p>
+        <div class="mobility-grid">
+          <div class="mobility-card"><h5>Doorway Chest Stretch</h5><p>60 sec per side. Vital after heavy pressing. Keep ribs down — don't flare them to stretch.</p></div>
+          <div class="mobility-card"><h5>Thread the Needle</h5><p>8 reps each side, 2 sec pause. Opens thoracic spine — essential for clean front rack position.</p></div>
+          <div class="mobility-card"><h5>Shoulder Sleeper Stretch</h5><p>60 sec each side. Posterior capsule release — prevents impingement with weekly overhead work.</p></div>
+          <div class="mobility-card"><h5>Wrist Circles + Flexor Stretch</h5><p>10 circles each direction + 30 sec hold. Forearms take a beating from bar work; never skip this.</p></div>
+        </div>
+
+      </div>
+      <!-- /Day 2 -->
+
+
+      <!-- ══════════════════════════════════════════
+           DAY 3 — Snatch Pull + Speed / Mobility
+      ══════════════════════════════════════════ -->
+      <div class="workout-tab-panel" id="day3-tab-content">
+
+        <div class="day-header">
+          <div class="day-badge">3<span>Day</span></div>
+          <div>
+            <h3>Snatch Pull &amp; Speed / Mobility Day</h3>
+            <p class="day-focus"><strong>Olympic lift focus:</strong> Snatch Pull from the floor — the highest-speed bar movement in the program. Followed by track-style speed work, agility, and a full-body mobility session. Lower volume, higher quality.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <strong>Why a Snatch Pull?</strong> The snatch-grip pull demands the fastest bar speed of any barbell movement. It trains rate of force development better than almost anything. You never actually need to snatch — the pull alone gives the adaptation. Perfect for athletes who haven't learned the full snatch.
+        </div>
+
+        <div class="phase-strip">
+          <strong>Warm-Up (10 min):</strong> A-skip 2 × 15 yds → B-skip 2 × 15 yds → high knees → butt kicks → snatch-grip barbell Romanian deadlift × 5 (light) → snatch-grip pull (below knee) × 3.
+        </div>
+
+        <!-- Olympic Lift Block -->
+        <p class="section-label">Olympic Lift Block</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">★</div>
+            Snatch-Grip Pull → 10-Yard Sprint
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Bar Form &amp; Max Speed</div>
+              <p class="exercise-name">Snatch Pull (from floor)</p>
+              <span class="exercise-scheme">5 × 3 @ 90–100% of snatch 1RM (or moderate load with max speed)</span>
+              <ul class="bar-cues">
+                <li>Wide snatch grip — hook grip strongly recommended</li>
+                <li>Bar literally scrapes the shins on the way up</li>
+                <li>Maintain scapular retraction throughout: "armpits forward"</li>
+                <li>The pull is an explosion from the floor — it should be violent</li>
+                <li>Full triple extension: ankles, knees, hips at the top</li>
+                <li>Shrug pulls the bar high; elbows flare out and up</li>
+                <li>No catch — let the bar down under control</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/Q0EXBnhCf04" title="Snatch Pull from the Floor"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=Q0EXBnhCf04" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Contrast — Sprint</div>
+              <p class="exercise-name">10-Yard Acceleration Sprint</p>
+              <span class="exercise-scheme">5 × 1 (max intent)</span>
+              <ul class="bar-cues">
+                <li>3-point stance or stand start — coach preference</li>
+                <li>First step is the key: short, powerful, driving into the ground</li>
+                <li>Forward lean the first 5 yards; don't stand up early</li>
+                <li>Arms drive in tight angles — not across the body</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after pull, then 3 min after sprint</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Speed Work -->
+        <p class="section-label">Speed &amp; Agility Work</p>
+        <table class="workout-table">
+          <thead><tr><th>Exercise</th><th>Volume</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Flying 10s (run-up → 10-yd time)</td><td>4 runs</td><td>Build to full speed over 20 yds, then sprint through the 10-yd window. Train top speed, not start speed.</td></tr>
+            <tr><td>Pro Agility (5-10-5)</td><td>4 × each direction</td><td>Start from a 3-point stance. Explode to the first cone; second cut is the most important — plant outside foot hard.</td></tr>
+            <tr><td>L-Drill (3-Cone)</td><td>4 reps</td><td>WR specific: the third cone turn mimics a route break. Stay low through every cut.</td></tr>
+            <tr><td>Reactive Shuffle (coach calls direction)</td><td>3 × 5 sec</td><td>Stay in athletic stance. React, don't anticipate. Builds football-specific quickness.</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Mobility block - full body -->
+        <p class="section-label">Full-Body Mobility Session (15 min)</p>
+        <div class="callout blue">
+          <strong>Day 3 is your mobility investment day.</strong> Every minute spent here multiplies the quality of Days 4 and 5. Work through every position with intentional breath: 3–5 slow breaths per hold.
+        </div>
+        <div class="mobility-grid">
+          <div class="mobility-card"><h5>World's Greatest Stretch</h5><p>5 reps each side. The single best multi-joint mobility exercise: hip flexor, thoracic rotation, hamstring all in one.</p></div>
+          <div class="mobility-card"><h5>Deep Squat Hold</h5><p>3 × 30 sec. Heels flat, elbows inside knees pressing outward. Add a light plate overhead for extra pull.</p></div>
+          <div class="mobility-card"><h5>Hip 90/90 Flow</h5><p>5 transitions each side. Slow and deliberate. The hip capsule is the governor of athletic output.</p></div>
+          <div class="mobility-card"><h5>Thoracic Extension (foam roll)</h5><p>Roll T4–T8 segment. 5 breaths per level. Undoes the rounding accumulated from pressing days.</p></div>
+          <div class="mobility-card"><h5>Pigeon Pose</h5><p>90 sec each side. Glute and posterior hip. Key for hamstring injury prevention in sprinting.</p></div>
+          <div class="mobility-card"><h5>Banded Lat Stretch</h5><p>60 sec each side. Attach band to rig, step away, side bend. Opens up the lat for full overhead range.</p></div>
+        </div>
+
+      </div>
+      <!-- /Day 3 -->
+
+
+      <!-- ══════════════════════════════════════════
+           DAY 4 — Hang Power Snatch + Lower Contrast
+      ══════════════════════════════════════════ -->
+      <div class="workout-tab-panel" id="day4-tab-content">
+
+        <div class="day-header">
+          <div class="day-badge">4<span>Day</span></div>
+          <div>
+            <h3>Hang Power Snatch &amp; Lower Contrast</h3>
+            <p class="day-focus"><strong>Olympic lift focus:</strong> Hang Power Snatch — bar starts above the knee, demanding maximal hip snap and bar speed. Paired with reactive plyometrics. Heavy posterior chain accessory work follows.</p>
+          </div>
+        </div>
+
+        <div class="phase-strip">
+          <strong>Warm-Up (8 min):</strong> Hip circles × 10 → snatch-grip RDL × 5 → overhead squat (PVC/empty bar) × 5 → hang power snatch (empty bar) × 3 at slow tempo → build to working weight in 2 ramp-up sets.
+        </div>
+
+        <!-- Contrast Pair 1 -->
+        <p class="section-label">Contrast Pair 1 — Olympic Lift</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">1</div>
+            Hang Power Snatch → Box Jump
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Bar Form &amp; Speed</div>
+              <p class="exercise-name">Hang Power Snatch</p>
+              <span class="exercise-scheme">5 × 3 @ 65–75% 1RM</span>
+              <ul class="bar-cues">
+                <li>Start in the power position: hips hinged, bar above knee</li>
+                <li>"Jump" the bar — this isn't a pull, it's an explosive hip snap</li>
+                <li>Bar stays in contact with the body until the hips fire</li>
+                <li>Elbows drive high and wide immediately after the snap</li>
+                <li>Punch under and catch in a partial overhead squat — stable base</li>
+                <li>Don't muscle it up — if form breaks, the weight is too heavy</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/9iC40NRMX0I" title="Hang Power Snatch"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=9iC40NRMX0I" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Box Jump (Step Down)</p>
+              <span class="exercise-scheme">5 × 3 (max height box)</span>
+              <ul class="bar-cues">
+                <li>Swing arms back on the load, then explode them up</li>
+                <li>Land softly on top — stick the position, no wobble</li>
+                <li>Step down, do NOT jump down (saves knees)</li>
+                <li>Reset completely between reps — this is power, not cardio</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/52FSbMbEVg4" title="Box Jump"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=52FSbMbEVg4" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast Pair 2 -->
+        <p class="section-label">Contrast Pair 2</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">2</div>
+            Back Squat → Depth Drop to Vertical Jump
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy</div>
+              <p class="exercise-name">Back Squat</p>
+              <span class="exercise-scheme">4 × 5 @ 75–85% 1RM</span>
+              <ul class="bar-cues">
+                <li>High bar position: bar rests on upper traps/shelf</li>
+                <li>Brace core before unracking — 360° of pressure</li>
+                <li>Knees track over toes throughout; no caving inward</li>
+                <li>Hit parallel or below every rep — non-negotiable</li>
+                <li>Drive out of the hole with intent — accelerate through the sticking point</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/Ak1iHbEeeY8" title="Back Squat"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=Ak1iHbEeeY8" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Depth Drop → Vertical Jump</p>
+              <span class="exercise-scheme">4 × 3</span>
+              <ul class="bar-cues">
+                <li>Step off a 12–18" box; don't jump off</li>
+                <li>The moment both feet hit, explode immediately upward</li>
+                <li>Ground contact time should be under 0.25 sec — think of the floor as hot</li>
+                <li>This is a reactive / plyometric drill — ground contact is the training stimulus</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Posterior Chain Accessory -->
+        <p class="section-label">Posterior Chain Accessory</p>
+        <table class="workout-table">
+          <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Romanian Deadlift (RDL)</td><td>3 × 8</td><td>Hinge, don't squat. Stretch hamstrings to tension at the bottom. Full lockout at top — squeeze glutes hard.</td></tr>
+            <tr><td>Nordic Hamstring Curl (partner)</td><td>3 × 4–6</td><td>Control the eccentric as slowly as possible. Use hands to push up. Single best hamstring injury-prevention drill.</td></tr>
+            <tr><td>Single-Leg Hip Thrust (barbell)</td><td>3 × 10 each</td><td>Bar across hip, foot flat, drive to full extension. Pause 1 sec at top. Glutes, not lower back.</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Core -->
+        <p class="section-label">Core Finisher</p>
+        <table class="workout-table">
+          <thead><tr><th>Exercise</th><th>Sets × Reps</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Cable Woodchopper (High to Low)</td><td>3 × 10 each side</td><td>Power from hip rotation. Arms are levers, not the engine.</td></tr>
+            <tr><td>Hanging Leg Raise</td><td>3 × 10–12</td><td>Full hip flexion at top. Lower slowly — don't let momentum swing the legs.</td></tr>
+            <tr><td>Suitcase Carry</td><td>3 × 30 yds each side</td><td>Heavy kettlebell in one hand. Stay completely upright — lateral flexion defeats the purpose.</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Mobility -->
+        <p class="section-label">Cool-Down Mobility</p>
+        <div class="mobility-grid">
+          <div class="mobility-card"><h5>Seated Hamstring Stretch</h5><p>2 × 45 sec each leg. Flex foot, hinge at hip — not the waist. After RDLs and Nordics the hamstrings need this.</p></div>
+          <div class="mobility-card"><h5>Glute Figure-4 Stretch</h5><p>90 sec each side. Lying on back. Crossed ankle over knee, pull gently. Glute medius recovery.</p></div>
+          <div class="mobility-card"><h5>Hip Flexor Lunge Stretch</h5><p>60 sec each side. Weight on the back knee pad. Arms overhead increases the stretch through the iliopsoas.</p></div>
+          <div class="mobility-card"><h5>Calf / Achilles Stretch</h5><p>45 sec each, straight leg + bent knee. Sprinting and squatting load the Achilles hard. Never skip.</p></div>
+        </div>
+
+      </div>
+      <!-- /Day 4 -->
+
+
+      <!-- ══════════════════════════════════════════
+           DAY 5 — Hang Clean + Upper Contrast + Core
+      ══════════════════════════════════════════ -->
+      <div class="workout-tab-panel" id="day5-tab-content">
+
+        <div class="day-header">
+          <div class="day-badge">5<span>Day</span></div>
+          <div>
+            <h3>Hang Clean &amp; Upper Contrast + Core Cap</h3>
+            <p class="day-focus"><strong>Olympic lift focus:</strong> Hang Clean — bar starts at the power position. Reinforces aggressive hip extension and elbow speed. Upper contrast pairings close the week. Ends with a 15-min dedicated core and bracing session.</p>
+          </div>
+        </div>
+
+        <div class="phase-strip">
+          <strong>Warm-Up (8 min):</strong> Jump rope 2 min → arm swings → thoracic rotation → hang power shrug × 5 → hang high pull × 3 → hang clean (empty bar) × 3 → ramp to working weight over 2 sets.
+        </div>
+
+        <!-- Contrast Pair 1 -->
+        <p class="section-label">Contrast Pair 1 — Olympic Lift</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">1</div>
+            Hang Power Clean → Lateral Bound
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Bar Form &amp; Speed</div>
+              <p class="exercise-name">Hang Power Clean</p>
+              <span class="exercise-scheme">4 × 3 @ 70–80% 1RM</span>
+              <ul class="bar-cues">
+                <li>Power position: mid-thigh, shoulders over bar</li>
+                <li>Initiate with the hips — not a pull from the arms</li>
+                <li>Elbow speed is the cue: elbows must whip around the bar fast</li>
+                <li>Catch in a partial front squat — not fully upright</li>
+                <li>A missed catch means reset your elbow speed cue</li>
+                <li>Every rep should look and feel identical — automate the pattern</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/TjTEOme9fvw" title="Hang Power Clean"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=TjTEOme9fvw" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Lateral Bound (Side to Side)</p>
+              <span class="exercise-scheme">4 × 4 each direction</span>
+              <ul class="bar-cues">
+                <li>Load on one leg, push off laterally with max force</li>
+                <li>Stick the single-leg landing — absorb, then repeat the other way</li>
+                <li>Drive the inside arm up at takeoff for extra propulsion</li>
+                <li>Think: same lateral hip explosion as a route cut or juke</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast Pair 2 -->
+        <p class="section-label">Contrast Pair 2</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">2</div>
+            Bent-Over Barbell Row → Band Face Pull + Sprint Arms
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy</div>
+              <p class="exercise-name">Bent-Over Barbell Row</p>
+              <span class="exercise-scheme">4 × 5 @ 75–80% 1RM</span>
+              <ul class="bar-cues">
+                <li>Hinge to 45°; back flat and rigid — not a good-morning</li>
+                <li>Pull bar to lower chest/upper stomach, not toward the neck</li>
+                <li>Lead with the elbow, not the hands</li>
+                <li>Hold 1 sec at the top — squeeze rhomboids and lats together</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/phVtqawIgbk" title="Bent Over Row"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=phVtqawIgbk" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Band Face Pull + Rapid Arm Drive</p>
+              <span class="exercise-scheme">4 × 8 + 10 sec arm drive</span>
+              <ul class="bar-cues">
+                <li>Face pulls at eye level; external rotation at the end</li>
+                <li>Immediately after the last pull: rapid arm drive drill (tight angles, max speed) for 10 sec</li>
+                <li>This bridges posterior shoulder strength directly to sprint mechanics</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contrast Pair 3 -->
+        <p class="section-label">Contrast Pair 3</p>
+        <div class="contrast-pair">
+          <div class="contrast-pair-header">
+            <div class="pair-num">3</div>
+            Landmine Press → Rotational Med Ball Slam
+          </div>
+          <div class="contrast-pair-body">
+            <div class="contrast-lift">
+              <div class="exercise-type heavy">Heavy — Rotational Power</div>
+              <p class="exercise-name">Half-Kneeling Landmine Press</p>
+              <span class="exercise-scheme">3 × 6 each side</span>
+              <ul class="bar-cues">
+                <li>Half-kneeling: same-side knee down as the pressing arm</li>
+                <li>Arc the bar forward-and-up; follow the natural bar path</li>
+                <li>Core braced — no lumbar extension or side lean</li>
+                <li>Mimics the arm position in aggressive blocking or stiff-arming</li>
+              </ul>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/azAYQHhjiSc" title="Landmine Press"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=azAYQHhjiSc" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+            <div class="contrast-explosive">
+              <div class="exercise-type speed">Explosive</div>
+              <p class="exercise-name">Rotational Med Ball Slam</p>
+              <span class="exercise-scheme">3 × 6 each side</span>
+              <ul class="bar-cues">
+                <li>Start with ball overhead, rotate and slam at the opposite side</li>
+                <li>Power comes from hip rotation — arms are just the delivery</li>
+                <li>Slam through the floor, not just toward it</li>
+              </ul>
+              <div class="rest-chip">⏱ Rest 15–30 sec after (A), then 3 min after (B)</div>
+              <div class="video-container">
+                <iframe loading="lazy" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  src="https://www.youtube.com/embed/T_XkIEfDtP8" title="Rotational Med Ball Slam"></iframe>
+              </div>
+              <a class="mobile-video-link" href="https://www.youtube.com/watch?v=T_XkIEfDtP8" target="_blank" rel="noopener noreferrer">▶ Watch Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Cap -->
+        <p class="section-label">Week-Closing Core Block (15 min)</p>
+        <div class="callout">
+          <strong>The core block ends every Friday.</strong> Athletes who can brace well transfer force better and get injured less. Every exercise here has one rule: if the core breaks, the set ends.
+        </div>
+        <table class="workout-table">
+          <thead><tr><th>Exercise</th><th>Sets × Reps/Duration</th><th>Coaching Cue</th></tr></thead>
+          <tbody>
+            <tr><td>Stir the Pot (forearms on stability ball)</td><td>3 × 8 circles each direction</td><td>Keep hips completely still while arms circle. The difficulty is the instability — embrace it.</td></tr>
+            <tr><td>Copenhagen Plank</td><td>3 × 20–30 sec each side</td><td>Top leg on the bench, bottom leg off the floor. Adductor and lateral core in one. Do NOT let hips sag.</td></tr>
+            <tr><td>Pallof Press (kneeling, overhead)</td><td>3 × 8 each side</td><td>Press band out, then extend overhead. Return to chest. Every phase fights rotation — every phase counts.</td></tr>
+            <tr><td>Reverse Hyper (or Back Extension)</td><td>3 × 12</td><td>Posterior chain decompression. Slow and controlled. End the week by strengthening what heavy lifting compresses.</td></tr>
+            <tr><td>Dead Bug (contralateral)</td><td>3 × 6 each side</td><td>Extend opposite arm and leg slowly. 3 sec each way. Lower back stays flat — if it arches, bring the leg higher.</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Mobility -->
+        <p class="section-label">Week-End Mobility (10 min)</p>
+        <div class="mobility-grid">
+          <div class="mobility-card"><h5>Child's Pose</h5><p>2 min. Widened knees, arms extended. Breathe into the lower back. Full decompression from the week.</p></div>
+          <div class="mobility-card"><h5>Spinal Twist (lying)</h5><p>60 sec each side. Lumbar rotation flush after 5 days of heavy axial loading.</p></div>
+          <div class="mobility-card"><h5>Doorway Chest + Shoulder Stretch</h5><p>60 sec each side. Pec minor and anterior capsule — the two most tightened muscles in a week of pressing.</p></div>
+          <div class="mobility-card"><h5>Standing Quad + Hip Flexor Flow</h5><p>45 sec each leg. Step into a lunge, reach the back arm overhead. Combines quad, hip flexor, and lat stretch.</p></div>
+        </div>
+
+      </div>
+      <!-- /Day 5 -->
+
+    </div><!-- /.workout-program -->
+  </div><!-- /.container -->
+</main>
+
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(r => r.text())
+    .then(d => { document.getElementById('site-footer').innerHTML = d; });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.workout-tabs li');
+  const tabLinks = document.querySelectorAll('.workout-tabs li a');
+  const tabPanels = document.querySelectorAll('.workout-tab-panel');
+
+  tabLinks.forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      tabs.forEach(t => t.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      this.parentElement.classList.add('active');
+      const panel = document.querySelector(this.getAttribute('href'));
+      if (panel) panel.classList.add('active');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
