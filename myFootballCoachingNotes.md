@@ -72,6 +72,18 @@
 
 > Determine scheme before formation.
 
+#### O-Line drills
+Blocking Drills
+Down Block, explosive out of stance
+IZ & OZ explosive steps each direction.
+IZ & OZ against pads (pad holders hold the pad underneath)
+
+##### Terminology
+Stance = Starting 3 point stance
+Fit = Lineman has engaged, starting position is engaged with padholder/defender, bent elbows, thumbs up, palms on target, knees bent near 45°. 
+Drive = Power walk the defender back 
+Finish = Final burst. Extend arms forward and up.
+
 ### Terminology
 #### 5 Eligible Receivers
 - H
@@ -634,6 +646,10 @@ This file lives in the repo only. Not part of the public site.
 
 ## 📚 Resources
 
+### Coach Philosophy
+- [Armchair Coach Justin - The 3 Principles that GUIDE the Sean McVay Offense (Rams Film Study)](https://youtu.be/HCuZzAD0YDY?si=SpOCRUBbDbsjExgV)
+  - I love this break down of Sean McVay's offense.  I would like to steal it to help guide me in my coaching philosophy while coaching Liam.
+
 ### Blocking
 - [Play Football - O-Line Tips: Hand Placement & Blitz Recognition](https://www.youtube.com/watch?v=TsmUl6VHYeQ&ab_channel=PlayFootball)
 - [Chiefpigskin - Every Day Run Drills: O Linemen](https://youtu.be/Ije6St-CszM?si=vdeBTwfk0Kb2uiJ8)
@@ -647,9 +663,12 @@ This file lives in the repo only. Not part of the public site.
 - [FlipSled: Step, step, and punch drill - OL Blocking for better hands](https://youtube.com/shorts/ZYvlfR-4jls?si=bv90c5_bcGLUwOyr)
 - [Football University - Offensive Line Drills | Hand Placement](https://youtu.be/RBUG6JhE8nY?si=IsFxhK_kNrYC7uiz)
 - [Joe Pawlak - UND O Line Drill Tape Run](https://youtu.be/owSJ2DiZNWA?si=IgKU7tH0scYStZLy)
+- [Glazier Clinics - Cowboys O-Line Drill](https://x.com/GlazierClinics/status/2041487587571908967?s=20)
+- [Glazier Clinics - Zone SOP Drill](https://x.com/GlazierClinics/status/2042226693188784559?s=20)
 
 ### Exercise & Conditioning
 - [Sprints](https://youtube.com/shorts/agHssqNb3Yg?si=WYJRL1fwg4646GJs)
+- [Coach Isaac - Top 5 Football🏈 Workouts](https://youtube.com/shorts/3iMmrzqHiMA?si=2ymuDq96lBzxkFKs)
 
 ### Football 101 & Fundamentals
 - [vIQtory - Passing Concepts Explained for Youth Football Coaches](https://youtu.be/a3ypxBpLnx8?si=17MwRUtbb6iTgUMZ)
@@ -674,6 +693,10 @@ This file lives in the repo only. Not part of the public site.
 - [How do you identify your fronts for the Offensive Line! ](https://youtube.com/shorts/_ePd4B0MHWA?si=NXVoUScNHAk8I8LD)
    > I like the above to show typical fronts seen in football when coming up with blocking assignments.
 - [WZWF - Kyle Shanahan's 49ers PLAYBOOK Breakdown (And DOWNLOAD)!](https://youtu.be/6gYC8ObJlDk?si=OmzRJTP8Z-ZRtPyI)
+-[Coach Tatum - Slide or Weak Flood](https://youtube.com/shorts/OW8jRCsUa-Q?si=5naTTZUy9k5McnVx)
+  - Good explanation on how to run boot with OZ 
+- [Armchair Coach Justin - The Hidden Science Behind NFL Passing Concepts](https://youtu.be/5oaHb-pcrjY?si=NCknjx8NYdxr5oPT)
+ - Passing concepts
 
 
 ### Football Play Ideas
@@ -686,6 +709,7 @@ This file lives in the repo only. Not part of the public site.
 - [Duo: Gap Down Buddy](https://youtube.com/shorts/eCotQUJ3yxE?si=pOgyqqu6ICoSk6KM)
 - [How do you categorize Gap Scheme on Film](https://youtube.com/shorts/tGHx85Pa9QE?si=nhBnvy0P2MZHQ3ji)
 - [Simple Down Blocking Scheme for Youth Football](https://youtu.be/F797-EW_u4c?si=r-zVprjrfRvAyAyE)
+- [Coach Zach Clark - Football Film Study: The Power Run Play](https://youtu.be/DMeyRWDmp1w?si=pJbzgUE5Ri5GgbHW)
 
 
 ### How to Watch Film
@@ -693,12 +717,14 @@ This file lives in the repo only. Not part of the public site.
 
 ### Jet Sweep
 - [YFO - Jet ISO - One of our best plays!](https://youtu.be/wm7OzD9dmhs?si=uboMKMjvBTrwbBEe)
+- [Wide Zone Warriors Football - Unlocking JET SWEEP: From NFL to Youth League](https://youtu.be/x9jvOA8NtdA?si=hfsYq4acRyLZjT85)
 
 ### Linebacker
 -[Coach Kou's - Coaching Football Defense: LB Fundamentals and Drills](https://coachkoufootball.substack.com/p/coaching-football-defense-lb-fundamentals?utm_source=substack&utm_medium=email#media-a2c558d4-1dce-4181-a36c-d87b0764384a)
 
 ### Planning & Installation
 - [Chiefpigskin - Pre-Season Defensive Planning & Install Drills](https://youtu.be/p3xfUQOfmDw?si=NzsvsRId5Lx11aZN)
+- [Coach Tatum - Quick Game Install: Stick, Out, Hitches](https://youtube.com/shorts/fczkTiA_0JY?si=ys5H8wnsOE4DmrdV)
 
 ### Quarterback Training
 - [FDT - Training Elite Youth QBs](https://www.youtube.com/watch?v=ll8WrM1iAiI)
@@ -707,8 +733,14 @@ This file lives in the repo only. Not part of the public site.
 ### RPOs
 - [Coach Tatum - RPOs](https://youtube.com/shorts/CGGRP3juTL0?si=66UhDRWwfcSVrals)
 
-### Split Back
+### Split Back aka Pro Set
 - [How to utilize the 2 Back Run Game](https://youtu.be/yCiui2mWFZc?si=WVH-d1-EXTxfiDg6)
+- [This is the Outside Veer - The First Triple Option Offense in Football](https://youtube.com/shorts/LOats8yQCOA?si=qBdByE4ZrVrvc_hn)
+- [2  Back Personnel + Tempo](https://www.youtube-nocookie.com/embed/Lewf-SOV8TI?playlist=Lewf-SOV8TI&autoplay=1&iv_load_policy=3&loop=1&start=#)
+
+
+### Tackle Drills
+-[Chris Haddad](https://x.com/chrisvIQtory/status/1879537288964960747)
 
 ### Team Drills & Special Teams
 - [Team Open Field Blocking Drill](https://youtube.com/shorts/U3fCcFiRNz0?si=i50woE1oQ_1XN6hz)
@@ -766,6 +798,7 @@ This file lives in the repo only. Not part of the public site.
   - Med Ball Push Ups
   - Med Ball Press
   - Explosive barbell Rows
+  -[30 Minute Lower Body Football Workout](https://youtube.com/shorts/f6o-7-x3qiQ?si=Pq51HlhD6IpXDP4w)
 
 
 ### Wide Receiver Drills
@@ -782,6 +815,47 @@ This file lives in the repo only. Not part of the public site.
 - [AFA - Inside Zone Blocking Rules](https://youtu.be/YunV5OwJ4H4?si=1Zq2euIhYGpmv5Ic)
 - [AFA - How To Run Inside Zone 10 Different Ways](https://youtu.be/wmwOEzJpKLM?si=PZfguCHzu3R11fKn)
 - [TOC - Coaching Outside Zone](https://youtube.com/shorts/wUDvHslp_Ic?si=Zt5tR_S8vD6WpUHI)
+- [CFB On Fox - Urban Meyer breaks down Ohio State's zone blocking scheme](https://youtu.be/hzL8pNEQIsg?si=CujHLRX55_WHRrBI)
 
 
 ## My Random Notes
+
+# WR - Thu Session
+1. Blocking
+
+## FDT
+2. Kneeling Stick Release (Knee up sticks first)
+
+3. Kneeling Stick + Jab
+
+4. 5 cone stick drill (4 each leg)
+
+5. 4 cone 45-degree zig-zag drill.
+
+6. Release (Speed, Stick, Jab)
+
+7. 3 cone (3 yards apart) high knees to drop at cone (one foot should be farther then the other) x6
+
+8. JJ plant step drill (x10)
+
+9. WR stance +  1-2 step, third step towards sideline.  Catch ball.
+
+10. WR stance +  1-2-3 step, third step towards sideline.  Catch ball.
+
+11. Flip, catch, release
+
+Whip Route
+
+12. Snap Fall drill (Hands behind back, go to toes, lean forward, last second catch self with lead foot bent to 90 degrees(punch with opposite arm), don't let back knee touch ground x8ea)
+
+13. Snap Fall Pivot Hook - leaning forward, first leg catches, second leg turns hips.
+
+14. Cook Hook Step - 5 cones, Moving Rt -> Left foot turns hips to RT, last one sprint out (Opposite direction facing)
+
+
+## Lineman calls
+Rizz----> Right Inside Zone
+Lizard--> Left  Inside Zone
+Rambo---> Right Outside Zone
+Lotto---> Left  Outside Zone
+PP------> Pass  Protect
