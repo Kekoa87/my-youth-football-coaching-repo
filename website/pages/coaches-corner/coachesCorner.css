@@ -266,7 +266,7 @@
   padding: 0.3rem 0.55rem;
 }
 
-.practice-template-embed {
+.resource-card-preview {
   margin-top: 1rem;
   border: 1px solid #d9e1ec;
   border-radius: 8px;
@@ -274,15 +274,23 @@
   background: #f8fbff;
 }
 
-.practice-template-embed iframe {
+.resource-card-preview img {
   display: block;
   width: 100%;
-  height: 420px;
-  border: none;
+  height: auto;
+  transition: opacity 0.2s ease;
+}
+
+.resource-card-preview img:hover {
+  opacity: 0.92;
 }
 
 .module-card__actions {
   margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -306,9 +314,5 @@
   .timeline-header {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .practice-template-embed iframe {
-    height: 300px;
   }
 }

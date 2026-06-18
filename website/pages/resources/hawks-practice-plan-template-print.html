@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parker Hawks — Practice Plan Template</title>
+  <style>
+    /* ── Print baseline ─── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @page {
+      size: letter landscape;
+      margin: 0.55in 0.5in;
+    }
+
+    body {
+      font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 9.5pt;
+      color: #1a1a1a;
+      background: #fff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* ── Header ─── */
+    .plan-header {
+      display: flex;
+      align-items: center;
+      background: #1C2D4D;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 4px 4px 0 0;
+      gap: 14px;
+      margin-bottom: 0;
+    }
+
+    .team-logo-placeholder {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: #E8671A;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18pt;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .header-titles {
+      flex: 1;
+    }
+
+    .team-name {
+      font-size: 15pt;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #E8671A;
+      line-height: 1;
+    }
+
+    .doc-title {
+      font-size: 8pt;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.7);
+      margin-top: 2px;
+    }
+
+    .header-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 8pt;
+    }
+
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 2px;
+    }
+
+    .meta-value {
+      font-weight: 700;
+      color: #fff;
+      font-size: 9pt;
+      border-bottom: 1.5px solid rgba(255,255,255,0.4);
+      min-width: 90px;
+      padding-bottom: 1px;
+    }
+
+    /* ── Install strip ─── */
+    .install-strip {
+      background: #f0f4f8;
+      border: 1px solid #d0d8e4;
+      border-top: none;
+      display: flex;
+      gap: 0;
+      font-size: 8pt;
+    }
+
+    .install-item {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-right: 1px solid #d0d8e4;
+    }
+
+    .install-item:last-child { border-right: none; }
+
+    .install-label {
+      text-transform: uppercase;
+      font-size: 6.5pt;
+      letter-spacing: 0.06em;
+      color: #6b7c93;
+      font-weight: 700;
+      margin-right: 8px;
+      white-space: nowrap;
+    }
+
+    .install-value {
+      border-bottom: 1px solid #b0bec5;
+      flex: 1;
+      min-width: 70px;
+    }
+
+    /* ── Main Grid ─── */
+    .practice-grid {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #c8d6e4;
+      border-top: none;
+      font-size: 8.5pt;
+    }
+
+    .practice-grid th,
+    .practice-grid td {
+      border: 1px solid #c8d6e4;
+      padding: 4px 6px;
+      vertical-align: top;
+    }
+
+    /* Column header row */
+    .col-header {
+      background: #1C2D4D;
+      color: #fff;
+      font-size: 7.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      text-align: center;
+      padding: 5px 6px;
+    }
+
+    /* Segment label cells (left column) */
+    .seg-time {
+      background: #f7f9fc;
+      font-weight: 700;
+      font-size: 7.5pt;
+      text-align: center;
+      color: #4a5568;
+      white-space: nowrap;
+      width: 52px;
+    }
+
+    .seg-name {
+      font-weight: 700;
+      font-size: 8pt;
+      color: #1a1a1a;
+      width: 110px;
+    }
+
+    /* Section divider rows */
+    .section-warm-up td { background: #fff3cd; }
+    .section-off-ind   td { background: #e8f4fd; }
+    .section-off-grp   td { background: #dbeafe; }
+    .section-off-team  td { background: #d1fae5; }
+    .section-water     td { background: #ccfbf1; font-weight: 700; color: #0f766e; text-align: center; }
+    .section-def-ind   td { background: #fce7f3; }
+    .section-def-team  td { background: #fde68a; }
+
+    .section-header td {
+      font-weight: 900;
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      text-align: center;
+      padding: 4px 6px;
+      color: #1a1a1a;
+    }
+
+    .section-header.section-warm-up  td { background: #fbbf24; }
+    .section-header.section-off-ind  td { background: #3b82f6; color: #fff; }
+    .section-header.section-off-grp  td { background: #2563eb; color: #fff; }
+    .section-header.section-off-team td { background: #059669; color: #fff; }
+    .section-header.section-water    td { background: #0891b2; color: #fff; }
+    .section-header.section-def-ind  td { background: #dc2626; color: #fff; }
+    .section-header.section-def-team td { background: #b45309; color: #fff; }
+
+    /* Writeable line cells */
+    .write-line {
+      border-bottom: 1px solid #9ca3af !important;
+      padding-bottom: 1px;
+      display: block;
+      margin-bottom: 6px;
+      min-height: 12px;
+    }
+
+    .write-label {
+      font-size: 6.5pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6b7c93;
+      display: block;
+      margin-bottom: 1px;
+    }
+
+    .drill-slot {
+      margin-bottom: 5px;
+    }
+
+    /* Notes column */
+    .notes-col {
+      min-width: 80px;
+      font-size: 7.5pt;
+      color: #6b7c93;
+      font-style: italic;
+    }
+
+    /* Footer */
+    .plan-footer {
+      margin-top: 6px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.5pt;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="plan-header">
+    <div class="team-logo-placeholder">H</div>
+    <div class="header-titles">
+      <div class="team-name">Parker Hawks</div>
+      <div class="doc-title">Practice Plan Template</div>
+    </div>
+    <div class="header-meta">
+      <div class="meta-item">
+        <span class="meta-label">Date</span>
+        <span class="meta-value">&nbsp;</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Time</span>
+        <span class="meta-value">&nbsp;</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Location</span>
+        <span class="meta-value">&nbsp;</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTALL STRIP -->
+  <div class="install-strip">
+    <div class="install-item">
+      <span class="install-label">Run Install:</span>
+      <span class="install-value">&nbsp;</span>
+    </div>
+    <div class="install-item">
+      <span class="install-label">Pass Install:</span>
+      <span class="install-value">&nbsp;</span>
+    </div>
+    <div class="install-item">
+      <span class="install-label">Focus / Theme:</span>
+      <span class="install-value">&nbsp;</span>
+    </div>
+    <div class="install-item">
+      <span class="install-label">Coaching Notes:</span>
+      <span class="install-value">&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- PRACTICE GRID -->
+  <table class="practice-grid">
+    <colgroup>
+      <col style="width:52px" />
+      <col style="width:115px" />
+      <col style="width:*" />
+      <col style="width:*" />
+      <col style="width:*" />
+      <col style="width:*" />
+      <col style="width:*" />
+      <col style="width:75px" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th class="col-header">Time</th>
+        <th class="col-header">Segment</th>
+        <th class="col-header">QB</th>
+        <th class="col-header">RB</th>
+        <th class="col-header">WR / TE</th>
+        <th class="col-header">OL</th>
+        <th class="col-header">DL / LB / DB</th>
+        <th class="col-header">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- DYNAMIC WARM-UP -->
+      <tr class="section-header section-warm-up">
+        <td colspan="8">Dynamic Warm-Up — Full Team</td>
+      </tr>
+      <tr class="section-warm-up">
+        <td class="seg-time">5 Min</td>
+        <td class="seg-name">Full Team Movement Prep</td>
+        <td colspan="5" style="font-size:8pt; color:#4a5568;">
+          Knee Pull (every other step) &nbsp;·&nbsp; A-Skip &nbsp;·&nbsp; High Knees &nbsp;·&nbsp; Bear Hug &nbsp;·&nbsp; Low Shuffle
+          &nbsp;·&nbsp; Carioca &nbsp;·&nbsp; Back Pedal &nbsp;·&nbsp; Run Backs &nbsp;·&nbsp; Low Sweep &nbsp;·&nbsp; Toe Touch
+          &nbsp;·&nbsp; Leg Sweep &nbsp;·&nbsp; Quad Stretch
+        </td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+
+      <!-- OFFENSE POSITION INDYS -->
+      <tr class="section-header section-off-ind">
+        <td colspan="8">Offense Position Indys — Simultaneous Groups</td>
+      </tr>
+      <tr class="section-off-ind">
+        <td class="seg-time" rowspan="3">15 Min</td>
+        <td class="seg-name">Drill 1</td>
+        <td><span class="drill-slot"><span class="write-label">QB</span><span class="write-line"></span></span></td>
+        <td><span class="drill-slot"><span class="write-label">RB</span><span class="write-line"></span></span></td>
+        <td><span class="drill-slot"><span class="write-label">WR</span><span class="write-line"></span></span></td>
+        <td><span class="drill-slot"><span class="write-label">OL</span><span class="write-line"></span></span></td>
+        <td><span class="drill-slot"><span class="write-label">DEF</span><span class="write-line"></span></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-off-ind">
+        <td class="seg-name">Drill 2</td>
+        <td><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-off-ind">
+        <td class="seg-name">Drill 3</td>
+        <td><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+
+      <!-- OFFENSE GROUP INDYS -->
+      <tr class="section-header section-off-grp">
+        <td colspan="8">Offense Group Indys — Paired Groups</td>
+      </tr>
+      <tr class="section-off-grp">
+        <td class="seg-time" rowspan="2">10 Min</td>
+        <td class="seg-name">QB + WRs</td>
+        <td colspan="3">
+          <span class="write-label">Routes / Concepts</span>
+          <span class="write-line"></span>
+        </td>
+        <td colspan="2">
+          <span class="write-label">OL + RB</span>
+          <span class="write-line"></span>
+        </td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-off-grp">
+        <td class="seg-name">Rep 2</td>
+        <td colspan="3"><span class="write-line"></span></td>
+        <td colspan="2"><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+
+      <!-- OFFENSE TEAM / LOOK 11 -->
+      <tr class="section-header section-off-team">
+        <td colspan="8">Offense Look 11 — Starting 11 Team Period</td>
+      </tr>
+      <tr class="section-off-team">
+        <td class="seg-time" rowspan="4">20 Min</td>
+        <td class="seg-name">Controlled Run of:</td>
+        <td colspan="5">
+          <span class="write-label">IZ + Flood (or today's install)</span>
+          <span class="write-line"></span>
+        </td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-off-team">
+        <td class="seg-name">Situational Reps</td>
+        <td colspan="5"><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-off-team">
+        <td class="seg-name">Back Up Reps</td>
+        <td colspan="5"><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-off-team">
+        <td class="seg-name">Special Teams</td>
+        <td colspan="2" style="font-size:8pt; color:#065f46;">Punt</td>
+        <td colspan="3" style="font-size:8pt; color:#065f46;">Field Goal</td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+
+      <!-- WATER BREAK -->
+      <tr class="section-header section-water">
+        <td colspan="8">Water Break</td>
+      </tr>
+      <tr class="section-water">
+        <td class="seg-time">5 Min</td>
+        <td colspan="6" style="text-align:center; color:#0f766e; font-weight:600;">— Water / Rest —</td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+
+      <!-- DEFENSE POSITION INDYS -->
+      <tr class="section-header section-def-ind">
+        <td colspan="8">Defense Position Indys — Simultaneous Groups</td>
+      </tr>
+      <tr class="section-def-ind">
+        <td class="seg-time" rowspan="3">15 Min</td>
+        <td class="seg-name">Drill 1</td>
+        <td colspan="2"><span class="drill-slot"><span class="write-label">DL</span><span class="write-line"></span></span></td>
+        <td colspan="2"><span class="drill-slot"><span class="write-label">LB</span><span class="write-line"></span></span></td>
+        <td><span class="drill-slot"><span class="write-label">DB</span><span class="write-line"></span></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-def-ind">
+        <td class="seg-name">Drill 2</td>
+        <td colspan="2"><span class="write-line"></span></td>
+        <td colspan="2"><span class="write-line"></span></td>
+        <td><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-def-ind">
+        <td class="seg-name">Tackle Drill</td>
+        <td colspan="5" style="font-size:8pt; color:#6b7c93;">DL Tackle Drill &nbsp;·&nbsp; LB Tackle Drill &nbsp;·&nbsp; DB Tackle Drill</td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+
+      <!-- DEFENSE TEAM / LOOK 11 -->
+      <tr class="section-header section-def-team">
+        <td colspan="8">Defense Look 11 — Starting 11 Team Period</td>
+      </tr>
+      <tr class="section-def-team">
+        <td class="seg-time" rowspan="4">15 Min</td>
+        <td class="seg-name">Formation Review</td>
+        <td colspan="5"><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-def-team">
+        <td class="seg-name">Assignment + Fits</td>
+        <td colspan="5"><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-def-team">
+        <td class="seg-name">Opponent Prep</td>
+        <td colspan="5"><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+      <tr class="section-def-team">
+        <td class="seg-name">Alignment Check</td>
+        <td colspan="5"><span class="write-line"></span></td>
+        <td class="notes-col">&nbsp;</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="plan-footer">
+    <span>Parker Hawks Football · Practice Plan Template</span>
+    <span>youthfootballcoachinghub.com</span>
+  </div>
+
+</body>
+</html>
