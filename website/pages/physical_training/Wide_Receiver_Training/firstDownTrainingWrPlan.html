@@ -8,6 +8,105 @@
   <link rel="stylesheet" href="../../../styles.css" />
   <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png" />
   <style>
+    /* ════════════════════════════════════════════════════
+       PASSWORD PROTECTION STYLES
+       To change the password, find the string "FirstDownTraining2026"
+       in the <script> block near the bottom of this file.
+    ════════════════════════════════════════════════════ */
+
+    /* Full-screen overlay shown before authentication */
+    #pw-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-light, #f8f9fa);
+      padding: var(--space-md, 1rem);
+    }
+
+    #pw-card {
+      background: var(--color-white, #fff);
+      border: 1px solid var(--color-border, #dee2e6);
+      border-radius: 12px;
+      box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.12);
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    #pw-card h2 {
+      color: var(--color-primary-dark, #133728);
+      margin-bottom: .5rem;
+      font-family: var(--font-family-sans-serif, sans-serif);
+    }
+
+    #pw-card p {
+      color: var(--color-secondary, #6c757d);
+      font-size: .95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #pw-input {
+      width: 100%;
+      padding: .7rem 1rem;
+      border: 2px solid var(--color-border, #dee2e6);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .2s;
+      box-sizing: border-box;
+      margin-bottom: 1rem;
+    }
+
+    #pw-input:focus {
+      border-color: var(--color-primary, #1C5239);
+    }
+
+    #pw-input.pw-shake {
+      animation: pw-shake .4s ease;
+      border-color: #dc3545;
+    }
+
+    @keyframes pw-shake {
+      0%,100% { transform: translateX(0); }
+      20%     { transform: translateX(-8px); }
+      40%     { transform: translateX(8px); }
+      60%     { transform: translateX(-6px); }
+      80%     { transform: translateX(6px); }
+    }
+
+    #pw-submit {
+      width: 100%;
+      padding: .75rem;
+      background: var(--color-primary, #1C5239);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    #pw-submit:hover { background: var(--color-primary-dark, #133728); }
+
+    #pw-error {
+      margin-top: .9rem;
+      color: #dc3545;
+      font-size: .9rem;
+      min-height: 1.2em;
+    }
+
+    /* Protected page content — hidden until authenticated */
+    #protected-content {
+      display: none;
+    }
+
     /* ── Program layout ── */
     .program-layout {
       display: grid;
@@ -201,6 +300,31 @@
   </style>
 </head>
 <body>
+
+<!-- ════════════════════════════════════════════════════
+     PASSWORD GATE — shown before any page content loads.
+     The overlay covers the entire viewport; the protected
+     content beneath it stays hidden (display:none) until
+     the correct password is entered.
+════════════════════════════════════════════════════ -->
+<div id="pw-overlay" role="dialog" aria-modal="true" aria-labelledby="pw-heading">
+  <div id="pw-card">
+    <h2 id="pw-heading">Protected Content</h2>
+    <p>This page requires a password.<br>Please enter it below to continue.</p>
+    <input
+      id="pw-input"
+      type="password"
+      placeholder="Enter password"
+      autocomplete="current-password"
+      aria-label="Password"
+    />
+    <button id="pw-submit" type="button">Unlock</button>
+    <div id="pw-error" role="alert" aria-live="polite"></div>
+  </div>
+</div>
+
+<!-- Protected page content — hidden until password is verified -->
+<div id="protected-content">
 
 <div id="site-header"></div>
 <script>
@@ -909,6 +1033,95 @@
     });
   });
 
+}());
+</script>
+
+</div><!-- /#protected-content -->
+
+<!-- ════════════════════════════════════════════════════
+     PASSWORD PROTECTION LOGIC
+     ─────────────────────────────────────────────────
+     HOW IT WORKS:
+       1. On page load, #protected-content is hidden (display:none via CSS)
+          and the #pw-overlay covers the full viewport.
+       2. When the user submits a password, it is compared against
+          CORRECT_PASSWORD (defined below).
+       3. On a match: the overlay is removed and the protected
+          content is made visible.
+       4. On a mismatch: an error message is shown and the input
+          shakes to give clear feedback; the user may try again.
+       5. Session memory: on success, a flag is stored in
+          sessionStorage so the gate does not re-appear if the
+          user navigates away and returns within the same browser tab.
+
+     TO CHANGE THE PASSWORD:
+       Find the line below that reads:
+           const CORRECT_PASSWORD = "FirstDownTraining2026";
+       Replace the value between the quotes with your new password.
+       The change takes effect immediately — no build step required.
+════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  // ── Change the password here ────────────────────────────────
+  var CORRECT_PASSWORD = "FirstDownTraining2026";
+  // ────────────────────────────────────────────────────────────
+
+  var SESSION_KEY = 'fdtWrPlanAuth';
+
+  var overlay     = document.getElementById('pw-overlay');
+  var content     = document.getElementById('protected-content');
+  var input       = document.getElementById('pw-input');
+  var submitBtn   = document.getElementById('pw-submit');
+  var errorMsg    = document.getElementById('pw-error');
+
+  /* If the user already authenticated this session, skip the gate */
+  if (sessionStorage.getItem(SESSION_KEY) === '1') {
+    unlock();
+    return;
+  }
+
+  /* Show the overlay; keyboard focus goes to the input */
+  overlay.style.display = 'flex';
+  input.focus();
+
+  function unlock() {
+    overlay.style.display = 'none';
+    content.style.display = 'block';
+    sessionStorage.setItem(SESSION_KEY, '1');
+  }
+
+  function handleAttempt() {
+    var entered = input.value;
+
+    if (entered === CORRECT_PASSWORD) {
+      unlock();
+    } else {
+      /* Wrong password — show message and shake the input */
+      errorMsg.textContent = 'Incorrect password. Please try again.';
+      input.value = '';
+
+      /* Trigger shake animation by removing then re-adding the class */
+      input.classList.remove('pw-shake');
+      /* Force a reflow so the browser registers the class removal */
+      void input.offsetWidth;
+      input.classList.add('pw-shake');
+      input.focus();
+
+      /* Remove shake class after animation completes (400 ms) */
+      setTimeout(function () {
+        input.classList.remove('pw-shake');
+      }, 450);
+    }
+  }
+
+  submitBtn.addEventListener('click', handleAttempt);
+
+  /* Also allow pressing Enter in the password field */
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') handleAttempt();
+  });
 }());
 </script>
 
