@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="First Down Training's 8-Week Ultimate WR Training Schedule — daily on-field drills and gym workouts for wide receivers covering releases, route running, explosiveness, and conditioning." />
+  <title>8-Week Ultimate WR Training Schedule | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png" />
+  <style>
+    /* ── Program layout ── */
+    .program-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .program-sidebar {
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-md);
+      background: var(--color-white);
+      position: sticky;
+      top: 1rem;
+    }
+    .program-sidebar h3 { margin-top: 0; font-size: 1rem; }
+    .week-list { list-style: none; margin: 0; padding: 0; }
+    .week-list li + li { margin-top: .3rem; }
+    .week-button {
+      width: 100%;
+      text-align: left;
+      border: 1px solid transparent;
+      background: transparent;
+      padding: .45rem .65rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-size: .95rem;
+    }
+    .week-button.active {
+      background: var(--color-light);
+      border-color: var(--color-primary);
+      font-weight: 600;
+      color: var(--color-primary-dark);
+    }
+    .week-button:hover:not(.active) { background: var(--color-light); }
+    .program-main { min-width: 0; }
+    .section-note {
+      background: var(--color-light);
+      border-left: 4px solid var(--color-primary);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      margin-bottom: var(--space-md);
+      font-size: .95rem;
+    }
+
+    /* ── Main section tabs (Field / Gym) ── */
+    .section-tabs {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+    }
+    .section-tab-btn {
+      padding: .65rem 1.4rem;
+      border: 2px solid var(--color-border);
+      background: var(--color-white);
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      transition: all .2s;
+    }
+    .section-tab-btn.active {
+      background: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      color: var(--color-white);
+    }
+    .section-panel { display: none; }
+    .section-panel.active { display: block; }
+
+    /* ── Drill cards (field training) ── */
+    .split-block {
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+      background: var(--color-white);
+    }
+    .split-block h4 { margin: 0 0 var(--space-sm); color: var(--color-primary); }
+    .drill-list { list-style: none; margin: 0; padding: 0; }
+    .drill-list li {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-sm);
+      padding: .4rem 0;
+      border-bottom: 1px solid var(--color-light);
+      font-size: .95rem;
+    }
+    .drill-list li:last-child { border-bottom: none; }
+    .drill-name { font-weight: 600; color: var(--color-dark); flex: 1; }
+    .drill-reps { color: var(--color-secondary); white-space: nowrap; font-size: .9rem; }
+    .drill-link {
+      display: inline-block;
+      padding: .2rem .55rem;
+      background: var(--color-primary);
+      color: var(--color-white) !important;
+      border-radius: 5px;
+      font-size: .8rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .drill-link:hover { background: var(--color-primary-dark); }
+    .rest-day-panel {
+      text-align: center;
+      padding: var(--space-xl);
+      background: var(--color-light);
+      border-radius: 12px;
+    }
+    .rest-day-panel h3 { color: var(--color-secondary); }
+
+    /* ── Gym exercise blocks ── */
+    .superset-group {
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: var(--space-sm) var(--space-md);
+      margin-bottom: var(--space-sm);
+      background: #fafafa;
+    }
+    .superset-label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .05em;
+      color: var(--color-secondary);
+      text-transform: uppercase;
+      margin-bottom: .3rem;
+    }
+    .gym-exercise {
+      padding: .35rem 0;
+      border-bottom: 1px solid var(--color-border);
+      font-size: .93rem;
+    }
+    .gym-exercise:last-child { border-bottom: none; }
+    .gym-exercise strong { color: var(--color-primary-dark); }
+    .rest-note { font-size: .85rem; color: var(--color-secondary); margin-top: .35rem; font-style: italic; }
+
+    /* ── Warmup collapsible ── */
+    .warmup-toggle {
+      width: 100%;
+      text-align: left;
+      border: 1px solid var(--color-border);
+      background: var(--color-light);
+      padding: .5rem var(--space-md);
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-size: .9rem;
+      margin-bottom: var(--space-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .warmup-content { display: none; margin-bottom: var(--space-md); }
+    .warmup-content.open { display: block; }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--color-light);
+      border-radius: 10px;
+      padding: var(--space-md) var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+    .toc h3 { margin-top: 0; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc li { margin-bottom: .25rem; }
+
+    /* ── Day context badge ── */
+    .day-badge {
+      display: inline-block;
+      background: var(--color-primary-dark);
+      color: var(--color-white);
+      border-radius: 6px;
+      padding: .2rem .6rem;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .program-layout {
+        grid-template-columns: 1fr;
+      }
+      .program-sidebar { position: static; }
+    }
+    @media (max-width: 600px) {
+      .drill-list li { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="site-header"></div>
+<script>
+  fetch('/website/includes/header.html')
+    .then(r => r.text())
+    .then(d => { document.getElementById('site-header').innerHTML = d; });
+</script>
+
+<main>
+  <div class="container">
+    <div class="workout-program">
+
+      <!-- ── Page Header ── -->
+      <div class="page-header" style="margin-bottom: var(--space-lg);">
+        <h1>8-Week Ultimate WR Training Schedule</h1>
+        <p style="text-align:center;">Source: <strong>First Down Training</strong> &mdash; firstdowntraining.com</p>
+      </div>
+
+      <!-- ── Introduction ── -->
+      <p>
+        This 8-week wide receiver training program from First Down Training combines two 28-day on-field workout plans with two 28-day gym programs — more than 500 drills and exercises designed to develop the skills and athleticism elite WRs need. Each week pairs daily on-field sessions focused on releases, route-running, and cutting with gym workouts targeting explosiveness, grip strength, and conditioning.
+      </p>
+      <p>
+        The field plan progresses through four skill areas: releases off the line, sharpening the top of routes, press-release techniques, and full route-tree execution. The gym plan (two phases) builds explosive leg power, upper-body grip strength, and position-specific conditioning. The program is best run consecutively: complete your on-field session, then add the gym session on the same day or the next day.
+      </p>
+      <p style="font-size:.9rem; color: var(--color-secondary);">
+        <strong>Disclaimer:</strong> This program is designed to increase performance of WRs. Results may vary. Some movements may be advanced for your current fitness level — please consult a physician before beginning. Never perform exercises alone. Safety first.
+      </p>
+      <p style="font-size:.9rem; color: var(--color-secondary);">
+        Contact: <a href="mailto:support@firstdowntraining.com">support@firstdowntraining.com</a>
+      </p>
+
+      <!-- ── Table of Contents ── -->
+      <nav class="toc" aria-label="Page contents">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#field-training">On-Field Training</a> — 56 daily field sessions (Weeks 1–8)</li>
+          <li><a href="#gym-training">Gym Training</a>
+            <ul>
+              <li><a href="#gym-phase1">Phase 1 — WR Gym Program 2.0</a> (Weeks 1–4)</li>
+              <li><a href="#gym-phase2">Phase 2 — WR Gym Program 3.0</a> (Weeks 5–8)</li>
+            </ul>
+          </li>
+        </ol>
+      </nav>
+
+      <!-- ══════════════════════════════════════════
+           ON-FIELD TRAINING SECTION
+      ══════════════════════════════════════════ -->
+      <section id="field-training">
+        <h2>On-Field Training</h2>
+        <p>
+          Each field session begins with a <strong>dynamic warm-up</strong> — any activity that raises your heart rate and breaks a light sweat. Do not stretch cold muscles. Warm-ups are labeled below and can be any routine you prefer.
+        </p>
+        <p>
+          Sessions are organized into <strong>Splits</strong>. Complete all drills in Split 1 before moving to Split 2, then Split 3. Each drill includes a link to a demonstration video.
+        </p>
+
+        <div class="program-layout">
+          <!-- Sidebar -->
+          <aside class="program-sidebar">
+            <h3>Select Week</h3>
+            <ul class="week-list" id="field-week-list">
+              <li><button class="week-button active" data-week="1">Week 1</button></li>
+              <li><button class="week-button" data-week="2">Week 2</button></li>
+              <li><button class="week-button" data-week="3">Week 3</button></li>
+              <li><button class="week-button" data-week="4">Week 4</button></li>
+              <li><button class="week-button" data-week="5">Week 5</button></li>
+              <li><button class="week-button" data-week="6">Week 6</button></li>
+              <li><button class="week-button" data-week="7">Week 7</button></li>
+              <li><button class="week-button" data-week="8">Week 8</button></li>
+            </ul>
+          </aside>
+
+          <!-- Main field content -->
+          <div class="program-main">
+            <div id="field-week-note" class="section-note" style="display:none;"></div>
+            <ul class="workout-tabs" id="field-day-tabs"></ul>
+            <div id="field-day-content"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           GYM TRAINING SECTION
+      ══════════════════════════════════════════ -->
+      <section id="gym-training" style="margin-top: var(--space-xxl);">
+        <h2>Gym Training</h2>
+
+        <!-- Phase tabs -->
+        <div class="section-tabs">
+          <button class="section-tab-btn active" data-phase="gym20" id="gym-phase1">Phase 1 — WR Gym 2.0 (Weeks 1–4)</button>
+          <button class="section-tab-btn" data-phase="gym30" id="gym-phase2">Phase 2 — WR Gym 3.0 (Weeks 5–8)</button>
+        </div>
+
+        <!-- GYM 2.0 -->
+        <div class="section-panel active" id="gym20-panel">
+          <p>
+            This more advanced gym program builds on foundational WR training. It features heavier loads, higher reps, and more explosive movements. Focus areas: <strong>explosiveness</strong> (fast-twitch development via Olympic lifts), <strong>grip strength</strong> (every catch depends on it), and <strong>stability/balance</strong> (enables cuts against press coverage).
+          </p>
+          <div class="program-layout">
+            <aside class="program-sidebar">
+              <h3>Select Week</h3>
+              <ul class="week-list" id="gym20-week-list">
+                <li><button class="week-button active" data-week="1">Week 1</button></li>
+                <li><button class="week-button" data-week="2">Week 2</button></li>
+                <li><button class="week-button" data-week="3">Week 3</button></li>
+                <li><button class="week-button" data-week="4">Week 4</button></li>
+              </ul>
+            </aside>
+            <div class="program-main">
+              <div id="gym20-week-note" class="section-note" style="display:none;"></div>
+              <ul class="workout-tabs" id="gym20-day-tabs"></ul>
+              <div id="gym20-day-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GYM 3.0 -->
+        <div class="section-panel" id="gym30-panel">
+          <p>
+            The most advanced phase of this WR gym series. Builds on programs 2.0 with even more explosive and unstable movements. Continues the same focus areas — explosiveness, grip strength, stability — but demands greater coordination and output.
+          </p>
+          <div class="program-layout">
+            <aside class="program-sidebar">
+              <h3>Select Week</h3>
+              <ul class="week-list" id="gym30-week-list">
+                <li><button class="week-button active" data-week="1">Week 5</button></li>
+                <li><button class="week-button" data-week="2">Week 6</button></li>
+                <li><button class="week-button" data-week="3">Week 7</button></li>
+                <li><button class="week-button" data-week="4">Week 8</button></li>
+              </ul>
+            </aside>
+            <div class="program-main">
+              <div id="gym30-week-note" class="section-note" style="display:none;"></div>
+              <ul class="workout-tabs" id="gym30-day-tabs"></ul>
+              <div id="gym30-day-content"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- .workout-program -->
+  </div><!-- .container -->
+</main>
+
+<div id="site-footer"></div>
+<script>
+  fetch('/website/includes/footer.html')
+    .then(r => r.text())
+    .then(d => { document.getElementById('site-footer').innerHTML = d; });
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════
+     PROGRAM DATA + RENDERING
+══════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  // ── Field drill lookup table ──────────────────────────────────
+  // Each entry: {n: display name, u: YouTube ID (short), r: default reps, yt: true for long-form}
+  const D = {
+    hopCones:       {n:'Hopping Over Line Of Cones — Single Leg', u:'QSpUGuPsxHQ', r:'5 sets each side'},
+    singleJab:      {n:'Single Jab With Cones',                   u:'QIw38XDHWqE', r:'4 reps each side'},
+    rockerStep:     {n:'Rocker Step — 6 Cone Drill',               u:'bWA5np7ek1c', r:'4 reps each side'},
+    wideStepTowel:  {n:'Wide Step Towel Re-Stack',                 u:'OmXfh1DU1Qo', r:'4 reps each side'},
+    crossOverTowel: {n:'Cross Over Towel Re-Stack',                u:'0oia8b-cx68', r:'4 reps each side'},
+    snapFall1:      {n:'Snap Fall Drill — Single Leg',             u:'3ed84Lisf2Y', r:'8 reps each side'},
+    snapFall2:      {n:'Snap Fall — 2 Steps',                      u:'pML7q0cpMqM', r:'8 reps each side'},
+    highKneeHip:    {n:'High Knee Hip Drop',                       u:'P4-6sQNioEY', r:'4 sets of 2 reps'},
+    runThenDrop:    {n:'Run Then Drop',                            u:'BAnDEm1g7zo', r:'6 sets'},
+    half90s:        {n:'Half 90s',                                 u:'BQPIl2OVl9k', r:'4 reps each side'},
+    full90s:        {n:'Full 90s',                                 u:'AKu1D_HXPw4', r:'4 reps each side'},
+    half45s:        {n:'Half 45s',                                 u:'bAllh7O9B80', r:'4 reps each side'},
+    full45s:        {n:'Full 45s',                                 u:'QmckdHrhM18', r:'4 reps each side'},
+    crossOverCones: {n:'Cross Over With Cones',                    u:'h4IzS-36MO8', r:'4 reps each side'},
+    hipFlip3:       {n:'Hip Flip Stick Drill — 3 Cones',           u:'gvdyDSU10No', r:'4 reps each side'},
+    jabPushJab:     {n:'Jab Push Jab Push Jab',                    u:'8PSbwJSkgco', r:'4 reps each side'},
+    doubleHop:      {n:'Double Hop → Push To Jab (opposite side)', u:'b4dMEiOLyz8', r:'4 reps each side'},
+    l90:            {n:'90-Degree L Stick',                        u:'7K-tiSUyMHk', r:'4 reps each side'},
+    l45:            {n:'45-Degree L Stick',                        u:'2g7LmllTahI', r:'4 reps each side'},
+    crossOverHop:   {n:'Cross Over Hop & Balance',                 u:'pq_z0PE8ZBU', r:'4 reps each side'},
+    crossOverHop8:  {n:'Cross Over Hop & Balance',                 u:'pq_z0PE8ZBU', r:'8 reps each side'},
+    splitRelease:   {n:'Split Release Sequence',                   u:'bCizN8gX6Fo', r:'4 reps each direction'},
+    diamondRelease: {n:'Diamond Release — 3 Cones',                u:'AJzhJ3jne3k', r:'4 reps each side'},
+    medBallLunge:   {n:'Med Ball Lunge Slams',                     u:'E6-knPv5Bds', r:'3×8 each side'},
+    cone3Feet:      {n:'3 Cone Quick Feet Around',                 u:'YkJhT5CWFHQ', r:'4 reps each side'},
+    karaokaSpeedCut:{n:'Karaoka Speed Cut',                        u:'A-V3a0nSNDc', r:'4 reps each side'},
+    speedCut2Step:  {n:'Speed Cut — 2 Step Round',                 u:'U0yhrpih8bA', r:'4 reps each side'},
+    routeTree:      {n:'Run the Full Route Tree (2 reps each route, each side)', u:'3aZB8SkAUkE', r:'', yt:true},
+    burstRelease:   {n:'Burst Release — 3 Cone Sequence',          u:'SlZA00rhyrs', r:'4 reps each side'},
+    speedCutCircle: {n:'Speed Cut Circle',                         u:'yIQCFKFDKgM', r:'4 reps each side'},
+  };
+
+  // ── Field week patterns ────────────────────────────────────────
+  // splits: array of arrays of drill keys
+  // isRest: boolean
+  const FW = {
+    w1: [
+      {t:'Day 1 — Releases',            splits:[['hopCones','singleJab'],['rockerStep'],['wideStepTowel','crossOverTowel']]},
+      {t:'Day 2 — Top Of The Route',    splits:[['hopCones','singleJab'],['snapFall1','snapFall2','highKneeHip'],['runThenDrop','half90s']]},
+      {t:'Day 3 — Releases & Top',      splits:[['hopCones','singleJab','crossOverCones'],['highKneeHip','runThenDrop'],['hipFlip3','half45s']]},
+      {t:'Day 4 — Rest Day',            isRest:true},
+      {t:'Day 5 — Press Releases',      splits:[['hopCones','singleJab'],['crossOverHop8'],['l45','wideStepTowel','crossOverTowel']]},
+      {t:'Day 6 — Full Route Running',  splits:[['highKneeHip','runThenDrop','half90s','full90s','half45s','full45s']]},
+      {t:'Day 7 — Rest Day',            isRest:true}
+    ],
+    w2: [
+      {t:'Day 1 — Press Releases / Cutting',    splits:[['jabPushJab','doubleHop'],['l90','l45'],['crossOverHop','splitRelease','diamondRelease']]},
+      {t:'Day 2 — Top Of The Route',            splits:[['jabPushJab','doubleHop'],['snapFall2','highKneeHip','runThenDrop','hipFlip3','cone3Feet'],['medBallLunge']]},
+      {t:'Day 3 — Releases / Top',              splits:[['hopCones','singleJab','crossOverCones','jabPushJab'],['runThenDrop','l45'],[]]},
+      {t:'Day 4 — Rest Day',                    isRest:true},
+      {t:'Day 5 — Press Releases & Cutting',    splits:[['singleJab','crossOverCones'],['doubleHop','rockerStep','crossOverHop'],['wideStepTowel','crossOverTowel']]},
+      {t:'Day 6 — Full Route Running',          splits:[['runThenDrop','half90s','full90s','half45s','full45s','medBallLunge']]},
+      {t:'Day 7 — Rest Day',                    isRest:true}
+    ],
+    w5: [
+      {t:'Day 1 — Releases',                    splits:[['singleJab','crossOverCones','jabPushJab'],['karaokaSpeedCut','speedCut2Step'],['doubleHop','l90']]},
+      {t:'Day 2 — Top Of The Route',            splits:[['singleJab','crossOverCones','snapFall1'],['runThenDrop','half90s','full90s'],['medBallLunge']]},
+      {t:'Day 3 — Releases & Top',              splits:[['singleJab','crossOverCones','jabPushJab'],['singleJab','crossOverCones','snapFall1'],['splitRelease','diamondRelease']]},
+      {t:'Day 4 — Rest Day',                    isRest:true},
+      {t:'Day 5 — Press Releases',              splits:[['singleJab','crossOverCones','jabPushJab'],['wideStepTowel','crossOverTowel'],['burstRelease']]},
+      {t:'Day 6 — Full Route Running',          splits:[['routeTree']]},
+      {t:'Day 7 — Rest Day',                    isRest:true}
+    ],
+    w6: [
+      {t:'Day 1 — Press Releases / Cutting',    splits:[['crossOverCones','jabPushJab','crossOverHop'],['speedCutCircle','rockerStep'],['l45','diamondRelease']]},
+      {t:'Day 2 — Top Of The Route',            splits:[['highKneeHip','runThenDrop','hipFlip3'],['half45s','full45s'],['medBallLunge']]},
+      {t:'Day 3 — Releases & Top',              splits:[['crossOverCones','jabPushJab','crossOverHop'],['highKneeHip','runThenDrop','hipFlip3'],['splitRelease','diamondRelease','burstRelease']]},
+      {t:'Day 4 — Rest Day',                    isRest:true},
+      {t:'Day 5 — Press Releases & Cutting',    splits:[['crossOverCones','jabPushJab','crossOverHop'],['wideStepTowel','crossOverTowel'],['diamondRelease','burstRelease']]},
+      {t:'Day 6 — Full Route Running',          splits:[['routeTree']]},
+      {t:'Day 7 — Rest Day',                    isRest:true}
+    ]
+  };
+
+  const FIELD_WEEK_MAP = {1:'w1',2:'w2',3:'w1',4:'w2',5:'w5',6:'w6',7:'w5',8:'w6'};
+  const FIELD_WEEK_REPEATS = {3:'Week 3 repeats Week 1',4:'Week 4 repeats Week 2',7:'Week 7 repeats Week 5',8:'Week 8 repeats Week 6'};
+
+  // ── Warmup templates ──────────────────────────────────────────
+  const WARMUP = {
+    field: 'Dynamic warm-up — any activity you prefer that breaks a light sweat and gets blood pumping. Do not stretch cold muscles.',
+    legStd: [
+      '30 sec jumping jacks',
+      '30 sec high knees in place',
+      '10 jump squats',
+      '10 jumping lunges (alternating, 5 each side)',
+      '10 side-to-side lunges (alternating, 5 each side)',
+      '10 burpees','10 push-ups',
+      '30 sec sit-ups','30 sec bicycle kicks',
+      'Perform back-to-back — goal is to break a sweat.'
+    ],
+    upperStd: [
+      '30 sec jumping jacks',
+      '20 arm circles forward','20 arm circles backward',
+      '20 push-ups','20 sit-ups',
+      '10 jump squats','10 lunges',
+      '30 sec sit-ups','30 sec bicycle kicks'
+    ],
+    conditioning: [
+      'A-skip — 4 sets × 20 yd',
+      'B-skip — 4 sets × 20 yd',
+      'C-skip — 4 sets × 20 yd',
+      'High knees — 4 sets × 20 yd',
+      'Karaoka — 4 sets × 20 yd',
+      'Toy Soldiers — 4 sets × 20 yd',
+      'Quad Pull — 4 sets × 20 yd'
+    ]
+  };
+
+  // ── Gym data ─────────────────────────────────────────────────
+  // A "group" is one or more exercises done as a superset.
+  // Each group: {exs: [{n, v}], rest: '...'}  — exs = exercises, v = volume
+
+  function mkGrp(exs, rest) { return {exs, rest}; }
+  function ex(n, v) { return {n, v}; }
+
+  // GYM 2.0 — Pattern A (weeks 1 & 3 within GYM 2.0 program)
+  const G2A = [
+    {t:'Day 1 — Leg Work / Core Work', wu:'legStd', splits:[
+      {name:'Split 1 — Explosiveness', groups:[
+        mkGrp([ex('Hang Cleans','5 sets × 8 reps'), ex('Alternating Jumping Lunges (weighted)','5 sets × 8 reps each side [superset]')],'1:30 rest'),
+        mkGrp([ex('Jump Squats','5 sets × 8–10 reps'), ex('Pause Squats','5 sets × 5 reps — hold 3 seconds at bottom [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Thrusters','5 sets × 8 reps — front squat into shoulder press'), ex('Barbell Walking Lunges','5 sets × 20 reps each leg [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 3 — AB Finisher', groups:[
+        mkGrp([ex('Med Ball Slams','3 sets × 10'), ex('Kneeling Med Ball Rotation Throws','3 sets × 10 each side [superset]'), ex('AB Wheel / Barbell Rollouts (or V-Ups)','3 sets × 10 [superset]')],'1:30 rest'),
+      ]},
+    ]},
+    {t:'Day 2 — Grip Strength / Upper Body', wu:'upperStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Clean & Jerk','5 sets × 8–10 reps'), ex('Pull-Ups','5 sets × AMRAP [superset]'), ex('Band Push-Ups','5 sets × 10–12 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Barbell Bicep Curls','5 sets × 8 reps'), ex('DB Tricep Extension','5 sets × 8 reps [superset]'), ex('DB Hammer Curls','5 sets × 6 reps each side [superset]')],'1:00 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('DB Reverse Forearm Curls','5 sets × 8 reps'), ex('Barbell Forearm Curls','5 sets × 8 reps [superset]')],'1:00 rest'),
+      ]},
+    ]},
+    {t:'Day 3 — Conditioning', wu:'conditioning', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('800 yd jog','then walk 100 yds'), ex('8 × 200 yd sprints for time','walk 100 yds between'), ex('8 × 100 yd sprints','walk 100 yds between'), ex('8 × 50 yd sprints','walk 25 yds between')],''),
+      ]},
+    ]},
+    {t:'Day 4 — Active Recovery', isRest:true, restNote:'Rest, stretch, and hydrate.'},
+    {t:'Day 5 — Leg Work', wu:'legStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Power Cleans','8 sets × 3 reps'), ex('Front Squats','8 sets × 10–12 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Barbell Step-Ups','5 sets × 8 reps each side'), ex('DB Split Squats','5 sets × 8 reps each side [superset]'), ex('Walking Lunges','5 sets × 20 yds [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 3 — AB Finisher', groups:[
+        mkGrp([ex('Pull-Up Bar Toes To Bar','3 sets × AMRAP'), ex('V-Ups with Med Ball','3 sets × 30 reps [superset]'), ex('Leg Lifts','3 sets × 20 reps [superset]')],'1:30 rest'),
+      ]},
+    ]},
+    {t:'Day 6 — Grip Strength / Upper Body', wu:'upperStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell Pause Bench Press','5 sets × 8 reps — pause 2–3 sec at chest, then explode up'), ex('DB Tempo Bench Press','5 sets × 8–10 reps — 5 sec down, 5 sec up [superset]'), ex('DB Shoulder Press','5 sets × 8 reps [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Plate Front Raises','5 sets × 10–12 reps'), ex('DB Side Raises','5 sets × 10–12 reps [superset]'), ex('Plate Flips','5 sets × 8–10 reps each hand [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Plank To Push-Up','2 sets — as long as you can hold')],'2:00 rest'),
+      ]},
+    ]},
+    {t:'Day 7 — Active Rest', isRest:true, restNote:'Rest, stretch, and hydrate.'},
+  ];
+
+  // GYM 2.0 — Pattern B (weeks 2 & 4)
+  const G2B = [
+    {t:'Day 1 — Leg Work', wu:'legStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell Tempo Back Squat','5 sets × 5 reps — 5 sec down, 5 sec up'), ex('DB Box Jumps','5 sets × 8 reps [superset]')],'1:30 rest'),
+        mkGrp([ex('Barbell Split Squats','5 sets × 8 reps each side'), ex('DB Jump Squats','5 sets × 10 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Walking Lunges','200 yds — lunge every step, rest at 50 yds')],''),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Med Ball Rotation Throws','5 sets × 8 each side'), ex('Plate Russian Twists','5 sets × 20 reps [superset]'), ex('Bicycle Kicks','5 sets × 40 reps [superset]')],'30 sec rest'),
+      ]},
+    ]},
+    {t:'Day 2 — Grip Strength / Upper Body', wu:'upperStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell 21s (Curls)','5 sets — 7 reps halfway up, 7 reps halfway to full, 7 full reps'), ex('Barbell Reverse Curls','5 sets × 8 reps [superset]'), ex('DB Hammer Curls','5 sets × 8 reps [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Cable Tricep Pull-Downs','5 sets × 10–12 reps'), ex('Cable Tricep Overhead Extension','5 sets × 8 reps — can use resistance bands [superset]'), ex('Barbell Skull Crushers','5 sets × 10–12 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Forearm Curls','3 sets × AMRAP'), ex('Plate Farmers Carry','3 sets × 30 yds [superset]')],'1:00 rest'),
+      ]},
+    ]},
+    {t:'Day 3 — Conditioning', wu:'', splits:[
+      {name:'Sprint Work', groups:[
+        mkGrp([ex('25 × 100 yd sprints','Walk 100 yds between each sprint')],''),
+      ]},
+    ]},
+    {t:'Day 4 — Active Rest', isRest:true, restNote:'Rest, stretch, and hydrate.'},
+    {t:'Day 5 — Leg Work', wu:'legStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell Back Squats','8 sets × 3 reps — hold 2 seconds at bottom'), ex('Plate Wall Sit','8 sets × 1:30 hold [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Barbell or Trap Bar Deadlifts','5 sets × 3–5 reps — heavier weight'), ex('Barbell RDL','5 sets × 8 reps each side [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Plate Russian Twists','3 sets × 40–50 reps'), ex('Barbell Roll Out','3 sets × 15–20 reps [superset]')],'1:00 rest'),
+      ]},
+    ]},
+    {t:'Day 6 — Grip Strength / Upper Body', wu:'upperStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell Rows','5 sets × 5–8 reps'), ex('L-Sit Pull-Ups','5 sets × AMRAP [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Bench Press','5 sets × 5 reps'), ex('DB Chest Fly — Flat Bench','5 sets × 8 reps [superset]'), ex('DB Incline Bench Press (highest incline)','5 sets × 8–10 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Reverse DB Curls','5 sets × 8 reps'), ex('Barbell Forearm Curls','5 sets × 10 reps [superset]'), ex('Plate Hammer Curls','5 sets × 10 reps [superset]')],'30 sec rest'),
+      ]},
+    ]},
+    {t:'Day 7 — Active Rest', isRest:true, restNote:'Rest, stretch, and hydrate.'},
+  ];
+
+  // GYM 3.0 — Pattern A (weeks 5 & 7)
+  const G3A = [
+    {t:'Day 1 — Leg Work / Core Work', wu:'legStd', splits:[
+      {name:'Split 1 — Explosiveness', groups:[
+        mkGrp([ex('Single Leg Hang Cleans','5 sets × 6 reps'), ex('Explosive Split Squats On Bench (jump on 1 leg)','5 sets × 6–8 reps each side [superset]')],'1:30 rest'),
+        mkGrp([ex('Jump Squats','5 sets × 8–10 reps'), ex('Pistol Squats (weighted, to bench if needed)','5 sets × 8–10 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Barbell Front Squat Reverse Lunge','5 sets × 8 reps each side'), ex('Dumbbell Bosu Ball Reverse Lunge','5 sets × 10 reps each leg [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 3 — AB Finisher', groups:[
+        mkGrp([ex('Bosu Med Ball Wall Slams','3 sets × 10'), ex('Med Ball Overhead Rotation Slams','3 sets × 6 each side [superset]'), ex('AB Wheel / Barbell Rollouts or V-Ups','3 sets × 10 [superset]')],'1:30 rest'),
+      ]},
+    ]},
+    {t:'Day 2 — Grip Strength / Upper Body', wu:'upperStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell Snatch (light)','5 sets × 6–8 reps'), ex('Tempo DB Bench Press','5 sets × 5 reps — 3 sec down, 3 sec up [superset]'), ex('Band Push-Ups','5 sets × 10–12 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Barbell Bicep Curls','5 sets × 8 reps'), ex('DB Tricep Extension','5 sets × 8 reps [superset]'), ex('DB Hammer Curls','5 sets × 6 reps each side [superset]')],'1:00 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('DB Reverse Forearm Curls','5 sets × 8 reps'), ex('Barbell Forearm Curls','5 sets × 8 reps [superset]')],'1:00 rest'),
+      ]},
+    ]},
+    {t:'Day 3 — Conditioning', wu:'conditioning', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('800 yd jog','walk 100 yds'), ex('16 × 100 yd sprints','walk 100 yds between each')],''),
+      ]},
+    ]},
+    {t:'Day 4 — Active Recovery', isRest:true, restNote:'Rest, stretch, and hydrate.'},
+    {t:'Day 5 — Leg Work', wu:'legStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Power Cleans','8 sets × 3 reps'), ex('Kneeling Plate Jumps (hold plate at chest)','8 sets × 6–8 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Barbell Explosive Step-Ups','5 sets × 8 reps each side'), ex('Trap Bar Deadlift Jumps','5 sets × 8 reps [superset]'), ex('Walking Lunges','5 sets × 20 yds [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 3 — AB Finisher', groups:[
+        mkGrp([ex('Pull-Up Bar Toes To Bar','3 sets × AMRAP'), ex('V-Ups with Med Ball','3 sets × 30 reps [superset]'), ex('Leg Lifts','3 sets × 20 reps [superset]')],'1:30 rest'),
+      ]},
+    ]},
+    {t:'Day 6 — Grip Strength / Upper Body', wu:'upperStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell Pause Bench Press','5 sets × 8 reps — pause 2–3 sec at chest'), ex('DB Tempo Bench Press','5 sets × 8–10 reps — 5 sec down, 5 sec up [superset]'), ex('1-Arm DB Snatch','5 sets × 8 reps each side [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Plate Front Raises','5 sets × 10–12 reps'), ex('Bosu Ball Shoulder Press','5 sets × 10–12 reps [superset]'), ex('1-Leg Bosu Ball Plate Flips','5 sets × 8–10 each hand — stand on 1 leg [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Plank To Push-Up','2 sets — as long as you can hold')],'2:00 rest'),
+      ]},
+    ]},
+    {t:'Day 7 — Active Rest', isRest:true, restNote:'Rest, stretch, and hydrate.'},
+  ];
+
+  // GYM 3.0 — Pattern B (weeks 6 & 8)
+  const G3B = [
+    {t:'Day 1 — Leg Work', wu:'legStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell Tempo Back Squat','5 sets × 5 reps — 5 sec down, 5 sec up'), ex('DB Box Jumps','5 sets × 8 reps [superset]')],'1:30 rest'),
+        mkGrp([ex('Box Fall Off Broad Jump','5 sets × 8 reps — fall off box, land, immediately broad jump'), ex('DB Jump Squats','5 sets × 10 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Walking Lunges','200 yds — lunge every step, rest at 50 yds')],''),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Box Fall Med Ball Rotation Throws','5 sets × 8 each side — fall, then rotate throw'), ex('Box Fall Med Ball Slams','5 sets × 8 reps [superset]'), ex('Bicycle Kicks','5 sets × 40 reps [superset]')],'30 sec rest'),
+      ]},
+    ]},
+    {t:'Day 2 — Grip Strength / Upper Body', wu:'upperStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Barbell Curl Burnouts','5 sets — AMRAP, then drop to empty bar AMRAP'), ex('Barbell Reverse Curls','5 sets × 8 reps [superset]'), ex('Plate Bosu Ball Hammer Curls','5 sets × 8 reps [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Resistance Band Tricep Pull-Downs (2 sec pause at top)','5 sets × 10–12 reps'), ex('Resistance Band Tricep Overhead Extension','5 sets × 8 reps [superset]'), ex('Barbell Skull Crushers','5 sets × 10–12 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Forearm Curls','3 sets × AMRAP'), ex('Plate Farmers Carry','3 sets × 30 yds [superset]')],'1:00 rest'),
+      ]},
+    ]},
+    {t:'Day 3 — Conditioning', wu:'', splits:[
+      {name:'Sprint Work', groups:[
+        mkGrp([ex('40 × 50 yd sprints','Walk 100 yds between each sprint')],''),
+      ]},
+    ]},
+    {t:'Day 4 — Active Rest', isRest:true, restNote:'Rest, stretch, and hydrate.'},
+    {t:'Day 5 — Leg Work', wu:'legStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('Band Split Squat','5 sets × 8–10 reps each side'), ex('Bosu Ball Kettlebell Front Squat','5 sets × 8–10 reps [superset]')],'2:00 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Barbell or Trap Bar Deadlifts (heavy)','5 sets × 3–5 reps'), ex('DB Overhead Walking Lunge','5 sets × 20 yds [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 3', groups:[
+        mkGrp([ex('Bosu Ball Wall Throws / Catch','3 sets × 10–15 reps'), ex('Kneeling Jump Med Ball Side Throws','3 sets × 8–10 each side [superset]')],'1:00 rest'),
+      ]},
+    ]},
+    {t:'Day 6 — Grip Strength / Upper Body', wu:'upperStd', splits:[
+      {name:'Split 1', groups:[
+        mkGrp([ex('1-Leg Barbell Rows','5 sets × 5–8 reps'), ex('Regular Pull-Ups','5 sets × AMRAP [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 2', groups:[
+        mkGrp([ex('Bench Press','5 sets × 5 reps'), ex('Band Push-Ups Into Drop Set','5 sets × 8 reps then AMRAP [superset]'), ex('DB Incline Chest Fly (highest incline)','5 sets × 8–10 reps [superset]')],'1:30 rest'),
+      ]},
+      {name:'Split 3 (fast-paced)', groups:[
+        mkGrp([ex('Reverse DB Curls','10 sets × 8 reps'), ex('Plate Flips (lighter weight)','10 sets × 15–20 reps [superset]')],'30 sec rest'),
+      ]},
+    ]},
+    {t:'Day 7 — Active Rest', isRest:true, restNote:'Rest, stretch, and hydrate.'},
+  ];
+
+  const GYM20_MAP = {1:G2A,2:G2B,3:G2A,4:G2B};
+  const GYM30_MAP = {1:G3A,2:G3B,3:G3A,4:G3B};
+  const GYM20_REPEATS = {3:'Week 3 uses the same workout as Week 1.',4:'Week 4 uses the same workout as Week 2.'};
+  const GYM30_REPEATS = {3:'Week 7 uses the same workout as Week 5.',4:'Week 8 uses the same workout as Week 6.'};
+
+  // ── Rendering helpers ─────────────────────────────────────────
+
+  function drillUrl(drillKey) {
+    const d = D[drillKey];
+    if (!d) return '#';
+    const id = d.u;
+    return d.yt
+      ? 'https://youtu.be/' + id
+      : 'https://youtube.com/shorts/' + id;
+  }
+
+  function renderDrillList(drillKeys) {
+    if (!drillKeys || drillKeys.length === 0) return '<p style="color:var(--color-secondary);font-size:.9rem;">No additional drills listed for this split.</p>';
+    return '<ul class="drill-list">' + drillKeys.map(function(k) {
+      var d = D[k];
+      if (!d) return '';
+      return '<li>' +
+        '<span class="drill-name">' + d.n + '</span>' +
+        (d.r ? '<span class="drill-reps">' + d.r + '</span>' : '') +
+        '<a class="drill-link" href="' + drillUrl(k) + '" target="_blank" rel="noopener noreferrer">▶ Video</a>' +
+        '</li>';
+    }).join('') + '</ul>';
+  }
+
+  function renderFieldDay(day) {
+    if (day.isRest) {
+      return '<div class="rest-day-panel"><h3>Rest Day</h3><p>Hydrate, rest, ice any soreness, and massage / foam roll.</p></div>';
+    }
+    var html = '<p class="section-note">' + WARMUP.field + '</p>';
+    day.splits.forEach(function(drills, i) {
+      html += '<div class="split-block"><h4>Split ' + (i+1) + '</h4>';
+      html += renderDrillList(drills);
+      html += '</div>';
+    });
+    return html;
+  }
+
+  function warmupHtml(wuKey) {
+    if (!wuKey || !WARMUP[wuKey]) return '';
+    var items = WARMUP[wuKey];
+    return '<button class="warmup-toggle" onclick="this.nextElementSibling.classList.toggle(\'open\');this.querySelector(\'span\').textContent=this.nextElementSibling.classList.contains(\'open\')?\'▲\':\'▼\'"><span>▼</span> Warm-Up</button>' +
+      '<div class="warmup-content"><ul>' +
+      items.map(function(i){ return '<li>' + i + '</li>'; }).join('') +
+      '</ul></div>';
+  }
+
+  function renderGymDay(day) {
+    if (day.isRest) {
+      return '<div class="rest-day-panel"><h3>Active Rest / Recovery</h3><p>' + (day.restNote || 'Rest, stretch, and hydrate.') + '</p></div>';
+    }
+    var html = warmupHtml(day.wu);
+    day.splits.forEach(function(split) {
+      html += '<div class="split-block"><h4>' + split.name + '</h4>';
+      split.groups.forEach(function(grp) {
+        html += '<div class="superset-group">';
+        if (grp.exs.length > 1) {
+          html += '<div class="superset-label">Superset</div>';
+        }
+        grp.exs.forEach(function(e) {
+          html += '<div class="gym-exercise"><strong>' + e.n + '</strong> — ' + e.v + '</div>';
+        });
+        if (grp.rest) {
+          html += '<div class="rest-note">Rest: ' + grp.rest + '</div>';
+        }
+        html += '</div>';
+      });
+      html += '</div>';
+    });
+    return html;
+  }
+
+  function buildDayTabs(days, tabsEl, contentEl, renderFn) {
+    tabsEl.innerHTML = '';
+    days.forEach(function(day, i) {
+      var li = document.createElement('li');
+      if (i === 0) li.className = 'active';
+      var a = document.createElement('a');
+      a.href = '#';
+      a.textContent = 'Day ' + (i+1);
+      a.title = day.t;
+      li.appendChild(a);
+      tabsEl.appendChild(li);
+    });
+
+    function showDay(idx) {
+      tabsEl.querySelectorAll('li').forEach(function(li, i) {
+        li.className = i === idx ? 'active' : '';
+      });
+      var day = days[idx];
+      contentEl.innerHTML = '<div class="day-badge">' + day.t + '</div>' + renderFn(day);
+    }
+
+    tabsEl.querySelectorAll('a').forEach(function(a, i) {
+      a.addEventListener('click', function(e) {
+        e.preventDefault();
+        showDay(i);
+      });
+    });
+
+    showDay(0);
+  }
+
+  // ── Field training controller ─────────────────────────────────
+  var fieldWeek = 1;
+  var fieldTabsEl = document.getElementById('field-day-tabs');
+  var fieldContentEl = document.getElementById('field-day-content');
+  var fieldNoteEl = document.getElementById('field-week-note');
+
+  function loadFieldWeek(w) {
+    fieldWeek = w;
+    var pattern = FIELD_WEEK_MAP[w];
+    var days = FW[pattern];
+    var repeat = FIELD_WEEK_REPEATS[w];
+    if (repeat) {
+      fieldNoteEl.textContent = repeat;
+      fieldNoteEl.style.display = 'block';
+    } else {
+      fieldNoteEl.style.display = 'none';
+    }
+    buildDayTabs(days, fieldTabsEl, fieldContentEl, renderFieldDay);
+  }
+
+  document.getElementById('field-week-list').querySelectorAll('.week-button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.getElementById('field-week-list').querySelectorAll('.week-button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      loadFieldWeek(Number(btn.getAttribute('data-week')));
+    });
+  });
+
+  loadFieldWeek(1);
+
+  // ── Gym 2.0 controller ────────────────────────────────────────
+  var gym20Week = 1;
+  var gym20TabsEl = document.getElementById('gym20-day-tabs');
+  var gym20ContentEl = document.getElementById('gym20-day-content');
+  var gym20NoteEl = document.getElementById('gym20-week-note');
+
+  function loadGym20Week(w) {
+    gym20Week = w;
+    var days = GYM20_MAP[w];
+    var repeat = GYM20_REPEATS[w];
+    if (repeat) {
+      gym20NoteEl.textContent = repeat;
+      gym20NoteEl.style.display = 'block';
+    } else {
+      gym20NoteEl.style.display = 'none';
+    }
+    buildDayTabs(days, gym20TabsEl, gym20ContentEl, renderGymDay);
+  }
+
+  document.getElementById('gym20-week-list').querySelectorAll('.week-button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.getElementById('gym20-week-list').querySelectorAll('.week-button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      loadGym20Week(Number(btn.getAttribute('data-week')));
+    });
+  });
+
+  loadGym20Week(1);
+
+  // ── Gym 3.0 controller ────────────────────────────────────────
+  var gym30Week = 1;
+  var gym30TabsEl = document.getElementById('gym30-day-tabs');
+  var gym30ContentEl = document.getElementById('gym30-day-content');
+  var gym30NoteEl = document.getElementById('gym30-week-note');
+
+  function loadGym30Week(w) {
+    gym30Week = w;
+    var days = GYM30_MAP[w];
+    var repeat = GYM30_REPEATS[w];
+    if (repeat) {
+      gym30NoteEl.textContent = repeat;
+      gym30NoteEl.style.display = 'block';
+    } else {
+      gym30NoteEl.style.display = 'none';
+    }
+    buildDayTabs(days, gym30TabsEl, gym30ContentEl, renderGymDay);
+  }
+
+  document.getElementById('gym30-week-list').querySelectorAll('.week-button').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.getElementById('gym30-week-list').querySelectorAll('.week-button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      loadGym30Week(Number(btn.getAttribute('data-week')));
+    });
+  });
+
+  loadGym30Week(1);
+
+  // ── Phase (section) tab switching ────────────────────────────
+  document.querySelectorAll('.section-tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.section-tab-btn').forEach(function(b){ b.classList.remove('active'); });
+      document.querySelectorAll('.section-panel').forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      var phase = btn.getAttribute('data-phase');
+      document.getElementById(phase + '-panel').classList.add('active');
+    });
+  });
+
+}());
+</script>
+
+</body>
+</html>

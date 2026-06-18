@@ -693,7 +693,7 @@ This file lives in the repo only. Not part of the public site.
 - [How do you identify your fronts for the Offensive Line! ](https://youtube.com/shorts/_ePd4B0MHWA?si=NXVoUScNHAk8I8LD)
    > I like the above to show typical fronts seen in football when coming up with blocking assignments.
 - [WZWF - Kyle Shanahan's 49ers PLAYBOOK Breakdown (And DOWNLOAD)!](https://youtu.be/6gYC8ObJlDk?si=OmzRJTP8Z-ZRtPyI)
--[Coach Tatum - Slide or Weak Flood](https://youtube.com/shorts/OW8jRCsUa-Q?si=5naTTZUy9k5McnVx)
+- [Coach Tatum - Slide or Weak Flood](https://youtube.com/shorts/OW8jRCsUa-Q?si=5naTTZUy9k5McnVx)
   - Good explanation on how to run boot with OZ 
 - [Armchair Coach Justin - The Hidden Science Behind NFL Passing Concepts](https://youtu.be/5oaHb-pcrjY?si=NCknjx8NYdxr5oPT)
  - Passing concepts
@@ -737,6 +737,7 @@ This file lives in the repo only. Not part of the public site.
 - [How to utilize the 2 Back Run Game](https://youtu.be/yCiui2mWFZc?si=WVH-d1-EXTxfiDg6)
 - [This is the Outside Veer - The First Triple Option Offense in Football](https://youtube.com/shorts/LOats8yQCOA?si=qBdByE4ZrVrvc_hn)
 - [2  Back Personnel + Tempo](https://www.youtube-nocookie.com/embed/Lewf-SOV8TI?playlist=Lewf-SOV8TI&autoplay=1&iv_load_policy=3&loop=1&start=#)
+- []()
 
 
 ### Tackle Drills
