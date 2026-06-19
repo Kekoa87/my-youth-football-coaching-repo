@@ -1,0 +1,393 @@
+/* ================================================================
+   Practice Plan Template Resource Page
+   website/pages/resources/practice-plan-template.css
+   ================================================================ */
+
+/* ── Hero ─────────────────────────────────────────────────────── */
+.resource-hero {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  color: var(--color-white);
+  padding: var(--space-xxl) 0;
+  text-align: center;
+}
+
+.resource-hero__eyebrow {
+  display: inline-block;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 0 var(--space-sm);
+}
+
+.resource-hero__title {
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: var(--line-height-heading);
+  color: var(--color-white);
+  margin: 0 0 var(--space-md);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.resource-hero__lead {
+  font-size: var(--font-size-lg);
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 580px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.6;
+}
+
+/* ── Resource Action Buttons ──────────────────────────────────── */
+.resource-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+  align-items: center;
+}
+
+.resource-actions--spaced {
+  margin-top: var(--space-xl);
+}
+
+.resource-actions--center {
+  justify-content: center;
+}
+
+/* ── Resource Page Main ───────────────────────────────────────── */
+.resource-page {
+  padding-top: 0;
+}
+
+/* ── Alt background sections ──────────────────────────────────── */
+.resource-section--alt {
+  background: #f1f3f5;
+}
+
+/* ── Section title / subtitle ─────────────────────────────────── */
+.section-subtitle {
+  text-align: center;
+  max-width: 640px;
+  margin: calc(-1 * var(--space-md)) auto var(--space-xl);
+  color: var(--color-secondary);
+  font-size: var(--font-size-base);
+  line-height: 1.6;
+}
+
+/* ── Intro two-column layout ──────────────────────────────────── */
+.resource-intro {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.resource-intro__text h2 {
+  margin-top: 0;
+}
+
+.resource-intro__text p {
+  line-height: 1.75;
+}
+
+.resource-callout {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 12px;
+  padding: var(--space-xl);
+  margin: 0;
+  position: sticky;
+  top: calc(var(--space-xxl) + 64px);
+}
+
+.resource-callout__headline {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.4;
+  margin: 0 0 var(--space-md);
+  color: var(--color-white);
+}
+
+.resource-callout__body {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Template Sections Grid ───────────────────────────────────── */
+.template-sections-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.template-section-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  position: relative;
+  box-shadow: var(--box-shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.template-section-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow-md);
+}
+
+.template-section-card__number {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-primary);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: var(--space-sm);
+}
+
+.template-section-card h3 {
+  margin: 0 0 var(--space-xs);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.template-section-card__time {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary);
+  background: #e8f5ee;
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  margin-bottom: var(--space-sm);
+}
+
+.template-section-card p {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Template Preview ─────────────────────────────────────────── */
+.template-preview-wrapper {
+  background: #f8fbff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-md);
+}
+
+.template-preview-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.template-preview-caption {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  text-align: center;
+  padding: var(--space-md) var(--space-lg);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ── Benefits Grid ────────────────────────────────────────────── */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+/* Last row: 2 cards centered if 5 total */
+.benefits-grid .benefit-card:nth-child(4) {
+  grid-column: 1;
+}
+
+.benefits-grid .benefit-card:nth-child(5) {
+  grid-column: 2;
+}
+
+.benefit-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  box-shadow: var(--box-shadow-sm);
+  text-align: left;
+}
+
+.benefit-card__icon {
+  font-size: 1.75rem;
+  margin-bottom: var(--space-sm);
+  display: block;
+}
+
+.benefit-card h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.benefit-card p {
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Premium / Upcoming Resources ─────────────────────────────── */
+.premium-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.premium-card {
+  background: var(--color-white);
+  border: 1px dashed #b8c7dc;
+  border-radius: 12px;
+  padding: var(--space-lg);
+  position: relative;
+  opacity: 0.85;
+}
+
+.premium-badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7c93;
+  background: #edf2f7;
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  margin-bottom: var(--space-sm);
+}
+
+.premium-card h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: #4a5568;
+}
+
+.premium-card p {
+  font-size: var(--font-size-sm);
+  color: #718096;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.premium-footnote {
+  text-align: center;
+  margin-top: var(--space-xl);
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+}
+
+.premium-footnote a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ── Bottom CTA ───────────────────────────────────────────────── */
+.resource-cta {
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-xxl) 0;
+  text-align: center;
+}
+
+.resource-cta h2 {
+  color: var(--color-white);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  margin: 0 0 var(--space-sm);
+}
+
+.resource-cta p {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: var(--font-size-lg);
+  max-width: 520px;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.6;
+}
+
+.resource-cta__note {
+  font-size: var(--font-size-sm) !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-top: var(--space-md) !important;
+  margin-bottom: 0 !important;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .template-sections-grid,
+  .premium-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefits-grid .benefit-card:nth-child(4),
+  .benefits-grid .benefit-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .resource-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-callout {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .resource-hero {
+    padding: var(--space-xl) 0;
+  }
+
+  .resource-hero__title {
+    font-size: 1.6rem;
+  }
+
+  .resource-hero__lead {
+    font-size: var(--font-size-base);
+  }
+
+  .resource-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .resource-actions .btn {
+    text-align: center;
+  }
+
+  .template-sections-grid,
+  .benefits-grid,
+  .premium-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-subtitle {
+    margin-bottom: var(--space-lg);
+  }
+}

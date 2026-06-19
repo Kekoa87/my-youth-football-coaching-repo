@@ -266,6 +266,33 @@
   padding: 0.3rem 0.55rem;
 }
 
+.resource-card-preview {
+  margin-top: 1rem;
+  border: 1px solid #d9e1ec;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8fbff;
+}
+
+.resource-card-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: opacity 0.2s ease;
+}
+
+.resource-card-preview img:hover {
+  opacity: 0.92;
+}
+
+.module-card__actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 @media (max-width: 1024px) {
   .module-card--placeholder,
   .module-card--active {
