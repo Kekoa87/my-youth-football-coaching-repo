@@ -21,11 +21,13 @@
 
   function bindEvents() {
     const logoutLink = document.getElementById('coach-logout');
-    logoutLink.addEventListener('click', (event) => {
-      event.preventDefault();
-      window.coachAuth.logout();
-      window.location.replace('/index.html');
-    });
+    if (logoutLink) {
+      logoutLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.coachAuth.logout();
+        window.location.replace('/index.html');
+      });
+    }
   }
 
   document.addEventListener('DOMContentLoaded', init);

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Private coaching resources for authorized staff." />
-  <title>Coaches Corner | Youth Football Coaching Hub</title>
+  <meta name="description" content="Private coaching staff dashboard for the Parker Hawks — practice plans, playbook, and team resources." />
+  <title>Coaches Corner | Parker Hawks</title>
   <link rel="stylesheet" href="/website/styles.css" />
   <link rel="stylesheet" href="/website/pages/coaches-corner/coachesCorner.css" />
   <link rel="icon" href="/website/images/ChromeSiteSymbol.jpg" type="image/png" />
@@ -13,59 +13,98 @@
 <body>
   <div id="site-header"></div>
 
-  <main class="section-padding coaches-dashboard">
-    <div class="container">
-      <div class="coaches-dashboard__header" role="banner" aria-label="Coaches dashboard intro">
-        <div>
-          <p class="coaches-dashboard__eyebrow">Private Staff Workspace</p>
-          <h1>Coaches Corner</h1>
-          <p class="coaches-dashboard__subhead">Organize staff resources and templates in one place.</p>
-        </div>
-        <a href="#" id="coach-logout" class="coaches-dashboard__logout">Logout</a>
-      </div>
+  <main class="coaches-dashboard">
 
-      <section class="module-grid" aria-label="Coaching modules">
-        <article class="module-card module-card--placeholder" aria-labelledby="playbook-title">
-          <h2 id="playbook-title">Playbook</h2>
-          <p>Coming soon. Organize concepts, installs, and call sheets in one place.</p>
-          <span class="module-status">Planned</span>
-        </article>
+    <!-- ── Dashboard Header ─────────────────────────────────── -->
+    <header class="dashboard-header">
+      <div class="container">
+        <div class="dashboard-header__top">
 
-        <article class="module-card module-card--active" aria-labelledby="practice-template-title">
-          <div class="module-card__heading">
-            <h2 id="practice-template-title">Practice Plan Template</h2>
-            <span class="module-status module-status--active">Live</span>
+          <div class="dashboard-header__left">
+            <p class="dashboard-header__eyebrow">Private Staff Workspace</p>
+            <h1 class="dashboard-header__title">Coaches Corner</h1>
+            <p class="dashboard-header__subhead">Staff dashboard for practice planning and team resources.</p>
           </div>
-          <p>A structured template for building complete practice plans — from warm-up through installs and conditioning. Covers time slots, segment type, drill selection, and coaching notes for each phase of practice.</p>
-          <!-- Source: HawksTemplates (ID: 1do-RzXXE4rvo26kmnHBUFAQGQxuDhws2kumiSaXA_ns) Tab: HawksPracticePlanTemplate (gid=956968404) -->
-          <div class="resource-card-preview">
+
+          <div class="dashboard-header__meta">
+            <span class="dashboard-season-badge">2026 Parker Hawks Season</span>
+            <div class="dashboard-updated">
+              <span class="dashboard-updated__label">Last Updated</span>
+              <span class="dashboard-updated__value">June 19, 2026</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Dashboard Body ────────────────────────────────────── -->
+    <div class="dashboard-body">
+      <div class="container">
+
+        <!-- ── Practice Plan (featured card) ──────────────────── -->
+        <article class="resource-card resource-card--featured" aria-labelledby="practice-plan-title">
+          <div class="resource-card__content">
+            <div class="resource-card__header">
+              <span class="status-badge status-badge--live">Live</span>
+              <span class="resource-card__label">Practice Plan Template</span>
+            </div>
+            <h2 id="practice-plan-title">Today's Practice Plan</h2>
+            <!-- Source: HawksTemplates (ID: 1do-RzXXE4rvo26kmnHBUFAQGQxuDhws2kumiSaXA_ns) Tab: HawksPracticePlanTemplate (gid=956968404) -->
+            <p>A structured, time-blocked template covering every phase of practice — warm-up, position indys, group periods, team installs, and conditioning. Open in Google Sheets to fill in today's session and share directly with your staff.</p>
+            <div class="resource-card__actions">
+              <a
+                href="/website/pages/resources/youth-football-practice-plan-template.html"
+                class="btn btn-primary"
+              >View Practice Plan</a>
+              <a
+                href="https://docs.google.com/spreadsheets/d/1do-RzXXE4rvo26kmnHBUFAQGQxuDhws2kumiSaXA_ns/view?gid=956968404"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+              >Open in Sheets</a>
+            </div>
+          </div>
+
+          <div class="resource-card__preview">
             <img
               src="/website/images/practice-plan-preview.jpg"
-              alt="Practice Plan Template — time-blocked sections for warm-up, position drills, and team installs"
-              loading="lazy"
+              alt="Practice Plan Template showing time-blocked sections for warm-up, position drills, and team installs"
+              loading="eager"
             />
-          </div>
-          <div class="module-card__actions">
-            <a
-              href="/website/pages/resources/youth-football-practice-plan-template.html"
-              class="btn btn-primary"
-            >View Resource</a>
-            <a
-              href="https://docs.google.com/spreadsheets/d/1do-RzXXE4rvo26kmnHBUFAQGQxuDhws2kumiSaXA_ns/view?gid=956968404"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-outline"
-            >Open in Sheets</a>
           </div>
         </article>
 
-        <article class="module-card module-card--placeholder" aria-labelledby="roster-title">
-          <h2 id="roster-title">Roster Management</h2>
-          <p>Coming soon. Track player groups, attendance, and development notes.</p>
-          <span class="module-status">Planned</span>
-        </article>
-      </section>
+        <!-- ── Coming Soon ─────────────────────────────────────── -->
+        <section class="dashboard-section" aria-labelledby="coming-soon-title">
+          <h2 id="coming-soon-title" class="dashboard-section__title">Coming Soon</h2>
+          <div class="dashboard-grid">
+
+            <article class="resource-card resource-card--planned" aria-labelledby="playbook-title">
+              <span class="resource-card__icon" aria-hidden="true">📖</span>
+              <h3 id="playbook-title">Playbook</h3>
+              <p>Offensive, defensive, and special teams materials organized for your entire staff — concepts, installs, and call sheets in one place.</p>
+              <span class="status-badge status-badge--planned">Planned</span>
+            </article>
+
+            <article class="resource-card resource-card--planned" aria-labelledby="roster-title">
+              <span class="resource-card__icon" aria-hidden="true">👥</span>
+              <h3 id="roster-title">Roster Management</h3>
+              <p>Player groups, attendance tracking, and development notes — everything you need to manage your team throughout the season.</p>
+              <span class="status-badge status-badge--planned">Planned</span>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- Sign out — subtle text link, not a primary button -->
+        <div class="dashboard-signout">
+          <a href="#" id="coach-logout">Sign out</a>
+        </div>
+
+      </div>
     </div>
+
   </main>
 
   <div id="site-footer"></div>
