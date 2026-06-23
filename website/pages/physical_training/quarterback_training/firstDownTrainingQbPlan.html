@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="First Down Training's 8-Week Ultimate QB Training Schedule — daily on-field drills for quarterbacks covering throwing mechanics, footwork, pocket movement, and full route-tree execution." />
+  <title>8-Week Ultimate QB Training Schedule | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../../styles.css" />
+  <link rel="icon" href="../../../images/ChromeSiteSymbol.jpg" type="image/png" />
+  <style>
+    /* ════════════════════════════════════════════════════
+       PASSWORD PROTECTION STYLES
+       To change the password, find the string "FirstDownTraining2026"
+       in the <script> block near the bottom of this file.
+    ════════════════════════════════════════════════════ */
+
+    #pw-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-light, #f8f9fa);
+      padding: var(--space-md, 1rem);
+    }
+
+    #pw-card {
+      background: var(--color-white, #fff);
+      border: 1px solid var(--color-border, #dee2e6);
+      border-radius: 12px;
+      box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.12);
+      padding: 2.5rem 2rem;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    #pw-card h2 {
+      color: var(--color-primary-dark, #133728);
+      margin-bottom: .5rem;
+      font-family: var(--font-family-sans-serif, sans-serif);
+    }
+
+    #pw-card p {
+      color: var(--color-secondary, #6c757d);
+      font-size: .95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    #pw-input {
+      width: 100%;
+      padding: .7rem 1rem;
+      border: 2px solid var(--color-border, #dee2e6);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .2s;
+      box-sizing: border-box;
+      margin-bottom: 1rem;
+    }
+
+    #pw-input:focus { border-color: var(--color-primary, #1C5239); }
+
+    #pw-input.pw-shake {
+      animation: pw-shake .4s ease;
+      border-color: #dc3545;
+    }
+
+    @keyframes pw-shake {
+      0%,100% { transform: translateX(0); }
+      20%     { transform: translateX(-8px); }
+      40%     { transform: translateX(8px); }
+      60%     { transform: translateX(-6px); }
+      80%     { transform: translateX(6px); }
+    }
+
+    #pw-submit {
+      width: 100%;
+      padding: .75rem;
+      background: var(--color-primary, #1C5239);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    #pw-submit:hover { background: var(--color-primary-dark, #133728); }
+
+    #pw-error {
+      margin-top: .9rem;
+      color: #dc3545;
+      font-size: .9rem;
+      min-height: 1.2em;
+    }
+
+    #protected-content { display: none; }
+
+    /* ── Program layout ── */
+    .program-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .program-sidebar {
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: var(--space-md);
+      background: var(--color-white);
+      position: sticky;
+      top: 1rem;
+    }
+    .program-sidebar h3 { margin-top: 0; font-size: 1rem; }
+    .week-list { list-style: none; margin: 0; padding: 0; }
+    .week-list li + li { margin-top: .3rem; }
+    .week-button {
+      width: 100%;
+      text-align: left;
+      border: 1px solid transparent;
+      background: transparent;
+      padding: .45rem .65rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-size: .95rem;
+    }
+    .week-button.active {
+      background: var(--color-light);
+      border-color: var(--color-primary);
+      font-weight: 600;
+      color: var(--color-primary-dark);
+    }
+    .week-button:hover:not(.active) { background: var(--color-light); }
+    .program-main { min-width: 0; }
+    .section-note {
+      background: var(--color-light);
+      border-left: 4px solid var(--color-primary);
+      padding: var(--space-sm) var(--space-md);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      margin-bottom: var(--space-md);
+      font-size: .95rem;
+    }
+
+    /* ── Section tabs (Month 1 / Month 2) ── */
+    .section-tabs {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+    }
+    .section-tab-btn {
+      padding: .65rem 1.4rem;
+      border: 2px solid var(--color-border);
+      background: var(--color-white);
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-secondary);
+      transition: all .2s;
+    }
+    .section-tab-btn.active {
+      background: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      color: var(--color-white);
+    }
+    .section-panel { display: none; }
+    .section-panel.active { display: block; }
+
+    /* ── Drill / Split cards ── */
+    .split-block {
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: var(--space-md);
+      margin-bottom: var(--space-md);
+      background: var(--color-white);
+    }
+    .split-block h4 { margin: 0 0 var(--space-sm); color: var(--color-primary); }
+    .drill-list { list-style: none; margin: 0; padding: 0; }
+    .drill-list li {
+      display: flex;
+      align-items: baseline;
+      gap: var(--space-sm);
+      padding: .4rem 0;
+      border-bottom: 1px solid var(--color-light);
+      font-size: .95rem;
+    }
+    .drill-list li:last-child { border-bottom: none; }
+    .drill-name { font-weight: 600; color: var(--color-dark); flex: 1; }
+    .drill-reps { color: var(--color-secondary); white-space: nowrap; font-size: .9rem; }
+    .drill-link {
+      display: inline-block;
+      padding: .2rem .55rem;
+      background: var(--color-primary);
+      color: var(--color-white) !important;
+      border-radius: 5px;
+      font-size: .8rem;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .drill-link:hover { background: var(--color-primary-dark); }
+    .drill-note {
+      display: block !important;
+      font-style: italic;
+      color: var(--color-secondary);
+      font-size: .88rem;
+      padding: .3rem 0 !important;
+      border-bottom: none !important;
+    }
+
+    /* ── Route tree special display ── */
+    .route-tree-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: .4rem;
+      margin-top: .6rem;
+    }
+    .route-tag {
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-radius: 6px;
+      padding: .35rem .7rem;
+      font-size: .88rem;
+    }
+    .route-num {
+      font-weight: 700;
+      margin-right: .35rem;
+    }
+
+    /* ── Rest-day panel ── */
+    .rest-day-panel {
+      text-align: center;
+      padding: var(--space-xl);
+      background: var(--color-light);
+      border-radius: 12px;
+    }
+    .rest-day-panel h3 { color: var(--color-secondary); }
+
+    /* ── Warmup / EDD collapsibles ── */
+    .warmup-toggle {
+      width: 100%;
+      text-align: left;
+      border: 1px solid var(--color-border);
+      background: var(--color-light);
+      padding: .5rem var(--space-md);
+      border-radius: 8px;
+      cursor: pointer;
+      font: inherit;
+      font-size: .9rem;
+      margin-bottom: var(--space-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .warmup-content { display: none; margin-bottom: var(--space-md); }
+    .warmup-content.open { display: block; }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--color-light);
+      border-radius: 10px;
+      padding: var(--space-md) var(--space-lg);
+      margin-bottom: var(--space-xl);
+    }
+    .toc h3 { margin-top: 0; font-size: 1rem; }
+    .toc ol { margin: 0; padding-left: 1.4rem; }
+    .toc li { margin-bottom: .25rem; }
+
+    /* ── Day badge ── */
+    .day-badge {
+      display: inline-block;
+      background: var(--color-primary-dark);
+      color: var(--color-white);
+      border-radius: 6px;
+      padding: .2rem .6rem;
+      font-size: .85rem;
+      font-weight: 600;
+      margin-bottom: var(--space-md);
+    }
+
+    /* ── EDD callout box ── */
+    .edd-callout {
+      background: #f0f7f3;
+      border: 1px solid var(--color-primary);
+      border-radius: 10px;
+      padding: var(--space-sm) var(--space-md);
+      margin-bottom: var(--space-md);
+      font-size: .9rem;
+    }
+    .edd-callout strong { color: var(--color-primary-dark); }
+
+    /* ── Related resources card ── */
+    .resource-card {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      border: 1px solid var(--color-border);
+      border-radius: 10px;
+      padding: var(--space-md);
+      background: var(--color-white);
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow .2s;
+    }
+    .resource-card:hover { box-shadow: 0 2px 10px rgba(0,0,0,.1); }
+    .resource-card-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .resource-card h4 { margin: 0 0 .2rem; color: var(--color-primary-dark); }
+    .resource-card p { margin: 0; font-size: .9rem; color: var(--color-secondary); }
+
+    /* ── Responsive ── */
+    @media (max-width: 860px) {
+      .program-layout { grid-template-columns: 1fr; }
+      .program-sidebar { position: static; }
+    }
+    @media (max-width: 600px) {
+      .drill-list li { flex-wrap: wrap; }
+      .route-tree-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════
+     PASSWORD GATE
+════════════════════════════════════════════════════ -->
+<div id="pw-overlay" role="dialog" aria-modal="true" aria-labelledby="pw-heading">
+  <div id="pw-card">
+    <h2 id="pw-heading">Protected Content</h2>
+    <p>This page requires a password.<br>Please enter it below to continue.</p>
+    <input
+      id="pw-input"
+      type="password"
+      placeholder="Enter password"
+      autocomplete="current-password"
+      aria-label="Password"
+    />
+    <button id="pw-submit" type="button">Unlock</button>
+    <div id="pw-error" role="alert" aria-live="polite"></div>
+  </div>
+</div>
+
+<!-- Protected page content -->
+<div id="protected-content">
+
+<div id="site-header"></div>
+<script>
+  fetch('/website/includes/header.html')
+    .then(r => r.text())
+    .then(d => { document.getElementById('site-header').innerHTML = d; });
+</script>
+
+<main>
+  <div class="container">
+    <div class="workout-program">
+
+      <!-- ── Page Header ── -->
+      <div class="page-header" style="margin-bottom: var(--space-lg);">
+        <h1>First Down Training Ultimate 8-Week Quarterback Development Plan</h1>
+        <p style="text-align:center;">Source: <strong>First Down Training</strong> &mdash; firstdowntraining.com</p>
+      </div>
+
+      <!-- ── Introduction ── -->
+      <p>
+        This 8-week quarterback training program from First Down Training is a comprehensive on-field plan built around two 28-day phases of QB development. The program covers every core skill a quarterback needs — throwing mechanics, lower-body footwork, pocket movement, off-platform throwing, and full route-tree execution — progressing from foundational mechanics to advanced pocket management and decision-making reads.
+      </p>
+      <p>
+        <strong>Month 1 (Weeks 1–4)</strong> establishes the mechanical foundation: each week pairs two mechanics-focused sessions with a footwork session and a live route-running day. Key tools include towel drills for arm mechanics, EDD (Everyday Drills) for shoulder prep, and spot-route throws to build accuracy with proper footwork. The weekly pattern repeats so reps compound and habits solidify.
+      </p>
+      <p>
+        <strong>Month 2 (Weeks 5–8)</strong> elevates the training with pocket footwork, weighted-ball mechanics work, on-the-run throws, and complex route-tree challenges requiring multiple completions before progressing. For every Month 2 drill and exercise, refer to the companion video at
+        <a href="https://youtu.be/8gceXO1cvqk" target="_blank" rel="noopener noreferrer">youtu.be/8gceXO1cvqk</a>.
+      </p>
+      <p style="font-size:.9rem; color: var(--color-secondary);">
+        <strong>Disclaimer:</strong> This program is designed to develop quarterback performance. Results may vary. Some movements may be advanced for your current fitness level — please consult a physician before beginning. Never perform exercises alone. Safety first.
+      </p>
+      <p style="font-size:.9rem; color: var(--color-secondary);">
+        Contact: <a href="mailto:support@firstdowntraining.com">support@firstdowntraining.com</a>
+      </p>
+
+      <!-- ── Table of Contents ── -->
+      <nav class="toc" aria-label="Page contents">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#edd-reference">Everyday Drills (EDD) Reference</a> — pre-workout warm-up routine performed before every session</li>
+          <li><a href="#field-training">On-Field Training</a>
+            <ul>
+              <li><a href="#month1-tab">Month 1 (Weeks 1–4)</a> — throwing mechanics, towel drills, footwork, live routes</li>
+              <li><a href="#month2-tab">Month 2 (Weeks 5–8)</a> — pocket movement, weighted-ball work, off-platform throws, route-tree challenges</li>
+            </ul>
+          </li>
+          <li><a href="#related-resources">Related First Down Training Resources</a></li>
+        </ol>
+      </nav>
+
+      <!-- ══════════════════════════════════════════
+           EDD REFERENCE SECTION
+      ══════════════════════════════════════════ -->
+      <section id="edd-reference" style="margin-bottom: var(--space-xl);">
+        <h2>Everyday Drills (EDD) Reference</h2>
+        <p>
+          The EDD is performed at the start of <strong>every single workout</strong>. It appears in the plans as "EDD" or "Everyday Drills." The EDD prepares your arm, shoulder, and hips for throwing and must be completed before any splits. Some days add a <strong>90 Degree Arm Hand Press</strong> to the standard EDD — this is noted in each session.
+        </p>
+
+        <div class="split-block">
+          <h4>Standard EDD</h4>
+          <ul class="drill-list">
+            <li>
+              <span class="drill-name">Flex T Walks</span>
+              <span class="drill-reps">30 yds × 2</span>
+              <a class="drill-link" href="https://youtube.com/shorts/Su8gmo64tqA" target="_blank" rel="noopener noreferrer">▶ Video</a>
+            </li>
+            <li><span class="drill-name">Flex T Inward Turn</span><span class="drill-reps">20 reps</span></li>
+            <li><span class="drill-name">Flex T Outward Turn</span><span class="drill-reps">20 reps</span></li>
+            <li><span class="drill-name">Small Arm Circles</span><span class="drill-reps">20 reps forward and back</span></li>
+            <li><span class="drill-name">Big Arm Circles</span><span class="drill-reps">20 reps forward and back</span></li>
+          </ul>
+        </div>
+
+        <div class="split-block">
+          <h4>Month 1 — Everyday Mechanics Drills</h4>
+          <p style="font-size:.9rem;color:var(--color-secondary);margin-bottom:.5rem;">
+            Performed after the EDD, before every Month 1 workout session.
+          </p>
+          <ul class="drill-list">
+            <li>
+              <span class="drill-name">Single Leg Hops</span>
+              <span class="drill-reps">4 × 10 yds</span>
+              <a class="drill-link" href="https://youtube.com/shorts/b40AduOcbmM" target="_blank" rel="noopener noreferrer">▶ Video</a>
+            </li>
+            <li>
+              <span class="drill-name">QB Hip Walk</span>
+              <span class="drill-reps">4 × 10 yds</span>
+              <a class="drill-link" href="https://youtube.com/shorts/sDzOMiG10-E" target="_blank" rel="noopener noreferrer">▶ Video</a>
+            </li>
+            <li>
+              <span class="drill-name">QB Straight Jacket</span>
+              <span class="drill-reps">4 × 10 yds</span>
+              <a class="drill-link" href="https://youtube.com/shorts/sjb6lSlEeEw" target="_blank" rel="noopener noreferrer">▶ Video</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="split-block">
+          <h4>Month 2 — Extended EDD</h4>
+          <p style="font-size:.9rem;color:var(--color-secondary);margin-bottom:.5rem;">
+            Month 2 replaces the Month 1 Everyday Mechanics Drills with this extended EDD. Refer to the
+            <a href="https://youtu.be/8gceXO1cvqk" target="_blank" rel="noopener noreferrer">Month 2 reference video</a> for all exercises.
+          </p>
+          <ul class="drill-list">
+            <li><span class="drill-name">Flex T Walks</span><span class="drill-reps">30 yds × 2</span></li>
+            <li><span class="drill-name">Flex T Inward Turn</span><span class="drill-reps">20 reps</span></li>
+            <li><span class="drill-name">Flex T Outward Turn</span><span class="drill-reps">20 reps</span></li>
+            <li><span class="drill-name">90 Degree Arm Hand Press</span><span class="drill-reps">6 reps</span></li>
+            <li><span class="drill-name">Small Arm Circles</span><span class="drill-reps">20 reps forward and back</span></li>
+            <li><span class="drill-name">Big Arm Circles</span><span class="drill-reps">20 reps forward and back</span></li>
+            <li><span class="drill-name">1 Leg Hops Forward — throwing leg</span><span class="drill-reps">2 × 10 yds</span></li>
+            <li><span class="drill-name">1 Leg Hops Backward — throwing leg</span><span class="drill-reps">2 × 10 yds</span></li>
+            <li><span class="drill-name">Arms Extended Hip Separation</span><span class="drill-reps">15 reps</span></li>
+            <li><span class="drill-name">QB Walk</span><span class="drill-reps">4 sets × 10 yds</span></li>
+            <li><span class="drill-name">Straight Jacket</span><span class="drill-reps">4 sets × 10 yds</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           ON-FIELD TRAINING SECTION
+      ══════════════════════════════════════════ -->
+      <section id="field-training">
+        <h2>On-Field Training</h2>
+        <p>
+          Each field session begins with a <strong>dynamic warm-up</strong> followed by the <strong>EDD</strong>. Complete all drills in Split 1 before moving to Split 2. Video links open YouTube Shorts demonstrations. The
+          <a href="https://youtu.be/8gceXO1cvqk" target="_blank" rel="noopener noreferrer">Month 2 master video</a>
+          covers all Month 2 exercises and should be viewed before beginning Weeks 5–8.
+        </p>
+
+        <!-- Phase tabs -->
+        <div class="section-tabs" role="tablist">
+          <button class="section-tab-btn active" data-phase="month1" id="month1-tab" role="tab" aria-selected="true">Month 1 — Weeks 1–4</button>
+          <button class="section-tab-btn" data-phase="month2" id="month2-tab" role="tab" aria-selected="false">Month 2 — Weeks 5–8</button>
+        </div>
+
+        <!-- ─ MONTH 1 PANEL ─ -->
+        <div class="section-panel active" id="month1-panel">
+          <p>
+            Month 1 builds mechanical consistency through repetition. Each week follows a pattern of <strong>two mechanics days</strong>, a <strong>footwork day</strong>, and a <strong>live-route day</strong>, with three rest days. Weeks 3 and 4 repeat Weeks 1 and 2 so the patterns become automatic.
+          </p>
+          <div class="program-layout">
+            <aside class="program-sidebar">
+              <h3>Select Week</h3>
+              <ul class="week-list" id="m1-week-list">
+                <li><button class="week-button active" data-week="1">Week 1</button></li>
+                <li><button class="week-button" data-week="2">Week 2</button></li>
+                <li><button class="week-button" data-week="3">Week 3</button></li>
+                <li><button class="week-button" data-week="4">Week 4</button></li>
+              </ul>
+            </aside>
+            <div class="program-main">
+              <div id="m1-week-note" class="section-note" style="display:none;"></div>
+              <ul class="workout-tabs" id="m1-day-tabs"></ul>
+              <div id="m1-day-content"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ─ MONTH 2 PANEL ─ -->
+        <div class="section-panel" id="month2-panel">
+          <p>
+            Month 2 advances to <strong>pocket movement</strong>, <strong>weighted-ball mechanics</strong>, <strong>off-platform throwing</strong>, and a more demanding <strong>route-tree challenge</strong> that requires 2–3 successful completions before progressing. For every drill, refer to the
+            <a href="https://youtu.be/8gceXO1cvqk" target="_blank" rel="noopener noreferrer">Month 2 video reference</a>.
+            Weeks 7 and 8 repeat Weeks 5 and 6.
+          </p>
+          <div class="program-layout">
+            <aside class="program-sidebar">
+              <h3>Select Week</h3>
+              <ul class="week-list" id="m2-week-list">
+                <li><button class="week-button active" data-week="1">Week 5</button></li>
+                <li><button class="week-button" data-week="2">Week 6</button></li>
+                <li><button class="week-button" data-week="3">Week 7</button></li>
+                <li><button class="week-button" data-week="4">Week 8</button></li>
+              </ul>
+            </aside>
+            <div class="program-main">
+              <div id="m2-week-note" class="section-note" style="display:none;"></div>
+              <ul class="workout-tabs" id="m2-day-tabs"></ul>
+              <div id="m2-day-content"></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ══════════════════════════════════════════
+           RELATED RESOURCES
+      ══════════════════════════════════════════ -->
+      <section id="related-resources" style="margin-top: var(--space-xxl);">
+        <h2>Related First Down Training Resources</h2>
+        <p>This QB plan is part of a series of First Down Training resources available on this site:</p>
+        <a class="resource-card" href="../../Wide_Receiver_Training/firstDownTrainingWrPlan.html">
+          <span class="resource-card-icon">🏈</span>
+          <div>
+            <h4>8-Week Ultimate WR Training Schedule</h4>
+            <p>First Down Training's complete wide receiver program — on-field releases, route running, and gym training phases for WRs.</p>
+          </div>
+        </a>
+      </section>
+
+    </div><!-- .workout-program -->
+  </div><!-- .container -->
+</main>
+
+<div id="site-footer"></div>
+<script>
+  fetch('/website/includes/footer.html')
+    .then(r => r.text())
+    .then(d => { document.getElementById('site-footer').innerHTML = d; });
+</script>
+
+<!-- ══════════════════════════════════════════════════════════════
+     PROGRAM DATA + RENDERING
+══════════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  // ── Drill lookup table ─────────────────────────────────────────
+  // u: YouTube Shorts ID  |  yt: true = regular YouTube URL  |  r: default volume
+  var D = {
+    /* ── EDD / Everyday Mechanics (Month 1) ── */
+    flexT:            {n:'Flex T Overview',                          u:'Su8gmo64tqA', r:'see video'},
+    singleLegHops:    {n:'Single Leg Hops',                          u:'b40AduOcbmM', r:'4 × 10 yds'},
+    qbHipWalk:        {n:'QB Hip Walk',                              u:'sDzOMiG10-E', r:'4 × 10 yds'},
+    qbStraightJacket: {n:'QB Straight Jacket',                       u:'sjb6lSlEeEw', r:'4 × 10 yds'},
+
+    /* ── Month 1 — Mechanics & Towel Drills ── */
+    qb1Step3Step:     {n:'QB 1 Step Sequence Drill & 3 Step',        u:'FDH0r_QfwOA', r:'8 reps each side for each drop'},
+    towelHitch12:     {n:'Towel Hitch Drill',                        u:'_T0LQNbeoNQ', r:'12 reps'},
+    towelHitch20:     {n:'Towel Hitch Drill',                        u:'_T0LQNbeoNQ', r:'20 reps'},
+    frontArmTowel:    {n:'Front Arm Football Towel Throws',          u:'TLRyoqBdC08', r:'25 reps'},
+    iytws:            {n:'I, Y, T, Ws — Wild Front Side',            u:'ZyDKfWBwWDw', r:'10 sets'},
+
+    /* ── Month 1 — Footwork Drills ── */
+    towelFootworkCircuit: {n:'Towel Footwork Circuit',               u:'v84eXQh1H2M', r:'8 reps for each movement'},
+    towelSingleLeg:   {n:'Towel Single Leg On The Run',              u:'KpAEOBqABkw', r:'10 reps'},
+    towel2Step:       {n:'Towel 2 Step On The Run',                  u:'ApF9kprIdJo', r:'10 reps'},
+    coneZigZag:       {n:'Cone Zig Zag',                             u:'6JSQuu-r7vk', r:'5 sets'},
+    coneLineShuffle:  {n:'Cone Line Shuffle',                        u:'GuRbeZvvfpk', r:'5 reps'},
+    oneUpOneBack:     {n:'1 Up & 1 Back (throwing 10 yd dig)',       u:'WL3-FxMyUpA', r:'4 reps'},
+    oneBackOneUp:     {n:'1 Back & 1 Up',                            u:'VTGCNty79sg', r:'4 reps each side'},
+    oneUpOneForward:  {n:'1 Up & 1 Forward',                         u:'g140YzX4gNs', r:'4 reps each side'},
+    sprintOut10yd:    {n:'Sprint Out 10 yd Out Throws',              u:'B5i59-ovGP4', r:'8 reps each side'},
+
+    /* ── Month 1 — Socks / Front-Side Drills ── */
+    crossOverPause:   {n:'Cross Over Pause Drill (in socks)',        u:'fw3JAAW0UPg', r:'12 reps'},
+    throwResetDrill:  {n:'Throw Then Re Set Drill — front side (in socks)', u:'YuLKDSjbRo4', r:'12 reps'},
+
+    /* ── Month 1 — Pocket Movement (Week 2/4 additions) ── */
+    twoDriftsBack:    {n:'2 Drifts Back',                            u:'3bjvtngQZ94', r:'4 reps'},
+    twoClimbsUp:      {n:'2 Climbs Up',                              u:'bmAsLCbktrc', r:'4 reps'},
+    conflictClimbSetUp: {n:'Conflict Climb & Set Up',                u:'zB7DsvSuTHg', r:'4 reps'},
+    retreatMovement:  {n:'Retreat Movement',                         u:'UloNW9X8-h4', r:'4 reps'},
+  };
+
+  // ── Dynamic warmup templates ───────────────────────────────────
+  var WU = {
+    light:  ['A-Skip 15 yds × 2', 'High Knees 15 yds × 2', 'Karaoka 20 yds × 2', 'Toy Soldiers 10 yds × 2', 'Quad Pull 10 yds × 2', 'Knee Hug 10 yds × 2'],
+    full:   ['A-Skip 15 yds × 2', 'B-Skip 15 yds × 2',    'Karaoka 20 yds × 2', 'Toy Soldiers 10 yds × 2', 'Quad Pull 10 yds × 2', 'Knee Hug 10 yds × 2']
+  };
+
+  // Route tree reference
+  var ROUTE_TREE = [
+    {num:'0', name:'Hitch'},
+    {num:'1', name:'5 yd Out'},
+    {num:'2', name:'3 Step Slant'},
+    {num:'3', name:'12 yd Curl'},
+    {num:'4', name:'15–12 yd Comeback'},
+    {num:'5', name:'10 yd Out'},
+    {num:'6', name:'10 yd In'},
+    {num:'7', name:'Corner'},
+    {num:'8', name:'Post'},
+    {num:'9', name:'Fade'}
+  ];
+
+  // ── Month 1 Pattern A — Weeks 1 & 3 ──────────────────────────
+  var M1A = [
+    {
+      t:'Day 1 — Throwing Mechanics',
+      wu:'light',
+      splits:[
+        {name:'Split 1 — Mechanics & Arm Warm-Up', items:[
+          {k:'qb1Step3Step'},
+          {k:'towelHitch12'},
+          {note:'Warm Up Arm &amp; Throw'},
+        ]},
+        {name:'Split 2 — Spot Routes', items:[
+          {n:'Slants &amp; 5 yd Outs', v:'1 step footwork — 5 reps each throw, each side'},
+          {n:'Bang 8 Posts &amp; 10 yd Outs', v:'3 rhythm footwork — 5 reps each throw, each side'},
+        ]},
+      ]
+    },
+    {
+      t:'Day 2 — Footwork',
+      wu:'full',
+      eddExtra:'90 Degree Arm Hand Press (6 reps)',
+      splits:[
+        {name:'Split 1 — Towel Footwork', items:[
+          {k:'towelFootworkCircuit'},
+          {k:'towelHitch20'},
+          {k:'towelSingleLeg', note:'Use a towel as shown in program notes'},
+          {k:'towel2Step', note:'Use a towel as shown in program notes'},
+          {note:'Throw &amp; Warm Up Arm'},
+        ]},
+        {name:'Split 2 — Cone &amp; Movement Drills', items:[
+          {k:'coneZigZag'},
+          {k:'coneLineShuffle'},
+          {k:'oneUpOneBack'},
+          {k:'sprintOut10yd'},
+        ]},
+      ]
+    },
+    {t:'Day 3 — Rest Day', isRest:true, restNote:'Hydrate, rest, ice any soreness, and massage / foam roll.'},
+    {
+      t:'Day 4 — Throwing Mechanics (heavy)',
+      wu:'full',
+      eddExtra:'90 Degree Arm Hand Press (6 reps)',
+      splits:[
+        {name:'Split 1 — Mechanics Emphasis: Back Leg', items:[
+          {k:'frontArmTowel'},
+          {k:'iytws'},
+          {n:'Towel Work — 1 Step &amp; 3 Step (emphasis back leg)', v:'8 reps each side for each drop — 3 step drop and 1 step drop throwing with towel'},
+          {k:'towelHitch12'},
+          {note:'Warm Up Arm &amp; Throw'},
+        ]},
+        {name:'Split 2 — Spot Throws', items:[
+          {n:'Touch Fade Ball — 1 step drop', v:'20 yds — 5 reps each side'},
+          {n:'Dagger Digs — 3 hitch', v:'15 yds — 5 reps each side'},
+          {n:'Smash Corner With Progression Re-Set', v:'3 step to hitch &amp; re-set — 10–12 yd corner — 5 reps each side'},
+        ]},
+      ]
+    },
+    {t:'Day 5 — Rest Day', isRest:true, restNote:'Hydrate, rest, ice any soreness, and massage / foam roll.'},
+    {
+      t:'Day 6 — Footwork &amp; Live Routes',
+      wu:'full',
+      eddExtra:'90 Degree Arm Hand Press (6 reps)',
+      splits:[
+        {name:'Split 1 — Front-Side Footwork (in socks)', items:[
+          {note:'Warm Up Arm &amp; Throw'},
+          {note:'Remove shoes for this split.'},
+          {n:'1 Step Drop In Socks', v:'Throwing to partner 10 yds away'},
+          {k:'crossOverPause'},
+          {k:'throwResetDrill'},
+        ]},
+        {name:'Split 2 — Full Route Tree', items:[
+          {n:'Throw Full Route Tree 0–9', v:'3 reps for each route number', routeTree:true},
+        ]},
+      ]
+    },
+    {t:'Day 7 — Rest Day', isRest:true, restNote:'Hydrate, rest, ice any soreness, and massage / foam roll.'},
+  ];
+
+  // ── Month 1 Pattern B — Weeks 2 & 4 ──────────────────────────
+  // Day 1: same as M1A Day 1
+  // Day 2: same Split 1 but different Split 2 (adds progression drills)
+  // Day 4: same Split 1 but Split 2 starts with pocket movement drills
+  // Days 3,5,6,7: identical to M1A
+  var M1B = [
+    {
+      t:'Day 1 — Throwing Mechanics',
+      wu:'light',
+      splits:[
+        {name:'Split 1 — Mechanics &amp; Arm Warm-Up', items:[
+          {k:'qb1Step3Step'},
+          {k:'towelHitch12'},
+          {note:'Warm Up Arm &amp; Throw'},
+        ]},
+        {name:'Split 2 — Spot Routes', items:[
+          {n:'Slants &amp; 5 yd Outs', v:'1 step footwork — 5 reps each throw, each side'},
+          {n:'Bang 8 Posts &amp; 10 yd Outs', v:'3 rhythm footwork — 5 reps each throw, each side'},
+        ]},
+      ]
+    },
+    {
+      t:'Day 2 — Footwork',
+      wu:'full',
+      eddExtra:'90 Degree Arm Hand Press (6 reps)',
+      splits:[
+        {name:'Split 1 — Towel Footwork', items:[
+          {k:'towelFootworkCircuit'},
+          {k:'towelHitch20'},
+          {k:'towelSingleLeg', note:'Use a towel as shown in program notes'},
+          {k:'towel2Step', note:'Use a towel as shown in program notes'},
+          {note:'Throw &amp; Warm Up Arm'},
+        ]},
+        {name:'Split 2 — Progression Movement Drills', items:[
+          {k:'oneUpOneBack', v:'4 reps each side'},
+          {k:'oneBackOneUp'},
+          {k:'oneUpOneForward'},
+          {k:'sprintOut10yd'},
+        ]},
+      ]
+    },
+    {t:'Day 3 — Rest Day', isRest:true, restNote:'Hydrate, rest, ice any soreness, and massage / foam roll.'},
+    {
+      t:'Day 4 — Throwing Mechanics (heavy)',
+      wu:'full',
+      eddExtra:'90 Degree Arm Hand Press (6 reps)',
+      splits:[
+        {name:'Split 1 — Mechanics Emphasis: Back Leg', items:[
+          {k:'frontArmTowel'},
+          {k:'iytws'},
+          {n:'Towel Work — 1 Step &amp; 3 Step (emphasis back leg)', v:'8 reps each side for each drop — 3 step drop and 1 step drop throwing with towel'},
+          {k:'towelHitch12'},
+          {note:'Warm Up Arm &amp; Throw'},
+        ]},
+        {name:'Split 2 — Pocket Movement + Spot Throws', items:[
+          {k:'twoDriftsBack'},
+          {k:'twoClimbsUp'},
+          {k:'conflictClimbSetUp'},
+          {k:'retreatMovement'},
+          {n:'Touch Fade Ball — 1 step drop', v:'20 yds — 5 reps each side'},
+          {n:'Dagger Digs — 3 hitch', v:'15 yds — 5 reps each side'},
+          {n:'Smash Corner With Progression Re-Set', v:'3 step to hitch &amp; re-set — 10–12 yd corner — 5 reps each side'},
+        ]},
+      ]
+    },
+    {t:'Day 5 — Rest Day', isRest:true, restNote:'Hydrate, rest, ice any soreness, and massage / foam roll.'},
+    {
+      t:'Day 6 — Footwork &amp; Live Routes',
+      wu:'full',
+      eddExtra:'90 Degree Arm Hand Press (6 reps)',
+      splits:[
+        {name:'Split 1 — Front-Side Footwork (in socks)', items:[
+          {note:'Warm Up Arm &amp; Throw'},
+          {note:'Remove shoes for this split.'},
+          {n:'1 Step Drop In Socks', v:'Throwing to partner 10 yds away'},
+          {k:'crossOverPause'},
+          {k:'throwResetDrill'},
+        ]},
+        {name:'Split 2 — Full Route Tree', items:[
+          {n:'Throw Full Route Tree 0–9', v:'3 reps for each route number', routeTree:true},
+        ]},
+      ]
+    },
+    {t:'Day 7 — Rest Day', isRest:true, restNote:'Hydrate, rest, ice any soreness, and massage / foam roll.'},
+  ];
+
+  // ── Month 2 Pattern A — Weeks 5 & 7 ──────────────────────────
+  var M2A = [
+    {
+      t:'Day 1 — Throwing Mechanics (hips &amp; base)',
+      wu:'full',
+      m2edd:true,
+      prethrow:'Feet In Cement / Stepping Warm Up Throws (must be done before every workout)',
+      splits:[
+        {name:'Split 1 — Mechanics', items:[
+          {n:'Baseball Hand Switch Throws (throw on the third rep)', v:'20 reps'},
+          {n:'Hitch 3 Rep Drill — Towel Throws', v:'12 reps'},
+          {n:'Med Ball Behind Back Foot Throws', v:'15 reps'},
+          {n:'Cross-Over Pause Throws', v:'15 reps'},
+          {n:'Hitch 2-Rep Drill With Ball', v:'10 reps'},
+        ]},
+        {name:'Split 2 — Spot Throws', items:[
+          {n:'Timing Speed Outs — Rhythm 3 Step', v:'6 throws each side'},
+          {n:'15 yd Dagger Concept Digs — big 3 and hitch', v:'6 throws each side'},
+        ]},
+      ]
+    },
+    {
+      t:'Day 2 — Pocket Movement',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — Towel Pocket Footwork', items:[
+          {n:'Towel Footwork: 1-Up 1-Back', v:'8 reps'},
+          {n:'Towel Footwork: 1-Back 1-Up', v:'8 reps'},
+          {n:'Towel Footwork: 1-Up 1-Forward', v:'8 reps'},
+          {n:'Towel Footwork: 1-Forward Retreat', v:'8 reps'},
+        ]},
+        {name:'Split 2 — Pocket Throws', items:[
+          {n:'Conflict Climb — Throw 1st Window Curl (3 step drop)', v:'5 reps each side'},
+          {n:'Smash Progression (3 step drop re-set to corner — Cover 2 Ball)', v:'4 reps each side'},
+          {n:'Smash Progression Pocket Drift (3 step drop eyes to hitch — drift forward or back once to corner)', v:'4 reps each side — refer to Month 2 video'},
+          {n:'Retreat 3rd Read Smash Split Route', v:'6 reps each side'},
+        ]},
+      ]
+    },
+    {t:'Day 3 — Rest Day', isRest:true, restNote:'Hydrate, rest your arm, and stretch.'},
+    {
+      t:'Day 4 — Mechanics Day',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — Weighted Ball Mechanics', items:[
+          {n:'Weighted Front Arm Alphabets', v:'refer to Month 2 video'},
+          {n:'Cone Circle Towel Throws With Front Hand Weighted Ball', v:'20 reps'},
+          {n:'Weighted Ball Hand Switch Toss', v:'20 reps'},
+        ]},
+        {name:'Split 2 — Route Throws', items:[
+          {n:'Bang 8 Posts — rhythm 3 step, no hitch', v:'6 reps each side'},
+          {n:'15–12 yd Comebacks — big 3 step with a hitch', v:'6 reps each side'},
+          {n:'Deep Fades — 4 vert, 3 step and a hitch', v:'6 reps each side'},
+        ]},
+      ]
+    },
+    {
+      t:'Day 5 — Throwing On The Run / Off Platform',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — On-The-Run Simulation', items:[
+          {n:'1 Foot Towel Throws — on the run simulation', v:'20 reps'},
+          {n:'2 Step Towel Throws — on the run simulation', v:'20 reps'},
+          {n:'1 Foot Ball Throws', v:'15 reps (with actual football)'},
+          {n:'2 Step Ball Throws', v:'15 reps (with actual football)'},
+        ]},
+        {name:'Split 2 — Sprint Outs &amp; Escape Throws', items:[
+          {n:'Sprint Out Left &amp; Right — Throw 12–15 yd Out', v:'6 reps each side'},
+          {n:'Single Jab Escape — Throw Comeback Breaking Route', v:'6 reps each side'},
+          {n:'Double Drift Left Side &amp; Double Climb Right Side — throwing a first window dig', v:'6 reps each side'},
+        ]},
+      ]
+    },
+    {
+      t:'Day 6 — Full Route Tree',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — Route Tree Challenge', items:[
+          {n:'Route Tree 0–9', v:'1 rep under center &amp; 1 rep from gun — each side — must be a good throw or repeat the rep — minimum 36 throws per workout', routeTree:true},
+        ]},
+      ]
+    },
+    {t:'Day 7 — Rest Day', isRest:true, restNote:'Hydrate, ice, stretch, and massage / roll out.'},
+  ];
+
+  // ── Month 2 Pattern B — Weeks 6 & 8 ──────────────────────────
+  var M2B = [
+    {
+      t:'Day 1 — Mechanics',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — Weighted Ball Mechanics', items:[
+          {n:'Baseball &amp; Weighted Ball Hand Switch Throws Off Hitch', v:'20 reps'},
+          {n:'Stationary Front Foot Rock Back &amp; Forth — Towel Throws (med ball on inside heel)', v:'25 reps'},
+          {n:'Foguls With Weighted Ball In Front Hand — Left, Middle, Right', v:'4 × 10 yds'},
+          {n:'Weighted Ball Front Hand Hitch Drill', v:'12 reps'},
+        ]},
+        {name:'Split 2 — Route Throws', items:[
+          {n:'Cover 2 Fades — fade / 5 yd out progression, quick game footwork', v:'6 reps each side'},
+          {n:'Dig Pivot Progression — 3 step and re-set, throwing dig in first window', v:'6 reps each side'},
+          {n:'Deep Post — big 3 and a hitch', v:'6 reps each side'},
+        ]},
+      ]
+    },
+    {
+      t:'Day 2 — Pocket Movement',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — Pocket Footwork With Weighted Ball', items:[
+          {n:'Pocket Footwork With Weighted Ball — switching hands (up one back one)', v:'8 reps'},
+          {n:'Pocket Footwork With Weighted Ball — switching hands (back one up one)', v:'8 reps'},
+          {n:'Pocket Footwork With Weighted Ball — switching hands (up one forward one)', v:'8 reps'},
+          {n:'Pocket Footwork With Weighted Ball — switching hands (forward one retreat)', v:'8 reps'},
+        ]},
+        {name:'Split 2 — Advanced Pocket Throws', items:[
+          {n:'Throwing A Post Corner (footwork: 3 step drop — 1 up 1 forward right side &amp; 1 up 1 back left side)', v:'8 reps each side'},
+          {n:'Whip, Dig, Deep Post Progression Out Of Trips — throwing the deep post (footwork: 3 step eyes to whip from #3, re-set to dig from #2, re-set to post from #1)', v:'8 reps each side'},
+        ]},
+      ]
+    },
+    {t:'Day 3 — Rest Day', isRest:true, restNote:'Hydrate, rest your arm, and stretch.'},
+    {
+      t:'Day 4 — Mechanics',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — Weighted Ball Front Arm Work', items:[
+          {n:'Weighted Ball Front Arm Number Line — count all the way to 25', v:'refer to Month 2 video'},
+          {n:'Weighted Ball Front Arm Towel Foguls — in place', v:'25 reps'},
+          {n:'Weighted Ball Front Arm Towel Hitch Drill', v:'12 reps'},
+        ]},
+        {name:'Split 2 — Zone Read &amp; Boot Throws', items:[
+          {n:'Pistol Zone Read Fake — Throw 1st Window Dig (footwork: zone fake, 3 hitch)', v:'6 reps each side'},
+          {n:'Power Zone Read Bang 8 Post Hip Flip (2 shuffles flip hips throw — no hitch)', v:'6 reps each side'},
+          {n:'Stretch Fake Reverse Boot — Back Side Deep Post (footwork: ball fake stretch, bootleg out, set up 1 hitch and throw back side deep post)', v:'6 reps each side'},
+        ]},
+      ]
+    },
+    {
+      t:'Day 5 — Throwing On The Run / Off Platform',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — Lateral &amp; Hook Throws', items:[
+          {n:'4 Step Lateral Towel Throws', v:'15 reps'},
+          {n:'4 Step Hook &amp; Replace Towel Throws', v:'15 reps'},
+        ]},
+        {name:'Split 2 — Zone Fake &amp; Escape Throws', items:[
+          {n:'Pistol Zone Read Fake Sprint Out — Backside Crossing Route (footwork: pistol zone fake — eyes to flat — flag covered — eyes to backside crosser)', v:'6 reps each side'},
+          {n:'Jab Escape Throw Corner-Post — right side stay on the run, left side hook replace (footwork: 3 step single jab with front foot and escape out)', v:'6 reps each side'},
+        ]},
+      ]
+    },
+    {
+      t:'Day 6 — Route Tree (advanced)',
+      wu:'full',
+      m2edd:true,
+      splits:[
+        {name:'Split 1 — Route Tree Challenge (advanced)', items:[
+          {n:'Route Tree 0–9', v:'1 rep under center &amp; 1 rep from gun — plus any outside breaking route (comebacks, outs, corners) 1 rep on the run — must complete 2–3 good throws before moving to next route — receivers recommended', routeTree:true},
+        ]},
+      ]
+    },
+    {t:'Day 7 — Rest Day', isRest:true, restNote:'Hydrate, ice, stretch, and massage / roll out.'},
+  ];
+
+  // ── Week maps ─────────────────────────────────────────────────
+  var M1_MAP = {1:M1A, 2:M1B, 3:M1A, 4:M1B};
+  var M2_MAP = {1:M2A, 2:M2B, 3:M2A, 4:M2B};
+  var M1_REPEATS = {3:'Week 3 repeats Week 1 — same workout pattern.', 4:'Week 4 repeats Week 2 — same workout pattern.'};
+  var M2_REPEATS = {3:'Week 7 repeats Week 5 — same workout pattern.', 4:'Week 8 repeats Week 6 — same workout pattern.'};
+
+  // ── Rendering helpers ─────────────────────────────────────────
+
+  function ytUrl(key) {
+    var d = D[key];
+    if (!d || !d.u) return '#';
+    return d.yt ? 'https://youtu.be/' + d.u : 'https://youtube.com/shorts/' + d.u;
+  }
+
+  function toggleHtml(label, listItems) {
+    var id = 'tog-' + Math.random().toString(36).slice(2,8);
+    var lis = listItems.map(function(li){ return '<li>' + li + '</li>'; }).join('');
+    return '<button class="warmup-toggle" onclick="(function(b){var c=b.nextElementSibling;c.classList.toggle(\'open\');b.querySelector(\'span\').textContent=c.classList.contains(\'open\')?\'▲\':\'▼\';})(this)">'
+         + '<span>▼</span> ' + label + '</button>'
+         + '<div class="warmup-content"><ul>' + lis + '</ul></div>';
+  }
+
+  function routeTreeHtml() {
+    var tags = ROUTE_TREE.map(function(r){
+      return '<span class="route-tag"><span class="route-num">' + r.num + '</span>' + r.name + '</span>';
+    }).join('');
+    return '<div class="route-tree-grid">' + tags + '</div>';
+  }
+
+  function renderItems(items) {
+    var html = '<ul class="drill-list">';
+    items.forEach(function(item) {
+      if (item.note) {
+        html += '<li class="drill-note">' + item.note + '</li>';
+        return;
+      }
+      if (item.k) {
+        var d = D[item.k];
+        if (!d) return;
+        var vol = item.v || d.r || '';
+        html += '<li>'
+             + '<span class="drill-name">' + d.n + '</span>'
+             + (vol ? '<span class="drill-reps">' + vol + '</span>' : '')
+             + '<a class="drill-link" href="' + ytUrl(item.k) + '" target="_blank" rel="noopener noreferrer">▶ Video</a>'
+             + '</li>';
+        if (item.note) {
+          html += '<li class="drill-note">' + item.note + '</li>';
+        }
+        return;
+      }
+      if (item.n) {
+        html += '<li>';
+        html += '<span class="drill-name">' + item.n + '</span>';
+        if (item.v) html += '<span class="drill-reps">' + item.v + '</span>';
+        html += '</li>';
+        if (item.routeTree) {
+          html += '<li style="display:block;padding:.4rem 0;">' + routeTreeHtml() + '</li>';
+        }
+        return;
+      }
+    });
+    html += '</ul>';
+    return html;
+  }
+
+  function renderQBDay(day) {
+    if (day.isRest) {
+      return '<div class="rest-day-panel">'
+           + '<h3>Rest / Recovery</h3>'
+           + '<p>' + (day.restNote || 'Rest, hydrate, and recover.') + '</p>'
+           + '</div>';
+    }
+
+    var html = '';
+
+    // Dynamic warmup toggle
+    if (day.wu && WU[day.wu]) {
+      html += toggleHtml('Dynamic Warm-Up', WU[day.wu]);
+    }
+
+    // EDD callout
+    if (day.m2edd) {
+      html += '<div class="edd-callout"><strong>EDD (Extended — Month 2):</strong> Perform the Month 2 Extended EDD listed in the <a href="#edd-reference">EDD Reference</a> section above. Refer to the <a href="https://youtu.be/8gceXO1cvqk" target="_blank" rel="noopener noreferrer">Month 2 video</a> for all exercises.</div>';
+    } else {
+      html += '<div class="edd-callout"><strong>EDD:</strong> Perform the Standard EDD'
+           + (day.eddExtra ? ' + <strong>' + day.eddExtra + '</strong>' : '')
+           + ' and the Month 1 Everyday Mechanics Drills (Single Leg Hops, QB Hip Walk, QB Straight Jacket) from the <a href="#edd-reference">EDD Reference</a> section above.</div>';
+    }
+
+    // Feet in cement note (Month 2 Day 1)
+    if (day.prethrow) {
+      html += '<div class="section-note"><strong>Pre-Throw Routine:</strong> ' + day.prethrow + '</div>';
+    }
+
+    // Splits
+    day.splits.forEach(function(split) {
+      html += '<div class="split-block"><h4>' + split.name + '</h4>';
+      html += renderItems(split.items);
+      html += '</div>';
+    });
+
+    return html;
+  }
+
+  function buildDayTabs(days, tabsEl, contentEl, renderFn) {
+    tabsEl.innerHTML = '';
+    days.forEach(function(day, i) {
+      var li = document.createElement('li');
+      if (i === 0) li.className = 'active';
+      var a = document.createElement('a');
+      a.href = '#';
+      a.textContent = 'Day ' + (i + 1);
+      a.title = (day.t || '').replace(/&amp;/g,'&');
+      li.appendChild(a);
+      tabsEl.appendChild(li);
+    });
+
+    function showDay(idx) {
+      tabsEl.querySelectorAll('li').forEach(function(li, i){ li.className = i === idx ? 'active' : ''; });
+      var day = days[idx];
+      contentEl.innerHTML = '<div class="day-badge">' + (day.t || '') + '</div>' + renderFn(day);
+    }
+
+    tabsEl.querySelectorAll('a').forEach(function(a, i){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        showDay(i);
+      });
+    });
+
+    showDay(0);
+  }
+
+  // ── Month 1 controller ────────────────────────────────────────
+  var m1TabsEl    = document.getElementById('m1-day-tabs');
+  var m1ContentEl = document.getElementById('m1-day-content');
+  var m1NoteEl    = document.getElementById('m1-week-note');
+
+  function loadM1Week(w) {
+    var days   = M1_MAP[w];
+    var repeat = M1_REPEATS[w];
+    if (repeat) { m1NoteEl.textContent = repeat; m1NoteEl.style.display = 'block'; }
+    else { m1NoteEl.style.display = 'none'; }
+    buildDayTabs(days, m1TabsEl, m1ContentEl, renderQBDay);
+  }
+
+  document.getElementById('m1-week-list').querySelectorAll('.week-button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.getElementById('m1-week-list').querySelectorAll('.week-button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      loadM1Week(Number(btn.getAttribute('data-week')));
+    });
+  });
+
+  loadM1Week(1);
+
+  // ── Month 2 controller ────────────────────────────────────────
+  var m2TabsEl    = document.getElementById('m2-day-tabs');
+  var m2ContentEl = document.getElementById('m2-day-content');
+  var m2NoteEl    = document.getElementById('m2-week-note');
+
+  function loadM2Week(w) {
+    var days   = M2_MAP[w];
+    var repeat = M2_REPEATS[w];
+    if (repeat) { m2NoteEl.textContent = repeat; m2NoteEl.style.display = 'block'; }
+    else { m2NoteEl.style.display = 'none'; }
+    buildDayTabs(days, m2TabsEl, m2ContentEl, renderQBDay);
+  }
+
+  document.getElementById('m2-week-list').querySelectorAll('.week-button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.getElementById('m2-week-list').querySelectorAll('.week-button').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      loadM2Week(Number(btn.getAttribute('data-week')));
+    });
+  });
+
+  loadM2Week(1);
+
+  // ── Phase tab switching ───────────────────────────────────────
+  document.querySelectorAll('.section-tab-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.section-tab-btn').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.section-panel').forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      var phase = btn.getAttribute('data-phase');
+      document.getElementById(phase + '-panel').classList.add('active');
+    });
+  });
+
+}());
+</script>
+
+</div><!-- /#protected-content -->
+
+<!-- ════════════════════════════════════════════════════
+     PASSWORD PROTECTION LOGIC
+     ─────────────────────────────────────────────────
+     TO CHANGE THE PASSWORD:
+       Find the line:  var CORRECT_PASSWORD = "FirstDownTraining2026";
+       Replace the value between the quotes with your new password.
+════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  var CORRECT_PASSWORD = "FirstDownTraining2026";
+  var SESSION_KEY = 'fdtQbPlanAuth';
+
+  var overlay   = document.getElementById('pw-overlay');
+  var content   = document.getElementById('protected-content');
+  var input     = document.getElementById('pw-input');
+  var submitBtn = document.getElementById('pw-submit');
+  var errorMsg  = document.getElementById('pw-error');
+
+  if (sessionStorage.getItem(SESSION_KEY) === '1') { unlock(); return; }
+
+  overlay.style.display = 'flex';
+  input.focus();
+
+  function unlock() {
+    overlay.style.display = 'none';
+    content.style.display = 'block';
+    sessionStorage.setItem(SESSION_KEY, '1');
+  }
+
+  function handleAttempt() {
+    if (input.value === CORRECT_PASSWORD) {
+      unlock();
+    } else {
+      errorMsg.textContent = 'Incorrect password. Please try again.';
+      input.value = '';
+      input.classList.remove('pw-shake');
+      void input.offsetWidth;
+      input.classList.add('pw-shake');
+      input.focus();
+      setTimeout(function(){ input.classList.remove('pw-shake'); }, 450);
+    }
+  }
+
+  submitBtn.addEventListener('click', handleAttempt);
+  input.addEventListener('keydown', function(e){ if (e.key === 'Enter') handleAttempt(); });
+}());
+</script>
+
+</body>
+</html>
