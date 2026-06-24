@@ -8,3 +8,9 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+
+# Large media — GIFs exceed GitHub's 100 MB file limit.
+# Convert to MP4 with: ffmpeg -i input.gif -vf "fps=15,scale=trunc(iw/2)*2:trunc(ih/2)*2" -pix_fmt yuv420p -c:v libx264 -crf 23 -movflags faststart -an output.mp4
+# Use <video autoplay loop muted playsinline> in HTML instead of <img>.
+*.gif
+*.GIF
