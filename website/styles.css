@@ -1246,6 +1246,13 @@ footer p {
   border-radius: 8px;
 }
 
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
 .exercise-card {
   padding: 18px;
 }
