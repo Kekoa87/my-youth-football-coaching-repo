@@ -1851,9 +1851,10 @@ footer p {
 
 .drills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
   margin-bottom: var(--space-xl);
+  align-items: start;
 }
 
 .drill-card {
@@ -1861,37 +1862,37 @@ footer p {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-sm);
-  padding: var(--space-lg);
+  padding: var(--space-md);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 100%;
 }
 
 .drill-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--box-shadow-md);
 }
 
 .drill-card h3, .drill-card h4, .drill-card h5 {
   margin-top: 0;
-  margin-bottom: var(--space-sm);
-  font-size: var(--font-size-lg);
+  margin-bottom: 4px;
+  font-size: 1rem;
   color: var(--color-primary);
 }
 
 .drill-card p {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   color: var(--color-dark);
-  margin-bottom: var(--space-md);
-  flex-grow: 1;
+  margin-bottom: var(--space-sm);
+  flex-grow: 0;
+  line-height: 1.5;
 }
 
 .drill-card .video-container,
 .drill-card .youtube-thumbnail,
 .drill-card .instagram-media,
 .drill-card .twitter-tweet {
-  margin-top: auto; /* Push media to bottom if desired, or keep flow */
+  margin-top: var(--space-sm);
   margin-bottom: 0;
 }
 
@@ -1923,6 +1924,66 @@ footer p {
 
 .drill-card.hidden {
   display: none;
+}
+
+/* ── Category badge ─────────────────────────────────────── */
+.drill-card-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: var(--font-family-sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background-color: var(--color-light);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+}
+
+/* ── Horizontal video strip (multi-rep cards) ───────────── */
+.drill-video-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-top: var(--space-sm);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.drill-video-strip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.drill-video-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.drill-video-strip::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 2px;
+}
+
+.drill-video-strip video {
+  flex: 0 0 200px;
+  border-radius: var(--border-radius);
+  display: block;
+}
+
+/* ── Side-by-side image pair ────────────────────────────── */
+.drill-image-pair {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--space-sm);
+}
+
+.drill-image-pair img {
+  width: calc(50% - 3px);
+  margin: 0;
+  border-radius: var(--border-radius);
 }
 
 /* Filter Bar Component */
