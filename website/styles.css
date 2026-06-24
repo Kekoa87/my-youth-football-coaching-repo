@@ -1246,6 +1246,13 @@ footer p {
   border-radius: 8px;
 }
 
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
 .exercise-card {
   padding: 18px;
 }
@@ -1844,9 +1851,10 @@ footer p {
 
 .drills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: var(--space-lg);
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
   margin-bottom: var(--space-xl);
+  align-items: start;
 }
 
 .drill-card {
@@ -1854,37 +1862,37 @@ footer p {
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-sm);
-  padding: var(--space-lg);
+  padding: var(--space-md);
   display: flex;
   flex-direction: column;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  height: 100%;
 }
 
 .drill-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--box-shadow-md);
 }
 
 .drill-card h3, .drill-card h4, .drill-card h5 {
   margin-top: 0;
-  margin-bottom: var(--space-sm);
-  font-size: var(--font-size-lg);
+  margin-bottom: 4px;
+  font-size: 1rem;
   color: var(--color-primary);
 }
 
 .drill-card p {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-sm);
   color: var(--color-dark);
-  margin-bottom: var(--space-md);
-  flex-grow: 1;
+  margin-bottom: var(--space-sm);
+  flex-grow: 0;
+  line-height: 1.5;
 }
 
 .drill-card .video-container,
 .drill-card .youtube-thumbnail,
 .drill-card .instagram-media,
 .drill-card .twitter-tweet {
-  margin-top: auto; /* Push media to bottom if desired, or keep flow */
+  margin-top: var(--space-sm);
   margin-bottom: 0;
 }
 
@@ -1916,6 +1924,426 @@ footer p {
 
 .drill-card.hidden {
   display: none;
+}
+
+/* ── Category badge ─────────────────────────────────────── */
+.drill-card-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  font-family: var(--font-family-sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background-color: var(--color-light);
+  color: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+}
+
+/* ── Horizontal video strip (multi-rep cards) ───────────── */
+.drill-video-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-top: var(--space-sm);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+.drill-video-strip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.drill-video-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.drill-video-strip::-webkit-scrollbar-thumb {
+  background-color: var(--color-border);
+  border-radius: 2px;
+}
+
+.drill-video-strip video {
+  flex: 0 0 200px;
+  border-radius: var(--border-radius);
+  display: block;
+}
+
+/* ── Side-by-side image pair ────────────────────────────── */
+.drill-image-pair {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--space-sm);
+}
+
+.drill-image-pair img {
+  width: calc(50% - 3px);
+  margin: 0;
+  border-radius: var(--border-radius);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   Tackle Page — Progression Layout
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Section wrappers ───────────────────────────────────────── */
+.tackle-section {
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 2px solid var(--color-border);
+}
+
+.tackle-section:first-of-type {
+  border-top: none;
+  margin-top: var(--space-sm);
+  padding-top: 0;
+}
+
+.tackle-section-header {
+  margin-bottom: var(--space-md);
+}
+
+.tackle-section-header h2 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-xs);
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-md);
+}
+
+.tackle-section-header__desc {
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  margin-bottom: 0;
+  padding-left: calc(var(--space-md) + 4px);
+}
+
+/* ── Jump-to navigation ─────────────────────────────────────── */
+.tackle-jump-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  margin: var(--space-sm) 0 var(--space-lg);
+  font-family: var(--font-family-sans-serif);
+}
+
+.tackle-jump-nav__label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-secondary);
+  white-space: nowrap;
+  margin-right: var(--space-xs);
+}
+
+.tackle-jump-nav a {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  padding: 3px 12px;
+  border-radius: 99px;
+  border: 1px solid var(--color-primary);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.tackle-jump-nav a:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+/* ── Visual progression stepper ─────────────────────────────── */
+.progression-stepper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin: var(--space-sm) 0 var(--space-lg);
+  overflow-x: auto;
+  padding-bottom: var(--space-xs);
+}
+
+.progression-stepper__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 90px;
+  position: relative;
+  text-align: center;
+}
+
+.progression-stepper__step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-primary);
+  z-index: 0;
+}
+
+.progression-stepper__dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  margin-bottom: var(--space-xs);
+  flex-shrink: 0;
+}
+
+.progression-stepper__phase {
+  font-family: var(--font-family-sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primary-dark);
+  line-height: 1.3;
+  padding: 0 var(--space-xs);
+}
+
+/* ── Phase section header ───────────────────────────────────── */
+.phase-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin: var(--space-lg) 0 var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.phase-header__badge {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-family-sans-serif);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 14px;
+  border-radius: 99px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.phase-header__title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-family-sans-serif);
+  font-weight: 600;
+}
+
+.phase-header__desc {
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--font-size-sm);
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+/* ── Individual progression step card ──────────────────────── */
+.progression-step {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow-sm);
+  margin-bottom: var(--space-md);
+  overflow: hidden;
+}
+
+.progression-step__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-light);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.progression-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  font-family: var(--font-family-sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.progression-step__title {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-primary-dark);
+  font-family: var(--font-family-sans-serif);
+  font-weight: 600;
+}
+
+.progression-step__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.progression-step__video {
+  padding: var(--space-md);
+  border-right: 1px solid var(--color-border);
+}
+
+.progression-step__video .video-container {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.progression-step__video .drill-video-strip {
+  margin-top: 0;
+}
+
+.progression-step__info {
+  padding: var(--space-md);
+}
+
+.progression-step__purpose {
+  font-size: var(--font-size-sm);
+  color: var(--color-dark);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-family-sans-serif);
+}
+
+.progression-step__points-title {
+  font-family: var(--font-family-sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-xs);
+  margin-top: 0;
+}
+
+.progression-step__points-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.progression-step__points-list li {
+  font-family: var(--font-family-sans-serif);
+  font-size: var(--font-size-sm);
+  color: var(--color-dark);
+  padding: 3px 0 3px var(--space-md);
+  position: relative;
+  line-height: 1.5;
+}
+
+.progression-step__points-list li::before {
+  content: '▸';
+  color: var(--color-primary);
+  position: absolute;
+  left: 0;
+  font-size: 0.6rem;
+  top: 6px;
+}
+
+/* Mobile: stack video above info */
+@media (max-width: 640px) {
+  .progression-step__body {
+    grid-template-columns: 1fr;
+  }
+
+  .progression-step__video {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+}
+
+/* ── Back-to-top button ─────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease,
+              background-color 0.15s ease;
+  z-index: 9000;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    bottom: var(--space-lg);
+    right: var(--space-md);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ── Drive sub-phase label ──────────────────────────────────── */
+.drive-phase-label {
+  display: inline-block;
+  font-family: var(--font-family-sans-serif);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-secondary);
+  background-color: var(--color-light);
+  border: 1px solid var(--color-border);
+  padding: 2px 10px;
+  border-radius: 99px;
+  margin-bottom: var(--space-xs);
 }
 
 /* Filter Bar Component */
