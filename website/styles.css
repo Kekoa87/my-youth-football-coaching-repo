@@ -1992,19 +1992,19 @@ footer p {
 
 /* ── Section wrappers ───────────────────────────────────────── */
 .tackle-section {
-  margin-top: var(--space-xxl);
-  padding-top: var(--space-lg);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
   border-top: 2px solid var(--color-border);
 }
 
 .tackle-section:first-of-type {
   border-top: none;
-  margin-top: var(--space-lg);
+  margin-top: var(--space-sm);
   padding-top: 0;
 }
 
 .tackle-section-header {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .tackle-section-header h2 {
@@ -2033,7 +2033,7 @@ footer p {
   background-color: var(--color-light);
   border: 1px solid var(--color-border);
   border-radius: var(--border-radius);
-  margin: var(--space-md) 0 var(--space-xl);
+  margin: var(--space-sm) 0 var(--space-lg);
   font-family: var(--font-family-sans-serif);
 }
 
@@ -2070,7 +2070,7 @@ footer p {
   display: flex;
   align-items: flex-start;
   gap: 0;
-  margin: var(--space-lg) 0 var(--space-xl);
+  margin: var(--space-sm) 0 var(--space-lg);
   overflow-x: auto;
   padding-bottom: var(--space-xs);
 }
@@ -2130,7 +2130,7 @@ footer p {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  margin: var(--space-xl) 0 var(--space-md);
+  margin: var(--space-lg) 0 var(--space-sm);
   padding-bottom: var(--space-sm);
   border-bottom: 1px solid var(--color-border);
 }
@@ -2283,6 +2283,50 @@ footer p {
   .progression-step__video {
     border-right: none;
     border-bottom: 1px solid var(--color-border);
+  }
+}
+
+/* ── Back-to-top button ─────────────────────────────────────── */
+.back-to-top {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease,
+              background-color 0.15s ease;
+  z-index: 9000;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .back-to-top {
+    bottom: var(--space-lg);
+    right: var(--space-md);
+    width: 40px;
+    height: 40px;
   }
 }
 

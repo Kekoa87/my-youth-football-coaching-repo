@@ -818,6 +818,8 @@
   </div>
 </main>
 
+<button class="back-to-top" id="backToTop" aria-label="Scroll back to top" title="Back to top">&#8679;</button>
+
 <div id="site-footer"></div>
 <script>
   fetch("/website/includes/footer.html")
@@ -827,5 +829,17 @@
     });
 </script>
 <script src="../../../js/main.js"></script>
+<script>
+  (function () {
+    var btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', function () {
+      btn.classList.toggle('is-visible', window.scrollY > 400);
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }());
+</script>
 </body>
 </html>
