@@ -95,10 +95,11 @@ a:hover {
 }
 
 /* Images */
-img {
+img,
+video {
   max-width: 100%;
   height: auto;
-  display: block; /* Remove bottom space */
+  display: block;
   border-radius: var(--border-radius);
 }
 
