@@ -1946,31 +1946,15 @@ footer p {
 /* ── Horizontal video strip (multi-rep cards) ───────────── */
 .drill-video-strip {
   display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
+  flex-direction: column;
+  gap: var(--space-sm);
   margin-top: var(--space-sm);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border) transparent;
-}
-
-.drill-video-strip::-webkit-scrollbar {
-  height: 4px;
-}
-
-.drill-video-strip::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.drill-video-strip::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
-  border-radius: 2px;
 }
 
 .drill-video-strip video {
-  flex: 0 0 200px;
-  border-radius: var(--border-radius);
+  width: 100%;
   display: block;
+  border-radius: var(--border-radius);
 }
 
 /* ── Side-by-side image pair ────────────────────────────── */
@@ -2224,7 +2208,16 @@ footer p {
 }
 
 .progression-step__video .drill-video-strip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
   margin-top: 0;
+  overflow: visible;
+}
+
+.progression-step__video .drill-video-strip video {
+  width: 100%;
+  flex: none;
 }
 
 .progression-step__info {
