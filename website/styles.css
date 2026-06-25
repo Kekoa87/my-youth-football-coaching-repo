@@ -1943,34 +1943,18 @@ footer p {
   line-height: 1.6;
 }
 
-/* ── Horizontal video strip (multi-rep cards) ───────────── */
+/* ── Vertical video stack (multi-rep cards) ─────────────── */
 .drill-video-strip {
   display: flex;
-  gap: 8px;
-  overflow-x: auto;
-  padding-bottom: 4px;
+  flex-direction: column;
+  gap: var(--space-sm);
   margin-top: var(--space-sm);
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border) transparent;
-}
-
-.drill-video-strip::-webkit-scrollbar {
-  height: 4px;
-}
-
-.drill-video-strip::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.drill-video-strip::-webkit-scrollbar-thumb {
-  background-color: var(--color-border);
-  border-radius: 2px;
 }
 
 .drill-video-strip video {
-  flex: 0 0 200px;
-  border-radius: var(--border-radius);
+  width: 100%;
   display: block;
+  border-radius: var(--border-radius);
 }
 
 /* ── Side-by-side image pair ────────────────────────────── */
@@ -2224,7 +2208,26 @@ footer p {
 }
 
 .progression-step__video .drill-video-strip {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
   margin-top: 0;
+  overflow: visible;
+}
+
+.progression-step__video .drill-video-strip video {
+  width: 100%;
+  flex: none;
+}
+
+/* Multi-video sections: always stack video area above info, regardless of viewport */
+.progression-step__body:has(.drill-video-strip) {
+  grid-template-columns: 1fr;
+}
+
+.progression-step__body:has(.drill-video-strip) .progression-step__video {
+  border-right: none;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .progression-step__info {
