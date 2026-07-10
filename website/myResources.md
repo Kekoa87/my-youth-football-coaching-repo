@@ -51,6 +51,7 @@
   - Good explanation on how to run boot with OZ 
 - [Armchair Coach Justin - The Hidden Science Behind NFL Passing Concepts](https://youtu.be/5oaHb-pcrjY?si=NCknjx8NYdxr5oPT)
  - Passing concepts
+- [Weekly Spiral - Kyle Shanahan's play-action scheme and the counters to his bread and butter plays](https://youtu.be/sYbZsuGU0Oo?si=tqv6lHtjfDVprdEE)
 
 
 ## Football Play Ideas
@@ -171,3 +172,7 @@
 - [AFA - How To Run Inside Zone 10 Different Ways](https://youtu.be/wmwOEzJpKLM?si=PZfguCHzu3R11fKn)
 - [TOC - Coaching Outside Zone](https://youtube.com/shorts/wUDvHslp_Ic?si=Zt5tR_S8vD6WpUHI)
 - [CFB On Fox - Urban Meyer breaks down Ohio State's zone blocking scheme](https://youtu.be/hzL8pNEQIsg?si=CujHLRX55_WHRrBI)
+
+
+SPLIT HEAVY RT - ORBIT RT - Not sure about he Y/Z.  Lots of ways to do it.
+
