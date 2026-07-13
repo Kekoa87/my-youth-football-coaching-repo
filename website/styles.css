@@ -2007,6 +2007,11 @@ footer p {
   padding-left: calc(var(--space-md) + 4px);
 }
 
+/* ── Larger video cards for supplemental drills ─────────────── */
+#supplemental-drills .drills-grid {
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+}
+
 /* ── Jump-to navigation ─────────────────────────────────────── */
 .tackle-jump-nav {
   display: flex;
