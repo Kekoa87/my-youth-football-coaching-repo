@@ -1851,7 +1851,7 @@ footer p {
 
 .drills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
   align-items: start;
@@ -2005,11 +2005,6 @@ footer p {
   color: var(--color-secondary);
   margin-bottom: 0;
   padding-left: calc(var(--space-md) + 4px);
-}
-
-/* ── Larger video cards for supplemental drills ─────────────── */
-#supplemental-drills .drills-grid {
-  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
 }
 
 /* ── Jump-to navigation ─────────────────────────────────────── */
