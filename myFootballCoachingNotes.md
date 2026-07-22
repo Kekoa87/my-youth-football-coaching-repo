@@ -733,6 +733,9 @@ This file lives in the repo only. Not part of the public site.
 ### RPOs
 - [Coach Tatum - RPOs](https://youtube.com/shorts/CGGRP3juTL0?si=66UhDRWwfcSVrals)
 
+### Screens
+- [Coach McKie - SUPER SIMPLE Air Raid Screens for Middle School Football](https://youtu.be/CiFveQhv41o?si=XpXw4j8H63CK4TDX)
+
 ### Split Back aka Pro Set
 - [How to utilize the 2 Back Run Game](https://youtu.be/yCiui2mWFZc?si=WVH-d1-EXTxfiDg6)
 - [This is the Outside Veer - The First Triple Option Offense in Football](https://youtube.com/shorts/LOats8yQCOA?si=qBdByE4ZrVrvc_hn)
@@ -854,9 +857,3 @@ Whip Route
 14. Cook Hook Step - 5 cones, Moving Rt -> Left foot turns hips to RT, last one sprint out (Opposite direction facing)
 
 
-## Lineman calls
-Rizz----> Right Inside Zone
-Lizard--> Left  Inside Zone
-Rambo---> Right Outside Zone
-Lotto---> Left  Outside Zone
-PP------> Pass  Protect

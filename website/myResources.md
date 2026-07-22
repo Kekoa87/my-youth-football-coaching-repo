@@ -173,6 +173,3 @@
 - [TOC - Coaching Outside Zone](https://youtube.com/shorts/wUDvHslp_Ic?si=Zt5tR_S8vD6WpUHI)
 - [CFB On Fox - Urban Meyer breaks down Ohio State's zone blocking scheme](https://youtu.be/hzL8pNEQIsg?si=CujHLRX55_WHRrBI)
 
-
-SPLIT HEAVY RT - ORBIT RT - Not sure about he Y/Z.  Lots of ways to do it.
-
