@@ -331,6 +331,13 @@
   }
 }
 
+/* Center images narrower than the content column (full-width images
+   are unaffected, since auto margins have no effect once width = 100%) */
+.prose img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ══════════════════════════════════════════════════════
    Layered Offense Section Styles (unchanged below)
 ══════════════════════════════════════════════════════ */
