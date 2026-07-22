@@ -852,6 +852,15 @@ main .content-wrapper {
   margin-bottom: var(--space-xl);
 }
 
+/* Breathing room above a subheading that follows flowing body content
+   (long-form pages like coachingPhilosophy.html). Scoped to p/ul so it
+   never affects headings inside other components (e.g. the section-intro
+   labels on newCoaches.html, which never sit directly after a p or ul). */
+.about-page-main p + h2,
+.about-page-main ul + h2 {
+  margin-top: var(--space-xxl);
+}
+
 /* Adjustments for images within content pages */
 .about-page-main img {
   margin-top: var(--space-sm);
