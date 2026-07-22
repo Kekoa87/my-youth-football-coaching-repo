@@ -712,6 +712,15 @@
   gap: var(--space-sm) var(--space-xl);
 }
 
+/* Reasserts the reset above when this component sits inside a .prose
+   section — .prose ul (two classes) otherwise outranks the single-class
+   selector here and reintroduces disc bullets and default padding. */
+.prose .key-takeaway__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 .key-takeaway__list li {
   display: flex;
   align-items: flex-start;
