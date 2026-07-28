@@ -2632,7 +2632,7 @@ footer p {
 
 .blocking-rule-images {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1rem;
     margin: 1rem 0;
 }
@@ -2641,6 +2641,19 @@ footer p {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    display: block;
+}
+
+.blocking-rule-images figure {
+    margin: 0;
+}
+
+.blocking-rule-images figcaption {
+    text-align: center;
+    margin-top: var(--space-xs);
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #555;
 }
 
 /* Stack on small screens */
