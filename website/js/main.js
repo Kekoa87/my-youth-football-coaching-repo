@@ -104,36 +104,62 @@ document.querySelectorAll('.collapsible-button').forEach(button => {
 });
 
 // Lightbox functionality
+// Reused across any page that includes the shared #lightbox-modal markup
+// (see runConcepts.html, passingConcepts.html, blockingSchemes.html).
 function initializeLightbox() {
   const modal = document.getElementById('lightbox-modal');
   if (!modal) return;
 
   const modalImg = document.getElementById('lightbox-image');
-  const closeButton = document.querySelector('.close-button');
-  const diagramPlaceholders = document.querySelectorAll('.concept-diagram-placeholder');
+  const closeButton = modal.querySelector('.close-button');
+  const lightboxImages = document.querySelectorAll(
+    '.concept-diagram-placeholder img, .blocking-rule-images img'
+  );
 
-  diagramPlaceholders.forEach(placeholder => {
-    const img = placeholder.querySelector('img');
-    if (img) {
-      img.onclick = function() {
-        modal.style.display = 'block';
-        modalImg.src = this.src;
-        modalImg.alt = this.alt;
-      }
+  let lastFocusedElement = null;
+
+  function openLightbox(img) {
+    lastFocusedElement = document.activeElement;
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+    if (closeButton) closeButton.focus();
+  }
+
+  function closeLightbox() {
+    if (!modal.classList.contains('is-open')) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    modalImg.src = '';
+    if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+      lastFocusedElement.focus();
     }
+  }
+
+  lightboxImages.forEach(img => {
+    img.addEventListener('click', () => openLightbox(img));
   });
 
   if (closeButton) {
-    closeButton.onclick = function() {
-      modal.style.display = 'none';
-    }
+    closeButton.addEventListener('click', closeLightbox);
   }
 
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = 'none';
+  // Click outside the image (on the dark backdrop) closes the modal.
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) {
+      closeLightbox();
     }
-  }
+  });
+
+  // Escape key closes the modal from anywhere on the page.
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeLightbox();
+    }
+  });
 }
 
 // Function to filter drills
