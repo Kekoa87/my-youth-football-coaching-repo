@@ -1860,7 +1860,11 @@ footer p {
 
 .drills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+  /* min(420px, 100%) instead of a bare 420px: once the container is
+     narrower than the card's preferred minimum, the column clamps to
+     100% of the container instead of forcing an overflow-causing
+     420px track. Multi-column behavior on tablet/desktop is unchanged. */
+  grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
   align-items: start;
