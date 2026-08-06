@@ -827,37 +827,3 @@ This file lives in the repo only. Not part of the public site.
 
 
 ## My Random Notes
-
-# WR - Thu Session
-1. Blocking
-
-## FDT
-2. Kneeling Stick Release (Knee up sticks first)
-
-3. Kneeling Stick + Jab
-
-4. 5 cone stick drill (4 each leg)
-
-5. 4 cone 45-degree zig-zag drill.
-
-6. Release (Speed, Stick, Jab)
-
-7. 3 cone (3 yards apart) high knees to drop at cone (one foot should be farther then the other) x6
-
-8. JJ plant step drill (x10)
-
-9. WR stance +  1-2 step, third step towards sideline.  Catch ball.
-
-10. WR stance +  1-2-3 step, third step towards sideline.  Catch ball.
-
-11. Flip, catch, release
-
-Whip Route
-
-12. Snap Fall drill (Hands behind back, go to toes, lean forward, last second catch self with lead foot bent to 90 degrees(punch with opposite arm), don't let back knee touch ground x8ea)
-
-13. Snap Fall Pivot Hook - leaning forward, first leg catches, second leg turns hips.
-
-14. Cook Hook Step - 5 cones, Moving Rt -> Left foot turns hips to RT, last one sprint out (Opposite direction facing)
-
-
