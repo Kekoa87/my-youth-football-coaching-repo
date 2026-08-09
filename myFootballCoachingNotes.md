@@ -827,3 +827,8 @@ This file lives in the repo only. Not part of the public site.
 
 
 ## My Random Notes
+### 3rd / 4th grade formation?
+> Maybe I want to run double tight?
+>> I can run motion
+>>> Duo would be easy.
+>>>> could run bubble and tunnel
