@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Team drills for youth football, designed for working with an entire team or large groups of players. New drills coming soon.">
+  <title>Team Drills | Youth Football Coaching Hub</title>
+  <link rel="stylesheet" href="../../styles.css">
+  <link rel="icon" href="../../images/ChromeSiteSymbol.jpg" type="image/png">
+</head>
+<body>
+  <div id="site-header"></div>
+  <script>
+    fetch("/website/includes/header.html")
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      });
+  </script>
+
+<main class="drills-page-layout">
+  <section class="drills-header-section">
+    <div class="container">
+      <div class="page-header">
+        <h1>Team Drills</h1>
+        <p style="text-align: center; color: #666; font-style: italic;">
+          Author: <a href="/website/pages/about/about.html">Coach Kyle</a> | Created: August 19, 2026
+        </p>
+      </div>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto;">This section will feature drills designed for working with an entire football team or larger groups of players, covering team-wide fundamentals, situational work, and group coordination.</p>
+    </div>
+  </section>
+
+  <section class="drills-grid-section">
+    <div class="container drills-container">
+      <div class="drills-grid">
+        <!-- Team drills will be added here. -->
+      </div>
+
+      <div class="coach-reference">
+        <span class="coach-reference__badge">🚧 Foundation Page</span>
+        <h3 class="coach-reference__title">Team Drills Coming Soon</h3>
+        <p class="coach-reference__desc">This page is set up as the home for full-team and large-group drills. Check back soon as drills are added.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script>
+  fetch("/website/includes/footer.html")
+    .then(res => res.text())
+    .then(data => {
+      document.getElementById('site-footer').innerHTML = data;
+    });
+</script>
+<script src="../../js/main.js"></script>
+</body>
+</html>

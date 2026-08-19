@@ -1,0 +1,649 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  .oszn-root {
+    --field: #1c3829;
+    --field-line: #2e5940;
+    --charcoal: #14171a;
+    --panel: #1d2225;
+    --chalk: #f0ede3;
+    --chalk-dim: #b9b6ab;
+    --steel: #545b60;
+    --steel-line: #33383b;
+    --amber: #e2a53d;
+    --rust: #a8402f;
+    --font-display: 'Anton', 'Arial Narrow', sans-serif;
+    --font-body: 'Work Sans', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+    background: var(--charcoal);
+    color: var(--chalk);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .oszn-root * { box-sizing: border-box; }
+
+  .oszn-root a { color: var(--amber); }
+
+  /* ---------- HERO ---------- */
+  .oszn-hero {
+    position: relative;
+    padding: 64px 24px 48px;
+    background:
+      repeating-linear-gradient(180deg, transparent 0 78px, var(--field-line) 78px 80px),
+      linear-gradient(180deg, var(--field) 0%, #142a1f 100%);
+    border-bottom: 3px solid var(--amber);
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .oszn-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 0%, rgba(0,0,0,0) 0%, rgba(0,0,0,0.35) 100%);
+    pointer-events: none;
+  }
+
+  .oszn-eyebrow {
+    font-family: var(--font-mono);
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--amber);
+    margin: 0 0 14px;
+    position: relative;
+  }
+
+  .oszn-hero h1 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    font-size: clamp(38px, 7vw, 76px);
+    line-height: 0.95;
+    margin: 0 0 16px;
+    color: var(--chalk);
+    position: relative;
+  }
+
+  .oszn-hero h1 span { color: var(--amber); }
+
+  .oszn-hero p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: var(--chalk-dim);
+    font-size: 16px;
+    position: relative;
+  }
+
+  /* ---------- PHASE TIMELINE (yard-line signature element) ---------- */
+  .oszn-timeline-wrap {
+    background: var(--panel);
+    padding: 36px 24px 28px;
+    border-bottom: 1px solid var(--steel-line);
+  }
+
+  .oszn-timeline-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--chalk-dim);
+    text-align: center;
+    margin: 0 0 22px;
+  }
+
+  .oszn-yardline {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+  }
+
+  .oszn-yardline::before {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; top: 22px;
+    height: 2px;
+    background: var(--steel-line);
+  }
+
+  .oszn-phase {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding-top: 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--chalk);
+    font-family: var(--font-body);
+  }
+
+  .oszn-phase .tick {
+    width: 2px;
+    height: 44px;
+    background: var(--steel);
+    margin: 0 auto 12px;
+    position: relative;
+    transition: background 0.2s ease;
+  }
+
+  .oszn-phase .tick::after {
+    content: attr(data-yard);
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--steel);
+  }
+
+  .oszn-phase.active .tick { background: var(--amber); height: 60px; }
+  .oszn-phase.active .tick::after { color: var(--amber); }
+
+  .oszn-phase .plabel {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 0.03em;
+    color: var(--chalk-dim);
+  }
+
+  .oszn-phase.active .plabel { color: var(--chalk); }
+
+  .oszn-phase .pweeks {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--steel);
+    margin-top: 4px;
+  }
+
+  .oszn-phase-detail {
+    max-width: 640px;
+    margin: 28px auto 0;
+    text-align: center;
+    color: var(--chalk-dim);
+    font-size: 14px;
+    min-height: 42px;
+  }
+
+  /* ---------- POSITION SELECTOR ---------- */
+  .oszn-selector-wrap {
+    padding: 32px 24px 8px;
+    text-align: center;
+  }
+
+  .oszn-selector-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--chalk-dim);
+    margin: 0 0 16px;
+  }
+
+  .oszn-tabs {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid var(--steel-line);
+    border-radius: 6px;
+    padding: 6px;
+    background: var(--panel);
+  }
+
+  .oszn-tab {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 14px;
+    background: transparent;
+    border: none;
+    color: var(--chalk-dim);
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .oszn-tab:hover { color: var(--chalk); }
+
+  .oszn-tab.active {
+    background: var(--amber);
+    color: var(--charcoal);
+  }
+
+  /* ---------- POSITION INTRO ---------- */
+  .oszn-pos-intro {
+    max-width: 760px;
+    margin: 28px auto 0;
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .oszn-pos-intro h2 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: 26px;
+    color: var(--chalk);
+    margin: 0 0 10px;
+    letter-spacing: 0.01em;
+  }
+
+  .oszn-pos-intro p {
+    color: var(--chalk-dim);
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .oszn-focus-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 18px 0 0;
+  }
+
+  .oszn-focus-tags span {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border: 1px solid var(--steel-line);
+    color: var(--amber);
+    padding: 5px 10px;
+    border-radius: 999px;
+  }
+
+  /* ---------- WEEK GRID ---------- */
+  .oszn-week {
+    max-width: 980px;
+    margin: 40px auto 0;
+    padding: 0 24px 64px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .oszn-day {
+    background: var(--panel);
+    border: 1px solid var(--steel-line);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .oszn-day-head {
+    background: var(--field);
+    padding: 14px 18px;
+    border-bottom: 3px solid var(--amber);
+  }
+
+  .oszn-day-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--amber);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0 0 2px;
+  }
+
+  .oszn-day-title {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    font-size: 19px;
+    margin: 0;
+    color: var(--chalk);
+    letter-spacing: 0.01em;
+  }
+
+  .oszn-block {
+    padding: 14px 18px 6px;
+  }
+
+  .oszn-block-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--chalk-dim);
+    margin: 0 0 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .oszn-block-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--steel-line);
+  }
+
+  .oszn-ex-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-bottom: 14px;
+  }
+
+  .oszn-ex-table td {
+    padding: 6px 0;
+    border-bottom: 1px solid var(--steel-line);
+    vertical-align: top;
+  }
+
+  .oszn-ex-table tr:last-child td { border-bottom: none; }
+
+  .oszn-ex-name { color: var(--chalk); padding-right: 10px; }
+  .oszn-ex-scheme {
+    font-family: var(--font-mono);
+    color: var(--amber);
+    white-space: nowrap;
+    text-align: right;
+    width: 1%;
+  }
+
+  .oszn-field-note {
+    padding: 12px 18px 18px;
+    font-size: 13px;
+    color: var(--chalk-dim);
+    border-top: 1px dashed var(--steel-line);
+    margin-top: auto;
+  }
+
+  .oszn-field-note strong { color: var(--chalk); }
+
+  /* ---------- FOOTER NOTE ---------- */
+  .oszn-footnote {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+    text-align: center;
+    color: var(--steel);
+    font-size: 12.5px;
+    font-family: var(--font-mono);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    .oszn-yardline { flex-wrap: nowrap; overflow-x: auto; }
+    .oszn-phase { min-width: 110px; }
+    .oszn-hero { padding: 48px 16px 36px; }
+  }
+</style>
+
+<div class="oszn-root">
+
+  <!-- HERO -->
+  <div class="oszn-hero">
+    <p class="oszn-eyebrow">Field &#43; Weight Room &middot; 5&#43; Days / Week</p>
+    <h1>Offseason<br><span>Gym Routine</span></h1>
+    <p>A position-specific strength, power, and speed program built for the offseason grind &mdash; from foundation to game-ready.</p>
+  </div>
+
+  <!-- PHASE TIMELINE -->
+  <div class="oszn-timeline-wrap">
+    <p class="oszn-timeline-label">12-Week Offseason Arc</p>
+    <div class="oszn-yardline" id="oszn-yardline">
+      <button class="oszn-phase active" data-phase="foundation">
+        <div class="tick" data-yard="WK 1&ndash;4"></div>
+        <div class="plabel">Foundation</div>
+        <span class="pweeks">Build the base</span>
+      </button>
+      <button class="oszn-phase" data-phase="strength">
+        <div class="tick" data-yard="WK 5&ndash;8"></div>
+        <div class="plabel">Strength &amp; Power</div>
+        <span class="pweeks">Load it up</span>
+      </button>
+      <button class="oszn-phase" data-phase="peak">
+        <div class="tick" data-yard="WK 9&ndash;12"></div>
+        <div class="plabel">Speed &amp; Peak</div>
+        <span class="pweeks">Sharpen &amp; taper</span>
+      </button>
+    </div>
+    <p class="oszn-phase-detail" id="oszn-phase-detail"></p>
+  </div>
+
+  <!-- POSITION SELECTOR -->
+  <div class="oszn-selector-wrap">
+    <p class="oszn-selector-label">Select Your Group</p>
+    <div class="oszn-tabs" id="oszn-tabs">
+      <button class="oszn-tab active" data-pos="ol-dl">OL / DL</button>
+      <button class="oszn-tab" data-pos="skill">WR / DB / RB</button>
+      <button class="oszn-tab" data-pos="lb">LB / Hybrid</button>
+      <button class="oszn-tab" data-pos="general">General</button>
+    </div>
+  </div>
+
+  <div class="oszn-pos-intro">
+    <h2 id="oszn-pos-title"></h2>
+    <p id="oszn-pos-desc"></p>
+    <div class="oszn-focus-tags" id="oszn-pos-tags"></div>
+  </div>
+
+  <!-- WEEK GRID -->
+  <div class="oszn-week" id="oszn-week"></div>
+
+  <p class="oszn-footnote">
+    Warm up with 8&ndash;10 min of dynamic mobility before every session. Reload/deload every 4th week (cut volume ~30%).
+    Sets/reps shown are for the Foundation phase &mdash; swap in the loading notes above for Strength/Power and Speed/Peak.
+    Always coach technique before load, and adjust for your own training age and any injury history.
+  </p>
+
+</div>
+
+<script>
+(function() {
+  var PHASES = {
+    foundation: "Weeks 1&ndash;4: Build a strength and movement base. Higher rep ranges (8&ndash;12), moderate loads, technique-first. Field work centers on acceleration mechanics and change-of-direction fundamentals.",
+    strength: "Weeks 5&ndash;8: Shift to heavier loads and lower reps (3&ndash;6) on your main lifts, with explosive/power variations added. Field work adds top-end speed and reactive agility.",
+    peak: "Weeks 9&ndash;12: Sharpen. Lower volume, higher intent &mdash; power and speed take priority over grinding out reps. Taper the final week into camp/season."
+  };
+
+  var DATA = {
+    "ol-dl": {
+      title: "Offensive &amp; Defensive Line",
+      desc: "Built around raw strength, drive power, and hand technique. Heavier compound lifts anchor the week, with field sessions focused on pad level, first-step quickness, and sled/bag work &mdash; not top-end sprinting.",
+      tags: ["Max Strength", "Drive Power", "Hand Technique", "Short-Area Quickness"],
+      days: [
+        {
+          num: "Day 1", title: "Lower Body Strength",
+          weight: [["Back Squat","4x6"],["Trap Bar Deadlift","3x8"],["Walking Lunge","3x10/leg"],["Standing Calf Raise","3x12"]],
+          field: "Sled drive push, 5x15 yd &middot; 3-point stance starts, 6 reps &middot; pad level drill circuit"
+        },
+        {
+          num: "Day 2", title: "Upper Body Push",
+          weight: [["Bench Press","4x6"],["Weighted Dip","3x8"],["Overhead Press","3x8"],["Tricep Rope Pushdown","3x12"]],
+          field: "Hand-fighting/punch drills vs. bags, 4 rounds &middot; short-area footwork ladder"
+        },
+        {
+          num: "Day 3", title: "Total Body Power",
+          weight: [["Power Clean (or Med Ball Slam if unfamiliar)","5x3"],["Box Jump","4x5"],["Farmer's Carry","3x40 yd"],["Plank + Weighted Vest","3x45s"]],
+          field: "Sled resisted starts, 6x10 yd &middot; run-through blocking reps"
+        },
+        {
+          num: "Day 4", title: "Lower Body Posterior Chain",
+          weight: [["Romanian Deadlift","4x8"],["Bulgarian Split Squat","3x8/leg"],["Hip Thrust","3x10"],["Seated Calf Raise","3x15"]],
+          field: "Bag drive &amp; anchor drills &middot; 2-point stance starts, 6 reps"
+        },
+        {
+          num: "Day 5", title: "Upper Body Pull + Core",
+          weight: [["Barbell Row","4x8"],["Weighted Pull-Up","3x6"],["Face Pull","3x15"],["Weighted Sit-Up","3x15"]],
+          field: "Hand-placement technique walkthrough &middot; light conditioning: sled pull/push circuit, 15 min"
+        }
+      ]
+    },
+    "skill": {
+      title: "WR &#183; DB &#183; RB (Speed / Skill)",
+      desc: "Prioritizes speed mechanics, elastic power, and change of direction. Lifts stay explosive and controlled &mdash; strength supports speed here, it doesn't compete with it.",
+      tags: ["Top-End Speed", "Change of Direction", "Elastic Power", "Hip Mobility"],
+      days: [
+        {
+          num: "Day 1", title: "Lower Body Power",
+          weight: [["Trap Bar Deadlift","4x5"],["Bulgarian Split Squat","3x8/leg"],["Hamstring Nordic Curl","3x6"],["Standing Calf Raise","3x15"]],
+          field: "Acceleration mechanics, 6x20 yd build-ups &middot; A-skips &amp; wall drills"
+        },
+        {
+          num: "Day 2", title: "Upper Body + Plyo",
+          weight: [["Incline Dumbbell Press","3x8"],["Pull-Up","3x8"],["Med Ball Rotational Throw","3x8/side"],["Lateral Bound","3x6/side"]],
+          field: "Cone agility (5-10-5 shuttle), 6 reps &middot; catch-and-turn drills"
+        },
+        {
+          num: "Day 3", title: "Speed Development",
+          weight: [["Box Jump","4x5"],["Single-Leg RDL","3x8/leg"],["Core Anti-Rotation Press","3x10/side"]],
+          field: "Top-end sprints, 4x40 yd at 90%+ &middot; full recovery between reps &middot; flying 10s, 4 reps"
+        },
+        {
+          num: "Day 4", title: "Lower Body Strength",
+          weight: [["Back Squat","3x6"],["Hip Thrust","3x10"],["Reverse Lunge","3x8/leg"],["Copenhagen Plank","3x20s/side"]],
+          field: "Reactive change-of-direction (mirror drills), 8 reps &middot; short-burst starts"
+        },
+        {
+          num: "Day 5", title: "Upper Body Pull + Core",
+          weight: [["Dumbbell Row","3x10"],["Push Press","3x6"],["Med Ball Slam","3x10"],["Weighted Sit-Up","3x15"]],
+          field: "Route-running or ball-skills work &middot; light tempo run, 15 min"
+        }
+      ]
+    },
+    "lb": {
+      title: "Linebacker &#47; Hybrid",
+      desc: "A blend of the two worlds &mdash; strength to hold up at the point of attack, speed and agility to run sideline to sideline. Field sessions mix reactive drills with pursuit-angle work.",
+      tags: ["Strength-Speed", "Read &amp; React", "Tackling Technique", "Sideline-to-Sideline Range"],
+      days: [
+        {
+          num: "Day 1", title: "Lower Body Strength",
+          weight: [["Back Squat","4x6"],["Romanian Deadlift","3x8"],["Walking Lunge","3x10/leg"],["Standing Calf Raise","3x12"]],
+          field: "Downhill acceleration, 6x15 yd &middot; read-and-react starts off a coach's cue"
+        },
+        {
+          num: "Day 2", title: "Upper Body Push/Pull",
+          weight: [["Bench Press","4x6"],["Barbell Row","4x8"],["Overhead Press","3x8"],["Face Pull","3x15"]],
+          field: "Tackling form &amp; wrap drills vs. bags &middot; hand-fighting at the line"
+        },
+        {
+          num: "Day 3", title: "Total Body Power",
+          weight: [["Power Clean (or Broad Jump if unfamiliar)","5x3"],["Box Jump","4x5"],["Med Ball Rotational Throw","3x8/side"],["Plank Variation","3x40s"]],
+          field: "Pursuit-angle sprints, 6x20 yd &middot; cone agility (5-10-5), 6 reps"
+        },
+        {
+          num: "Day 4", title: "Lower Body Posterior Chain",
+          weight: [["Trap Bar Deadlift","4x6"],["Bulgarian Split Squat","3x8/leg"],["Hip Thrust","3x10"],["Nordic Curl","3x6"]],
+          field: "Backpedal-to-break drills, 8 reps &middot; short-area burst starts"
+        },
+        {
+          num: "Day 5", title: "Upper Body + Core",
+          weight: [["Weighted Pull-Up","3x6"],["Push Press","3x6"],["Dumbbell Row","3x10"],["Weighted Sit-Up","3x15"]],
+          field: "Zone drop &amp; recognition drills &middot; light conditioning, 15 min"
+        }
+      ]
+    },
+    "general": {
+      title: "General / All-Around",
+      desc: "A balanced template for players who don't need a heavy position lean yet &mdash; younger athletes, two-way players, or anyone building a well-rounded base before specializing.",
+      tags: ["Balanced Strength", "General Speed", "Athletic Movement", "Work Capacity"],
+      days: [
+        {
+          num: "Day 1", title: "Lower Body Strength",
+          weight: [["Back Squat","4x8"],["Romanian Deadlift","3x10"],["Walking Lunge","3x10/leg"],["Standing Calf Raise","3x12"]],
+          field: "Acceleration mechanics, 6x15 yd &middot; A-skips &amp; wall drills"
+        },
+        {
+          num: "Day 2", title: "Upper Body Push",
+          weight: [["Bench Press","4x8"],["Dumbbell Shoulder Press","3x10"],["Push-Up","3xAMRAP"],["Tricep Pushdown","3x12"]],
+          field: "Cone agility (5-10-5 shuttle), 6 reps"
+        },
+        {
+          num: "Day 3", title: "Total Body Power",
+          weight: [["Box Jump","4x5"],["Kettlebell Swing","3x12"],["Med Ball Slam","3x10"],["Plank","3x40s"]],
+          field: "Sprint intervals, 6x20 yd &middot; full recovery between reps"
+        },
+        {
+          num: "Day 4", title: "Lower Body Posterior Chain",
+          weight: [["Trap Bar Deadlift","4x8"],["Bulgarian Split Squat","3x8/leg"],["Hip Thrust","3x12"],["Seated Calf Raise","3x15"]],
+          field: "Change-of-direction (mirror drills), 6 reps"
+        },
+        {
+          num: "Day 5", title: "Upper Body Pull + Core",
+          weight: [["Barbell Row","4x8"],["Pull-Up (assisted if needed)","3x8"],["Face Pull","3x15"],["Weighted Sit-Up","3x15"]],
+          field: "Position skill work of your choice &middot; light conditioning, 15 min"
+        }
+      ]
+    }
+  };
+
+  function esc(s) { return s; }
+
+  function renderPosition(key) {
+    var d = DATA[key];
+    document.getElementById('oszn-pos-title').innerHTML = d.title;
+    document.getElementById('oszn-pos-desc').innerHTML = d.desc;
+
+    var tagsEl = document.getElementById('oszn-pos-tags');
+    tagsEl.innerHTML = '';
+    d.tags.forEach(function(t) {
+      var span = document.createElement('span');
+      span.innerHTML = t;
+      tagsEl.appendChild(span);
+    });
+
+    var week = document.getElementById('oszn-week');
+    week.innerHTML = '';
+    d.days.forEach(function(day) {
+      var card = document.createElement('div');
+      card.className = 'oszn-day';
+
+      var rows = day.weight.map(function(ex) {
+        return '<tr><td class="oszn-ex-name">' + ex[0] + '</td><td class="oszn-ex-scheme">' + ex[1] + '</td></tr>';
+      }).join('');
+
+      card.innerHTML =
+        '<div class="oszn-day-head">' +
+          '<p class="oszn-day-num">' + day.num + '</p>' +
+          '<h3 class="oszn-day-title">' + day.title + '</h3>' +
+        '</div>' +
+        '<div class="oszn-block">' +
+          '<p class="oszn-block-label">Weight Room</p>' +
+          '<table class="oszn-ex-table"><tbody>' + rows + '</tbody></table>' +
+        '</div>' +
+        '<div class="oszn-field-note"><strong>Field:</strong> ' + day.field + '</div>';
+
+      week.appendChild(card);
+    });
+  }
+
+  function renderPhase(key) {
+    document.getElementById('oszn-phase-detail').innerHTML = PHASES[key];
+  }
+
+  document.getElementById('oszn-tabs').addEventListener('click', function(e) {
+    var btn = e.target.closest('.oszn-tab');
+    if (!btn) return;
+    document.querySelectorAll('.oszn-tab').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    renderPosition(btn.getAttribute('data-pos'));
+  });
+
+  document.getElementById('oszn-yardline').addEventListener('click', function(e) {
+    var btn = e.target.closest('.oszn-phase');
+    if (!btn) return;
+    document.querySelectorAll('.oszn-phase').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    renderPhase(btn.getAttribute('data-phase'));
+  });
+
+  renderPosition('ol-dl');
+  renderPhase('foundation');
+})();
+</script>
